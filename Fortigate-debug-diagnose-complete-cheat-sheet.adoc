@@ -11,5 +11,7 @@ v1.0, 2020-09-01
 |Command
 |Description
 
+|diagnose debug application ike -1
+| Enable IPSec VPN debug, shows phase 1 and phase 2 negotiations (for IKEv1) and everything for IKEv2.
 
 |===
