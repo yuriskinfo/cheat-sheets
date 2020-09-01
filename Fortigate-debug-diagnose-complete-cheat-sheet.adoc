@@ -22,4 +22,7 @@ NOTE: To enable debug set by any of the commands below, you need to run *diagnos
 |Flush (delete) all SAs of the given VPN peer only.
 
 
+|*get vpn ipsec stats tunnel*
+| Show short general statistics about tunnels: number, kind, number of selectors, state
+
 |===
