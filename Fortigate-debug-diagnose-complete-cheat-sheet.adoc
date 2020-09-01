@@ -15,7 +15,8 @@ NOTE: To enable debug set by any of the commands below, you need to run *diagnos
 |Description
 
 |*diagnose debug application ike -1*
-| Enable IPSec VPN debug, shows phase 1 and phase 2 negotiations (for IKEv1) and everything for IKEv2. "-1" sets the verbosity level to maximum, any other number will show less output.
+| Enable IPSec VPN debug, shows phase 1 and phase 2 negotiations (for IKEv1) and everything for IKEv2. 
+"-1" sets the verbosity level to maximum, any other number will show less output.
 
 
 
