@@ -14,6 +14,13 @@ NOTE: To enable debug set by any of the commands below, you need to run *diagnos
 |Command
 |Description
 
+| *diagnose vpn ike log-filter* 
+a| Filter VPN debug messages for various parameters:  
+
+* `list`  Display the current filter.
+* `clear` Erase the current filter.
+
+
 |*diagnose debug application ike -1*
 | Enable IPSec VPN debug, shows phase 1 and phase 2 negotiations (for IKEv1) and everything for IKEv2. 
 "-1" sets the verbosity level to maximum, any other number will show less output.
@@ -22,17 +29,17 @@ NOTE: To enable debug set by any of the commands below, you need to run *diagnos
 |Flush (delete) all SAs of the given VPN peer only.
 
 |*get vpn ipsec tunnel details* 
-| Get detailed info about the tunnels: Rx/Tx packets/bytes, IP addresses of the peers, algorithms used, detailed selectors info, lifetime.
+| Detailed info about the tunnels: Rx/Tx packets/bytes, IP addresses of the peers, algorithms used, detailed selectors info, lifetime.
 
 |*get vpn ipsec stats tunnel*
-| Show short general statistics about tunnels: number, kind, number of selectors, state
+| Short general statistics about tunnels: number, kind, number of selectors, state
 
 |*get vpn ipsec tunnel summary* 
 | Short statistics per each tunnel: number of selectors up/down, number of packets Rx/Tx.
 
 
 |*get vpn ipsec stats crypto*
-| Show statistics of the crypto component (ASIC/software) of the Fortigate: encryption algorithm, hasshing algorithm.
+| Statistics of the crypto component (ASIC/software) of the Fortigate: encryption algorithm, hasshing algorithm.
 
 
 
