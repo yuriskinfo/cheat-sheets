@@ -57,3 +57,29 @@ a| Filter VPN debug messages using various parameters:
 
 
 |===
+
+
+
+
+== NTP debug
+
+.NTP daemon diagnostics and debug
+[cols=2,options="header"]
+|===
+|Command
+|Description
+
+|*diag sys ntp status*
+|Current status of NTP time synchronization. Shows all NTP peers and their details info: reachability, stratum, clock offset, delay, NTP version.
+
+|*execute date*
+| Show current date as seen by Fortigate
+
+|*exec time*
+| Show current time as seen by Fortigate
+
+ 
+
+
+
+|===
