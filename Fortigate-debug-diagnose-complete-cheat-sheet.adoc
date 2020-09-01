@@ -9,7 +9,7 @@ NOTE: To enable debug set by any of the commands below, you need to run *diagnos
 == IPSEC VPN debug
 
 .IPSEC VPN Debug
-[cols=2*^,options="header"]
+[cols="30,70",options="header"]
 |===
 |Command
 |Description
