@@ -9,7 +9,7 @@ NOTE: To enable debug set by any of the commands below, you need to run *diagnos
 == IPSEC VPN debug
 
 .IPSEC VPN Debug
-[cols="70,30",options="header"]
+[cols=2*,options="header"]
 |===
 |Command
 |Description
@@ -18,6 +18,8 @@ NOTE: To enable debug set by any of the commands below, you need to run *diagnos
 | Enable IPSec VPN debug, shows phase 1 and phase 2 negotiations (for IKEv1) and everything for IKEv2. 
 "-1" sets the verbosity level to maximum, any other number will show less output.
 
+|*diagnose vpn ike gateway flush name <vpn_name>*
+|Flush (delete) all SAs of the given VPN peer only.
 
 
 |===
