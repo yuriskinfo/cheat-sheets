@@ -23,6 +23,10 @@ a| Filter VPN debug messages using various parameters:
 * `src-addr4`/`src-addr6`   IPv4/IPv6 source address range to filter by.
 * `dst-addr4`/`dst-addr6`   IPv4/IPv6 destination address range to filter by.
 * `src-port` Source port range
+* `dst-port`  Destination port range
+* `vd`  Index of virtual domain. -1 matches all.
+* `interface` Interface that IKE connection is negotiated over.
+* `negate` Negate the specified filter parameter.
 
 
 |*diagnose debug application ike -1*
