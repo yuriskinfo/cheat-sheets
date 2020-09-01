@@ -14,11 +14,15 @@ NOTE: To enable debug set by any of the commands below, you need to run *diagnos
 |Command
 |Description
 
-| *diagnose vpn ike log-filter* 
-a| Filter VPN debug messages for various parameters:  
+| *diagnose vpn ike log-filter <parameter>* 
+a| Filter VPN debug messages using various parameters:  
 
 * `list`  Display the current filter.
 * `clear` Erase the current filter.
+* `name` Phase1 name to filter by.
+* `src-addr4`/`src-addr6`   IPv4/IPv6 source address range to filter by.
+* `dst-addr4`/`dst-addr6`   IPv4/IPv6 destination address range to filter by.
+* `src-port` Source port range
 
 
 |*diagnose debug application ike -1*
