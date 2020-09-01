@@ -5,6 +5,8 @@ v1.0, 2020-09-01
 
 
 NOTE: To enable debug set by any of the commands below, you need to run *diagnose debug enable*. This is assumed and not reminded any further.
+NOTE: To disable and stop immediately any debug, run *dia deb res* which is short for *diagnose debug reset*.
+
 
 == IPSEC VPN debug
 
