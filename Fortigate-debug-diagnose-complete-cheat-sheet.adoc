@@ -21,8 +21,21 @@ NOTE: To enable debug set by any of the commands below, you need to run *diagnos
 |*diagnose vpn ike gateway flush name <vpn_name>*
 |Flush (delete) all SAs of the given VPN peer only.
 
+|*get vpn ipsec tunnel details* 
+| Get detailed info about the tunnels: Rx/Tx packets/bytes, IP addresses of the peers, algorithms used, detailed selectors info, lifetime.
 
 |*get vpn ipsec stats tunnel*
 | Show short general statistics about tunnels: number, kind, number of selectors, state
+
+|*get vpn ipsec tunnel summary* 
+| Short statistics per each tunnel: number of selectors up/down, number of packets Rx/Tx.
+
+
+|*get vpn ipsec stats crypto*
+| Show statistics of the crypto component (ASIC/software) of the Fortigate: encryption algorithm, hasshing algorithm.
+
+
+
+
 
 |===
