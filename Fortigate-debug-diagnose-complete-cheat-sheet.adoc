@@ -37,10 +37,10 @@ a| Filter VPN debug messages using various parameters:
 "-1" sets the verbosity level to maximum, any other number will show less output.
 
 |*diagnose vpn ike gateway flush name <vpn_name>*
-|Flush (delete) all SAs of the given VPN peer only.
+|Flush (delete) all SAs of the given VPN peer only. Identify the peer by its Phase 1 name.
 
 |*get vpn ipsec tunnel details* 
-| Detailed info about the tunnels: Rx/Tx packets/bytes, IP addresses of the peers, algorithms used, detailed selectors info, lifetime.
+| Detailed info about the tunnels: Rx/Tx packets/bytes, IP addresses of the peers, algorithms used, detailed selectors info, lifetime, whether NAT Traversal is enabled or not.
 
 |*get vpn ipsec stats tunnel*
 | Short general statistics about tunnels: number, kind, number of selectors, state
