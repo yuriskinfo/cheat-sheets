@@ -96,11 +96,26 @@ a| Filter VPN debug messages using various parameters:
 |Command
 |Description
 
+
+|*diagnose ip router bgp level info*
+ *diagnose ip router bgp all enable*
+| Set BGP debug level to INFO (the default is ERROR which gives very little info) and enable the BGP debug.
+
+|*exec router clear bgp all*
+| Disconnect all BGP peering sessions and clear BGP routes in BGP table and RIB. Use with care, involves downtime.
+
+
 |*get router info bgp summary*
 | State of BGP peering sessions with peers, one per line.
 
 |*get router info bgp network <prefix>*
-| Detailed info about <prefix> from the BGP process table. Output includes all learned via BGP routes, even those not currently installed in RIB. E.g. `get router info bgp network 0.0.0.0/0`
+| Detailed info about <prefix> from the BGP process table. Output includes all learned via BGP routes, even those not currently installed in RIB. E.g. `get router info bgp network 0.0.0.0/0`. The <prefix> is optional, if absent shows the whole BGP table.
+
+|*get router info routing-table bgp*
+| Show BGP routes actually installed in the RIB. 
+
+|*get router info bgp neighbors*
+| Detailed info on BGP peers: BGP version, state, supported capabilities, how many hops away, reson for the last reset.
 
 |*get router info bgp neighbors <IP of the neighbor> advertised-routes*
 | Show all routes advertised by us to the specific neighbor. 
@@ -108,9 +123,11 @@ a| Filter VPN debug messages using various parameters:
 |*get router info bgp neighbors <IP of the neighbor> routes*
 | Show all routes learned from this BGP peer. It shows routes AFTER filtering on local peer, if any.
 
-|*diagnose ip router bgp level info*
- *diagnose ip router bgp all enable*
-| Set BGP debug level to INFO (the default is ERROR which gives very little info) and enable the BGP debug.
+|*get router info bgp neighbors 12.12.12.12  received-routes*
+| Show all received routes from the neighbor BEFORE any local filtering is being applied. It only works if `set soft-reconfiguration enable` is set for this peer under `router bgp` configuration.
+
+|*diagnose sys tcpsock | grep 179*
+| List all incoming/outgoing TCP port 179 sessions for BGP.
 
 
 
