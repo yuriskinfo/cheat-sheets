@@ -117,7 +117,7 @@ a| Filter VPN debug messages using various parameters:
 | Show BGP routes actually installed in the RIB. 
 
 |*get router info bgp neighbors*
-| Detailed info on BGP peers: BGP version, state, supported capabilities, how many hops away, reson for the last reset.
+| Detailed info on BGP peers: BGP version, state, supported capabilities, how many hops away, reason for the last reset.
 
 |*get router info bgp neighbors <IP of the neighbor> advertised-routes*
 | Show all routes advertised by us to the specific neighbor. 
@@ -128,7 +128,7 @@ a| Filter VPN debug messages using various parameters:
 |*get router info bgp neighbors 12.12.12.12  received-routes*
 | Show all received routes from the neighbor BEFORE any local filtering is being applied. It only works if `set soft-reconfiguration enable` is set for this peer under `router bgp` configuration.
 
-|*diagnose sys tcpsock | grep 179*
+|*diagnose sys tcpsock \| grep 179*
 | List all incoming/outgoing TCP port 179 sessions for BGP.
 
 
