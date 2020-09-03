@@ -100,7 +100,21 @@ a| Filter VPN debug messages using various parameters:
 | State of BGP peering sessions with peers, one per line.
 
 |*get router info bgp network <prefix>*
-| Detailed info about <prefix> from the BGP process table. Includes all learned via BGP routes, even those not currently installed in RIB. E.g. `get router info bgp network 0.0.0.0/0`
+| Detailed info about <prefix> from the BGP process table. Output includes all learned via BGP routes, even those not currently installed in RIB. E.g. `get router info bgp network 0.0.0.0/0`
+
+|*get router info bgp neighbors <IP of the neighbor> advertised-routes*
+| Show all routes advertised by us to the specific neighbor. 
+
+|*get router info bgp neighbors <IP of the neighbor> routes*
+| Show all routes learned from this BGP peer. It shows routes AFTER filtering on local peer, if any.
+
+|*diagnose ip router bgp level info*
+ *diagnose ip router bgp all enable*
+| Set BGP debug level to INFO (the default is ERROR which gives very little info) and enable the BGP debug.
+
+
+
+
 
 
 |===
