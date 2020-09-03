@@ -83,3 +83,24 @@ a| Filter VPN debug messages using various parameters:
 
 
 |===
+
+
+
+
+
+== BGP
+
+.BGP debug
+[cols=2*,options="header"]
+|===
+|Command
+|Description
+
+|*get router info bgp summary*
+| State of BGP peering sessions with peers, one per line.
+
+|*get router info bgp network <prefix>*
+| Detailed info about <prefix> from the BGP process table. Includes all learned via BGP routes, even those not currently installed in RIB. E.g. `get router info bgp network 0.0.0.0/0`
+
+
+|===
