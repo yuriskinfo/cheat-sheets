@@ -98,7 +98,9 @@ a| Filter VPN debug messages using various parameters:
 
 
 |*diagnose ip router bgp level info*
+
  *diagnose ip router bgp all enable*
+
 | Set BGP debug level to INFO (the default is ERROR which gives very little info) and enable the BGP debug.
 
 |*exec router clear bgp all*
