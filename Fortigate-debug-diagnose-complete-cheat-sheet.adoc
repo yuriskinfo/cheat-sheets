@@ -125,7 +125,7 @@ a| Filter VPN debug messages using various parameters:
 |*get router info bgp neighbors <IP of the neighbor> routes*
 | Show all routes learned from this BGP peer. It shows routes AFTER filtering on local peer, if any.
 
-|*get router info bgp neighbors 12.12.12.12  received-routes*
+|*get router info bgp neighbors <IP of the neighbor> received-routes*
 | Show all received routes from the neighbor BEFORE any local filtering is being applied. It only works if `set soft-reconfiguration enable` is set for this peer under `router bgp` configuration.
 
 |*diagnose sys tcpsock \| grep 179*
