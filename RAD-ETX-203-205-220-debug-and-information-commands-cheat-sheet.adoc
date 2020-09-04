@@ -24,7 +24,9 @@ The commands below are meant to be run on the device CLI itself, not on provisio
 | Statistics of the port: total bits/frames passed,maximum/minimum bits/sec seen, and most interesting - CRC errors, error frames, oversize frames, discards.
 
 |*config port name*  
+
 *rate-measure interval _seconds_*  
+
 *show rate*
 | Show port utilization in bits/sec in real-time
 
