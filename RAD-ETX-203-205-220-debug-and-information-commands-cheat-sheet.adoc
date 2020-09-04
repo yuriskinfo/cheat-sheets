@@ -31,6 +31,34 @@ The commands below are meant to be run on the device CLI itself, not on provisio
 | Show port utilization in bits/sec in real-time
 
 
+|_Responder:_
+
+*config flow*  
+
+*service-ping-response local-ip 13.13.13.2/30 next-hop 13.13.13.1 egress-port ethernet 4/2 vlan 777*
+
+_Ping sender:_
+
+*config flow*
+
+service-ping local-ip 13.13.13.1/30 dst-ip 13.13.13.2 next-hop 13.13.13.2 egress-port ethernet 4/1 vlan 777 number-of-packets 10 payload-size 1450
+
+|Send ping over the client vlan (here 777) from ETX to ETX to measure latency and packet loss. You configure one ETX as responder and another one as sender.
+
+|*show configure flows summary brief*
+|List all flows configured on this ETX briefly
+
+|*show configure flows summary details*
+|List all flows configured on this ETX with details
+
+|*show config system system-date*
+| Show system time of the appliance, important for logs/alarms correlation.
+
+|*show config reporting brief-alarm-log*
+|Show alarms log, their severity/state/last raised time
+
+
+
 
 
 
