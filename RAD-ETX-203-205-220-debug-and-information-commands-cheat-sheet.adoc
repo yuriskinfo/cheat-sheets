@@ -1,0 +1,27 @@
+= RAD ETX 203, 205, 220 debug and information commands
+
+Carrier Ethernet Devices by RAD (ETX-203AX, ETX-203AM, ETX-203AX-T, ETX-205A, ETX-220A) are quite popular with telco companies around the world for connecting end clients to the backbone at layer 2. And while reference documentation is available, I couldn't find the debug/information commands digest on the Internet at all. This post, I hope, comes to fill the gap.
+
+The commands below are meant to be run on the device CLI itself, not on provisioning system of some kind. I show examples of using them below as well.
+
+
+[cols=2*,options="header"]
+|===
+|Command
+|Description
+
+
+|*show configure port summary*
+| Show port summary: state (up/down), speed
+
+|*show config port _name_ status*
+| Show port status: administrative and operational states, speed/duplex, connector type, MAC address, and most important (for fiber) - RX/TX signal power (dBm)
+
+|*show config port _name_ statistics*
+| Statistics of the port: total bits/frames passed,maximum/minimum bits/sec seen, and most interesting - CRC errors, error frames, oversize frames, discards.
+
+
+
+
+
+|===
