@@ -1,0 +1,67 @@
+= MRV Optiswitch OS904 OS906 OS912 debug and diagnostic commands
+Yuri Slobodyanyuk
+
+
+*MRV Communications* (acquired in 2017 by ADVA Optical Networking) is an Israeli company known for their optical network equipment, most notably their Optiswitch Carrier Ethernet Switch series. The switches (OS904, OS906G, OS912) are not available for purchase from them anymore, but if you work for a telco company, you surely still have these boxes around doing their work.
+
+Unfortunately, with the merger and the end of sale, all the documentation disappeared as well. To help you a bit I bring below some debug and diagnostic commands to be run on the CLI. You can still find the datasheet here https://www.cornet-solutions.co.jp/pdf/mrv_os_900_sdb_a4_hi.pdf
+
+[cols=2*,options="header"]
+|===
+|Command
+|Description
+
+|*show port*
+| Show port summary: state (on/off), speed, media (copper/sfp), duplex state
+
+|*show interface*
+|List of logical/vlan interfaces, MAC addresses, IP address (if any)
+
+|*show port detail _n_*
+| Show details of the port number _n_: media type, speed/duplex configured and actual, state, shaping applied.
+
+|*show port statistics _n_*
+|Show real-time statistics: packets/bytes received/sent, CRC and other error count
+
+|*show run ports*
+| Show running configuration for all ports
+
+|*show port tag*
+|Show tagging/vlans configured on each port
+
+|*show port sfp-diag _n_*
+| Show real-time diagnostic data for the interface: TX/RX power in dBm, voltage, temperature
+
+|*show port sfp-params*
+|Physical parameters of the SFP interface
+
+|*show port rate _portnumber_ time _seconds_*
+|Show the rate of the traffic passing the interface real-time
+
+|*monitor port statistics _portnumber_*
+|Show the same data as `show port statistics` but refresh every other second
+
+|*show syslog info*
+|Show logs
+
+|*show ver*
+| Show the device model, hardware, fan status, OS installed, MAc address, serial number and uptime
+
+|*show time*
+|Show system time. Important for checking alarms and logs
+
+|*show cpu*
+|CPU properties
+
+
+
+
+
+
+
+|===
+
+
+Additionally see https://github.com/yuriskinfo/cheat-sheets/blob/master/RAD-ETX-203-205-220-debug-and-information-commands-cheat-sheet.adoc
+
+ 
