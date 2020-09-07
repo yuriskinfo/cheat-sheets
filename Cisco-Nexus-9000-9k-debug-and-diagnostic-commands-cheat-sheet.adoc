@@ -24,5 +24,11 @@ v1.0, 2020-09-01
 |*show vpc brief*
 |Gives verbose info about the vPC (vPC domain stats, vPC peer-link stats, port-channels with active VLANs etc.).
 
+|*show vpc peer-keepalive*
+| Display real-time stats on peering keepalives: last send/receive time, IP of the peer, port and protocol used, vrf for communicaiton.
+
+
+
+
 |===
 
