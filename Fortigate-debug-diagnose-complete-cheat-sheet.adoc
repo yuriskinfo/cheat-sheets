@@ -90,7 +90,7 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 |Show RIB - active routing table with installed and actively used routes. It will not show routes with worse priority, multiple routes to the same destination if unused.
 
 |*get router info routing database*
-|Show ALL routes, the FOrtigate knows of - including not currently used.
+|Show ALL routes, the Fortigate knows of - including not currently used.
 
 |*get router info routing-table details <route>*
 | Show verbose info about specific route, e.g. `get router info routing-table details 0.0.0.0/0`
