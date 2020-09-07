@@ -59,6 +59,23 @@ a| Filter VPN debug messages using various parameters:
 |===
 
 
+== Static Routing Debug
+
+.Static and Policy Based Routing debug & diagnostics
+[cols=2,options="header"]
+|===
+|Command
+|Description
+
+|*get router info kernel*
+a|View the kernel routing table (FIB). This is the list of resolved routes actually being used by the FortiOS kernel.
+`tab` Table number, either 254 for unicast or 255 for multicast.
+
+`vf` Virtual domain index, if no VDOMs are enabled will be 0.
+
+
+
+|===
 
 
 == NTP debug
