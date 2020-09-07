@@ -1,0 +1,28 @@
+= Cisco Nexus 9000 9k debug and diagnostic commands complete cheat sheet
+Yuri Slobodyanyuk <admin@yurisk.info>
+v1.0, 2020-09-01
+:homepage: https://yurisk.info
+
+
+[cols=2,options="header"]
+|===
+|Command
+|Descritption
+
+|*show run interface <port-channel number> membership*
+|List physical interfaces included in the given Port-Channel, e.g. `show run int po1 membership`
+
+|*show port-channel usage*
+|Show port-channel numbers already in use.
+
+|*show port-channel summary*
+|Display list of all configured Port-Channels with their state, protocol (LACP or None), physical interface members.
+
+|*show vpc role*
+|Role of this peer in vPC, also vPC MAC address, vPC and system priority, local Nexus switch MAC.
+
+|*show vpc brief*
+|Gives verbose info about the vPC (vPC domain stats, vPC peer-link stats, port-channels with active VLANs etc.).
+
+|===
+
