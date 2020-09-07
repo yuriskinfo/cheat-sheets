@@ -69,9 +69,35 @@ a| Filter VPN debug messages using various parameters:
 
 |*get router info kernel*
 a|View the kernel routing table (FIB). This is the list of resolved routes actually being used by the FortiOS kernel.
+
 `tab` Table number, either 254 for unicast or 255 for multicast.
 
 `vf` Virtual domain index, if no VDOMs are enabled will be 0.
+
+`type` 0 - unspecific, 1 - unicast, 2 - local , 3 - broadcast, 4 - anycast , 5 - multicast, 6 - blackhole, 7 - unreachable , 8 - prohibited. 
+
+`proto` Type of installation, i.e. where did it come from: 0 - unspecific, 2 - kernel, 11 zebOS module, 14 - FortiOS, 15 - HA, 16 - authentication based, 17 - HA1
+
+`prio` priority of the route, lower is better.
+
+`pref` preferred next hop for this route.
+
+`Gwy` the address of the gateway this route will use
+
+`dev` outgoing interface index. If VDOMs enabled, VDOM will be included as well, if alias is set it will be shown.
+
+|*get router info routing-table all*
+|Show RIB - active routing table with installed and actively used routes. It will not show routes with worse priority, multiple routes to the same destination if unused.
+
+|*get router info routing database*
+|Show ALL routes, the FOrtigate knows of - including not currently used.
+
+|*get router info routing-table details <route>*
+| Show verbose info about specific route, e.g. `get router info routing-table details 0.0.0.0/0`
+
+|*get firewall proute*
+| Get all configured Policy Based Routes on the Fortigate.
+
 
 
 
