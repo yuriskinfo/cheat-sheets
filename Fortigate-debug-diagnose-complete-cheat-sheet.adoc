@@ -103,6 +103,34 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 
 |===
 
+== Interfaces
+
+.Interafces of all kinds diagnostics
+[cols=2,options="header"]
+|===
+|Command
+|Description
+
+|*get hardware nic <inerface name>*
+|Hardware info of the interface: MAC address, state (up/down), duplex (full, half), Rx/Tx packets, drops.
+
+|*diagnose hardware deviceinfo nic <nic name>*
+|Same as above.
+
+|*get hardware npu np6 port-list*
+|Show on which interfaces the NPU offloading is enabled
+
+|*diagnose npu np6lite port-list*
+| Same as above but for NP6-lite
+
+|*fnsysctl ifconfig <interface name>*
+|Gives the same info as Linux `ifconfig`
+
+|*diagnose ip address list*
+|Show IP addresses configured on all the Fortigate interfaces
+
+|===
+
 
 == NTP debug
 
