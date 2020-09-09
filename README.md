@@ -1,4 +1,4 @@
-# Just testing 
+# Debug and diagnostics cheat sheets
 
 
 [Fortigate debug and diagnose commands complete cheat sheet](Fortigate-debug-diagnose-complete-cheat-sheet.adoc) | [PDF](Fortigate-debug-diagnose-complete-cheat-sheet.pdf)
