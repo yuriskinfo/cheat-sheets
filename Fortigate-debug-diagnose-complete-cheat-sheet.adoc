@@ -8,6 +8,23 @@ NOTE: To enable debug set by any of the commands below, you need to run *diagnos
 
 NOTE: To disable and stop immediately any debug, run *dia deb res* which is short for *diagnose debug reset*.
 
+NOTE: All debug will run for 30 minutes by default, to increase use `diagnose debug duration <minutes>`, setting to 0 means unlimited by time. Reboot will reset this setting.
+
+
+== General Health, CPU, and Memory
+.General Health, CPU, and Memory loads
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|*get sys stat*
+|Get statistics about the FOrtigate device: FortiOS used, license status, Operation mode, VDOMs configured, last update dates for AntiVirus, IPS, Application Control databases.
+
+|*get sys performance stat*
+|Show real-time operational statistics: CPU load per CPU, memory usage, average network/session, uptime.
+
+|===
 
 == IPSEC VPN debug
 
@@ -129,6 +146,20 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 |*diagnose ip address list*
 |Show IP addresses configured on all the Fortigate interfaces
 
+
+|*diag debug application pppoed -1*
+
+*dia debug application pppoe -1*
+
+*dia debug applicaiton ppp -1*
+
+|Enable all ADSL-related debug
+
+
+|*execute interface pppoe-reconnect*
+|Force ADSL re-connection
+
+
 |===
 
 
@@ -149,14 +180,26 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 |*exec time*
 | Show current time as seen by Fortigate
 
- 
-
-
 
 |===
 
 
+== SNMP daemon debug
 
+.SNMP daemon debug
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|*diagnose  debug application snmpd -1*
+|ENable SNMP daemon messages debug
+
+|*show system snmp community*
+|Show SNMP community and allowed hosts configuration
+
+
+|===
 
 
 == BGP
