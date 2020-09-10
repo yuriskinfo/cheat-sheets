@@ -24,6 +24,15 @@ NOTE: All debug will run for 30 minutes by default, to increase use `diagnose de
 |*get sys performance stat*
 |Show real-time operational statistics: CPU load per CPU, memory usage, average network/session, uptime.
 
+|*diagnose debug crashlog read*
+| Display crash log. Records all daemons crashes and restarts. Some daemons are more critical than others.
+
+|*diagnose debug crashlog clear*
+| Clear the crash log.
+
+|*get hardware memory*
+| Show memory statistics: free, cached, swap, shared 
+
 |===
 
 == IPSEC VPN debug
@@ -146,6 +155,9 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 |*diagnose ip address list*
 |Show IP addresses configured on all the Fortigate interfaces
 
+|*diagnose sys gre list*
+| Show configured GRE tunnles and their state
+
 
 |*diag debug application pppoed -1*
 
@@ -158,6 +170,7 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 
 |*execute interface pppoe-reconnect*
 |Force ADSL re-connection
+
 
 
 |===
