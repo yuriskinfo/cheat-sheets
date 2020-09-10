@@ -11,6 +11,53 @@ NOTE: To disable and stop immediately any debug, run *dia deb res* which is shor
 NOTE: All debug will run for 30 minutes by default, to increase use `diagnose debug duration <minutes>`, setting to 0 means unlimited by time. Reboot will reset this setting.
 
 
+== Security rulebase debug (diagnose debug flow)
+.Security rulebase diagnostics with `diagnose debug flow`
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|*diagnose debug flow filter*
+|Show the active filter for the flow debug
+
+|*diagnose debug filter clear*
+|Remove any filtering of the debug output set
+
+|*diagnose debug flow filter <filtering param>*
+| Set filter for security rulebase processing packets output. You can set multiple filters - act as AND, by issuing this command multiple times. Parameters:
+
+`vd` - id number of the vdom. When entering the vdom with `edit vdom`, this number is shown first.
+
+`vd-name`
+
+`addr` - IP address of the packet(s), be it a destination or/and a source.
+
+`saddr` - IP source address of the packet(s).
+
+`daddr` - IP destination address of the packet(s).
+
+`port` - Source or/and destination port in the packet(s).
+
+`sport` - Source port of the packet(s).
+
+`dport` - Destination port of the packet(s).
+
+`negate <parameter>` - negate the match, i.e. match if a packet does NOT contain  `<parameter`. Where `parameter` is one of the above: `vd`, `addr`, `saddr`, `port`, `sport`, `dport`
+
+|*diagnose debug filter6 <parameter>*
+| Same as `diagnose debug filter` but for IPv6 packets. The rest of matching and conditions remain of the same syntax.
+
+|*diagnose debug flow show function-name*
+|Some
+
+|*diagnose debug flow trace start [number]*
+|Actually start the debug with optional `number` to limit number of packets traced. 
+
+
+
+|===
+
 == General Health, CPU, and Memory
 .General Health, CPU, and Memory loads
 [cols=2, options="header"]
