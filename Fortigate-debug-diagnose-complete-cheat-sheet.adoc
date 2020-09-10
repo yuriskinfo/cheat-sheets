@@ -31,6 +31,8 @@ NOTE: All debug will run for 30 minutes by default, to increase use `diagnose de
 
 `vd-name`
 
+`proto` - Protocol number.
+
 `addr` - IP address of the packet(s), be it a destination or/and a source.
 
 `saddr` - IP source address of the packet(s).
