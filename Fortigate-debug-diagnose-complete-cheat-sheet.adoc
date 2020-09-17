@@ -50,7 +50,7 @@ NOTE: All debug will run for 30 minutes by default, to increase use `diagnose de
 |*diagnose debug filter6 <parameter>*
 | Same as `diagnose debug filter` but for IPv6 packets. The rest of matching and conditions remain of the same syntax.
 
-|*diagnose debug flow show function-name*
+|*diagnose debug flow show function-name enable*
 |Some
 
 |*diagnose debug flow trace start [number]*
@@ -313,3 +313,25 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 
 
 |===
+
+
+== Admin sessions
+.Admin sessions management
+[cols=2,options="header"]
+|===
+|Command
+|Description
+
+|*get sys info admin status*
+|List logged in administrators showing `INDEX` value for each session
+
+|*execute disconnect-admin-session <INDEX>*
+|Disconnect logged in administrator by the session INDEX.
+
+|*execure disconnect-admin-session <INDEX>*
+|Disconnect logged in administrator by the session INDEX.
+
+|===
+
+
+ 
