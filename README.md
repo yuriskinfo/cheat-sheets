@@ -1,7 +1,7 @@
 # Debug and diagnostics cheat sheets
 
 
-## Network and Security vendors
+## Network and Security vendors (Fortinet, Cisco, Rad)
 
 [Fortigate debug and diagnose commands complete cheat sheet](Fortigate-debug-diagnose-complete-cheat-sheet.adoc) | [PDF](Fortigate-debug-diagnose-complete-cheat-sheet.pdf)
 
