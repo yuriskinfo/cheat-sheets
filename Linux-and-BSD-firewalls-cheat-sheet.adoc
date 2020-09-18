@@ -32,7 +32,7 @@ v1.0, 2020-09-01
 |List all zones with their rules and associated interfaces.
 
 |*firewall-cmd -add-service <service name>*
-|Add predefined service by name to the default zone, with action ACCEPT.
+|Add predefined service by name to the default zone, with action ACCEPT, e.g. `firewall-cmd -add-service ftp` .
 
 
 |===
