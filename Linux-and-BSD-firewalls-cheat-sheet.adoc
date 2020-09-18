@@ -1,0 +1,38 @@
+= Linux and PF firewalls commands cheat sheet
+Yuri Slobodyanyuk <admin@yurisk.info>
+v1.0, 2020-09-01
+:homepage: https://yurisk.info
+
+== Firewalld management (Red Hat based distributions)
+.firewall-cmd commands
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|*firewall-cmd --state*
+|Show firewall daemon status
+
+|*firewall-cmd  --list-all*
+|List currently active rules
+
+|*firewall-cmd --reload*
+|Reload firewall keeping the state table. Active sessions do not disconnect. On finishing reload will output `success`.
+
+|*firewall-cmd --get-default-zone*
+| Show the default zone for interfaces.
+
+|*firewall-cmd --get-zones*
+|List all available zones
+
+|*firewall-cmd --get-active-zones*
+| Show active zones, including to which zone each interface belongs.
+
+|*firewall-cmd --list-all-zones*
+|List all zones with their rules and associated interfaces.
+
+|*firewall-cmd -add-service <service name>*
+|Add predefined service by name to the default zone, with action ACCEPT.
+
+
+|===
