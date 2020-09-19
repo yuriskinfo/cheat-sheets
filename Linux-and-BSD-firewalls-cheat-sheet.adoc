@@ -58,10 +58,10 @@ v1.0, 2020-09-01
 |Reload firewall and rules.
 
 |*ufw allow <predefined service name>*
-| Allow some service in aany direction from/to any IP address using so called `simple` rule syntax. The service names are as per `/etc/services`. E.g. to allow ssh from any: `ufw allow ssh`.
+| Allow some service in any direction from/to any IP address using so called `simple` rule syntax. The service names are as per `/etc/services`. E.g. to allow ssh from any: `ufw allow ssh`.
 
 |*/etc/ufw/before.rule*
-|Some rules are pre-allowed by default, to change them edit the above file and reload firewall.
+|Some rules are pre-allowed by default, to change them edit this file and reload the  firewall.
 
 |===
 
