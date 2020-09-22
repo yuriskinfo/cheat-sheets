@@ -1,0 +1,91 @@
+= GNU screen terminal commands cheat sheet
+:author: Yuri Slobodyanyuk
+
+
+[cols=2,options="header"]
+|===
+
+|Command
+|Description
+
+|*~/.screenrc* & */etc/screenrc*
+| Commands the screen runs on start up.
+
+|*screen -ls*
+|List active screen sessions
+
+|*screen -S <session name>*
+|Create a new screen session with the name <session name>
+
+|*screen -x*
+
+*screen -r <session name>*
+
+|Attach to the running session, also by its name
+
+|*C-a d*
+| Detach from the session, session keeps running. Here, and further *C* means Ctrl.
+
+|*C-a c*
+|Create new window in the session.
+
+|*C-a C-a*
+|Switch to the previous window.
+
+|*C-a <number>*
+|Switch to the window number `number`.
+
+|*C-a n*
+|Switch to the next window.
+
+|*C-a p*
+|Switch to the previous window.
+
+|*C-a "*
+|List all windows with option to highlight and enter any of them.
+
+|*exit*
+|Exit and close current window. If it was the last window in a session, exits `screen` terminating the session.
+
+|*C-a k*
+|Kill the current window forcefully (not recommended).
+
+
+|*C-a A*
+|Rename current window.
+
+|*C-a S*
+|Split windows display horizontally. Use *C-a c* to create a new window inside the new split.
+
+|*C-a V*
+|Split windows display vertically. Available starting screen 4.01, i.e. not available on Mac 2020 which still uses screen 4.00.
+
+|*C-a tab*
+|Jump to the next region in a split window display.
+
+|*C-a X*
+|Remove the region in focus.
+
+|*C-a [* or *C-a <esc>*
+|Enter buffer navigation mode to scroll output buffer, copy, edit and paste later. Navigation commands as per `vim` if Vim is set as editor.*<esc>* to leave the buffer mode.
+
+|*<space>*
+|Start/stop selection while in the buffer mode to select the text. All selected text is being copied to the clipboard automatically. E.g. to select/copy the whole buffer: `C-a [ gg <space> G <esc>`
+
+|*C-a ]*
+|Paste the selected text at the cursor of the terminal, or create a new window and say start Vim there and paste into it while in Insert mode.
+
+|*C-a h*
+|Screenshot as a text the currently visible terminal window and save the output to `hardcopy.<n>`, where <n> is auto-incrementing number of your screen session.
+
+
+
+
+
+
+
+
+
+
+
+|===
