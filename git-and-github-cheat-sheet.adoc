@@ -1,0 +1,34 @@
+= Git and github.com cheat sheet
+:author: Yuri Slobodyanyuk
+
+[cols=2,options="header"]
+|===
+|command
+|Description
+
+|*git clone <URL of the remote repository> [local repo name]*
+| Clone remote repository, optionally renaming the local copy of it.
+
+|*git config --system <params>*
+|Set configuration parameters for all users at the local host, requires root permissions. Saves <params> in the +/etc/gitconfig+. Some params (when setting, separate paramater value from name with whitespace):
+
+- +core.editor+  Editor to use to enter comments when committing. E.g. `git config --system core.editor vim`.
+
+- +diff.tool+ Diff tool to use, e.g. `vimdiff`,`vimdiff2`,`xxdiff`,`gvimdiff`  
+
+- +user.email+ Email to be incldued in each commit.
+
+- +user.name+ Full name to be included in each commit.
+
+
+
+|*git config --global <params>*
+|Set <params> for ALL repositories of a user on the local host. Saves <params> in the +~/.gitconfig+ or +~/.config/git/config+.
+
+|*git config --local <params>*
+|(default) Set <params> for a specific repository only, should be run when inside this repository. Saves <params> in the +.git/config+ inside the repository. 
+
+|*git config --list --show-origin*
+|View all the settings with their origins.
+
+|===
