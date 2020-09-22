@@ -10,7 +10,7 @@
 | Clone remote repository, optionally renaming the local copy of it.
 
 |*git config --system <params>*
-|Set configuration parameters for all users at the local host, requires root permissions. Saves <params> in the `/etc/gitconfig`. Some params (when setting on the terminal, separate paramater value from name with whitespace):
+|Set configuration parameters for all users at the local host, requires root permissions, saves <params> in the `/etc/gitconfig`. Some params (when setting on the terminal, separate paramater value from name with whitespace):
 
 - `core.editor`  Editor to use to enter comments when committing. E.g. `git config --system core.editor vim`.
 
@@ -23,10 +23,10 @@
 
 
 |*git config --global <params>*
-|Set <params> for ALL repositories of a user on the local host. Saves <params> in the `~/.gitconfig` or `~/.config/git/config`.
+|Set <params> for ALL repositories of a user on the local host, saves <params> in the `~/.gitconfig` or `~/.config/git/config`.
 
 |*git config --local <params>*
-|(default) Set <params> for a specific repository only, should be run when inside this repository. Saves <params> in the `.git/config` inside the repository. 
+|(default) Set <params> for a specific repository only, should be run when inside this repository, saves <params> in the `.git/config` inside the repository. 
 
 |*git config --list --show-origin*
 |View all the settings with their origins.
