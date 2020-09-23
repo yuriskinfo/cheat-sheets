@@ -31,4 +31,16 @@
 |*git config --list --show-origin*
 |View all the settings with their origins.
 
+
+|*Contribute to a project (pull request) on Githab.com*
+| Steps to contribute to some project on the github:
+
+. Fork the project you want to contribute to.
+. Clone the fork to your local system.
+. Make a new custom (non-master) branch inside it.
+. Make your changes.
+. Push this branch to your Github account.
+. Open a Pull Request on the Github.com for the project owner to review & merge.
+
+
 |===
