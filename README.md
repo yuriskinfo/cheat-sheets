@@ -1,4 +1,4 @@
-# Debug and diagnostics cheat sheets
+# Configuration, Debug and diagnostics cheat sheets
 
 
 ## Network and Security vendors (Fortinet, Cisco, Rad)
