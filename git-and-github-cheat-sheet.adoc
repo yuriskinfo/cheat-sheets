@@ -33,7 +33,7 @@
 
 
 |*Contribute to a project (pull request) on Github.com*
-| Steps to contribute to some project on the github:
+a| Steps to contribute to some project on the github:
 
 . Fork the project you want to contribute to.
 
