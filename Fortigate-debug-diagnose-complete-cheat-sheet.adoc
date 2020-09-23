@@ -193,19 +193,19 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 |Same as above.
 
 |*get hardware npu np6 port-list*
-|Show on which interfaces the NPU offloading is enabled
+|Show on which interfaces the NPU offloading is enabled.
 
 |*diagnose npu np6lite port-list*
-| Same as above but for NP6-lite
+| Same as above but for NP6-lite.
 
 |*fnsysctl ifconfig <interface name>*
-|Gives the same info as Linux `ifconfig`
+|Gives the same info as Linux `ifconfig`.
 
 |*diagnose ip address list*
-|Show IP addresses configured on all the Fortigate interfaces
+|Show IP addresses configured on all the Fortigate interfaces.
 
 |*diagnose sys gre list*
-| Show configured GRE tunnles and their state
+| Show configured GRE tunnles and their state.
 
 
 |*diag debug application pppoed -1*
@@ -214,11 +214,11 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 
 *dia debug applicaiton ppp -1*
 
-|Enable all ADSL-related debug
+|Enable all ADSL/PPPoE-related debug.
 
 
 |*execute interface pppoe-reconnect*
-|Force ADSL re-connection
+|Force ADSL re-connection.
 
 
 
@@ -237,10 +237,10 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 |Current status of NTP time synchronization. Shows all NTP peers and their detailed info: reachability, stratum, clock offset, delay, NTP version.
 
 |*execute date*
-| Show current date as seen by Fortigate
+| Show current date as seen by Fortigate.
 
 |*exec time*
-| Show current time as seen by Fortigate
+| Show current time as seen by Fortigate.
 
 
 |===
@@ -255,7 +255,7 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 |Description
 
 |*diagnose  debug application snmpd -1*
-|ENable SNMP daemon messages debug
+|ENable SNMP daemon messages debug.
 
 |*show system snmp community*
 |Show SNMP community and allowed hosts configuration
@@ -328,8 +328,6 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 |*execute disconnect-admin-session <INDEX>*
 |Disconnect logged in administrator by the session INDEX.
 
-|*execure disconnect-admin-session <INDEX>*
-|Disconnect logged in administrator by the session INDEX.
 
 |===
 
