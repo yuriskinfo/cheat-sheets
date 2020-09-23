@@ -32,7 +32,7 @@
 |View all the settings with their origins.
 
 
-|*Contribute to a project (pull request) on Github.com*
+|*Contribute to a project (pull request/PR) on Github.com*
 a| Steps to contribute to some project on the github:
 
 . Fork the project you want to contribute to.
