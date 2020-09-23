@@ -3,7 +3,7 @@ Yuri Slobodyanyuk <admin@yurisk.info>
 v1.0, 2020-09-01
 :homepage: https://yurisk.info
 
-== Firewalld management (Red Hat based distributions)
+== Firewalld daemon management (Red Hat based distributions)
 .firewall-cmd commands
 [cols=2, options="header"]
 |===
@@ -65,4 +65,23 @@ v1.0, 2020-09-01
 
 |===
 
+
+== PF (Packet Filter) management for FreeBSD & OpenBSD
+
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|*pfct; -d*
+|Disable PF in place, does not survive reboot.
+
+|*pfctl -ef /etc/pf.conf*
+|Enable PF and load the rule set from file `/etc/pf.conf` in one go.
+
+|*pfctl -nf /etc/pf.conf*
+|Parse security rules soterd in a file without installing them (dry run).
+
+
+|===
 
