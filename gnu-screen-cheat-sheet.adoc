@@ -14,6 +14,9 @@
 |*screen -ls*
 |List active screen sessions
 
+|*screen -Q windows*
+|List windows' names inside screen session
+
 |*screen -S <session name>*
 |Create a new screen session with the name <session name>
 
