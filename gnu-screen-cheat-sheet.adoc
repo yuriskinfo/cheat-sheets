@@ -26,6 +26,9 @@
 
 |Attach to the running session, also by its name
 
+|*screen -dRR*
+|Attach to the screen session, detach on other display if attached. If no session exists, will create a new one.
+
 |*C-a d*
 | Detach from the session, session keeps running. Here, and further *C* means Ctrl.
 
@@ -37,6 +40,9 @@
 
 |*C-a <number>*
 |Switch to the window number `number`.
+
+|*C-a '*
+|Switch to the window by its name.
 
 |*C-a n*
 |Switch to the next window.
@@ -53,6 +59,8 @@
 |*C-a k*
 |Kill the current window forcefully (not recommended).
 
+|*C-a : quit*
+| Quit screen session compeltely terminating it. Alternatively - exit all screen windows.
 
 |*C-a A*
 |Rename current window.
@@ -81,7 +89,17 @@
 |*C-a h*
 |Screenshot as a text the currently visible terminal window and save the output to `hardcopy.<n>`, where <n> is auto-incrementing number of your screen session.
 
+|*C-a a*
+| Send `Ctrl-a` sequence to the running command, useful to jump to the line start in bash.
 
+|*C-a M*
+|Monitor window for activity. When enabled, will notify you of any acitvity while you work in other window.
+
+|*C-a _*
+| Monitor window for 30 seconds of silence, will notify you in any other window as `Window 0: silence for 30 seconds `
+
+|*C-a ?*
+|Show all key bindings help.
 
 
 
