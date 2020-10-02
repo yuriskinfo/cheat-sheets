@@ -108,7 +108,7 @@
 2+|*Sharing session (e.g. for pair programming)*
 
 
-
+[cols="1,1"]
 a|Original session (say _user1_):
 
 . Set suid root bit on `screen` binary: `chmod +s /usr/bin.screen` 
@@ -117,9 +117,9 @@ a|Original session (say _user1_):
 
 Connecting user (say _user2_):
 
-. Run in shell: `screen  -x  <sharing username>/', in our example `screen -x user1/`
+. Run in shell: `screen  -x  <sharing username>/`, in our example `screen -x user1/`
 
-|Sets up sharing the session. Another user connecting to the session views real-time its output, can enter and run commands himself. Also see *aclchg*, *acldel*, *aclgrp* for controlling access to the session. 
+|Sets up sharing the session. Another user connecting to the session views real-time its output, can enter and run commands himself. Also see *aclchg*, *acldel*, *aclgrp* for controlling what the connecting user can and cannot do. 
 
 |*C-a **
 | See who is connected to your shared screen session.
