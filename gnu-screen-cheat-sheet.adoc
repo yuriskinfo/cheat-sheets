@@ -102,8 +102,25 @@
 |Show all key bindings help.
 
 
+|*Save session state*
+|This is not possible. If you use the same layout each session, you can put start up commands to re-create it in `.screenrc` file in your home directory, but still - you cannot save the current session state, i.e. contents of the windows and their layout.
 
+|*Sharing session (e.g. for pair programming)
 
+Original session (say _user1_):
+
+. Set suid root bit on `screen` binary: `chmod +s /usr/bin.screen` 
+. Inside session you want to share: `C-a :` then `multiuser on` to enable sharing session.
+. Add usernames to share the session with: `C-a :` `acladd <username>`
+
+Connecting user (say _user2_):
+
+. Run in shell: `screen  -x  <sharing username>/', in our example `screen -x user1/`
+
+|Sets up sharing the session. Another user connecting to the session views real-time its output, can enter and run commands himself. Also see *aclchg*, *acldel*, *aclgrp* for controlling access to the session. 
+
+|*C-a **
+| See who is connected to your shared screen session.
 
 
 
