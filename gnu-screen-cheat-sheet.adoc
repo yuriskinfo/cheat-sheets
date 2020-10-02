@@ -108,7 +108,6 @@
 2+|*Sharing session (e.g. for pair programming)*
 
 
-[cols="1,1"]
 a|Original session (say _user1_):
 
 . Set suid root bit on `screen` binary: `chmod +s /usr/bin.screen` 
