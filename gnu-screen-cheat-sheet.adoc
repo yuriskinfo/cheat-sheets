@@ -110,7 +110,7 @@
 
 a|Original session (say _user1_):
 
-. Set suid root bit on `screen` binary: `sudo chmod +s /usr/bin.screen` 
+. Set suid root bit on `screen` binary: `sudo chmod +s /usr/bin/screen` 
 . Inside session you want to share: `C-a :` then `multiuser on` to enable sharing session.
 . Add usernames to share the session with: `C-a :` `acladd <username>`
 
