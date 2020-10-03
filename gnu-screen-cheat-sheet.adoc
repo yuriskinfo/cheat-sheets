@@ -87,7 +87,10 @@
 |Paste the selected text at the cursor of the terminal, or create a new window and say start Vim there and paste into it while in Insert mode.
 
 |*C-a h*
-|Screenshot as a text the currently visible terminal window and save the output to `hardcopy.<n>`, where <n> is auto-incrementing number of your screen session.
+|Screenshot as a text the currently visible terminal window and save the output to `hardcopy.<n>`, where <n> is auto-incrementing number of your window.
+
+|*C-a H*
+|Start/end logging all output of the curent window into a file `screenlog.N` where `N` is the window number. The data is appended, not overwritten if the file exists. Contents displayed until enabling the logging is not logged. 
 
 |*C-a a*
 | Send `Ctrl-a` sequence to the running command, useful to jump to the line start in bash.
