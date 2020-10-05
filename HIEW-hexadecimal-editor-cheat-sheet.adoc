@@ -1,0 +1,68 @@
+= HIEW hexadecimal editor and disassembler cheat sheet
+
+[cols=2,options="header"]
+|===
+|Command
+|Description
+
+|*hiew8.ini*
+|Configuration file usually located in the same directory as the hiew32.exe binary itself.
+
+|*F1*
+|Conext-aware help.
+
+|*ESC*
+| Exit any window in any mode without saving the changes.
+
+|*F3*
+|Enter the Edit mode.
+
+|*ENTER*
+| In the Read mode, switch between Hex/Decode/Text modes in turn.
+
+|*F7*
+|Open a search window.
+
+|*Ctrl+Enter*
+|Continue searching.
+
+|*Alt+F1*
+|Change location addressing mode.
+
+|*F9*
+|Save the changes made so far.
+
+|*F6*
+|In Decode/Disassembled mode, find cross-references.
+
+|*
+| In Read mode, select block(s) of bytes.
+
+|*F8*
+|Show the file headers.
+
+|*F8 -> F6 -> F3*
+| In Hex/Decode modes, show then edit file header sections.
+
+|*Alt+F6*
+|Show all strings in a file.
+
+|*+/-*
+|Increase/decrease minimal string length.
+
+|*F5*
+| Go to offset.
+
+|*Alt+F7*
+| Change the search direction: top-down/down-top.
+
+
+
+
+
+
+
+
+
+
+|===
