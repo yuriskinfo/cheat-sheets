@@ -115,7 +115,10 @@ a| Filter VPN debug messages using various parameters:
 |Flush (delete) all SAs of the given VPN peer only. Identify the peer by its Phase 1 name.
 
 |*diagnose vpn tunnel list [name <Phase1 name>]*
-| Show operational parameters for all or just specific tunnels: Type (dynamic or static), packets/bytes passed, NAT traversal state, Quick Mode selectors/Proxy Ids, mtu, algorithms used, whether NPU-offloaded or not, lifetime, DPD state. 
+| Show operational parameters for all or just specific tunnels: Type (dynamic dial up  or static), packets/bytes passed, NAT traversal state, Quick Mode selectors/Proxy Ids, mtu, algorithms used, whether NPU-offloaded or not, lifetime, DPD state. 
+
+|*diagnose vpn ike gateway list*
+| Show each tunnel details, including user for XAuth dial-up connection.
 
 |*get vpn ipsec tunnel details* 
 | Detailed info about the tunnels: Rx/Tx packets/bytes, IP addresses of the peers, algorithms used, detailed selectors info, lifetime, whether NAT Traversal is enabled or not.
