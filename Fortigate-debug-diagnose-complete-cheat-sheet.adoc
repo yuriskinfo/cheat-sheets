@@ -114,6 +114,9 @@ a| Filter VPN debug messages using various parameters:
 |*diagnose vpn ike gateway flush name <vpn_name>*
 |Flush (delete) all SAs of the given VPN peer only. Identify the peer by its Phase 1 name.
 
+|*diagnose vpn tunnel list [name <Phase1 name>]*
+| Show operational parameters for all or just specific tunnels: Type (dynamic or static), packets/bytes passed, NAT traversal state, Quick Mode selectors/Proxy Ids, mtu, algorithms used, whether NPU-offloaded or not, lifetime, DPD state. 
+
 |*get vpn ipsec tunnel details* 
 | Detailed info about the tunnels: Rx/Tx packets/bytes, IP addresses of the peers, algorithms used, detailed selectors info, lifetime, whether NAT Traversal is enabled or not.
 
@@ -125,7 +128,7 @@ a| Filter VPN debug messages using various parameters:
 
 
 |*get vpn ipsec stats crypto*
-| Statistics of the crypto component (ASIC/software) of the Fortigate: encryption algorithm, hasshing algorithm.
+| Crypto stats per component (ASIC/software) of the Fortigate: encryption algorithm, hashing algorithm. Useful to see if unwanted situation of software encryption/decryption occurs. 
 
 
 
