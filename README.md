@@ -11,6 +11,8 @@
 
 [MRV Optiswitch OS904 OS906 OS912 debug and diagnostic commands](MRV-Optiswitch-OS904-OS906-OS912-debug-and-diagnostic-commands.adoc) | [PDF](MRV-Optiswitch-OS904-OS906-OS912-debug-and-diagnostic-commands.pdf)
 
+[Aruba and HP switches debug and diagnostics commands](Aruba-HP-switches-debug-and-diagnostics-commands-cheat-sheet.adoc) | [PDF](Aruba-HP-switches-debug-and-diagnostics-commands-cheat-sheet.pdf)
+
 
 ## Linux, FreeBSD, OpenBSD, and Open Source Tools
 
