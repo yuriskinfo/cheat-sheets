@@ -1,0 +1,66 @@
+= Aruba and HP switches debug and diagnostics commands cheat sheet
+Yuri SLobodyanyuk, admin@yurisk.info
+:homepage: https://yurisk.info
+
+[cols=2,options="header"]
+|===
+|Command
+|Description 
+
+| *show logging -r*
+| Show system logs and events in reverse chronological order, i.e. newest logs first.
+
+|*show mac-address*
+|Show table of MAC addresses.
+
+|*show interface status*
+| Show list of all interfaces with info for each: state (Up/Down), Actual  Speed, Tagged or not, VLANs configured for the interface (single VLAN for Untagged, multiple for Tagged). NOTE: In Cisco world Tagged interface is called *trunk*.
+
+|*display interface*
+|Show detailed information of an interface: MAC address, state, speed, VLAN id if any. 
+
+|*show ip*
+| Show all configured IP addresses on a switch.
+
+|*show trunk*
+| Show trunk interfaces with their state and type. NOTE: In HP/Aruba world *trunk* means aggregated interfaces (LACP), what in Cisco world is called port/ether-channel.
+
+|*show trunk-statistics <trunk name>*
+| Show cumulative statistics for the trunk interface: packets passed, bytes received, drops if any.
+
+|*show lacp*
+|Show LACP state on the trunking interfaces.
+
+|*display stp root*
+| Show root switch for Spanning Tree Protocol.
+
+|*display stp brief*
+| Short information on STP state for VLANs.
+
+|*display lldp neighbor list*
+|Display LLDP neighbors.
+
+
+|*show ip ospf neighbor [detail]*
+|Display OSPF neighbors
+
+|*show ip route*
+| Show routing table for Layer 3 switch.
+
+|*show ip*
+| Show IP routing state: disabled/enabled. It is dsiabled by default, to enable: *(config)# ip routing*.
+
+
+|*display boot-loader*
+| Show what image will be loaded on the next boot.
+
+
+
+
+
+
+|===
+
+
+
+
