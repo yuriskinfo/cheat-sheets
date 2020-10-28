@@ -73,7 +73,7 @@ v1.0, 2020-09-01
 |Command
 |Description
 
-|*pfct; -d*
+|*pfct -d*
 |Disable PF in place, does not survive reboot.
 
 |*pfctl -ef /etc/pf.conf*
