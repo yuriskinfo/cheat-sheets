@@ -82,6 +82,13 @@ v1.0, 2020-09-01
 |*pfctl -nf /etc/pf.conf*
 |Parse security rules soterd in a file without installing them (dry run).
 
+|*pass in quick on egress from 62.13.77.141 to any*
+| 'Quick' rule (means allows this traffic on all interfaces, otherwise we would need 2nd rule allowing this traffic in _outgoing_ direction on egress interface) to allow incoming ANY port/protocol with the source being `62.13.77.141` and destination being ANY IP address behind the PF firewall. NOTE: here, `egress` is not a direction, but a group name to which the interface in question (`em0`) belongs to. In OpenBSD you set it in a file `/etc/hostname.em0: group egress`. 
+
+
+
+
+
 
 |===
 
