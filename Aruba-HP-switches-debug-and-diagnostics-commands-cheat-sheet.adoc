@@ -10,6 +10,21 @@ Yuri SLobodyanyuk, admin@yurisk.info
 | *show logging -r*
 | Show system logs and events in reverse chronological order, i.e. newest logs first.
 
+|*clear log*
+|Delete all logs on the switch.
+
+|*debug destination buffer*
+|Direct debug output to the log buffer, to be read later on CLI.
+
+|*debug <daemon name>*
+|Start runnig debug,e.g. to debug SNMP daemon: `debug snmp pdu`
+
+|*show debug buffer*
+|Show log buffer with the collected debug output.
+
+|*show debug*
+|Show what debug is currently active.
+
 |*show mac-address*
 |Show table of MAC addresses.
 
