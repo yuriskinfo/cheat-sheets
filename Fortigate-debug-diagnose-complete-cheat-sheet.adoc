@@ -339,3 +339,17 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 
 
  
+== Authentication
+.Authentication in all kinds LDAP, Radius, FSSO
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|*diagnose test authserver ldap <LDAP server name in FG> <username> <password>*
+| Test user authenticaiton on Fortigate CLI against Active Directory via LDAP. E.g. test user `Tara Addison` against LDAP server configured in Fortigate as `LDAP-full-tree` having password `secret`: `diagnose test authserver ldap LDAP-full-tree "Tara Addison" secret`.
+
+
+
+
+|===
