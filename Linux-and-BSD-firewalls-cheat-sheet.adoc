@@ -60,7 +60,7 @@ v1.0, 2020-09-01
 |*ufw allow <predefined service name>*
 | Allow some service in any direction from/to any IP address using so called `simple` rule syntax. The service names are as per `/etc/services`. E.g. to allow ssh from any: `ufw allow ssh`.
 
-|*/etc/ufw/before.rule*
+|*/etc/ufw/before.rules*
 |Some rules are pre-allowed by default, to change them edit this file and reload the  firewall.
 
 |===
