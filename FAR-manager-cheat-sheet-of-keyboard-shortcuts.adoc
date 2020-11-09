@@ -19,6 +19,9 @@ v1.0, 2020-11-09
 |*Alt + F2*
 |Set the working drive for the right panel.
 
+|*Ctrl + u*
+|Swap panels (left becomes right and vice versa).
+
 |*Alt + F7*
 |Open File Search dialog box
 
