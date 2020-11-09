@@ -350,6 +350,12 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 | Test user authenticaiton on Fortigate CLI against Active Directory via LDAP. E.g. test user `Tara Addison` against LDAP server configured in Fortigate as `LDAP-full-tree` having password `secret`: `diagnose test authserver ldap LDAP-full-tree "Tara Addison" secret`.
 
 
+|*diagnose debug authd fsso list*
+|List logged in users the Fortigate learned via FSSO
+
+|*diagnose debug authd fsso server-status*
+| Show status of connections with FSSO servers. Note: it shows both, local and remote FSSO Agent(s). The local Agent is only relevant when using Direct DC Polling, without installing FSSO Agent on AD DC, so it is ok for it to be `waiting for retry ... 127.0.0.1` if you don't use it. The working state should be `connected`. 
+
 
 
 |===

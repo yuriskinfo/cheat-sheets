@@ -1,0 +1,20 @@
+= FAR manager cheat sheet of keyboard shortcuts
+Yuri Slobodyanyuk <admin@yurisk.info>
+v1.0, 2020-11-09
+:homepage: https://yurisk.info
+
+
+[cols=2, options="header"]
+|===
+
+
+|*Ctrl + \*
+|Change working directory to the root folder, i.e. root of the drive.
+
+
+|*Alt + F7*
+|Open File Search dialog box
+
+
+
+|===
