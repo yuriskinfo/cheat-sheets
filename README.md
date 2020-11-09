@@ -26,6 +26,7 @@
 ## Windows software and utilities
 
 
+[FAR file manager cheat sheet of keyboard shortcuts](FAR-manager-cheat-sheet-of-keyboard-shortcuts.adoc) | [PDF](FAR-manager-cheat-sheet-of-keyboard-shortcuts.pdf)
 
 
 
