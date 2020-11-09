@@ -140,6 +140,22 @@ a| Filter VPN debug messages using various parameters:
 |===
 
 
+== SSL VPN debug
+.SSL VPN client to site/Remote Access debug
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|*get vpn ssl monitor*
+|List logged in SSL VPN users with allocated IP address, username, connection duration.
+
+|*diagnose debug app sslvpn -1*
+|Debug SSL VPN connection. Shows only SSL protocol negotiation and set up. That is - ciphers used, algorithms and such, does NOT show user names, groups, or any client related info.
+
+
+|===
+
 == Static Routing Debug
 
 .Static and Policy Based Routing debug & diagnostics
