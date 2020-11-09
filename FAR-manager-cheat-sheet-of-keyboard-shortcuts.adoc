@@ -13,9 +13,17 @@ v1.0, 2020-11-09
 |*Ctrl + \*
 |Change working directory to the root folder, i.e. root of the drive.
 
+|*Alt + F1*
+|Set the working drive for the left panel.
+
+|*Alt + F2*
+|Set the working drive for the right panel.
 
 |*Alt + F7*
 |Open File Search dialog box
+
+|*Alt + F12*
+|Open history of the visited folders.
 
 
 |*Ctrl + 1*  
@@ -46,6 +54,14 @@ v1.0, 2020-11-09
 |Sort by size.
 
 |*Ctrl + F8*
-|Sort by creation date 
+|Sort by creation time
+
+|*Ctrl + F9*
+|Sort by access time
+
+|*Shift + move up/down*
+|Select single/multiple items. To deselect, hold Shift and move in the opposite direction.
+ 
+
 
 |===
