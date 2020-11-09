@@ -362,6 +362,11 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 |Command
 |Description
 
+
+|*diagnose debug app fnbamd -1*
+|Enable debug for authentication daemon, valid for ANY remote authentication - RADIUS, LDAP, TACACS+.
+
+
 |*diagnose test authserver ldap <LDAP server name in FG> <username> <password>*
 | Test user authenticaiton on Fortigate CLI against Active Directory via LDAP. E.g. test user `Tara Addison` against LDAP server configured in Fortigate as `LDAP-full-tree` having password `secret`: `diagnose test authserver ldap LDAP-full-tree "Tara Addison" secret`.
 
