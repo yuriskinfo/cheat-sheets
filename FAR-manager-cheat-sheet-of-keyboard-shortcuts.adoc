@@ -28,6 +28,10 @@ v1.0, 2020-11-09
 |*Ctrl + Left/Right Arrow*
 |Move the separating bar between panels left/right, changing the occupied space.
 
+|*Ctrl + Up/Down Arrow*
+|Move the bottom border of the panels up/down.
+
+
 |*Alt + F7*
 |Open File Search dialog box
 
