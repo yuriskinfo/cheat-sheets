@@ -101,5 +101,4 @@ a|Open Filter dialog menu. It contains all file types/extensions seen in the cur
 - *Insert*: Open a dialog menu to create Custom filter. This allows to include/exclude files by their name/extension, size, attributes, and modification date. You can use relative operators `>=, <=`. All operands in a Custom filter are ANDed. Make sure to activate this Custom filter with Space or `+` in the filter list later.
  
 
-- 
 |===
