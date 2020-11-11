@@ -87,7 +87,7 @@ v1.0, 2020-11-09
 | Create and switch to a Temporary Panel. You can copy/drag files and folders from the visible Panel to it. This allows to work on multiple items from different locations at the same time. 
 
 
-2+|Filter what is shown in the Panel
+2+|_Filter what is shown in the Panel_
 
 |*Ctrl + i*
 a|Open Filter dialog menu. It contains all file types/extensions seen in the current folder. By moving with _Arrow Up/Down_ you can select/deselect any single or combination of multiple extensions to include or exclude in the display. Highlight the extension in question and press:  
