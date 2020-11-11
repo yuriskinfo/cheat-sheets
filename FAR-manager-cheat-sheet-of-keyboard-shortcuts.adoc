@@ -53,7 +53,7 @@ v1.0, 2020-11-09
 |*Ctrl + 5*
 |Full screen view - name, size, allocated, write, created, accessed, attributes columns.
 
-2+|Sort displayed items
+2+|_Sort displayed items_
 
 |*Ctrl + F3*
 | Sort by file/folder name.
