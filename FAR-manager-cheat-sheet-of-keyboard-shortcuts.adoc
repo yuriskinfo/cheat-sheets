@@ -92,7 +92,7 @@ v1.0, 2020-11-09
 |*Ctrl + i*
 a|Open Filter dialog menu. It contains all file types/extensions seen in the current folder. By moving with _Arrow Up/Down_ you can select/deselect any single or combination of multiple extensions to include or exclude in the display. Highlight the extension in question and press:  
 
-- *<space>* or *+* or *i*: Include files with such extension in the display, exclude from display anything else. Pressing the same key again clears the seleciton.
+- *<space>* or *+* or *i*: Include files with such extension in the display, exclude from display anything else. Pressing the same key again clears the selection.
 
 - *Shift + Backspace*: Clear all selections made so far.  
 
