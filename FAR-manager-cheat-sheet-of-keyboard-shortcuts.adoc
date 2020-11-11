@@ -84,6 +84,6 @@ v1.0, 2020-11-09
 |Open color selection dialog box.
 
 |*F11 + Temporary Panel*
-| Create and switch to a Temporary Panel. You can copy/drag files/fodlers from the visible Panel to it. This allows to work on multiple items from different locations at the same time. 
+| Create and switch to a Temporary Panel. You can copy/drag files and folders from the visible Panel to it. This allows to work on multiple items from different locations at the same time. 
 
 |===
