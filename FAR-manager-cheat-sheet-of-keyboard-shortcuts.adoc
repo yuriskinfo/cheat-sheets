@@ -86,4 +86,20 @@ v1.0, 2020-11-09
 |*F11 + Temporary Panel*
 | Create and switch to a Temporary Panel. You can copy/drag files and folders from the visible Panel to it. This allows to work on multiple items from different locations at the same time. 
 
+
+2+|Filter what is shown in the Panel
+
+|*Ctrl + i*
+a|Open Filter dialog menu. It contains all file types/extensions seen in the current folder. By moving with _Arrow Up/Down_ you can select/deselect any single or combination of multiple extensions to include or exclude in the display. Highlight the extension in question and press:  
+
+- *<space>* or *+* or *i*: Include files with such extension in the display, exclude from display anything else. Pressing the same key again clears the seleciton.
+
+- *Shift + Backspace*: Clear all selections made so far.  
+
+- *x*: Exclude the selected extentions from showing, show what is left.
+
+- *Insert*: Open a dialog menu to create Custom filter. This allows to include/exclude files by their name, size, attributes, and modification date. You can use relative operatoes `>=, ,=`. All operands in Custom filter are ANDed. Make sure to activate this Custom filter with Space or `+` in the filter list later.
+ 
+
+- 
 |===
