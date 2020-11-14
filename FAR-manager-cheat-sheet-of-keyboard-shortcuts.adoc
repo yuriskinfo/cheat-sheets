@@ -38,8 +38,11 @@ v1.0, 2020-11-09
 |*Alt + F12*
 |Open history of the visited folders.
 
-|*Altf + F8*
-|OPen history of the viewed files.
+|*Alt + F8*
+|Open history of the viewed files.
+
+|*F9 + c + c* or *F11 + Advanced Compare*
+|Compare files/directories open in Panels. Standard compare (F9 + c + c) compares by name,size and time stamp. Advanced Compare allows to choose what to compare on. The files that differ are highlighted in blue.
 
 |*Ctrl + 1*  
 |Set panel view to 3-column layout showing just names.
