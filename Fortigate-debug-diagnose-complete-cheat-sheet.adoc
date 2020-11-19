@@ -84,6 +84,18 @@ NOTE: All debug will run for 30 minutes by default, to increase use `diagnose de
 
 |===
 
+
+== Session stateful table
+[cols=2, options="header"]
+|===
+
+|*get system session status*
+|Show current number of sessions passing the Fortigate. Run inside the VDOM in multi-vdom environment to get number of connections/sessions for this specific VDOM. 
+
+
+
+|===
+
 == IPSEC VPN debug
 
 .IPSEC VPN Debug
