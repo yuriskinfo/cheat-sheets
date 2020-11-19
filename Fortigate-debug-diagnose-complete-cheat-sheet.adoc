@@ -89,6 +89,8 @@ NOTE: All debug will run for 30 minutes by default, to increase use `diagnose de
 
 [cols=2, options="header"]
 |===
+|Command
+|Description
 
 |*get system session status*
 |Show current number of sessions passing the Fortigate. Run inside the VDOM in multi-vdom environment to get number of connections/sessions for this specific VDOM. 
