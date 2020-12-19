@@ -1,5 +1,7 @@
 = HIEW hexadecimal editor and disassembler cheat sheet
 
+Author: Yuri Slobodyanyuk, admin@yurisk.info
+
 [cols=2,options="header"]
 |===
 |Command

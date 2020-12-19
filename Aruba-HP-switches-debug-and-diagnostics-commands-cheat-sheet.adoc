@@ -2,6 +2,8 @@
 Yuri SLobodyanyuk, admin@yurisk.info
 :homepage: https://yurisk.info
 
+Author: Yuri Slobodyanyuk, admin@yurisk.info
+
 [cols=2,options="header"]
 |===
 |Command

@@ -5,8 +5,8 @@
 /Author (Yuri Slobodyanyuk)
 /Creator (Asciidoctor PDF 1.5.3, based on Prawn 2.2.2)
 /Producer (Yuri Slobodyanyuk)
-/ModDate (D:20201219184727+00'00')
-/CreationDate (D:20201219184754+00'00')
+/ModDate (D:20201219184839+00'00')
+/CreationDate (D:20201219185159+00'00')
 >>
 endobj
 2 0 obj
@@ -83,7 +83,7 @@ ET
 BT
 48.24 709.686 Td
 /F1.0 10.5 Tf
-[<41> 20.0195 <7574686f723a205975726920534c6f626f6479616e> 20.0195 <79756b2c20>] TJ
+[<41> 20.0195 <7574686f723a205975726920536c6f626f6479616e> 20.0195 <79756b2c20>] TJ
 ET
 
 0.0 0.0 0.0 SCN
@@ -92,7 +92,7 @@ ET
 0.2588 0.5451 0.7922 SCN
 
 BT
-193.0766 709.686 Td
+189.7901 709.686 Td
 /F1.0 10.5 Tf
 <61646d696e4079757269736b2e696e666f> Tj
 ET
@@ -1899,7 +1899,7 @@ endobj
 /URI (mailto:admin@yurisk.info)
 >>
 /Subtype /Link
-/Rect [193.0766 706.62 289.5296 720.9]
+/Rect [189.7901 706.62 286.2431 720.9]
 /Type /Annot
 >>
 endobj

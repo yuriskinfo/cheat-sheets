@@ -3,6 +3,8 @@ Yuri Slobodyanyuk <admin@yurisk.info>
 v1.0, 2020-11-09
 :homepage: https://yurisk.info
 
+Author: Yuri Slobodyanyuk, admin@yurisk.info
+
 
 [cols=2, options="header"]
 |===

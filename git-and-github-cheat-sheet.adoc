@@ -1,6 +1,8 @@
 = Git and github.com cheat sheet
 :author: Yuri Slobodyanyuk
 
+Author: Yuri Slobodyanyuk, admin@yurisk.info
+
 [cols=2,options="header"]
 |===
 |command
