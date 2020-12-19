@@ -1,6 +1,7 @@
 = GNU screen terminal commands cheat sheet
 :author: Yuri Slobodyanyuk
 
+=== Author: Yuri SLobodyanyuk, admin@yurisk.info
 
 [cols=2,options="header"]
 |===
