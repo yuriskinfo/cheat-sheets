@@ -1,4 +1,5 @@
 = RAD ETX 203, 205, 220 debug and information commands
+
 Author: Yuri Slobodyanyuk, admin@yurisk.info
 
 Carrier Ethernet Devices by RAD (ETX-203AX, ETX-203AM, ETX-203AX-T, ETX-205A, ETX-220A) are quite popular with telco companies around the world for connecting end clients to the backbone at layer 2. And while reference documentation is available, I couldn't find the debug/information commands digest on the Internet at all. This post, I hope, comes to fill the gap.
