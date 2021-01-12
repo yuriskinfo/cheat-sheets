@@ -397,3 +397,32 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 
 
 |===
+
+
+
+== Fortianalyzer logging  debug
+.Verify and debug sending logs from Fortigate to Fortianalyzer
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|*get log fortianalyzer setting*
+|Show active Fortianalyzer related settings on Fortigate.
+
+|*config log fortianalyzer*
+|Complete Fortianalyzer configuration on CLI, as GUI configuring is usually not enough for it to work.
+
+|*get log fortianalyzer filter*
+|Verify if any log sending filtering is being done, look for values of `filer` and `filter-type`. If there are any filters, it means not all logs are sent to FAZ.
+
+|*exec log fortianalyzer test-connectivity*
+|Verify that Fortigate communicates with Fortianalyzer. Look at the statistics in `Log: Tx & Rx` line - it should report increasing numbers, and make sure the status is `Registration: registered`.
+
+|*exec telnet <IP of Fortianalyzer> 514*
+|Test connectivity to port 514 on the Fortianalyzer. If pings are allowed between them, you can also try pinging.
+
+|*diagnose sniffer packet any 'port 514' 4*
+|Run sniffer on Fortigate to see if devices exchange packets on port 514. Click in GUI on `Test Connectivity` to initiate connection.
+
+|===
