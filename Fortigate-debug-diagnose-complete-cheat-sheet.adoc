@@ -408,13 +408,13 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 |Description
 
 |*get log fortianalyzer setting*
-|Show active Fortianalyzer related settings on Fortigate.
+|Show active Fortianalyzer-related settings on Fortigate.
 
 |*config log fortianalyzer*
 |Complete Fortianalyzer configuration on CLI, as GUI configuring is usually not enough for it to work.
 
 |*get log fortianalyzer filter*
-|Verify if any log sending filtering is being done, look for values of `filer` and `filter-type`. If there are any filters, it means not all logs are sent to FAZ.
+|Verify if any log sending filtering is being done, look for values of `filter` and `filter-type`. If there are any filters, it means not all logs are sent to FAZ.
 
 |*exec log fortianalyzer test-connectivity*
 |Verify that Fortigate communicates with Fortianalyzer. Look at the statistics in `Log: Tx & Rx` line - it should report increasing numbers, and make sure the status is `Registration: registered`.
