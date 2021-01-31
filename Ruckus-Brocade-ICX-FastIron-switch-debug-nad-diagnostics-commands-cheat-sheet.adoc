@@ -1,0 +1,61 @@
+= Ruckus ICX switches  7150, 7250, 7450, 7650, 7750, 7850 diagnostics commands
+Yuri Slobodyanyuk <admin@yurisk.info>
+v1.0, 2021-01-31
+:homepage: https://yurisk.info
+
+Author: Yuri Slobodyanyuk, admin@yurisk.info
+
+
+NOTE: When in doubt, use Cisco IOS-like commands, as most are equivalent. 
+
+.Ruckus ICX switch (former Brocade) diagnostics commands
+
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|*show version*
+|Show the switch hardware version, whether stack or not, uptime, serial number, firmware version. 
+
+|*show flash*
+|Show boot images stored in the flash - primary and secondary boot images and thier versions, flash free space. 
+
+|*show dir* OR *show files*
+|List contents of the flash - in addition to boot images, also startup configuration file and anything else stored in the flash.
+
+|*show boot*
+|Show in what sequence boot images will be tried on reload, usually Primary then Secondary.
+
+|*show cpu tasks*
+|Show last 1 second CPU load per task in percents. 
+
+|*show cpu histogram waittime*  AND *show cpu histogram holdtime*
+|Shows the task CPU usage in each bucket. This includes how many times a task run time or hold time falls in each bucket, and the maximum run time and total run time for each bucket. Hold time - The time that the task is holding the CPU without yield. Wait time - The time that the task is waiting for execution.
+
+|*show fdp neighbor* AND *show fdp neighbor detail*
+| Show CDP or/and LLDP neighbors, provided any of these protocols are enabled on the switch.
+
+|*show run*
+|Show the running configuration.
+
+|*show statistics brief*
+|Show stats for all interfaces - cumulative packets in/out, error in/outs.
+
+|*show statistics ethernet <port number>*
+|Show detailed statistics for the interface _<port number>_ - packets/bytes in/out, bad packets/frames, CRC count, Collisions, Interface bandwidth utilization in percents, current interface utilization in bits/sec.
+
+|*show spanvlan <vlan number>*
+|Show spanning tree status (optionally) for a given VLAN - who is root, interface cost, state (forwarding, disabled) of each interface. 
+
+|*show vlan <vlan number>*
+|Show VLAN information - spanning tree status (on/off), SPT priority, which ports are tagged and which are not, Uplink ports if any.
+
+|*show inline power*
+|Show power over the Ethernet status for each interface, if enabled/supported.
+
+|*show int <interface name>*
+|Detailed interface statistics like `show int` in Cisco equipment - port uptime, MAC address, configured vs actual speed/duplex, MDI mode, STP state, input/output rate in bits/sec, 
+
+|===
+

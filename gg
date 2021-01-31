@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+git add .
+git commit -m "e"
+git push origin
+
