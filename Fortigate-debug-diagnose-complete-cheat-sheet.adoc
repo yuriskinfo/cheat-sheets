@@ -450,13 +450,13 @@ a|*diagnose sys sdwan member*
 
 |Show list of SD-WAN zone/interface members. Also gives each interface gateway IP (if was set, 0.0.0.0 if not), `priority`, and `weight` both by default equal `0`, used with some SLA Types. 
 
-a|*diagnose sys sdwan service*
+|*diagnose sys sdwan service*
 
 *diagnose sys virtual-wan-link service*
 
-a|List configured SD-WAN rules (aka `services`), except the Implied one which is always present and cannot be disabled, but is editable for the default load balancing method used. Shows member interfaces and their status `alive|dead` for this rule. 
+|List configured SD-WAN rules (aka `services`), except the Implied one which is always present and cannot be disabled, but is editable for the default load balancing method used. Shows member interfaces and their status `alive|dead` for this rule. 
 
-a|*diag sys sdwan  intf-sla-log <interface name>*
+|*diag sys sdwan  intf-sla-log <interface name>*
 
 *diag sys virtual-wan-link intf-sla-log <interface name>*
 
