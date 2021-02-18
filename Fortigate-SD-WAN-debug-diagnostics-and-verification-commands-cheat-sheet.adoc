@@ -36,7 +36,7 @@ Yuri Slobodyanyuk, https://yurisk.info
 
 *diag sys virtual-wan-link intf-sla-log <interface name>*
 
-|Print log of <interface name> usage for the last 10 minutes. The statistics shown in bps: `inbandwidth`, `outbandwidth`, `bibandwidth`, `tx bytes`, `rx bytes`. 
+|Print log of <interface name> real-time usage for the last 10 minutes. The statistics shown in bps: `inbandwidth`, `outbandwidth`, `bibandwidth`, `tx bytes`, `rx bytes`. 
 
 
 |*diag netlink interface clear <interface name>*
@@ -45,7 +45,7 @@ Yuri Slobodyanyuk, https://yurisk.info
 
 
 |*diagnose firewall proute list*
-|List ALL Policy Based Routes (PBR). SD-WAN in Fortigate, after all, is implemented as a variation of PBR. This command lists manual (classic) PBR rules, along with SD-WAN created via SD-WAN rules. *Important*: Manually created PBR rules (via `Network -> Policy Routes` or on CLI `config route policy`) always have preference over the SD-WAN rules, and this command will show them higher up.
+|List ALL Policy Based Routes (PBR). SD-WAN in Fortigate, after all, is implemented as a variation of PBR. This command lists manual (classic) PBR rules, along with the ones created via SD-WAN rules. *Important*: Manually created PBR rules (via `Network -> Policy Routes` or on CLI `config route policy`) always have preference over the SD-WAN rules, and this command will show them higher up.
 
 |*diagnose debug flow filter*
 
