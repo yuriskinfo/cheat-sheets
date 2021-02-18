@@ -438,23 +438,25 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 |Command
 |Description
 
-a|*diagnose sys sdwan health-check* (6.4 and newer)
+|*diagnose sys sdwan health-check* (6.4 and newer)
 
 *diagnose sys virtual-link  health-check* (5.6 up to 6.4)     
 
 | Show state of all the health checks/probes. Successful  probes are marked `alive`, failed probes are marked `dead`. Also displays `packet-loss, latency, jitter` for each probe. 
 
-a|*diagnose sys sdwan member*
+|*diagnose sys sdwan member*
 
 *diagnose sys virtual-wan-link member*
 
 |Show list of SD-WAN zone/interface members. Also gives each interface gateway IP (if was set, 0.0.0.0 if not), `priority`, and `weight` both by default equal `0`, used with some SLA Types. 
+
 
 |*diagnose sys sdwan service*
 
 *diagnose sys virtual-wan-link service*
 
 |List configured SD-WAN rules (aka `services`), except the Implied one which is always present and cannot be disabled, but is editable for the default load balancing method used. Shows member interfaces and their status `alive|dead` for this rule. 
+
 
 |*diag sys sdwan  intf-sla-log <interface name>*
 
@@ -466,7 +468,6 @@ a|*diagnose sys sdwan member*
 |*diag netlink interface clear <interface name>*
 
 |Clear traffic statistics on the interface, this resets statistics of the SD-WAN traffic passing over this interface. Needed, if, for example, you changed SD-WAN rules, but not sure if it's already active. E.g. `diag netlink interface clear port1`. 
-
 
 
 |===
