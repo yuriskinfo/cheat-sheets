@@ -454,7 +454,7 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 
 *diagnose sys virtual-wan-link service*
 
-|List configured SD-WAN rules (aka `services`), except the Implied one which is always present and cannot be disabled, but is editable for the default load balancing method used. Shows member interfaces and their status `alive|dead` for this rule. 
+|List configured SD-WAN rules (aka `services`), except the Implied one which is always present and cannot be disabled, but is editable for the default load balancing method used. Shows member interfaces and their status `alive` or `dead` for this rule. 
 
 
 
