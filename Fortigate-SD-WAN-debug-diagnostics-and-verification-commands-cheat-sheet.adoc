@@ -41,7 +41,7 @@ Yuri Slobodyanyuk, https://yurisk.info
 
 |*diag netlink interface clear <interface name>*
 
-|Clear traffic statistics on the interface, this resets statistics of the SD-WAN traffic passing over this interface. Needed, if, for example, you changed SD-WAN rules, but not sure if it's already active. E.g. `diag netlink interface clear port1`. 
+|Clear traffic statistics on the given interface, this resets statistics of the SD-WAN Monitor GUI widget for this interface as well. Needed, if, for example, you changed SD-WAN rules, but not sure if it's already active. E.g. `diag netlink interface clear port1`. 
 
 
 |*diagnose firewall proute list*
