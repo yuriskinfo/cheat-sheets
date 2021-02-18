@@ -45,7 +45,7 @@ Yuri Slobodyanyuk, https://yurisk.info
 
 
 |*diagnose firewall proute list*
-|List ALL Policy Based Routes (PBR). SD-WAN in Fortigate, after all, is implemented as a variation of PBR. This command lists manual (classic) PBR rules, along with SD-WAN created via SD-WAN rules. *Important*: Manually created PBR rules (via `Network -> Policy Routes` or on CLI `config route policy` always have preference over the SD-WAN rules, and this command will show them higher up.
+|List ALL Policy Based Routes (PBR). SD-WAN in Fortigate, after all, is implemented as a variation of PBR. This command lists manual (classic) PBR rules, along with SD-WAN created via SD-WAN rules. *Important*: Manually created PBR rules (via `Network -> Policy Routes` or on CLI `config route policy`) always have preference over the SD-WAN rules, and this command will show them higher up.
 
 
 
