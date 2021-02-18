@@ -464,6 +464,7 @@ a|*diag sys sdwan  intf-sla-log <interface name>*
 
 
 |*diag netlink interface clear <interface name>*
+
 |Clear traffic statistics on the interface, this resets statistics of the SD-WAN traffic passing over this interface. Needed, if, for example, you changed SD-WAN rules, but not sure if it's already active. E.g. `diag netlink interface clear port1`. 
 
 
