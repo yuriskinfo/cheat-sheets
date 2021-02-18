@@ -47,7 +47,16 @@ Yuri Slobodyanyuk, https://yurisk.info
 |*diagnose firewall proute list*
 |List ALL Policy Based Routes (PBR). SD-WAN in Fortigate, after all, is implemented as a variation of PBR. This command lists manual (classic) PBR rules, along with SD-WAN created via SD-WAN rules. *Important*: Manually created PBR rules (via `Network -> Policy Routes` or on CLI `config route policy`) always have preference over the SD-WAN rules, and this command will show them higher up.
 
+|*diagnose debug flow filter*
 
+*diagnose debug flow filter <filtering param>*
+
+*diagnose debug flow show function-name enable*
+
+*diagnose debug flow trace start [number]*
+
+|Use `diagnose debug flow` to see how the traffic is being rotued via SD-WAN. Look for something like `Match policy routing id=2131951617: to 10.10.10.13 via ifindex-3' and `out port1 vwl_zone_id 2, state2 0x1,` here `id=2131951617` is SD-WAN PBR rule as seen in `diagnose firewall proute list` and `vwl_zone_id 2` is the SD-WAN zone in alist of virtual-links.
+ 
 
 
 
