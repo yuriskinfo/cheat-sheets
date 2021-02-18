@@ -55,7 +55,9 @@ Yuri Slobodyanyuk, https://yurisk.info
 
 *diagnose debug flow trace start [number]*
 
-|Use `diagnose debug flow` to see how the traffic is being rotued via SD-WAN. Look for something like `Match policy routing id=2131951617: to 10.10.10.13 via ifindex-3' and `out port1 vwl_zone_id 2, state2 0x1,` here `id=2131951617` is SD-WAN PBR rule as seen in `diagnose firewall proute list` and `vwl_zone_id 2` is the SD-WAN zone in alist of virtual-links.
+*diagnose debug enable*
+
+|Use `diagnose debug flow` to see how the traffic is being routed via SD-WAN. Look for something like `Match policy routing id=2131951617: to 10.10.10.13 via ifindex-3` and `out port1 vwl_zone_id 2, state2 0x1,` here `id=2131951617` is SD-WAN PBR rule as seen in `diagnose firewall proute list` and `vwl_zone_id 2` is the SD-WAN zone in alist of virtual-links.
  
 
 
