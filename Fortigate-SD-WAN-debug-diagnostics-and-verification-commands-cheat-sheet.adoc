@@ -3,7 +3,7 @@ Yuri Slobodyanyuk <admin@yurisk.info>
 v1.0, 2021-02-18
 :homepage: https://yurisk.info
 
-Author: Yuri Slobodyanyuk, https://yurisk.info
+Yuri Slobodyanyuk, https://yurisk.info
 
 
 == SD-WAN verification and debug
