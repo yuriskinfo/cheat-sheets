@@ -1,0 +1,85 @@
+= Useful CLI commands for Cisco CUCM, Cisco Unity Connection and IM and Presence
+Yuri Slobodyanyuk <admin@yurisk.info>
+v1.0, 2021-02-22
+:homepage: https://yurisk.info
+
+Author: Yuri Slobodyanyuk, admin@yurisk.info
+
+
+[cols=2,options="header"]
+|===
+|Command
+|Descritption
+
+|*show status*
+|General health info, first to run on unusual CPU/IO load. Shows uptime, C{U load, memory usage, CUCM/Unity version.
+
+|*utils ntp status*
+|Show NTP status - NTP source, synchronization, stratum. Note: this is not necessarily time source for the phones.
+
+|*utils network ping <dest> [count VALUE] [size VALUE]*
+| Ping to test network quality and connectivity. E.g. `utils network ping 8.8.8.8 count 10 size 1300` 
+
+|*utils network traceroute <IP address>*
+|Network trace.
+
+|*show tech network routes*
+|Show routing table.
+
+|*show network status [process nodns search [search term]]*
+|Show established connections with the process using the port. E.g. to show established connections to port 5060 (SIP phones and SIP trunks): `show network status process nodns search 5060`. 
+
+|*utils network arp list*
+
+*utils network arp delete*
+
+*utils network arp set*
+
+|Working with ARP table.
+
+|*show network ipprefs public*
+
+*show open ports*
+
+*show open ports all*
+
+*show open ports regexp*
+
+|Show open and accessible over the network ports with listening daemons.
+
+|*show network ip_conntrack*
+|Show number of open connections . While the number of connections does NOT equal number of registered phones, if there is some network connectivity issue this number will be unusually low. E.g. on CUCM with 52 registered SIP phones this commands shows 52 301 connections.
+
+|*show process list*
+|Show list of running processes (Linux style).
+
+|*utils iostat*
+|Show I/O stats - writes/reads per second, averages
+
+|*show hardware*
+|Show the hardware server on which the CUCM is installed.
+
+|*utils service list*
+
+*utils service <stop/restart/start>*
+
+|List runnung CUCM/Unity services (not previously mentioned Linux ones) and then stop/restart any of them by their name. Copy & paste service name exactly as shown in the listing. 
+
+|*utils system restart*
+|Last resort - restart the whole CUCM/Unity. 
+
+ 
+|*show diskusage activelog*
+|Get the disk usage.
+
+|*show logins*
+|Show logged in admins
+
+|*show password expiry user list*
+|Show user password expiration, by default it is set to 99999 days, i fnot changed by the administrator.
+
+|*set password { age | complexity | expiry | inactivity | user }*
+|Changing password for yourself/another user . Be very careful with changing password of course.
+
+
+|===

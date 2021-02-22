@@ -1,4 +1,4 @@
-= Cisco Nexus 9000 9k debug and diagnostic commands complete cheat sheet
+= Cisco Nexus 9000 9k debug and diagnostic commands complete cheat sheet (work in progress)
 Yuri Slobodyanyuk <admin@yurisk.info>
 v1.0, 2020-09-01
 :homepage: https://yurisk.info
