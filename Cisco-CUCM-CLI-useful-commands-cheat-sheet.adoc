@@ -76,7 +76,7 @@ Author: Yuri Slobodyanyuk, admin@yurisk.info
 |Show logged in admins
 
 |*show password expiry user list*
-|Show user password expiration, by default it is set to 99999 days, i fnot changed by the administrator.
+|Show user password expiration, by default it is set to 99999 days, if not changed by the administrator.
 
 |*set password { age / complexity / expiry / inactivity / user }*
 |Changing password for yourself/another user . Be very careful with changing password of course.
