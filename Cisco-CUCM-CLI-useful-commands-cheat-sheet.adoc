@@ -12,7 +12,7 @@ Yuri Slobodyanyuk, admin@yurisk.info
 |Descritption
 
 |*show status*
-|General health info, first to run on unusual CPU/IO load. Shows uptime, C{U load, memory usage, CUCM/Unity version.
+|General health info, first to run on unusual CPU/IO load. Shows uptime, CPU load, memory usage, CUCM/Unity version.
 
 |*utils ntp status*
 |Show NTP status - NTP source, synchronization, stratum. Note: this is not necessarily time source for the phones.
@@ -48,7 +48,7 @@ Yuri Slobodyanyuk, admin@yurisk.info
 |Show open and accessible over the network ports with listening daemons.
 
 |*show network ip_conntrack*
-|Show number of open connections . While the number of connections does NOT equal number of registered phones, if there is some network connectivity issue this number will be unusually low. E.g. on CUCM with 52 registered SIP phones this commands shows 52 301 connections.
+|Show number of open connections . While the number of connections does NOT equal number of registered phones, if there is some network connectivity issue this number will be unusually low. E.g. on CUCM with 52 registered SIP phones this commands shows  301 connections.
 
 |*show process list*
 |Show list of running processes (Linux style).
@@ -63,7 +63,7 @@ Yuri Slobodyanyuk, admin@yurisk.info
 
 *utils service <stop/restart/start>*
 
-|List runnung CUCM/Unity services (not previously mentioned Linux ones) and then stop/restart any of them by their name. Copy & paste service name exactly as shown in the listing. 
+|List running CUCM/Unity services (not previously mentioned Linux ones) and then stop/restart any of them by their name. Copy & paste service name exactly as shown in the listing. 
 
 |*utils system restart*
 |Last resort - restart the whole CUCM/Unity. 
