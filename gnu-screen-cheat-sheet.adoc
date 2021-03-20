@@ -92,13 +92,13 @@ Author: Yuri Slobodyanyuk, admin@yurisk.info
 |Paste the selected text at the cursor of the terminal, or create a new window and say start Vim there and paste into it while in Insert mode.
 
 |*C-a h*
-|Make screenshot (as a text) of the currently visible terminal window and save the output to `hardcopy.<n>`, where <n> is auto-incrementing number of your window.
+|Dump the contents of the currently visible terminal to `hardcopy.<n>` file, where <n> is auto-incrementing number of your window.
 
 |*C-a H*
-|Start/end logging all output of the curent window into a file `screenlog.N` where `N` is the window number. The data is appended, not overwritten if the file exists. Contents displayed until enabling the logging is not logged. 
+|Start/end logging all output of the curent window into a file `screenlog.N` where `N` is the window number. The data is appended, not overwritten if the file exists. Output printed before that is not logged. 
 
 |*C-a a*
-| Send `Ctrl-a` sequence to the running command, useful to jump to the line start in bash.
+| Send `Ctrl-a` sequence to the shell in the window, useful to jump to the beginning of the line.
 
 |*C-a M*
 |Monitor window for activity. When enabled, will notify you of any acitvity while you work in other window.
