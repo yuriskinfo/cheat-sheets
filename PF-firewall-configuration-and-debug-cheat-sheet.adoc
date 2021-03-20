@@ -32,6 +32,9 @@ a|  Flush, accordingly:
 - `nat` NAT rules only
 - `states` Stateful table (but again - active connections stay alive)
 
+|*pfct -k <source IP of connection to clear> [-k <destination>]*
+|Kill an active connection from the state table. You can specify IP address as the 1st selector to the 1st `-k` and optionally, destination selector with another `-k` key. `0.0.0.0/0` as a wildcard can be used. E.g. to clear all connections from any to 10.10.10.13/32 `pfctl -k 0.0.0.0/0 10.10.10.13/32`. To add selectors, look at available ones via *pfctl -s state*, e.g. 
+
 
 |*pfctl -z*
 |Clear all per rule statistics/counters
