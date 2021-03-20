@@ -22,6 +22,22 @@ Author: Yuri Slobodyanyuk, admin@yurisk.info
 |*pfctl -nf /etc/pf.conf*
 |Parse security rules stored in a file without installing them (dry run).
 
+|*pfctl -F all*
+
+*pfctl -F rules*
+
+*pfctl -F nat*
+
+*pfctl -F states*
+
+| Flush, accordingly:  
+
+- Everything (filter rules, nat, and sateful table)
+- Rules only (stateful table of existing connections stay intact)
+- NAT rules only
+- Stateful table
+
+
 |*pass in quick on egress from 62.13.77.141 to any*
 | 'Quick' rule, means allow this traffic to pass through on all interfaces, otherwise we would need 2nd rule allowing this traffic in _outgoing_ direction on egress interface, to allow destined to ANY port/protocol with the source being `62.13.77.141` and destination being ANY IP address behind the PF firewall. NOTE: here, `egress` is not a direction, but a group name to which the interface in question (`em0`) belongs to. In OpenBSD you set it in a file `/etc/hostname.em0: group egress` or in real-time with the command: `ifconfig em0 group egress`. 
 
