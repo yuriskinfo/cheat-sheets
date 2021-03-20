@@ -32,10 +32,14 @@ Author: Yuri Slobodyanyuk, admin@yurisk.info
 
 a|  Flush, accordingly:  
 
-- Everything (filter rules, nat, and sateful table)
+- Everything (filter rules, nat, but NOT sateful table - those already connected will stay so)
 - Rules only (stateful table of existing connections stay intact)
 - NAT rules only
-- Stateful table
+- Stateful table (but again - active connections stay alive)
+
+
+|*pfctl -z*
+|Clear all per rule statistics/counters
 
 
 |*pass in quick on egress from 62.13.77.141 to any*
