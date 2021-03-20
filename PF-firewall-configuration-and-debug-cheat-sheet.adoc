@@ -30,7 +30,7 @@ Author: Yuri Slobodyanyuk, admin@yurisk.info
 
 *pfctl -F states*
 
-| Flush, accordingly:  
+a|  Flush, accordingly:  
 
 - Everything (filter rules, nat, and sateful table)
 - Rules only (stateful table of existing connections stay intact)
