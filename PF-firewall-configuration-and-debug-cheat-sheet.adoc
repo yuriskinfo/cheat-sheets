@@ -1,0 +1,33 @@
+= PF firewall (FreeBSD, OpenBSD) configuration and debug commands cheat sheet
+Yuri Slobodyanyuk <admin@yurisk.info>
+v1.0, 2020-09-01
+:homepage: https://yurisk.info
+
+Author: Yuri Slobodyanyuk, admin@yurisk.info
+
+
+== PF (Packet Filter) management for FreeBSD & OpenBSD
+
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|*pfct -d*
+|Disable PF in place, does not survive reboot.
+
+|*pfctl -ef /etc/pf.conf*
+|Enable PF and load the rule set from file `/etc/pf.conf` in one go.
+
+|*pfctl -nf /etc/pf.conf*
+|Parse security rules stored in a file without installing them (dry run).
+
+|*pass in quick on egress from 62.13.77.141 to any*
+| 'Quick' rule, means allow this traffic to pass through on all interfaces, otherwise we would need 2nd rule allowing this traffic in _outgoing_ direction on egress interface) to allow incoming ANY port/protocol with the source being `62.13.77.141` and destination being ANY IP address behind the PF firewall. NOTE: here, `egress` is not a direction, but a group name to which the interface in question (`em0`) belongs to. In OpenBSD you set it in a file `/etc/hostname.em0: group egress` or in real-time with the command: `ifconfig em0 group egress`. 
+
+
+
+
+
+
+|===
