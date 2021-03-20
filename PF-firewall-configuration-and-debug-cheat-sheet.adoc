@@ -22,20 +22,15 @@ Author: Yuri Slobodyanyuk, admin@yurisk.info
 |*pfctl -nf /etc/pf.conf*
 |Parse security rules stored in a file without installing them (dry run).
 
-|*pfctl -F all*
+|*pfctl -F <all/rules/nat/states>*
 
-*pfctl -F rules*
-
-*pfctl -F nat*
-
-*pfctl -F states*
 
 a|  Flush, accordingly:  
 
-- Everything (filter rules, nat, but NOT sateful table - those already connected will stay so)
-- Rules only (stateful table of existing connections stay intact)
-- NAT rules only
-- Stateful table (but again - active connections stay alive)
+- `all` Everything (filter rules, nat, but NOT sateful table - those already connected will stay so)
+- `rules` Rules only (stateful table of existing connections stay intact)
+- `nat` NAT rules only
+- `states` Stateful table (but again - active connections stay alive)
 
 
 |*pfctl -z*
