@@ -86,7 +86,7 @@ Author: Yuri Slobodyanyuk, admin@yurisk.info
 |Enter buffer navigation mode to scroll output buffer, copy, edit and paste later. Navigation commands as per `vim` if Vim is set as editor.*<esc>* to leave the buffer mode.
 
 |*<space>*
-|Start/stop selection while in the buffer mode to select the text. Press `<space>` or `<Enter>` to copy the selected text. E.g. to select/copy the whole buffer: `C-a [ gg <space> G <esc>`
+|Start/stop selection while in the buffer mode to select the text. Press `<space>` or `<Enter>` to copy the selected text. E.g. to select/copy the whole buffer: `C-a [ gg <space> G <space> <esc>`
 
 |*C-a ]*
 |Paste the selected text at the cursor of the terminal, or create a new window and say start Vim there and paste into it while in Insert mode.
