@@ -67,9 +67,9 @@ Author: Yuri Slobodyanyuk, admin@yurisk.info
 |Rename current window.
 
 |*C-a S*
-|Split windows display horizontally. Use *C-a c* to create a new window inside the new split.
+|Split windows display horizontally. Use *C-a c* to create a new window inside the new split or *C-X* to close this part of split.
 
-|*C-a V*
+|*C-a \|*
 |Split windows display vertically. Available starting screen 4.01, i.e. not available on Mac 2020 which still uses screen 4.00.
 
 |*C-a tab*
