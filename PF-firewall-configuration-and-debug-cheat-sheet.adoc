@@ -27,7 +27,7 @@ Author: Yuri Slobodyanyuk, admin@yurisk.info
 
 a|  Flush, accordingly:  
 
-- `all` Everything (filter rules, nat, but NOT sateful table - those already connected will stay so)
+- `all` Everything (filter rules, nat, but NOT sateful table - those already connected will stay so). Blank/flushed rules mean "permit any any".
 - `rules` Rules only (stateful table of existing connections stay intact)
 - `nat` NAT rules only
 - `states` Stateful table (but again - active connections stay alive)
