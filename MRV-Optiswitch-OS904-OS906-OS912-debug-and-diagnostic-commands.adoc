@@ -15,7 +15,7 @@ Unfortunately, with the merger and the end of sale, all the documentation disapp
 |Enable/disable paging the output.
 
 |*show <smth> \| <include/begin/end/exclude> <search term>*
-|Pipe output of some `show` command, e.g. find specific MAC address: `show lt | include B1:12` (search terms are case sensitive). Also can pipe to few Linux commands, e.g. count number of learned/dynamic MACs: `show lt | grep -c "DYNAMIC"` 
+|Pipe output of some `show` command, e.g. find specific MAC address: `show lt \| include B1:12` (search terms are case sensitive). Also can pipe to few Linux commands, e.g. count number of learned/dynamic MACs: `show lt \| grep -c "DYNAMIC"` 
 
 
 |*show port*
