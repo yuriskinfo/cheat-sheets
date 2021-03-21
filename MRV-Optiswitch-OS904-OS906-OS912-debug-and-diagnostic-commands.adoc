@@ -11,6 +11,13 @@ Unfortunately, with the merger and the end of sale, all the documentation disapp
 |Command
 |Description
 
+|*no cli-paging/cli-paging*
+|Enable/disable paging the output.
+
+|*show <smth> \| <include/begin/end/exclude> <search term>*
+|Pipe output of some `show` command, e.g. find specific MAC address: `show lt | include B1:12` (search terms are case sensitive). Also can pipe to few Linux commands, e.g. count number of learned/dynamic MACs: `show lt | grep -c "DYNAMIC"` 
+
+
 |*show port*
 | Show port summary: state (on/off), speed, media (copper/sfp), duplex state
 
@@ -40,6 +47,9 @@ Unfortunately, with the merger and the end of sale, all the documentation disapp
 
 |*monitor port statistics _portnumber_*
 |Show the same data as `show port statistics` but refresh every other second
+
+|*show lt*
+|Show MAC address table -  static and learned dynamic. Output also gives timestamp when MAC address displayed was last changed. 
 
 |*show syslog info*
 |Show logs
