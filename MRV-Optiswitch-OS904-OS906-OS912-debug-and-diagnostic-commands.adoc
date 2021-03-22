@@ -57,8 +57,11 @@ Unfortunately, with the merger and the end of sale, all the documentation disapp
 |*show lt [port <port number> all]*
 |Show MAC address table -  static and learned dynamic. Output also gives timestamp when MAC address displayed was last changed. Optionally, specify port to show only MACs on this port. 
 
-|*show syslog info*
-|Show logs
+|*(config)# clear lt*
+|Delete  all learned MAC addresses from Learning Table.
+
+|*show syslog <all/debug/info/warning/error/fatal> [start-date] [end-date]*
+|Show logs per their severity. Optional start/end dates are in format `mm-dd-ff:mm:ss` . If remote syslog is configured in the MRV, there will be NO local logs, to verify - look in configuration `show run | i rsyslog`. 
 
 |*show ver*
 | Show the device model, hardware, fan status, OS installed, MAC address, serial number and uptime. 
