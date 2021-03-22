@@ -1,0 +1,41 @@
+= FreeBSD cheat sheet
+Yuri Slobodyanyuk <admin@yurisk.info>
+v1.0, 2021-03-22
+:homepage: https://yurisk.info
+
+Author: Yuri Slobodyanyuk, admin@yurisk.info
+
+
+== Working with disks and partitions
+
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+
+|*camcontrol devlist*
+|Show list of attached storage devices
+
+|*geom <disk/label/part/raid> list*
+|Display detailed information for the given GEOM class `disk` - physical disk, `label` - device labels, `part` - partitions. Other classes are available, but not mentioned for irrelevance here.
+
+|*mount*
+|Show mounted in fact partitions and their properties (journaled or not, type).
+
+|*glabel list*
+|Show labels, same as `geom label list`.
+
+|*gpart show*
+|Show partitions, similar to `geom part list` minus labels information, so is shorter. Add `-r` to show GPT partition types, see for the complete list at https://en.wikipedia.org/wiki/GUID_Partition_Table .
+
+
+
+
+
+
+
+
+
+
+|===
