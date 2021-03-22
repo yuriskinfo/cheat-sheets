@@ -17,6 +17,12 @@ Unfortunately, with the merger and the end of sale, all the documentation disapp
 |*show <smth> \| <include/begin/end/exclude> <search term>*
 |Pipe output of some `show` command, e.g. find specific MAC address: `show lt \| include B1:12` (search terms are case sensitive). Also can pipe to few Linux commands, e.g. count number of learned/dynamic MACs: `show lt \| grep -c "DYNAMIC"` 
 
+|*show run*
+|Show the running configuration
+
+|*show run*
+|Show the running configuration
+
 
 |*show port*
 | Show port summary: state (on/off), speed, media (copper/sfp), duplex state
@@ -48,14 +54,14 @@ Unfortunately, with the merger and the end of sale, all the documentation disapp
 |*monitor port statistics _portnumber_*
 |Show the same data as `show port statistics` but refresh every other second
 
-|*show lt*
-|Show MAC address table -  static and learned dynamic. Output also gives timestamp when MAC address displayed was last changed. 
+|*show lt [port <port number> all]*
+|Show MAC address table -  static and learned dynamic. Output also gives timestamp when MAC address displayed was last changed. Optionally, specify port to show only MACs on this port. 
 
 |*show syslog info*
 |Show logs
 
 |*show ver*
-| Show the device model, hardware, fan status, OS installed, MAc address, serial number and uptime
+| Show the device model, hardware, fan status, OS installed, MAC address, serial number and uptime. 
 
 |*show time*
 |Show system time. Important for checking alarms and logs
