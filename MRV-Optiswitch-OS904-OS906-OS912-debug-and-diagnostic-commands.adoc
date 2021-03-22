@@ -61,6 +61,10 @@ Unfortunately, with the merger and the end of sale, all the documentation disapp
 |*show syslog <all/debug/info/warning/error/fatal> [start-date] [end-date]*
 |Show logs per their severity. Optional start/end dates are in format `mm-dd-ff:mm:ss` . If remote syslog is configured in the MRV, there will be NO local logs, to verify - look in configuration `show run \| i rsyslog`. 
 
+|*clear syslog*
+|Delete all local log entries.
+
+
 |*show ver*
 | Show the device model, hardware, fan status, OS installed, MAC address, serial number and uptime. 
 
