@@ -40,7 +40,11 @@ a| Document ::= (Header?, Preamble?, Section*) +
 |+some text+ will be in Monospace.
 
 
+|\`some text`
+|`some text` is rendred not just in  Monospace but literally.
 
+|\"`some text`"
+|"`some text`" will be in double smarty quotes.
 
 
 
