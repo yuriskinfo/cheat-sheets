@@ -19,7 +19,9 @@ a| Document ::= (Header?, Preamble?, Section*) +
    AuthorInfo ::= (FirstName, (MiddleName?, LastName?)?, EmailAddress?) +
    RevisionInfo ::= (RevisionNumber?, RevisionDate, RevisionRemark?) +
    Preamble ::= (SectionBody) +
-   SectionBody ::= ((BlockTitle?, Block) \| (BlockMAcro)+ + 
+  SectionBody ::= ((BlockTitle?, Block) \| (BlockMacro)+ + 
+   Block ::= (paragraph \| DelimitedBlock \| List \| Table) +
+
 
 
 
