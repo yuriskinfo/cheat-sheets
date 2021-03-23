@@ -16,7 +16,10 @@ Author: Yuri Slobodyanyuk, admin@yurisk.info
 |Block types
 a| Document ::= (Header?, Preamble?, Section*) +
    Header ::= (Title, (AuthorInfo, RevisionInfo?)?) +
-
+   AuthorInfo ::= (FirstName, (MiddleName?, LastName?)?, EmailAddress?) +
+   RevisionInfo ::= (RevisionNumber?, RevisionDate, RevisionRemark?) +
+   Preamble ::= (SectionBody)
+   SectionBody ::= ((BlockTitle?, Block) \| BlockMAcro)\+ + 
 
 
 
