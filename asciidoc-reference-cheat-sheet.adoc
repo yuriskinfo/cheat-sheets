@@ -14,8 +14,8 @@ Author: Yuri Slobodyanyuk, admin@yurisk.info
 |Types of AsciiDoc documents
 
 |Block types
-a| Document \:\:= (Header?, Preamble?, Section*) +
-   Header \:\:= (Title, (AuthorInfo, RevisionInfo?)?) +
+a| Document ::= (Header?, Preamble?, Section*) +
+   Header ::= (Title, (AuthorInfo, RevisionInfo?)?) +
 
 
 
