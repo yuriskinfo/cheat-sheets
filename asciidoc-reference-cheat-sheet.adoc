@@ -30,6 +30,9 @@ a| Document ::= (Header?, Preamble?, Section*) +
         ListLabel ::= (ListTerm+) +
         ListItem ::= (ItemText, (List \| ListParagraph \| ListContinuation)*) 
 
+
+2+|_Text Formatting_
+
 |\_text_
 |_text_ will be in italics.
 
