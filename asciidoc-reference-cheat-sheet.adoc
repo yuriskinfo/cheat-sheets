@@ -44,7 +44,11 @@ a| Document ::= (Header?, Preamble?, Section*) +
 |`some text` is rendred not just in  Monospace but literally.
 
 |\"`some text`"
-|"`some text`" will be in double smarty quotes.
+|"`some text`" will be in double smart quotes.
+
+
+|\'`some text`'
+|'`some text`' will be rendered in single smart quotes.
 
 
 
