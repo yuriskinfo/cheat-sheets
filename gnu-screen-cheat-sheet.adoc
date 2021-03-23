@@ -113,7 +113,7 @@ Author: Yuri Slobodyanyuk, admin@yurisk.info
 |*Save session state*
 |This is not possible. If you use the same layout each session, you can put start up commands to re-create it in `.screenrc` file in your home directory, but still - you cannot save the current session state, i.e. contents of the windows and their layout.
 
-2+|*Sharing session (e.g. for pair programming)*
+2+|*Sharing session (e.g. for pair programming/tutoring)*
 
 
 a|Original session (say _user1_):
