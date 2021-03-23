@@ -1,0 +1,26 @@
+= Asciidoc syntax cheat sheet 
+:author: Yuri Slobodyanyuk
+
+Author: Yuri Slobodyanyuk, admin@yurisk.info
+
+[cols=2,options="header"]
+|===
+
+|Command
+|Description
+
+
+|`article, book, manpage`
+|Types of AsciiDoc documents
+
+|Block types
+a| Document \:\:= (Header?, Preamble?, Section*) +
+   Header \:\:= (Title, (AuthorInfo, RevisionInfo?)?) +
+
+
+
+
+
+
+
+|===
