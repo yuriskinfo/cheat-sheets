@@ -22,6 +22,18 @@ a| Document ::= (Header?, Preamble?, Section*) +
         SectionBody ::= ((BlockTitle?, Block) \| (BlockMacro)+ + 
         Block ::= (Paragraph \| DelimitedBlock \| List \| Table) +
         List ::= (BulletedList \| NumberedList \| LabeledList \| CalloutList) +
+        BulletedList ::= (ListItem)+ +
+        NumberedList ::= (ListItem)+ +
+        CalloutList ::= (ListItem)+ +
+        LabeledList ::= (ListItem)+ +
+        ListEntry ::= (ListLabel, ListItem) +
+        ListLabel ::= (ListTerm+) +
+        ListItem ::= (ItemText, (List \| ListParagraph \| ListContinuation)*) 
+
+| \` <text> \` or  \_ <text> \_
+|<text> will be in italics.
+
+
 
 
 
