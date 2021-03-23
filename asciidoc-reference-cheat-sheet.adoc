@@ -31,7 +31,7 @@ a| Document ::= (Header?, Preamble?, Section*) +
         ListItem ::= (ItemText, (List \| ListParagraph \| ListContinuation)*) 
 
 | 'text' or  \_text_
-|<text> will be in italics.
+|_text_ will be in italics.
 
 
 
