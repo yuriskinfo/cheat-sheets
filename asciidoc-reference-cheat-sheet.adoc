@@ -30,8 +30,14 @@ a| Document ::= (Header?, Preamble?, Section*) +
         ListLabel ::= (ListTerm+) +
         ListItem ::= (ItemText, (List \| ListParagraph \| ListContinuation)*) 
 
-|'text' or  \_text_
+|\_text_
 |_text_ will be in italics.
+
+|\*some text*
+|*some text* will be bold/strong.
+
+|\+some text+
+|+some text+ will be in Monospace.
 
 
 
