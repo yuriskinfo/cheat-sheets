@@ -55,7 +55,7 @@ Author: Yuri Slobodyanyuk, admin@yurisk.info
 |Add a new partition to the disk `dev name`, setting its type and optionally alignment and label. E.g. to add _freebsd-ufs_ type partition to disk _da1_ aligned on 4k border setting the label to _data_: `gpart add -t freebsd-ufs -a 4k -l data da1` . After that, this partition will be available as  _/dev/gpt/data_   
 
 |*newfs [-U] [-j] <partition name/label>* 
-|Add filesystem to the named partition. Switches depen on the filesystem type, here `-U` is for *freebsd-ufs* with soft updates but without journaling, while `-j` adds journaling. E.g. to create UFS filesystem with soft updates but without the jouranling on partition labeled _/data_ of type GPT: `newfs -U /dev/gpt/data`.  
+|Add filesystem to the named partition. Switches depend on the filesystem type, here `-U` is for *freebsd-ufs* with soft updates but without journaling, while `-j` adds journaling. E.g. to create UFS filesystem with soft updates but without the journaling on partition labeled _/data_ of type GPT: `newfs -U /dev/gpt/data`.  
 
 
 
