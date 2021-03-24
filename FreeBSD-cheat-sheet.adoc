@@ -30,8 +30,32 @@ Author: Yuri Slobodyanyuk, admin@yurisk.info
 |Show partitions, similar to `geom part list` minus labels information, so is shorter. Add `-r` to show GPT partition types, see for the complete list at https://en.wikipedia.org/wiki/GUID_Partition_Table .
 
 
+|*gpart recover <device name>*
+|Recover partition information, e.g. when increasing the size of already partitioned disk in Virtual Machine, the last sector holding the partition info is lost, so to put the needed info in the last sector of now increased disk: `gpart recover da0`. 
 
+|*swapoff <device name>*
+|Turn off temporarily the swap file, e.g. to move its partition to the end of the increased virtual disk: `swapoff /dev/da0p3`
 
+|*gpart delete -i <n> <device name>*
+|Delete partition number `n` (as shown by `gpart show`) on the device `device name`. E.g. If the swap partition was number 3 on disk /dev/da0, to delete it: `gpart delete -i 3 /dev/da0`.
+
+|*gpart create -s <partition scheme> <device name>*
+|Set type of partition to be added on device `device name`. E.g. to set up  device _da1_ for GPT partitioning: `gpart create -s gpt da1`.  
+
+|*sysctl kern.geom.debugflags=16*
+|Resizing a live partition may require turning off this protection.
+
+|*gpart resize -i <n> [ -s <new size K/M/G>] [-a <alignment size>] <device name>*
+|Resize existing partition number `n` to `new size`, optionally setting alighnment, on device `device name`. If `-s` size is not given, use up all available _free_ space. E.g. to increase the _2nd_ partition on device _da0_ to 47 Gigabyte with 4k alignment: `gpart resize -i 2 -s 47G -a 4k da0`.
+
+|*growfs <partition name>*
+|After resizing a partition, grow the existing file system on it to encompass the new free space. E.g.`growfs /dev/da0p2`. 
+
+|*gpart add -t <partition type> [-a <alignment>] [-l <label name>] <dev name>*
+|Add a new partition to the disk `dev name`, setting its type and optionally alignment and label. E.g. to add _freebsd-ufs_ type partition to disk _da1_ aligned on 4k border setting the label to _data_: `gpart add -t freebsd-ufs -a 4k -l data da1` . After that, this partition will be available as  _/dev/gpt/data_   
+
+|*newfs [-U] [-j] <partition name/label>* 
+|Add filesystem to the named partition. Switches depen on the filesystem type, here `-U` is for *freebsd-ufs* with soft updates but without journaling, while `-j` adds journaling. E.g. to create UFS filesystem with soft updates but without the jouranling on partition labeled _/data_ of type GPT: `newfs -U /dev/gpt/data`.  
 
 
 
