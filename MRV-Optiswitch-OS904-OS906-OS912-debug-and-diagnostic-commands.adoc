@@ -34,6 +34,9 @@ Unfortunately, with the merger and the end of sale, all the documentation disapp
 |*show port statistics _n_*
 |Show real-time statistics: packets/bytes received/sent, CRC and other error count
 
+|*show l2cntrl-protocol-counters*
+|Show counters of received/transmitted Layer 2 control protocols - LACP, MSTP, RSTP, OAM.
+
 |*show run ports*
 | Show running configuration for all ports
 
@@ -51,6 +54,15 @@ Unfortunately, with the merger and the end of sale, all the documentation disapp
 
 |*monitor port statistics _portnumber_*
 |Show the same data as `show port statistics` but refresh every other second
+
+|*(config)# port state disable/enable <n>*
+|Disable/enable MRV port number `n` (shut/no shut in Cisco terminology). Make sure you don't disable th eport you are connected through.
+
+|*(config)# port media-select <sfp/sfp100/copper/auto/sgmii>*
+| Set manually type of physical interface installed in MRV.
+
+|*(config)# port speed <10/100/1000/auto> <n/all>*
+|Force specific speed settting for a port.   
 
 |*show lt [port <port number> all]*
 |Show MAC address table -  static and learned dynamic. Output also gives timestamp when MAC address displayed was last changed. Optionally, specify port to show only MACs on this port. 
