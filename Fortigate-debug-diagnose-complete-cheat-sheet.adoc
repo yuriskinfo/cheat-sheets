@@ -103,6 +103,7 @@ NOTE: All debug will run for 30 minutes by default, to increase use `diagnose de
 
 
 == High Availability Clustering debug
+.HA Clustering related debug and verification
 [cols=2, options="header"]
 |===
 |Command
