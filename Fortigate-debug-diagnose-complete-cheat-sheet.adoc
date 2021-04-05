@@ -31,7 +31,7 @@ NOTE: All debug will run for 30 minutes by default, to increase use `diagnose de
 
 `vd` - id number of the vdom. When entering the vdom with `edit vdom`, this number is shown first.
 
-`vd-name`
+`vd-name` - limit debug to specific VDOM by its name. Fortigate translates the name to VDOM ID (`vd`).
 
 `proto` - Protocol number.
 
@@ -53,7 +53,7 @@ NOTE: All debug will run for 30 minutes by default, to increase use `diagnose de
 | Same as `diagnose debug filter` but for IPv6 packets. The rest of matching and conditions remain of the same syntax.
 
 |*diagnose debug flow show function-name enable*
-|Show function names rsponsible for each step in processing.
+|Show function names responsible for each step in processing.
 
 |*diagnose debug flow trace start [number]*
 |Actually start the debug with optional `number` to limit number of packets traced. 
