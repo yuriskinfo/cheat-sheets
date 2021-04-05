@@ -53,7 +53,7 @@ NOTE: All debug will run for 30 minutes by default, to increase use `diagnose de
 | Same as `diagnose debug filter` but for IPv6 packets. The rest of matching and conditions remain of the same syntax.
 
 |*diagnose debug flow show function-name enable*
-|Some
+|Show function names rsponsible for each step in processing.
 
 |*diagnose debug flow trace start [number]*
 |Actually start the debug with optional `number` to limit number of packets traced. 
