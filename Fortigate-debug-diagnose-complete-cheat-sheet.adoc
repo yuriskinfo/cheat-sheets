@@ -117,13 +117,29 @@ NOTE: All debug will run for 30 minutes by default, to increase use `diagnose de
 |*diagnose sys ha checksum recalculate*
 |Force cluster member to recalculate checksums, often will solve the out of sync problem. No adverse effects. Run on each cluster member. 
 
-|*diagnose sys ha checksum show <_VDOM_/global>*
+|*diagnose sys ha checksum show <__VDOM__/global>*
 |Print detailed synchronization status for each configuration part. Use after seeing `out-of-sync` in *diagnose sys ha checksum cluster* to know which part of configuration causes members to be out-of-sync. Need to run on each cluster member and compare, long output - use `diff`/`vimdiff/Notepad++ Compare plugin` to spot the differences.
 
-|*diagnose sys ha checksum show <_VDOM_/global> <settings part name>*
+|*diagnose sys ha checksum show <__VDOM__/global> <settings part name>*
 |Show exact setting inside the settings tree that causes out-of-sync. Use output from *diagnose sys ha checksum show* (see above) for _settings part name_. E.g. if `diagnose sys ha checksum show root` indicates that _firewall.vip_ is out-of-sync, running `diagnose sys ha checksum show root firewall.vip` will give checksums of each VIP in the root domain to compare with those of secondary member.
 
 
+|*diagnose debug app hatalk -1*
+|Enable heartbeat communications debug. IT shows in real time if members are talking over sync interfaces. 
+The output will look like `state/chg_time/now=2(work)/1610773657/1617606630`, where the desired `state` is _work_, _chg\_time_ is last cluster state/failover date in epoch, and _now_ last time communicaiton occurred on heartbeat interface(s), also in epoch. 
+
+|*diag debug application hasync -1* 
+|Real time synchronization between members. As only things that changed get synchronized after 1st sync is established, may take time to produce output. See next.
+
+|*execute ha synchronize stop*
+
+*diag debug enable*
+
+*diag debug application hasync -1*
+
+*execute ha synchronize start*
+
+|Stop, enable debug, then start again HA synchronization process, will produce lots of output.
 
 
 
