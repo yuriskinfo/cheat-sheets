@@ -70,7 +70,7 @@ NOTE: All debug will run for 30 minutes by default, to increase use `diagnose de
 |Description
 
 |*get sys stat*
-|Get statistics about the FOrtigate device: FortiOS used, license status, Operation mode, VDOMs configured, last update dates for AntiVirus, IPS, Application Control databases.
+|Get statistics about the Fortigate device: FortiOS used, license status, Operation mode, VDOMs configured, last update dates for AntiVirus, IPS, Application Control databases.
 
 |*get sys performance stat*
 |Show real-time operational statistics: CPU load per CPU, memory usage, average network/session, uptime.
@@ -111,6 +111,10 @@ NOTE: All debug will run for 30 minutes by default, to increase use `diagnose de
 |*get sys ha status*
 |Show general status and statistics of the clustering - health status, cluster uptime, last cluster state change, reason for selecting the current master, configuration status of each member (`in-sync/out-of-sync`), usage stats (average CPU, memory, session number), status (`up/down`, `duplex/speed`, `packets received/dropped`) for the heartbeat interface(s), HA cluster index (used to enter the secondary member CLI with `exe ha manage`).
 
+|*diagnose sys ha dump-by group*
+| Print detailed info per cluster group, shows actual uptime of each member in `start_time`, as well monitored links failures, status.
+
+
 |*diagnose sys ha checksum cluster*
 |Shows configuration checksum for each cluster member separated in individual VDOMs and _global_. In properly synchronized cluster all member checksums should be identical, look at `all` value. 
 
@@ -140,6 +144,13 @@ The output will look like `state/chg_time/now=2(work)/1610773657/1617606630`, wh
 *execute ha synchronize start*
 
 |Stop, enable debug, then start again HA synchronization process, will produce lots of output.
+
+
+|*exe ha manage ?*
+
+*exe ha manage <id>*
+
+|First show index of all Fortigate cluster members, then enter any secondary member CLI via its index.
 
 
 
