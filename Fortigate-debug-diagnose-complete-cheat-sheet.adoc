@@ -101,6 +101,35 @@ NOTE: All debug will run for 30 minutes by default, to increase use `diagnose de
 
 |===
 
+
+== High Availability Clustering debug
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|*get sys ha status*
+|Show general status and statistics of the clustering - health status, cluster uptime, last cluster state change, reason for selecting the current master, configuration status of each member (`in-sync/out-of-sync`), usage stats (average CPU, memory, session number), status (`up/down`, `duplex/speed`, `packets received/dropped`) for the heartbeat interface(s), HA cluster index (used to enter the secondary member CLI with `exe ha manage`).
+
+|*diagnose sys ha checksum cluster*
+|Shows configuration checksum for each cluster member separated in individual VDOMs and _global_. In properly synchronized cluster all member checksums should be identical, look at `all` value. 
+
+|*diagnose sys ha checksum recalculate*
+|Force cluster member to recalculate checksums, often will solve the out of sync problem. No adverse effects. Run on each cluster member. 
+
+|*diagnose sys ha checksum show <_VDOM_/global>*
+|Print detailed synchronization status for each configuration part. Use after seeing `out-of-sync` in *diagnose sys ha checksum cluster* to know which part of configuration causes members to be out-of-sync. Need to run on each cluster member and compare, long output - use `diff`/`vimdiff/Notepad++ Compare plugin` to spot the differences.
+
+|*diagnose sys ha checksum show <_VDOM_/global> <settings part name>*
+|Show exact setting inside the settings tree that causes out-of-sync. Use output from *diagnose sys ha checksum show* (see above) for _settings part name_. E.g. if `diagnose sys ha checksum show root` indicates that _firewall.vip_ is out-of-sync, running `diagnose sys ha checksum show root firewall.vip` will give checksums of each VIP in the root domain to compare with those of secondary member.
+
+
+
+
+
+
+|===
+
 == IPSEC VPN debug
 
 .IPSEC VPN Debug
