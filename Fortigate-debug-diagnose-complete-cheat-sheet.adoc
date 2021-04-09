@@ -130,8 +130,8 @@ NOTE: All debug will run for 30 minutes by default, to increase use `diagnose de
 
 
 |*diagnose debug app hatalk -1*
-|Enable heartbeat communications debug. IT shows in real time if members are talking over sync interfaces. 
-The output will look like `state/chg_time/now=2(work)/1610773657/1617606630`, where the desired `state` is _work_, _chg\_time_ is last cluster state/failover date in epoch, and _now_ last time communicaiton occurred on heartbeat interface(s), also in epoch. 
+|Enable heartbeat communications debug. It shows in real time if members are talking over sync interfaces. 
+The output will look like `state/chg_time/now=2(work)/1610773657/1617606630`, where the desired `state` is _work_, _chg\_time_ is last cluster state/failover date in epoch, and _now_ is the last time communication occurred on heartbeat interface(s), also in epoch. 
 
 |*diag debug application hasync -1* 
 |Real time synchronization between members. As only things that changed get synchronized after 1st sync is established, may take time to produce output. See next.
@@ -170,7 +170,7 @@ The output will look like `state/chg_time/now=2(work)/1610773657/1617606630`, wh
 a| Filter VPN debug messages using various parameters:  
 
 * `list`  Display the current filter.
-* `clear` Erase the current filter.
+* `clear` Delete  the current filter.
 * `name` Phase1 name to filter by.
 * `src-addr4`/`src-addr6`   IPv4/IPv6 source address range to filter by.
 * `dst-addr4`/`dst-addr6`   IPv4/IPv6 destination address range to filter by.
