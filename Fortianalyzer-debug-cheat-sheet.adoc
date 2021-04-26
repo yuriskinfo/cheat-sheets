@@ -70,7 +70,7 @@ Yuri Slobodyanyuk <admin@yurisk.info>
 |Sniff packets from/to remote device, to make sure they are sending each other packets. The communication is encrypted.
 
 |*diagnose sniffer packet any "port 514"*
-|Sniff all packets to/from port 514 used by Fortianalyzer to recieve logs from remote devices.
+|Sniff all packets to/from port 514 used by Fortianalyzer to receive logs from remote devices.
 
 
 |===
@@ -96,7 +96,11 @@ Yuri Slobodyanyuk <admin@yurisk.info>
 |Show as table log receiving rates for all ADOMs aggregated per device type (i.e. rate for all Fortigates will be as one data per ADOM).
 
 |*diagnose fortilogd lograte-device*
-|
+|Show average logs receive  rate per device for the last hour, day, and week.
+
+|*diagnose fortilogd lograte-total*
+|Show summary log receive rate for all devices on this Fortianalyzer.
+
 
 
 
