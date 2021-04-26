@@ -102,11 +102,20 @@ Yuri Slobodyanyuk <admin@yurisk.info>
 |Show summary log receive rate for all devices on this Fortianalyzer.
 
 
-
-
-
-
-
 |===
+
+=== Licensing
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|*diagnose dvm device list*
+|Look for the line _There are currently N devices/vdoms count for license_.
+
+|*diagnose debug vminfo*
+|Show report on Virtual Machine license: whether valid or not, type, licensed  storage volume, licensed log receive rate, licensed maximum device count.
+
+
 
 
