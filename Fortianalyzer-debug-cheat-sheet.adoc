@@ -59,6 +59,18 @@ Yuri Slobodyanyuk <admin@yurisk.info>
 |*diagnose test application oftpd 3*
 |List all devices sending logs to the Fortianalyzer with their IP addresses, serial numbers, _uptime_ meaning connection establishment uptime, not remote device uptime, and packets received (should be growing).
 
+
+
+|*diagnose debug application oftpd 8 <__Device name__>*
+|Real time debug of communicating with the __Device name__ device.
+
+|*diagnose sniffer packet any "host __IP of remote device__"*
+|Sniff packets from/to remote device, to make sure they are sending each other packets. The communication is encrypted.
+
+|*diagnose sniffer packet any "port 514"*
+|Sniff all packets to/from port 514 used by Fortianalyzer to recive logs from remote devices.
+
+
 |===
 
 
