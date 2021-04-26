@@ -62,6 +62,8 @@ Yuri Slobodyanyuk <admin@yurisk.info>
 
 
 |*diagnose debug application oftpd 8 <__Device name__>*
+
+*diagnose debug enable*
 |Real time debug of communicating with the __Device name__ device.
 
 |*diagnose sniffer packet any "host __IP of remote device__"*
