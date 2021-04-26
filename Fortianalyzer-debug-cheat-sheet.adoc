@@ -70,7 +70,7 @@ Yuri Slobodyanyuk <admin@yurisk.info>
 |Sniff packets from/to remote device, to make sure they are sending each other packets. The communication is encrypted.
 
 |*diagnose sniffer packet any "port 514"*
-|Sniff all packets to/from port 514 used by Fortianalyzer to recive logs from remote devices.
+|Sniff all packets to/from port 514 used by Fortianalyzer to recieve logs from remote devices.
 
 
 |===
