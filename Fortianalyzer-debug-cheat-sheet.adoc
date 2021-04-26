@@ -1,0 +1,94 @@
+= Fortianalyzer diagnose and debug cheat sheet
+Yuri Slobodyanyuk <admin@yurisk.info>
+:homepage: https://yurisk.info
+
+
+=== General Health
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+
+|*get sys status*
+|Get general information: firmware version, serial number, ADOMs enabled or not, time and time zone, general license status (Valid or not).
+
+|*get sys performance*
+|Detailed performance statistics: CPU load, memory usage, hard disk/flash disk used space and input/output (`iostat`) statistics.
+
+|*exe top*
+|Display real time list of running processes with their CPU load.
+
+|*diag log device*
+|Shows how much space is used by each device  logging to the Fortianalyzer, including quotas.
+
+|*exe iotop -b -n 1*
+|Display and update every 1 second READ/WRITE statistics for all the processes.
+
+
+|*diagnose system print cpuinfo*
+|Display hardware CPU information - vendor, number of CPUs etc.
+
+|*diagnose hardware info*
+|Even more hardware-related info.
+
+|*diagnose system print df*
+|Show disk partitions and space used. Analog of the Linux `df`.
+
+|*exe lvm info*
+|Shows disks status and size
+
+|*diagnose system print  loadavg*
+|Show average system load, analog to the Linux `uptime` command.
+
+|*diagnose system print  netstat*
+|Show established connections to the Fortianalyzer, as well as listening ports. Every logging device can (and usually does) have multiple connections established.
+
+|*diagnose system print  route*
+|Show routing table of the Fortianalyzer.
+
+
+|===
+
+=== Communication debug
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|*diagnose test application oftpd 3*
+|List all devices sending logs to the Fortianalyzer with their IP addresses, serial numbers, _uptime_ meaning connection establishment uptime, not remote device uptime, and packets received (should be growing).
+
+|===
+
+
+=== Logs from devices
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|*diagnose test application oftpd 50*
+|Show log types received and stored for each device.
+
+
+|*diag log device*
+|Shows how much space is used by each device  logging to the Fortianalyzer, including quotas.
+
+|*diagnose fortilogd lograte*
+|Show in one line last 5/30/60 seconds rate of receiving logs.
+
+|*diagnose fortilogd lograte-adom all*
+|Show as table log receiving rates for all ADOMs aggregated per device type (i.e. rate for all Fortigates will be as one data per ADOM).
+
+|*diagnose fortilogd lograte-device*
+|
+
+
+
+
+
+
+|===
+
+
