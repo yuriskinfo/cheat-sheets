@@ -13,6 +13,26 @@ NOTE: To disable and stop immediately any debug, run *dia deb res* which is shor
 NOTE: All debug will run for 30 minutes by default, to increase use `diagnose debug duration <minutes>`, setting to 0 means unlimited by time. Reboot will reset this setting.
 
 
+<<Security rulebase debug (diagnose debug flow)>>
+<<General Health, CPU, and Memory>>
+<<Session stateful table>>
+<<High Availability Clustering debug>>
+<<IPSEC VPN debug>>
+<<SSL VPN debug>>
+<<Static Routing Debug>>
+<<Interfaces>>
+<<NTP debug>>
+<<SNMP daemon debug>>
+<<BGP>>
+<<Admin sessions>>
+<<Authentication>>
+<<Fortianalyzer logging  debug>>
+<<SD-WAN verification and debug>>
+<<Virtual Fortigate License Status>>
+
+
+
+
 == Security rulebase debug (diagnose debug flow)
 .Security rulebase diagnostics with `diagnose debug flow`
 [cols=2, options="header"]
