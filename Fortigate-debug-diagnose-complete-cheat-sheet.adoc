@@ -535,3 +535,23 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 
 
 |===
+
+
+== Virtual Fortigate License Status
+.Verify status of VM Fortigate License
+[cols=2, options='header"]
+|===
+|Command
+|Description
+
+|*get sys status \| grep -i lic*
+|Get status o fthe license (valid for Hardware Fortigate as well as VM). The corect status is `Valid`.
+
+|*diagnose debug vm-print-license*
+| Show detailed info on VM Fortigate license status: allowed CPUs and memory, date of license activation, license expiration date (if set), serial number.
+
+|*diagnose hardware sysinfo vm full*
+|Show license data as seen by FortiGuard: status (should be `valid=1`), last time it was checked (`recv`), answer code, should be `code: 200`, `code: 401` is for duplicate license found, `code: 502` is for VM cannot connect to FortiGuard, and `code: 400` is for invalid license. 
+
+
+|===
