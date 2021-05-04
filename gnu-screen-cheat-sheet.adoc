@@ -132,7 +132,4 @@ Connecting user (say _user2_):
 | See who is connected to your shared screen session.
 
 
-
-
-
 |===
