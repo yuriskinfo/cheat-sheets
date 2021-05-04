@@ -1,5 +1,5 @@
 = GNU screen terminal commands cheat sheet
-:author: Yuri Slobodyanyuk
+:author: Yuri Slobodyanyuk 
 
 Author: Yuri Slobodyanyuk, admin@yurisk.info
 
