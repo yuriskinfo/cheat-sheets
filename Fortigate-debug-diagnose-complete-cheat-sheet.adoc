@@ -29,6 +29,7 @@ NOTE: All debug will run for 30 minutes by default, to increase use `diagnose de
 <<Fortianalyzer logging  debug>> +
 <<SD-WAN verification and debug>> +
 <<Virtual Fortigate License Status>> +
+<<DNS server and proxy debug>> +
 
 
 
