@@ -576,3 +576,58 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 
 
 |===
+
+
+== DNS server and proxy debug
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|*get system dns*
+|Show configured DNS servers, DNS cache limit and TTL, source IP used, timeout and retry, whther NDS over TLS is enabled.
+
+|*diagnose test app dnsproxy 2*
+|Show the following statatistics: number of DNS process workers (if multiple), DNS latency against each server used, Secure DNS IP and latency - DNS server used for DNS filtering and Botnet detections, DNS cache usage, UDP vs TCP requests statistics, name of DNS Filter applied if any.
+
+|*diagnose test app dnsproxy 1*
+|Clear DNS responses cache
+
+|*diagnose test app dnsproxy 3*
+|Display detailed statistics for each DNS/SDNS server used and those that could be used.
+
+|*diagnose test app dnsproxy 7*
+|Show the responses cached entries.
+
+|*diagnose test app dnsproxy 6\|4\|5*
+| Work with FQDN resolved objects:
+
+`6` - Display currently resolved FQDN addresses
+
+`4,5` - Reload/Requery all FQDN addresses 
+
+|*diagnose test app dnsproxy 8*
+|Show DNS database of domain(s) configured on the Fortigate itself.
+
+|*diagnose test app dnsproxy 9*
+|Reload DNS database of domain(s) configured on the Fortigate itself.
+
+|*diagnose test app dnsproxy 10*
+|Show active SDNS, i.e. DNS Filter Policy used. Shows Categories as numbers, so not easily readable.
+
+|*diagnose test app dnsproxy 12*
+|Reload configuration of DNS Filter, in case the changes made do not take effect immediately.
+
+|*diagnose test app dnsproxy 15*
+|Show cached responses and their rating of the DNS Filter for each URL/domain scanned.
+
+|*diagnose test app dnsproxy 16*
+|Clear the DNS Filter responses and ratings cache.
+
+|*diagnose test app dnsproxy 99*
+|Restart the dns proxy service.
+
+
+
+
+|===
