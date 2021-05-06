@@ -1,0 +1,42 @@
+= Checkpoint Firewalls Debug Cheat Sheet
+
+
+== Cluster XL (ClusterXL) debug
+[cols=2,"options="header"]
+|===
+|command
+|Description
+
+|*cphaprob state*
+|Show status of the cluster  and its members, if down - show the descriptive reason and when the state change happened,type of clustering - HA/Load Sharing/VRRP, IP address of each member's sync interface, problematic _pnote_ that causes failover, number of failovers since last restart.
+
+|*cphaprob -ia list*
+|Show detailed information on the failed __pnote__/Critical Device of this member. List of  pnotes enabled by default (differs by version/model so not a reference): _Interface Active Check_, _Recovery Delay_ , _CoreXL Configuration_, _Fullsync_, _Policy/filter_, _routed_, _fwd_, _cphad_, _init_, _cvpnd_. 
+
+|*cphaprob -l list*
+|List ALL _pnotes_ of the member, including in _OK_ state.
+
+
+|*cphaprob -a if*
+|Show all the interfaces seen by the cluster on this member. _Monitored_ are interfaces monitored by the cluster and if failed would cause fail over. _Secured_ is/are interface(s) the cluster uses to synchronize members. In Checkpoint appliances it is usually named `Sync`. Also show cluster synchronization mode - broadcast/multicast, 
+
+|*cphaprob -m if*
+|Show the monitored interfaces but also add ClusterXL VLAN monitoring info - which VLANs on which interface are being monitored. 
+
+|*cphaprob syncstat*
+|Show detailed synchronization states and traffic statistics: sync traffic drops/sent/received/queue szie/delta interval. Good at showing network/communication problems between cluster members.
+
+|*cphaprob show_failover*
+|Show detailed history log of failover events with their dates and reasons. Checkpoint records last 20 failovers by default. 
+
+|*cphaprob mmagic*
+|Show the cluster magic number, relevant if multiple clusters are present in the same network.
+
+
+|*cphaprob show_bond*
+|Show bond interfaces.
+
+
+
+
+|===
