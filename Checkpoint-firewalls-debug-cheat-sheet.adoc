@@ -36,7 +36,7 @@
 |*cphaprob show_bond*
 |Show bond interfaces.
 
-
-
+|*cpview -> Advanced -> ClsuterXL*
+|Partial output of the above commands in TUI interface.
 
 |===
