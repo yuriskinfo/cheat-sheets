@@ -41,3 +41,14 @@ Anywhere                   ALLOW IN    10.10.10.0/24
 ----
 
 
+*ufw status numbered* - Show rules with their sequence numbers, that we can later use to delete some specific rule.
+
+----
+Status: active
+     To                         Action      From
+     --                         ------      ----
+[ 1] 22                         ALLOW IN    Anywhere                  
+[ 2] Anywhere                   ALLOW IN    10.10.10.0/24             
+[ 3] 22 (v6)                    ALLOW IN    Anywhere (v6)           
+----
+
