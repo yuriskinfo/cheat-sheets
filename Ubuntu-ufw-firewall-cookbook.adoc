@@ -10,12 +10,12 @@
 Beware: after running this command all access restrictions imposed by ufw rules will be gone.
 
 
-*ufw  disable*
+`*ufw  disable*`
 
 
 == Verify status of the ufw firewall
 
-*ufw status* - Show short status. +
+`*ufw status*` - Show short status. +
 ----
 Status: active
 
@@ -27,7 +27,7 @@ Anywhere                   ALLOW       10.10.10.0/24
 ----
 
 
-*ufw status  verbose* - Show  all rules, including the default ones, and logging level.
+`*ufw status  verbose*`- Show  all rules, including the default ones, and logging level.
 ----
 Status: active
 Logging: on (low)
@@ -42,7 +42,7 @@ Anywhere                   ALLOW IN    10.10.10.0/24
 ----
 
 
-*ufw status numbered* - Show rules with their sequence numbers, that we can later use to delete some specific rule.
+`*ufw status numbered*` - Show rules with their sequence numbers, that we can later use to delete some specific rule.
 
 ----
 Status: active
