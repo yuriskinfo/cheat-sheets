@@ -59,6 +59,6 @@ Status: active
 
 
 == Allow SSH access to this server from Any IP source
-*ufw allow 22* - Add port 22 to the `filter` table with action of `allow`. The rule will be added to the `/etc/ufw/user.rules` file and will survive reboot.
+`*ufw allow 22*` - Add port 22 to the `filter` table with action of `allow`. The rule will be added to the `/etc/ufw/user.rules` file and will survive reboot.
 
 
