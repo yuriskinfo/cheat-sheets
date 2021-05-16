@@ -15,7 +15,7 @@ Beware: after running this command all access restrictions imposed by ufw rules 
 
 == Verify status of the ufw firewall
 
-`*ufw status*` - Show short status. +
+`*# ufw status*` - Show short status. +
 ----
 Status: active
 
