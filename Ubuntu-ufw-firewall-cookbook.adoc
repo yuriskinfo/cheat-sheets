@@ -1,0 +1,43 @@
+= Ubuntu Uncomplicated Firewall (ufw) cookbook of configuration examples
+
+<<Disable/unload the firewall>> +
+<<Verify status of the ufw firewall>> +
+<<Enable ufw firewall>> +
+
+
+== Disable/unload the firewall
+Beware: after running this command all access restrictions imposed by ufw rules will be gone.
+
+
+*ufw  disable*
+
+
+== Verify status of the ufw firewall
+
+*ufw status* - Show short status. +
+----
+Status: active
+
+To                         Action      From
+--                         ------      ----
+22                         ALLOW       Anywhere                  
+Anywhere                   ALLOW       10.10.10.0/24             
+22 (v6)                    ALLOW       Anywhere (v6)             
+----
+
+
+*ufw status  verbose* - Show  all rules, including the default ones, and logging level.
+----
+Status: active
+Logging: on (low)
+Default: deny (incoming), allow (outgoing), allow (routed)
+New profiles: skip
+
+To                         Action      From
+--                         ------      ----
+22                         ALLOW IN    Anywhere                  
+Anywhere                   ALLOW IN    10.10.10.0/24             
+22 (v6)                    ALLOW IN    Anywhere (v6)             
+----
+
+
