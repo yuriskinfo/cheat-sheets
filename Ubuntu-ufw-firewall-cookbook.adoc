@@ -3,6 +3,7 @@
 <<Disable/unload the firewall>> +
 <<Verify status of the ufw firewall>> +
 <<Enable ufw firewall>> +
+<<Allow SSH access to this server from Any IP source>>
 
 
 == Disable/unload the firewall
@@ -55,5 +56,9 @@ Status: active
 
 == Enable ufw firewall
 *ufw enable* - Enable _ufw_ firewall and load the default rules, as well as user created if any in the `/etc/ufw/user.rules`. 
+
+
+== Allow SSH access to this server from Any IP source
+*ufw allow 22* - Add port 22 to the `filter` table with action of `allow`. The rule will be added to the `/etc/ufw/user.rules` file and will survive reboot.
 
 
