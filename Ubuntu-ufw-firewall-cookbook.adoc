@@ -52,3 +52,8 @@ Status: active
 [ 3] 22 (v6)                    ALLOW IN    Anywhere (v6)           
 ----
 
+
+== Enable ufw firewall
+*ufw enable* - Enable _ufw_ firewall and load the default rules, as well as user created if any in the `/etc/ufw/user.rules`. 
+
+
