@@ -4,6 +4,7 @@
 <<Verify status of the ufw firewall>> +
 <<Enable ufw firewall>> +
 <<Allow SSH access to this server from Any IP source>>
+<<Delete a rule by its number>>
 
 
 == Disable/unload the firewall
@@ -60,5 +61,23 @@ Status: active
 
 == Allow SSH access to this server from Any IP source
 `*ufw allow 22*` - Add port 22 to the `filter` table with action of `allow`. The rule will be added to the `/etc/ufw/user.rules` file and will survive reboot.
+
+
+
+== Delete a rule by its number
+`*ufw delete <rule number>*` +
+First, see the rule numbers with `*ufw status numbered*`. Let's say I want to delete rule number 2:
+
+----
+# ufw delete 2
+Deleting:
+ allow from 10.10.10.0/24
+Proceed with operation (y|n)? y
+Rule deleted
+----
+
+On deleting a rule, the ufw moves rules up, taking place of the removed rule in sequencing. That is, the rule that was numbered 3 before the deletion of rule 2, will become new rule number 2.
+
+
 
 
