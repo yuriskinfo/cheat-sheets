@@ -5,6 +5,7 @@
 <<Enable ufw firewall>> +
 <<Allow SSH access to this server from Any IP source>>
 <<Delete a rule by its number>>
+<<Delete a rule by its number>>
 
 
 == Disable/unload the firewall
