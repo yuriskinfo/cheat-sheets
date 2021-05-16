@@ -3,8 +3,7 @@
 <<Disable/unload the firewall>> +
 <<Verify status of the ufw firewall>> +
 <<Enable ufw firewall>> +
-<<Allow SSH access to this server from Any IP source>>
-<<Delete a rule by its number>> +
+<<Allow SSH access to this server from Any IP source>> +
 <<Delete a rule by its number>> +
 
 
