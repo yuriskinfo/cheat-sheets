@@ -317,7 +317,10 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 | Same as above but for NP6-lite.
 
 |*fnsysctl ifconfig <interface name>*
-|Gives the same info as Linux `ifconfig`. The only way to see the MTU of the interface.
+|Gives the same info as Linux `ifconfig`. The only way to see the actual MTU of the interface.
+
+|*fnsysctl cat /proc/net/dev*
+|Similar to `netstat` shows errors on the interfaces, drops, packets sent/received. 
 
 |*diagnose ip address list*
 |Show IP addresses configured on all the Fortigate interfaces.
