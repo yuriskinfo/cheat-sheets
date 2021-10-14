@@ -1,7 +1,7 @@
 = GNU screen terminal commands cheat sheet
 :author: Yuri Slobodyanyuk 
 
-Author: Yuri Slobodyanyuk, admin@yurisk.info
+Follow me on https://linkedin.com/in/yurislobodyanyuk/ for updates.
 
 [cols=2,options="header"]
 |===
@@ -133,3 +133,5 @@ Connecting user (say _user2_):
 
 
 |===
+
+Follow me on https://linkedin.com/in/yurislobodyanyuk/ to stay updated.
