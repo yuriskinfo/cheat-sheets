@@ -12,7 +12,7 @@ NOTE: `C-a` below stands for `Ctrl + a` keyboard sequence.
 |Description
 
 |*~/.screenrc* & */etc/screenrc*
-| Commands the screen runs on start up.
+| Commands that the `screen runs on start up.
 
 |*screen -ls*
 |List active screen sessions
@@ -42,13 +42,13 @@ NOTE: `C-a` below stands for `Ctrl + a` keyboard sequence.
 |Switch to the previous window.
 
 |*C-a "*
-|List all windows with option to highlight and enter any of them.
+|List all windows with option to navigate and enter any of them.
 
 |*C-w*
 |Show a list of active windows with their numbers.
 
 |*C-a <number>*
-|Switch to the window number `number`.
+|Switch to the window number _number_.
 
 |*C-a '*
 |Switch to the window by its name.
@@ -67,7 +67,7 @@ NOTE: `C-a` below stands for `Ctrl + a` keyboard sequence.
 |Kill the current window forcefully (not recommended).
 
 |*C-a : quit*
-| Quit screen session compeltely terminating it. Alternatively - exit all screen windows.
+| Quit screen session completely terminating it. Alternatively - exit all screen windows.
 
 |*C-a A*
 |Rename current window.
@@ -81,8 +81,8 @@ NOTE: `C-a` below stands for `Ctrl + a` keyboard sequence.
 |*C-a tab*
 |Jump to the next region in a split window display.
 
-|*C-a X*
-|Remove the region in focus.
+|*C-a Q*
+| Unsplit the window, leaving the current window active.
 
 |*C-a [* or *C-a <esc>*
 |Enter buffer navigation mode to scroll output buffer, copy, edit and paste later. Navigation commands as per `vim` if Vim is set as editor.*<esc>* to leave the buffer mode.
@@ -94,7 +94,7 @@ NOTE: `C-a` below stands for `Ctrl + a` keyboard sequence.
 |Paste the selected text at the cursor of the terminal, or create a new window and say start Vim there and paste into it while in Insert mode.
 
 |*C-a h*
-|Dump the contents of the currently visible terminal to `hardcopy.<n>` file, where <n> is auto-incrementing number of your window.
+|Dump the contents of the currently visible terminal to `hardcopy.<n>` file, where _n_ is auto-incrementing number of your window.
 
 |*C-a H*
 |Start/end logging all output of the curent window into a file `screenlog.N` where `N` is the window number. The data is appended, not overwritten if the file exists. Output printed before that is not logged. 
@@ -106,7 +106,7 @@ NOTE: `C-a` below stands for `Ctrl + a` keyboard sequence.
 |Monitor window for activity. When enabled, will notify you of any acitvity while you work in other window.
 
 |*C-a _*
-| Monitor window for 30 seconds of silence, will notify you in any other window as `Window 0: silence for 30 seconds `
+| Monitor window for 30 seconds of silence, will notify you in any other window as `Window 0: silence for 30 seconds`
 
 |*C-a ?*
 |Show all key bindings help.
