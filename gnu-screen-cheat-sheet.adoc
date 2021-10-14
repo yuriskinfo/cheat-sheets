@@ -12,7 +12,7 @@ NOTE: `C-a` below stands for `Ctrl + a` keyboard sequence.
 |Description
 
 |*~/.screenrc* & */etc/screenrc*
-| Commands that the `screen runs on start up.
+| Commands that the `screen` runs on start up.
 
 |*screen -ls*
 |List active screen sessions
