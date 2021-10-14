@@ -3,6 +3,8 @@
 
 Follow me on https://linkedin.com/in/yurislobodyanyuk/ for updates.
 
+NOTE: `C-a` below stands for `Ctrl + a` keyboard sequence.
+
 [cols=2,options="header"]
 |===
 
