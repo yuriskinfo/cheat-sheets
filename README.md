@@ -1,5 +1,8 @@
 # Configuration, Debug and diagnostics cheat sheets
 
+All cheats sheets I created/create while doing my daily hands-on tasks on the production equipment. 
+Make sure to __watch__ this repository, and follow me on https://www.linkedin.com/in/yurislobodyanyuk/ to get updates on additions/new ones.  
+
 
 ## Network and Security vendors (Fortinet, Cisco, Rad, HP/Aruba)
 
