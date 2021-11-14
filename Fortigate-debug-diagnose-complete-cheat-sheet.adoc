@@ -30,6 +30,7 @@ NOTE: All debug will run for 30 minutes by default, to increase use `diagnose de
 <<SD-WAN verification and debug>> +
 <<Virtual Fortigate License Status>> +
 <<DNS server and proxy debug>> +
+<<Administrator GUI access and API automation requests debug>> +
 
 
 
@@ -633,5 +634,21 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 
 
 
+
+|===
+
+
+== Administrator GUI access and API automation requests debug
+
+[cols=2, options="header"]
+|===
+|Command
+|Descritption
+
+|*diagnose debug httpsd -1*
+
+*diagnose debug application httpsd -1*
+
+|Enable diagnostics for administrator and remote REST API access via `api-user`. When debugging API automation, refrain from working in admin GUI as it will produce a lot of unrelated output.    
 
 |===

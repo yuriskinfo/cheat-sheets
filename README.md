@@ -1,4 +1,4 @@
-# Configuration, Debug and diagnostics cheat sheets
+# Configuration, Debug and diagnostics cheat sheets for Network and Linux based equipment
 
 All cheats sheets I created/create while doing my daily hands-on tasks on the production equipment. 
 Make sure to __watch__ this repository, and follow me on https://www.linkedin.com/in/yurislobodyanyuk/ to get updates on additions/new ones.  
