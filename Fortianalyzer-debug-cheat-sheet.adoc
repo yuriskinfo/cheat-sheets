@@ -102,6 +102,7 @@ Yuri Slobodyanyuk <admin@yurisk.info>
 |Show summary log receive rate for all devices on this Fortianalyzer.
 
 
+
 |===
 
 === Licensing

@@ -1,0 +1,53 @@
+= Ed text editor cheat sheet
+:author: Yuri Slobodyanyuk 
+
+Follow me on https://linkedin.com/in/yurislobodyanyuk/ for updates.
+
+NOTE: The cheat sheet is for GNU version of `ed`. All values in () are optional.
+
+.Command mode
+[cols=2,options="header"]
+|===
+
+|Command
+|Description
+
+|*[_n_]a*
+| Append - enter input mode by appending a new line after the current, or, if _n_ is given, after the _nth_ line. Use 0 for _n_ to append at the top of the buffer. 
+
+|*[_n_]i*
+|Insert - enter the input mode by inserting a new line before the current or the _nth_ line, if given. Use 0 as _n_ to insert at the top of the buffer
+
+|*[_n_]c*
+|Change - enter the input mode by changing the current, or the _nth_ line if given. The current (or specified) line gets deleted before you start typing a new one.
+
+|*[_start,end_]m[_dest_]*
+|Move lines, including, from _start_ up to the _end_ after the _dest_ destination line. 
+
+|*e [_filename_]*
+|Edit a file - _filename_ if given, default if not. 
+WARNING: Current buffer and all of its changes is discarded.
+
+|*[_start,end_]w [_filename_]*
+| Write the current buffer (whole or just lines between _start_ and _end_) to a _filename_ if given or the currently set with the `file` command. The contents of the _filename_ is overwritten! 
+
+|*[_start, end_]W [_filename_]*
+|Write by appending the buffer to the file _filename_, the current contents of the _filename_ are not overwritten.
+
+|===
+
+.Input mode
+[cols=2, options="header"]
+|===
+
+|Command
+|Description
+
+|*.* (dot on a line by itself)
+|Switch from input to the command mode. The . (dot) should be entered on a new line by itself, then <Enter>. 
+
+
+
+
+
+|===
