@@ -3,7 +3,7 @@
 
 Follow me on https://linkedin.com/in/yurislobodyanyuk/ for updates.
 
-NOTE: The cheat sheet is for GNU version of `ed`. All values in () are optional.
+NOTE: The cheat sheet is for GNU version of `ed`. All values in [] are optional. `ed` fully supports Unicode.
 
 .Command mode
 [cols=2,options="header"]
@@ -13,26 +13,48 @@ NOTE: The cheat sheet is for GNU version of `ed`. All values in () are optional.
 |Description
 
 |*[_n_]a*
-| Append - enter input mode by appending a new line after the current, or, if _n_ is given, after the _nth_ line. Use 0 for _n_ to append at the top of the buffer. 
+| Append - append a new line after the current , or, if _n_ is given, after the _nth_ line, then enter input mode. Use 0 (zero) for _n_ to append at the top of the buffer. 
 
 |*[_n_]i*
-|Insert - enter the input mode by inserting a new line before the current or the _nth_ line, if given. Use 0 as _n_ to insert at the top of the buffer
+|Insert - insert a new line before the current or the _nth_ line, if given, then enter the input mode. Use 0 as _n_ to insert at the top of the buffer
 
 |*[_n_]c*
-|Change - enter the input mode by changing the current, or the _nth_ line if given. The current (or specified) line gets deleted before you start typing a new one.
+|Change - change the current, or the _nth_ line if given, then enter the input mode. The current (or specified) line gets deleted before you start typing a new one.
 
 |*[_start,end_]m[_dest_]*
 |Move lines, including, from _start_ up to the _end_ after the _dest_ destination line. 
+
+|*[_start,end_]t[_dest_]*
+| Transfer - copy lines _start_ through _end_ after the _dest_ line. If no line numbers are given, copies the current line and pastes underneath. 
 
 |*e [_filename_]*
 |Edit a file - _filename_ if given, default if not. 
 WARNING: Current buffer and all of its changes is discarded.
 
 |*[_start,end_]w [_filename_]*
-| Write the current buffer (whole or just lines between _start_ and _end_) to a _filename_ if given or the currently set with the `file` command. The contents of the _filename_ is overwritten! 
+| Write the current buffer (whole or just lines between _start_ and _end_) to a _filename_ if given or the currently set with the `file` command. The contents of the _filename_ is overwritten! Ed reports number of characters written on success.
 
 |*[_start, end_]W [_filename_]*
-|Write by appending the buffer to the file _filename_, the current contents of the _filename_ are not overwritten.
+|Write by appending the buffer to the file _filename_, the current contents of the _filename_ are not overwritten. Ed reports number of characters written on success.
+
+|*[.]=*
+| Show number of lines in the buffer, or, if `.` (dot) is given `.=`, show the line number of the current line.
+
+|*P*
+|Show/hide prompt, * (asterisk) is the default. 
+
+|*! _shell command(s)_*
+| Run the given _shell command(s)_ displaying their output without leaving the `ed`. Hitting <Enter> returns to the `ed` buffer. The shell's output is not kept or redirected to the buffer in any way.
+
+|*r*
+|Read
+
+|*r !_shell command(s)_*
+|Run the shell command 
+
+|*[_start_,_end_]p*
+| Print lines from _start_ to _end_ or current if not set. Sets current line to the last line printed. 
+
 
 |===
 
