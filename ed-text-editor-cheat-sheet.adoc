@@ -43,6 +43,9 @@ WARNING: Current buffer and all of its changes is discarded.
 |*P*
 |Show/hide prompt, * (asterisk) is the default. 
 
+|*H*
+|Turn on/off verbose error indication mode. With this mode off, `ed` only outputs `?` for any error without additional info.
+
 |*! _shell command(s)_*
 | Run the given _shell command(s)_ displaying their output without leaving the `ed`. Hitting <Enter> returns to the `ed` buffer. The shell's output is not kept or redirected to the buffer in any way.
 
@@ -54,6 +57,25 @@ WARNING: Current buffer and all of its changes is discarded.
 
 |*[_start_,_end_]p*
 | Print lines from _start_ to _end_ or current if not set. Sets current line to the last line printed. 
+
+|*q*
+|Quit the `ed`, warns if there are unsaved changes, if repeated 2nd time, quits discarding any unsaved changes.
+
+|*Q*
+|Quit `ed` unconditionally, discarding any unsaved changes.
+
+|*u*
+|Undo the last change. `ed` has only one level of uno, entering `u` the second time redoes the change undone before.
+
+|*_n_*
+|Go to the line _n_.
+
+|*[_starting_address_]z[_lines-to-scroll_]*
+| Scroll default 24 lines down, if _lines-to-scroll_ is not given. Optionally, start scrolling not from the current line (default), but from the line number  _starting_address_. Resets current line to the last line after scrolling position.
+
+
+|*[_start_,_end_]n*
+|Print _start_,_end_ lines prefixed by their line number, analog of *p* but prints line numbers as well. Use `,n` to print the whole buffer with line numbers.
 
 
 |===
@@ -68,6 +90,9 @@ WARNING: Current buffer and all of its changes is discarded.
 |*.* (dot on a line by itself)
 |Switch from input to the command mode. The . (dot) should be entered on a new line by itself, then <Enter>. 
 
+
+|*CTRL + C*
+|Discard the changes done in the current input mode sequence, and return to the command mode. Only changes since entering last input mode are discarded, not the whole session.
 
 
 
