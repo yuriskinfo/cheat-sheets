@@ -1,0 +1,119 @@
+= Checkpoint `cpstat` diagnostics and information tool cheat sheet
+
+NOTE: The tool is to be run in Expert mode. It is available on both Management Server and Gateway. The available *flavor* options depend on the blades enabled and their subscription status, also on platform used. To know what options are available on your specific Checkpoint - run `#cpstat` without any switches.
+
+status: Work in Progress.
+
+:toc: 
+
+== blades
+
+[cols=2, options="header"]
+|===
+|Flavor
+|Description
+
+|*fw*
+|Statistics: Packets accepted, packets dropped, Peak number of connections, current Number of connections, Top Rule Hits (shows rules with IDs with the most hits), 
+
+|===
+
+
+== fg
+[cols=2, options="header"]
+|===
+|Flavor
+|Description
+
+|*all*
+| QOS version, kernel build, QOS Policy name, QOS Policy install time, interface table with statistics for average Bps/conns/packets, per interface limits.
+
+|===
+
+
+== https_inspection
+[cols=2, options="header"]
+|===
+
+|Flavor
+|Description
+
+|*default*
+|State of HTTPS Inspection: On/Off.
+
+|*hsm_status*
+|Status of Hardware Security Module (HSM): Enabled/Disabled, HSM partition access, status for outbound HTTPS Inspection: HSM on/HSM off/HSM error.
+
+|*all*
+| Combined output from `default` and `hsm_status` flavors.
+
+|===
+
+
+
+== antimalware
+[cols=2, options="header"]
+|===
+|Flavor
+|Description
+
+|*default*
+|Status of the antimalware blade (0 - disabled, 1 - enabled).
+
+|*subscription_status*
+| Subscription status for each Anti-Bot/Anti-Virus/Anti-Spam component. Info includes status, expiration date, description.
+
+|*update_status*
+|Antimalware blade updates status for Anti-Bot/Anti-Virus/Anti-Spam. The info includes status (`up to date`), Database version, package date, whether the next update is scheduled to run. 
+
+
+|*ab_prm_contracts*
+| Anti-Malware premium contracts information: contract state, update status, DB version.
+
+|*av_prm_contracts*
+| Anti-Virus premium contracts information: contract state, update status, DB version.
+
+|*scanned_hosts*
+|Statistics for number of Scanned Hosts for Hour/Day/Week. Stats for number of  Infected Hosts for Hour/Day/Week. 
+
+|*scanned_mails*
+| Number of scanned mails.
+
+|===
+
+
+== dlp
+[cols=2, options="header"]
+|===
+
+|Flavor
+|Description
+
+|*default*
+|DLP status code.
+
+|*dlp*
+|Version, License status, LDAP Status, Traffic scans, DLP incidents, Scanned e-mails, E-mail incidents, Last E-mail scan, Quarantined messages, Size of quarantined messages, Sent e-mails, Expired e-mails, Discarded e-mails, Postfix queue length, Postfix errors, E-mails in queue older than 1 hour, Size of messages in queue, Free space in queue, Free space for quarantine, Quarantine status, HTTP scans, HTTP incidents, HTTP last scan, FTP scans, FTP incidents, FTP last scan, Bypass status, UserCheck clients, Last policy install status, Last scan time.
+
+
+|*fingerprint*
+|Fingerprint Current/Completed Tables DB info: Repository Id, Data Type Uid,Repository Root Path, Scan Id, Start Time, Repository Total Size, Repository Files, Repository Total Files Scanned, Duration,Status, Status Description, Repository Total Directories, Repository Unreach Total Directories, Fingerprinted Total Files, Total Skipped Files, Total Scanned Directories, Total Errors, Description, Data type name, Next Scheduled Scan Date.
+
+
+|*exchange_agents*
+|Status of Exchange agents: Name, Status, Total messages, Total scanned, Dropped, Uptime, Time since last message, Agent queue length, Exchange queue length, Avg. time per message, Avg. time per scanned message, Version, CPU usage, Memory usage, Policy timestamp.
+
+|===
+
+
+== ctnt - Content Awareness
+[cols=2, options="headers"]
+|===
+
+|Flavor
+|Description
+
+|*default*
+|Is Content Awareness blade active: True/False. Total files scanned, total data types detected.
+
+|===

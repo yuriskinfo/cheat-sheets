@@ -77,6 +77,8 @@ WARNING: Current buffer and all of its changes is discarded.
 |*[_start_,_end_]n*
 |Print _start_,_end_ lines prefixed by their line number, analog of *p* but prints line numbers as well. Use `,n` to print the whole buffer with line numbers.
 
+|*[_start_, _end_]s/_regex_/_replacement_/[g]*
+|Substitute - on lines _start_ to _end_, find 1st occurrence of _regex_ from the left (or all the occurrences if `g` for Global prefix is added) and replace with the _replacement_.
 
 |===
 
