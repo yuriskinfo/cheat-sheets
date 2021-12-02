@@ -19,6 +19,69 @@ status: Work in Progress.
 |===
 
 
+== os
+[cols=2, options="header"]
+|===
+
+|Flavor
+|Description
+
+|*default*
+| Product Name, SVN Foundation Version String, SVN Foundation Build Number, SVN Foundation Status (`OK`), OS Name (e.g. `Gaia`), OS Major Version (`3`), OS Minor Version (`10`), OS Build Number/SP Major/SP Minor/Version Level, Appliance SN (Serial Number), Appliance Name, Appliance Manufacturer.
+
+|*ifconfig*
+|Interface information: Name, IP Address, MTU, State, MAC address, RX Bytes (Received), TX Bytes (Transmitted), RX/TX Errors, RX/TX Drops, TX/RX Packets.
+
+|*routing*
+| Routing info - IPv4 routing table.
+
+|*routing6*
+|IPv6 routing table.
+
+|*memory*
+|Physical/virtual memory specs: Total/Active Virtual Memory, Total/Active/Free Real Memory, Memory Swaps/sec, Memory to Disk Transfers/sec.
+
+|*cpu*
+|CPU load stats (analog of Linux `top`): CPU User Time (%), CPU System Time (%), CPU Idle Time (%), CPU Usage (%), CPU Queue Length, CPU Interrupts/Sec, CPUs Number.
+
+|*disk*
+|Local hard disk stats: Disk Servicing Read\Write Requests Time, Disk Requests Queue, Disk Free Space (%), Disk Total Free Space (Bytes), Disk Available Free Space (Bytes), Disk Total Space (Bytes). 
+
+|*perf*
+|Combined output of flavors `memory`, `cpu`, and `disk` above.
+
+|*multi_cpu*
+| CPU load as in `cpu`, but per processor/core.
+
+|*multi_disk*
+|Disk partitioning info, analog of `df -h`: Partition Name, Size, Used (%/bytes), Free Total (%/bytes), Free Available.
+
+|*raidInfo*
+|RAID disks and volumes info: Volume id, Volume type, Number of disks, Max LBA, Volume state, Volume flags, Volume size (GB), Volume id, Disk id, Disk number, Disk vendor, Disk product id, Disk revision, Disk max LBA, Disk state, Disk flags, Disk sync state, Disk size (GB).
+
+
+
+
+
+|===
+
+
+== mg
+[cols=2,options="header"]
+|===
+|Flavor
+|Description
+
+|*default*
+|Show management sessions info: administrator username currently connected, Windows domain name of the administrator PC or its IP address, and general Checkpoint Management server info like Product Name, Major/Minor versions, Build number, whether started or not, status (`OK`).
+
+|*log_server*
+|Log server stats and info: Log Receive Rate, Log Receive Rate Peak, Log Receive Rate Last 10 Minutes, Log Receive Rate Last Hour, Log Server Connected Gateways, their state (`connected`/`not connected`), Last Login Time, Log Receive Rate.
+
+|*indexer*
+|Log Indexer stats: Total Read Logs, Total Updates and Logs Indexed, Total Read Logs Errors, Total Updates and Logs Indexed Errors, Updates and Logs Indexed Rate, Read Logs Rate, Updates and Logs Indexed Rate (10min), Read Logs Rate (10min), Updates and Logs Indexed Rate (60min), Read Logs Rate (60min), Updates and Logs Indexed Rate Peak, Read Logs Rate Peak, Read Logs Delay.
+
+|===
 == fg
 [cols=2, options="header"]
 |===
