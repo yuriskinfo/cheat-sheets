@@ -1,7 +1,9 @@
 = Ed text editor cheat sheet
 :author: Yuri Slobodyanyuk 
 
-Follow me on https://linkedin.com/in/yurislobodyanyuk/ for updates.
+Author: Yuri Slobodyanyuk, https://linkedin.com/in/yurislobodyanyuk/ .
+
+STATUS: Work in progress.
 
 NOTE: The cheat sheet is for GNU version of `ed`. All values in [] are optional. `ed` fully supports Unicode.
 

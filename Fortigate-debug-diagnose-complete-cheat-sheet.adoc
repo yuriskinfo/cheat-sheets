@@ -1,9 +1,7 @@
 = Fortigate debug and diagnose commands complete cheat sheet
-Yuri Slobodyanyuk <admin@yurisk.info>
-v1.0, 2020-09-01
 :homepage: https://yurisk.info
 
-Author: Yuri Slobodyanyuk, admin@yurisk.info
+Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
 
 
 NOTE: To enable debug set by any of the commands below, you need to run *diagnose debug enable*. This is assumed and not reminded any further.

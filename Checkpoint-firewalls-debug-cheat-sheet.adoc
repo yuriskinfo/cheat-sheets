@@ -1,5 +1,8 @@
 = Checkpoint Firewalls Debug Cheat Sheet
 
+Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
+
+Status: Work in progress.
 
 == Cluster XL (ClusterXL) debug
 [cols=2,"options="header"]

@@ -1,5 +1,7 @@
 = Checkpoint `cpstat` diagnostics and information tool cheat sheet
 
+Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
+
 NOTE: The tool is to be run in Expert mode. It is available on both Management Server and Gateway. The available *flavor* options depend on the blades enabled and their subscription status, also on platform used. To know what options are available on your specific Checkpoint - run `#cpstat` without any switches.
 
 status: Work in Progress.

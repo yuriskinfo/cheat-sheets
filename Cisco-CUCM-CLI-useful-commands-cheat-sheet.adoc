@@ -3,7 +3,7 @@ Yuri Slobodyanyuk <admin@yurisk.info>
 v1.0, 2021-02-22
 :homepage: https://yurisk.info
 
-Yuri Slobodyanyuk, https://yurisk.info
+Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
 
 
 [cols=2,options="header"]
