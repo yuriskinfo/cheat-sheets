@@ -12,7 +12,7 @@ status: Work in Progress.
 <<fg>> +
 <<https_inspection>> +
 <<antimalware>> +
-<<dlp>> +
+<<dlp - DLP>> +
 <<ctnt - Content Awareness>> +
 
 
