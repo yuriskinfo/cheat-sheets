@@ -6,7 +6,16 @@ NOTE: The tool is to be run in Expert mode. It is available on both Management S
 
 status: Work in Progress.
 
-:toc: 
+<<blades>> +
+<<os>> +
+<<mg>> +
+<<fg>> +
+<<https_inspection>> +
+<<antimalware>> +
+<<dlp>> +
+<<ctnt - Content Awareness>> +
+
+
 
 == blades
 
