@@ -6,6 +6,11 @@ Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
 :toc: auto
 
 
+<<General Health>> +
+<<Communication debug>> +
+<<Logs from devices>> +
+<<Licensing>> +
+
 
 == General Health
 [cols=2, options="header"]
