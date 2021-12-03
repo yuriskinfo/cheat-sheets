@@ -1,10 +1,10 @@
-# Configuration, Debug and diagnostics cheat sheets for Network and Linux based equipment
+# Configuration, Debug and Diagnostics cheat sheets for Network and Linux based equipment
 
-All cheats sheets I created/create while doing my daily hands-on tasks on the production equipment. 
-Make sure to __watch__ this repository, and follow me on https://www.linkedin.com/in/yurislobodyanyuk/ to get updates on additions/new ones.  
+All cheat sheets I created/create while doing my daily hands-on tasks on the production equipment. 
+Make sure to __watch__ this repository, also follow me on https://www.linkedin.com/in/yurislobodyanyuk/ to get updates on additions/new ones.  
 
 
-## Network and Security vendors (Fortinet, Cisco, Rad, HP/Aruba)
+## Network and Security vendors (Fortinet, Cisco, Checkpoint, Rad, MRV, HP/Aruba)
 
 [Fortigate debug and diagnose commands complete cheat sheet](Fortigate-debug-diagnose-complete-cheat-sheet.adoc) | [PDF](Fortigate-debug-diagnose-complete-cheat-sheet.pdf)
 

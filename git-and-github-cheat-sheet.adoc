@@ -1,7 +1,7 @@
 = Git and github.com cheat sheet
 :author: Yuri Slobodyanyuk
 
-Author: Yuri Slobodyanyuk, admin@yurisk.info
+Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
 
 [cols=2,options="header"]
 |===

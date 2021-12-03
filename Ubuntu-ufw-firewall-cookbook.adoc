@@ -1,5 +1,7 @@
 = Ubuntu Uncomplicated Firewall (ufw) cookbook of configuration examples
 
+Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
+
 <<Disable/unload the firewall>> +
 <<Verify status of the ufw firewall>> +
 <<Enable ufw firewall>> +

@@ -3,8 +3,11 @@ Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
 
 :homepage: https://yurisk.info
 
+:toc: auto
 
-=== General Health
+
+
+== General Health
 [cols=2, options="header"]
 |===
 |Command
@@ -51,7 +54,7 @@ Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
 
 |===
 
-=== Communication debug
+== Communication debug
 [cols=2, options="header"]
 |===
 |Command
@@ -77,7 +80,7 @@ Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
 |===
 
 
-=== Logs from devices
+== Logs from devices
 [cols=2, options="header"]
 |===
 |Command
@@ -106,7 +109,7 @@ Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
 
 |===
 
-=== Licensing
+== Licensing
 [cols=2, options="header"]
 |===
 |Command
@@ -118,6 +121,8 @@ Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
 |*diagnose debug vminfo*
 |Show report on Virtual Machine license: whether valid or not, type, licensed  storage volume, licensed log receive rate, licensed maximum device count.
 
+
+|===
 
 
 

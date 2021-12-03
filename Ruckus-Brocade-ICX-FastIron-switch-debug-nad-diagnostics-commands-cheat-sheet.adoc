@@ -1,9 +1,7 @@
 = Ruckus ICX switches  7150, 7250, 7450, 7650, 7750, 7850 diagnostics commands
-Yuri Slobodyanyuk <admin@yurisk.info>
-v1.0, 2021-01-31
+Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/ 
 :homepage: https://yurisk.info
 
-Author: Yuri Slobodyanyuk, admin@yurisk.info
 
 
 NOTE: When in doubt, use Cisco IOS-like commands, as most are equivalent. 

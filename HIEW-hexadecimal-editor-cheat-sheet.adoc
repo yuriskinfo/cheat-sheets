@@ -1,6 +1,6 @@
 = HIEW hexadecimal editor and disassembler cheat sheet
 
-Author: Yuri Slobodyanyuk, admin@yurisk.info
+Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
 
 [cols=2,options="header"]
 |===

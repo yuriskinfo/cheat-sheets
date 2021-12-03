@@ -1,9 +1,7 @@
 = Fortigate debug and diagnose commands complete cheat sheet
-Yuri Slobodyanyuk <admin@yurisk.info>
-v1.0, 2021-02-02
+Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
 :homepage: https://yurisk.info
 
-Author: Yuri Slobodyanyuk, admin@yurisk.info
 
 Reference: https://docs.fortinet.com/document/fortigate/6.4.0/fortios-log-message-reference/384955/traffic
 
@@ -182,5 +180,5 @@ Reference: https://docs.fortinet.com/document/fortigate/6.4.0/fortios-log-messag
 |lanout
 |Numerical, equals to _lanin_
 
-|shaperdropsentbyte
 
+|===

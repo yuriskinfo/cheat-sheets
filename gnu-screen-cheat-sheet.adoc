@@ -1,7 +1,7 @@
 = GNU screen terminal commands cheat sheet
 :author: Yuri Slobodyanyuk 
 
-Follow me on https://linkedin.com/in/yurislobodyanyuk/ for updates.
+Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
 
 NOTE: `C-a` below stands for `Ctrl + a` keyboard sequence.
 

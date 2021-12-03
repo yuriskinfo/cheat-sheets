@@ -1,6 +1,6 @@
 = MRV Optiswitch OS904 OS906 OS912 debug and diagnostic commands
 
-Author: Yuri Slobodyanyuk, admin@yurisk.info
+Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
 
 *MRV Communications* (acquired in 2017 by ADVA Optical Networking) is an Israeli company known for their optical network equipment, most notably their Optiswitch Carrier Ethernet Switch series. The switches (OS904, OS906G, OS912) are not available for purchase from them anymore, but if you work for a telco company, you surely still have these boxes around doing their work.
 
