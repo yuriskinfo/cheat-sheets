@@ -71,7 +71,25 @@ status: Work in Progress.
 |RAID disks and volumes info: Volume id, Volume type, Number of disks, Max LBA, Volume state, Volume flags, Volume size (GB), Volume id, Disk id, Disk number, Disk vendor, Disk product id, Disk revision, Disk max LBA, Disk state, Disk flags, Disk sync state, Disk size (GB).
 
 
+|*sensors*
+|Shows appliance hardware sensors stats: Temperature Sensors, Fan Speed Sensors, Voltage Sensors. Not relevant for Open Servers. 
 
+|
+
+|===
+
+
+== ha - ClusterXL
+[cols=2,options="header"]
+|===
+|Flavor
+|Description
+
+|*default*
+|Shows clusterXL version, Status (`OK`), Wokring Mode (Load SHaring/High Availability), State (Up/Down/Active), HA module state (`started`).
+
+|*all*
+|CLusterXL info includes: Product Name, Major/Minor ClusterXL versions, Status, HA protocol version (`2`), Working Mode, HA State, Monitored Interfaces table with their IPs and status, CLuster IPs table, Sync table listing Sync interface name and IP address.
 
 
 |===
