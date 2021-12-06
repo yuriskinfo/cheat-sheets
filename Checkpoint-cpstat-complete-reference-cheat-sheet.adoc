@@ -74,7 +74,61 @@ status: Work in Progress.
 |*sensors*
 |Shows appliance hardware sensors stats: Temperature Sensors, Fan Speed Sensors, Voltage Sensors. Not relevant for Open Servers. 
 
-|
+|*power_supply*
+|Status of the power supply, appliances only.
+
+|*hw_info*
+| List appliance hardware info: Serial Number (SN), Appliance Model and name.
+
+|*average_cpu*
+| Average CPU load sharing (User, System, Idle), over unclear what period.
+
+|*average_cpu*
+|Average memory stats (time period unclear): Active Virtual Memory,  Active Real Memory, Free Real Memory, Memory Swaps/Sec, Memory To Disk Transfers/Sec.
+
+|*updates*
+|All applied and available updates to this Check Point: Deployment agent build, Deployment agent status, Cloud connection status, number of Available packages, number of Available recommended packages, list of Recommended packages, Available Packages, Installed packages.
+
+|*licensing*
+|All about licenses: applied licenses and their status, expiration date, and quota used. Also UserCenter Account ID, CK Signature, Container SKU, Support level, Support expiration date, Activation status.
+
+|*connectivity*
+|Connectivity to the User Center status.
+
+|*vsx*
+|FOr VSX systems: Device name/type/context ID.
+
+|*all*
+|Combination os some, but not all flavors above: cpu, memory, ifconfig, routing, disk.
+
+
+|===
+
+
+== thresholds - Alert Thresholds
+NOTE: Thresholds and their actions are configured via `threshold_config` CLI tool. The tresholds are saved (by default) to `$FWDIR/conf/thresholds.conf`.
+
+[cols=2, options="header"]
+|===
+|Flavor
+|Description
+
+|*default*
+| Active Profile Name, State, Number of thresholds, Number of active thresholds, Number of events since startup.
+
+|*active_thresholds*
+|Active Thresholds name, Category, Severity, Subject, State.
+
+|*destinations*
+| Alert destinations: name (`Check Point log server`), Type (`Check Point Log Server`), State (`OK`), number of alerts.
+
+|*error*
+|Threshold errors: Threshold name, its OID, Error description, Time of error occurrence.
+
+
+
+
+
 
 |===
 
@@ -172,6 +226,21 @@ status: Work in Progress.
 | Number of scanned mails.
 
 |===
+
+
+== ci - Content Inspection (Anti-virus)
+[cols=2, options="header"]
+|===
+
+|Flavor
+|Description
+
+|*default*
+|Shows stats about Content Inspection/AV blade work: AV State code, AV Engine name (`KSS` - Kaspersky (?)) table version/signature version/date, name and count of top ever viruses, URL Filtering top blocked sites and categories, top blocked sources by AV/UF/File-Type, total scanned.
+
+|===
+
+
 
 
 == dlp - DLP
