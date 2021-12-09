@@ -1,4 +1,4 @@
-= Fortigate debug and diagnose commands complete cheat sheet
+= Fortianalyzer SQL tables list
 Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
 :homepage: https://yurisk.info
 
