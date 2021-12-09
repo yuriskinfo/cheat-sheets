@@ -26,6 +26,8 @@ Make sure to __watch__ this repository, also follow me on https://www.linkedin.c
 
 ## Linux, FreeBSD, OpenBSD, and Open Source Tools
 
+[Linux ip route reference by example](Linux-ip-route-reference-by-examples.adoc) | [PDF](Linux-ip-route-reference-by-examples.pdf)
+
 [Linux and PF BSD firewalls cheat sheet](Linux-and-BSD-firewalls-cheat-sheet.adoc) | [PDF](Linux-and-BSD-firewalls-cheat-sheet.pdf)
 
 [Git and github.com commands cheat sheet](git-and-github-cheat-sheet.adoc) | [PDF](git-and-github-cheat-sheet.pdf)

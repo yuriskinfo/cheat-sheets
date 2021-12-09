@@ -1,0 +1,224 @@
+= Linux ip route command reference by example
+
+NOTE: All the commands below take effect immediately after you hit Enter, and do NOT survive reboot. You may shorten the commands to the shortest but unique, e.g. `sh ip ad` instead of `show ip address`. All the commands come as part of the pre-installed package `iproute2`. 
+
+Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
+
+<<ip address - Manage IP address(es) on interfaces>> +
+<<ip route - Manage routing table>> +
+<<ip link - Link Management>> +
+<<ip neighbor - Manage ARP and neighbors table>> +
+<<Reference>>
+
+
+
+== ip address - Manage IP address(es) on interfaces
+
+[cols=2, options="header"]
+|===
+
+|Command
+|Description
+
+|*ip address show / ip ad sh*	
+|Show all IP addresses of all interfaces, also their MTU, MAC addresses.
+
+|*ip address show ens36*
+|Show IPs of a given interface (ens36).
+
+|*ip address show up*	
+|Only show IPs of the interfaces that are configured as UP. 
+
+|*ip address show dynamic/permanent*	
+|Show only dynamic (DHCP) or static IPv4/IPv6 addresses.
+
+|*ip address add 192.0.2.1/27 dev ens36*	
+|Add a new IP address (192.0.2.1) to the named (ens36) interface.
+
+|*ip address add 192.0.2.1/27 dev ens36 label ens36:external*	
+|Add IP address to the interface, AND label it (external). The label is any string. The label will show in show ip address as: inet 192.0.2.1/27 scope global ens33:external
+
+|*ip address delete 192.0.2.1/27 dev ens36*
+|Delete the specified IP address from the interface
+
+|*ip address flush dev ens36*	
+|Delete ALL IP addresses from the given interface.
+
+|===
+
+
+== ip route - Manage routing table
+
+[cols=2, options="header"]
+|===
+
+|Command
+|Description
+
+|*ip route [show]* / *ip ro* +
+*ip -6 route* +
+*ip -4 route*	
+|Show the routing table for both – IPv4 and IPv6. +
+Show the routing table for IPv6 only. +
+Show the routing table for IPv4 only.
+
+
+|*ip route add default via 10.10.10.1* +
+*ip route add default dev ens36* +
+*ip route add 0.0.0.0/0 dev ens36* +
+*ip -6 route add default dev ens36* 
+|Add default route/default gateway via next hop +
+… via outgoing interface (ens36) +
+… via outgoing interface using 0.0.0.0/0 notation +
+Add default IPv6 route.
+
+
+|*ip route delete default dev ens36*
+|Delete default route via given interface
+
+|*ip route show root 192.0.2.0/24*	
+|Show routes not shorter than the given. Here, 192.0.2.0/29 will match, but 192.0.2.0/23 will not.
+
+
+|*ip route show match 192.0.2.0/29*
+|Show routes not longer than the given network/mask. Here, 192.0.2.0/30 will match, but 192.0.2.0/27 will not. 
+
+|*ip route show exact 192.0.2.0/29*
+|Show route(s) matching EXACTLY inside the network and its given mask. Here, 192.0.2.7 will match, but 192.0.2.8 will not. 
+
+|*ip route get 192.123.123.1/24*
+|Simulate resolving of a route in real time by kernel.
+
+
+|*ip route add 192.192.13.0/24 via 10.13.77.1* + 
+*ip route add 192.192.13.0/24 dev ens36*
+|Add new route to 192.192.13.1/24 via nexthop. +
+Add new route to 192.192.13.1/24 via interface.
+
+
+|*ip route delete 192.192.13.0/24 via 10.13.77.1* + 
+*ip route delete 192.192.13.0/24*
+|Delete specific route
+
+
+|*ip route change 192.192.13.0/24 dev ens32*
+|Change some parameter of the existing route.
+
+
+|*ip route replace 192.192.13.0/24 dev ens36*
+|Replace a route  if exists add if not.
+
+|*ip route add blackhole 192.1.1.0/24*
+|Black hole some route. The traffic sent to this route will be dropped without any feedback.
+
+
+|*ip route add unreachable 192.1.1.0/24*
+|Block destination route, replies to sender “Host unreachable”.
+
+
+|*ip route add prohibit 192.1.1.0/24*
+|Block destination route, replies to sender with  ICMP “Administratively prohibited”.
+
+|*ip route add throw 192.1.1.0/24*
+|Block destination route, sends in reply ICMP “net unreachable”.
+
+|*ip route add 10.10.10.0/24 via 10.1.1.1 metric 5*
+|Add a route with a custom metric.
+
+|*ip route add default nexthop via 10.10.10.1 weight 1 nexthop dev ens33 weight 10*
+|Add 2 (default) routes with different weights (higher weight is preferred) – first with the weight of 1, second with the weight of 10.
+
+
+
+|===
+
+
+== ip link - Link Management
+[cols=2, options="header"]
+|===
+
+|Command
+|Description
+
+|*ip link show / ip link / ip link list* +
+*ip link show ens36*
+|Show info on all available interfaces. +
+Show info on a specific interface.
+
+|*ip link set dev eth36 down* +
+*ip link set dev ens36 up*
+|Set interface state to down. +
+Set interface state to up.
+
+|*ip link set ens33 name eth33*
+|Rename interface, here from ens33 to eth33. First, you have to set interface to down state. This adds this name as an alternative name, keeping the old name as well. Use with care – some distributions (RHEL/CentOS) expect certain names for each interface type.
+
+|*ip link set dev eth0 address 02:42:c2:7c:39:b3*
+|Change MAC address of the interface.
+
+|*ip link set dev tun0 mtu 1480* 
+|Set MTU size for the interface.
+
+|*ip link delete <dev>* 	
+|Delete interface, relevant for virtual interfaces only (VLAN, bridge, VXLAN, etc.).
+
+|*ip link set dev ens36 arp off/on*	
+|Turn ARP resolution protocol on the interface ens36 on/off. NOTE: disabling ARP will clear the current ARP table and will prevent this interface from learning MAC addresses, and so will disconnect any remote sessions to the host.
+
+|*ip link set dev ens36 multicast off/on*	
+|Turn multicast on the interface ens36 on or off.
+
+|*ip link add name eth0.110 link eth0 type vlan id 110*
+|Add VLAN 110 on the fly to the interface eth0, naming it eth1.110. 
+
+
+|*ip link add name eth0.120 link eth0 type vlan proto 802.1ad id 120* +
+*ip link add name eth0.120.200 link eth0.120 type vlan proto 802.1q id 200* 	
+|*QinQ (kernel >= 3.10)*. Add VLAN 120 as external VLAN on interface eth0 naming it eth0.120, setting protocol to 802.1ad.
+Add internal VLAN 200 to the eth0.120, naming it eth0.120.200 and setting protocol to the 802.1Q. 
+
+|*ip link add dummy0 type dummy* +
+*ip addr add 172.17.1.1/24 dev dummy0* +
+*ip link set dummy0 up*	
+|Create virtual software interface of type dummy, assign it IP address, and bring it up. Useful for testing. 
+
+
+|*ip link add vx0 type vxlan id 100 local 172.16.13.1 remote 192.168.12.12 dev eth0 dstport 4789*
+|Create VXLAN tunnel with id of 100 and local and remote addresses of 172.16.13.1/192.168.12.12 using destination port of 4789 UDP.
+
+|*ip link add bond13-14 type bond mode active-backup* +
+*ip link set eth13 master bond13-14* +
+*ip link set eth14 master bond13-14*	
+|Create logical interface bond13-14 of type bond in active-backup mode for failover (only 1 physical interface is active at any time).
+Add 2 physical interfaces to this bond (eth13 & eth14). All further configurations are to be done on the bond13-14 interface.
+
+|===
+
+== ip neighbor - Manage ARP and neighbors table
+[cols=2, options="header"]
+|===
+
+|Command
+|Description
+
+|*ip neighbor show* +
+*ip neighbor show dev eth0*
+
+*ip -6 neighbor show*	
+|Show all MAC addresses of the IPv4 neighbors. +
+Show MAC addresses of the neighbors on ens36 interface only. +
+Show IPv6 neighbors.
+
+|*ip neighbor flush dev eth0*	
+|Delete all cached dynamically learned MAC addresses on the interface eth0.
+
+|*ip neighbor add 192.1.1.1 lladdr 01:22:33:44:55:f1 dev eth0*	
+|Add static IP address to MAC address mapping for a neighbor on the interface eth0.
+
+|*ip neighbor delete 192.1.1.1 lladdr 01:33:44:55:ff:11 dev eth0*
+|Delete a static mapping of IP address to the MAC address on the interface.
+
+|===
+
+== Reference
+* https://manpages.debian.org/jessie/iproute2/ip-route.8.en.html
