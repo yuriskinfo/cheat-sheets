@@ -127,10 +127,36 @@ NOTE: Thresholds and their actions are configured via `threshold_config` CLI too
 
 
 
+|===
 
 
+
+== polsrv - Policy Server
+[cols=2, options="header"]
+|===
+|Flavor
+|Description
+
+|*default*
+| Policy server status - enabled/up, number of licensed/connected users.
+
+|*all*
+|Policy server status, versions major/minor, licensed/connected users.
 
 |===
+
+== svr - SmartReporter/SmartEvent 
+[cols=2, options="header"]
+|===
+
+|Flavor
+|Description
+
+|*default*
+| SmartEvent/SmartReporter server info: Product Name, SmartReporter Status, SmartReporter Version, SmartReporter Server State, Number of generations in queue, Enevtia Reporter Log Consolidator sessions (yes there is a typo in the tool "Enevtia" -> "Eventia"): Log Server, Customer, State, pid, Started since, Last startup, Database queue length, Memory occupied, Current log file name, Log records processed since startup, Log records stored, Log records ignored, Log records read per second, Is part of sequence, Currently open consolidated records, Consolidation rate (X100), Size allocated for database [KB], Current database size [KB], Database target table name, Temporary records loaded into database, Committed recors per second, Permanent records loaded into database, Records added into database, DNS items in cache, DNS cache size, DNS cache hits, DNS cache misses, DNS cache hit rate (X100), DNS open requests.
+
+|===
+
 
 
 == ha - ClusterXL
