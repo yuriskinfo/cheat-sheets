@@ -105,6 +105,44 @@ status: Work in Progress.
 |===
 
 
+== cpsemd - logging into the SmartEvent GUI
+[cols=2, options="header"]
+|===
+|Flavor
+|Description
+
+|*default*
+| Status and stats of `cpsemd` service, responsible for  logging into the SmartEvent GUI: Process Status, number of New events handled/Updates handled, Current database size, Database capacity, Events in database, Available database disk space, Is database full, Total database disk space.
+
+|===
+
+== vsec - cloud Controller
+[cols=2,options="header"]
+|===
+
+|Flavor
+|Description
+
+|*default*
+|Status of vSEC Controller (Check Point firewall for virtualized environments like  VMware ESXi, Microsoft Hyper-V and KVM): vSEC Controller Status (on/off), Number of disconnected Data Centers, Number of Data Centers, Number of imported Data Center objects, Number of gateways enforcing Data Center objects, for each Data Center: Controller, Type, Status, Imported Objects, Controller Updates. For Gateways Enforcing Data Center objects: Name, IP, Version, Update status.
+
+|===
+
+
+== cpsead - Correlation Unit
+[cols=2, options="header"]
+|===
+
+|Flavor
+|Description
+
+|*default*
+|Stats of `cpsead` daemon responsible for Correlation Unit functionality: Process is alive, Connected to SEM, Logs Processed, No Free Disk Space. 
+
+|===
+
+
+
 == thresholds - Alert Thresholds
 NOTE: Thresholds and their actions are configured via `threshold_config` CLI tool. The tresholds are saved (by default) to `$FWDIR/conf/thresholds.conf`.
 

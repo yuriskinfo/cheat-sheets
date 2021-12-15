@@ -62,6 +62,8 @@ Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
 Show the routing table for IPv6 only. +
 Show the routing table for IPv4 only.
 
+|*ip route show table all*
+|Show ALL routing tables of the server, helpful when there is Policy Based Routing (PBR) in place.
 
 |*ip route add default via 10.10.10.1* +
 *ip route add default dev ens36* +
