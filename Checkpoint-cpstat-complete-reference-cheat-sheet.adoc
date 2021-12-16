@@ -142,6 +142,29 @@ status: Work in Progress.
 |===
 
 
+== cvpn - Mobile Access
+[cols=2, options="header"]
+|===
+
+|Flavor
+|Description
+
+|*cvpnd*
+|Number of active sessions
+
+|*sysinfo*
+|OS name (Gaia), OS build, Product string.
+
+|*products*
+|IPS/SWS/ESOD versions.
+
+|*overall*
+| Overall status code/description.
+
+
+|===
+
+
 
 == thresholds - Alert Thresholds
 NOTE: Thresholds and their actions are configured via `threshold_config` CLI tool. The tresholds are saved (by default) to `$FWDIR/conf/thresholds.conf`.
