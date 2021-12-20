@@ -96,7 +96,7 @@ status: Work in Progress.
 |Connectivity to the User Center status.
 
 |*vsx*
-|FOr VSX systems: Device name/type/context ID.
+|For VSX systems: Device name/type/context ID.
 
 |*all*
 |Combination os some, but not all flavors above: cpu, memory, ifconfig, routing, disk.
@@ -165,6 +165,17 @@ status: Work in Progress.
 |===
 
 
+== fw - Firewall module
+[cols=2, options="header"]
+|===
+
+|Flavor
+|Description
+
+|*default*
+|Installed Security Policy name, Total number of accepted/denied packets per interface, ISP links table (if any)
+
+|===
 
 == thresholds - Alert Thresholds
 NOTE: Thresholds and their actions are configured via `threshold_config` CLI tool. The tresholds are saved (by default) to `$FWDIR/conf/thresholds.conf`.
