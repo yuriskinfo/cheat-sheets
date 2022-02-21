@@ -6,6 +6,9 @@ Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
 
 Unfortunately, with the merger and the end of sale, all the documentation disappeared as well. To help you a bit I bring below some debug and diagnostic commands to be run on the CLI. You can still find the datasheet here https://www.cornet-solutions.co.jp/pdf/mrv_os_900_sdb_a4_hi.pdf
 
+You can see how output of the commands below looks like when run on the real MRV in my blog post: https://yurisk.info/2020/01/13/MRV-Optiswitch-OS904-OS906-OS912-debug-and-diagnostic-commands/.
+
+
 [cols=2*,options="header"]
 |===
 |Command

@@ -1,0 +1,36 @@
+= ncftp Ftp Client Commands example cookbook
+:source-highlighter: rouge
+:date: 2022-02-09 07:55:25+00:00
+:toc: auto
+
+
+
+
+
+== Connect to remote FTP server specifying username and password on the command line
+WARNING: This means that username/password can be seen by other users logged in on the machine (if any)
+
+[source,bash]
+----
+ncftp -u ftpuser -p qwe123 ftp.slackware.com
+----
+
+.Here:
+* -u _user_: specify username on the FTP server
+* -p _password_: specify password of FTP user
+* ftp.slackware.com: FTP server domain name or IP address to connect to.
+
+After connecting we can issue FTP client commands on the prompt.
+
+
+== Upload a file renaming it at the destination
+`ncftp` will not upload a file if a file with the same name exists in the destination server. To still upload such file, we can rename it using `-z` option.
+Upload file named _manifesto-1.pdf_ to the FTP server renaming it to _manifesto-2.pdf_
+
+[source,bash]
+----
+ncftp / > put -z manifesto-1.pdf manifesto-2.pdf
+manifesto-1.pdf:                                        11.40 kB    2.49 MB/s 
+----
+
+

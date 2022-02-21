@@ -4,7 +4,7 @@ Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
 
 Carrier Ethernet Devices by RAD (ETX-203AX, ETX-203AM, ETX-203AX-T, ETX-205A, ETX-220A) are quite popular with telco companies around the world for connecting end clients to the backbone at layer 2. And while reference documentation is available, I couldn't find the debug/information commands digest on the Internet at all. This post, I hope, comes to fill the gap.
 
-The commands below are meant to be run on the device CLI itself, not on provisioning system of some kind. I show examples of using them below as well.
+The commands below are meant to be run on the device CLI itself, not on provisioning system like RADview. You can see how output looks like when run on the real ETX on my blog post https://yurisk.info/2020/03/21/rad-etx-203-203-220-debug-and-information-commands-examples/.
 
 
 [cols=2*,options="header"]

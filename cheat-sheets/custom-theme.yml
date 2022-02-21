@@ -1,0 +1,6 @@
+extends: default
+footer:
+  verso:
+    center:
+      content: ' https://www.linkedin.com/in/yurislobodyanyuk/[Yuri Slobodyanyuk] {doctitle}'
+footer_recto_right_content: '{page-number} out of {page-count}'
