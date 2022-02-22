@@ -1,4 +1,7 @@
 # Configuration, Debug and Diagnostics cheat sheets for Network and Linux based equipment
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
 
 All cheat sheets I created while doing my daily hands-on tasks of troubleshooting and configuring the production equipment. 
 Make sure to __watch__ this repository to get notified on updates. Your stars on the repository as a sign that you found it useful are appreciated, thanks. I also blog at https://yurisk.info about these topics as well.
