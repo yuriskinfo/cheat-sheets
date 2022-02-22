@@ -1,7 +1,7 @@
 # Configuration, Debug and Diagnostics cheat sheets for Network and Linux based equipment
 
 All cheat sheets I created while doing my daily hands-on tasks of troubleshooting and configuring the production equipment. 
-Make sure to __watch__ this repository to get notified on updates. And don't hesitate to star the repository if you found it useful. I also have a blog https://yurisk.info about these topics as well.
+Make sure to __watch__ this repository to get notified on updates. Your stars on the repository as a sign that you found it useful are appreciated, thanks. I also blog at https://yurisk.info about these topics as well.
   
 
 
