@@ -80,7 +80,7 @@ Author: Yuri Slobodyanyuk,  https://www.linkedin.com/in/yurislobodyanyuk/
 |Show switch time and date, for log correlation.
 
 
-|*show power-over-ethernet [brief| [ethernet] ]*
+|*show power-over-ethernet brief/ethernet*
 |Show state of PoE-enabled interfaces.
 
 
