@@ -6,6 +6,18 @@ Yuri SLobodyanyuk, admin@yurisk.info
 Author: Yuri Slobodyanyuk,  https://www.linkedin.com/in/yurislobodyanyuk/
 
 
+== Reset/wipe switch configuration to the factory defaults
+WARNING: This will erase all the configuration and cannot be undone.
+
+If you don't have priveleged EXEC  access to the switch:
+
+. Push and hold the _Reset_ button with sharp object like pen/pencil.
+. Now also push and hold _Clear_ button with another sharp object.
+. When LEDs are turned on - release _Reset_ button, while holding the _Clear_.
+. When LEDs start to blink, release the _Clear_ button as well.
+
+If you have privileged EXEC access to the switch, just run *(config)# erase startup* and reboot. 
+
 == Restrict management access to specific IP addresses
 To limit access to the switch, use *ip authorized-managers* command. Example - limit access to a single IP of 192.168.13.127:
 
