@@ -22,5 +22,14 @@ We have to set default gateway on a switch for the management VLAN we choose to 
 ip default-gateway 10.13.13.127
 ----
 
+It is, for example, when VLAN 200 is configured as management VLAN:
+
+----
+vlan 200
+   name "MgmtVlan"
+   tagged Trk1
+   ip address 10.13.13.250 255.255.255.0
+   exit
+----
 
 
