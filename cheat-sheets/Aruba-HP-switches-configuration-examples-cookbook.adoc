@@ -1,0 +1,26 @@
+= Aruba HP switches configuration examples cookbook
+Yuri SLobodyanyuk, admin@yurisk.info
+:homepage: https://yurisk.info
+:toc:
+
+Author: Yuri Slobodyanyuk,  https://www.linkedin.com/in/yurislobodyanyuk/
+
+
+== Restrict management access to specific IP addresses
+To limit access to the switch, use *ip authorized-managers* command. Example - limit access to a single IP of 192.168.13.127:
+
+----
+ip authorized-managers 192.168.13.127 255.255.255.255 access operator
+ip authorized-managers 192.168.13.127 255.255.255.255 access manager
+----
+
+
+== Add default gateway on Layer 2 switch for management
+We have to set default gateway on a switch for the management VLAN we choose to be managed remotely. The command does not mention explicitly the VLAN number, just make sure the network is the network configured on the management VLAN.
+
+----
+ip default-gateway 10.13.13.127
+----
+
+
+
