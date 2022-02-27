@@ -37,6 +37,9 @@ Author: Yuri Slobodyanyuk,  https://www.linkedin.com/in/yurislobodyanyuk/
 |*display interface*
 |Show detailed information of an interface: MAC address, state, speed, VLAN id if any. 
 
+|*show interface transceiver*
+|Info on installed optical transceivers: Port number where installed, Type/Speed, Serial Number.
+
 |*show ip*
 | Show all configured IP addresses on a switch.
 
@@ -66,12 +69,19 @@ Author: Yuri Slobodyanyuk,  https://www.linkedin.com/in/yurislobodyanyuk/
 | Show routing table for Layer 3 switch.
 
 |*show ip*
-| Show IP routing state: disabled/enabled. It is dsiabled by default, to enable: *(config)# ip routing*.
+| Show IP routing state: disabled/enabled. It is disabled by default, to enable: *(config)# ip routing* on platforms that support Layer 3 routing.
 
 
 |*display boot-loader*
 | Show what image will be loaded on the next boot.
 
+
+|*show time*
+|Show switch time and date, for log correlation.
+
+
+|*show power-over-ethernet [brief| [ethernet] ]*
+|Show state of PoE-enabled interfaces.
 
 
 
