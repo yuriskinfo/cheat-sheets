@@ -105,6 +105,9 @@ NOTE: All debug will run for 30 minutes by default, to increase use `diagnose de
 |*get hardware memory*
 | Show memory statistics: free, cached, swap, shared 
 
+|*execute sensor list*
+|List current readings of all sensors present on this model of the Fortigate. ALrger models (1500 and up) show CPUs voltage, fan speeds, temperature, power supply voltage and more.
+
 |===
 
 
