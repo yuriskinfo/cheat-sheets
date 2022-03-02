@@ -1,6 +1,6 @@
 = Linux and PF firewalls commands cheat sheet
 :homepage: https://yurisk.info
-
+:toc:
 Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
 
 == Firewalld daemon management (Red Hat based distributions)
