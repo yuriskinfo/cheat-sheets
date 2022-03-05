@@ -1,5 +1,6 @@
 = Fortigate debug and diagnose commands complete cheat sheet
 :homepage: https://yurisk.info
+:toc:
 
 Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
 
@@ -11,24 +12,6 @@ NOTE: To disable and stop immediately any debug, run *dia deb res* which is shor
 NOTE: All debug will run for 30 minutes by default, to increase use `diagnose debug duration <minutes>`, setting to 0 means unlimited by time. Reboot will reset this setting.
 
 
-<<Security rulebase debug (diagnose debug flow)>> +
-<<General Health, CPU, and Memory>> +
-<<Session stateful table>> +
-<<High Availability Clustering debug>> +
-<<IPSEC VPN debug>> +
-<<SSL VPN debug>> +
-<<Static Routing Debug>> +
-<<Interfaces>> +
-<<NTP debug>> +
-<<SNMP daemon debug>> +
-<<BGP>> +
-<<Admin sessions>> +
-<<Authentication>> +
-<<Fortianalyzer logging  debug>> +
-<<SD-WAN verification and debug>> +
-<<Virtual Fortigate License Status>> +
-<<DNS server and proxy debug>> +
-<<Administrator GUI access and API automation requests debug>> +
 
 
 
@@ -347,6 +330,32 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 
 |===
 
+
+== DHCP server
+
+.DHCP server
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+
+|*show system dhcp server*
+|Show DHCP server configuration, including DHCP address pools.
+
+|*execute dhcp lease-list [_interface name_]*
+|Show real-time list of allocated by Fortigate addresses via DHCP. It will show IP address of each client, its MAC
+ address, device type/name (Android, iOS, Windows, etc.), the lease time and expiration.
+
+|*execute dhcp lease-clear all/_start-end-IP-address-range_*
+|Clear DHCP allocations on the Fortigate. This will NOT cause clients that already have IP addresses to release them, but will
+just clear Fortigate DHCP database and will start over allocating again. You can either clear _all_ IP addresses in the database, or only specific IPs.
+
+
+|*diagnose debug application dhcps -1*
+|enable real-time debug of DHCP server activity.
+
+|===
 
 == NTP debug
 
