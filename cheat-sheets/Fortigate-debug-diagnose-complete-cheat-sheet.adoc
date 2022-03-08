@@ -603,7 +603,7 @@ just clear Fortigate DHCP database and will start over allocating again. You can
 
 |*config sys settings*
 
-*get | grep alg*
+*get \| grep alg*
 
 |Show what is the current SIP inspection mode. If the output is `default-voip-alg-mode: proxy-based` then the full Layer 7 
 proxy SIP inspection is on (_ALG_ inspection). If the output is `default-voip-alg-mode: kernel-helper-based` then the Layer 4 _helper_ inspection is on. In both modes Fortigate does IP address translation inside SIP packets (if needed), and opens dynamically high ports for incoming media/voice streams ports. In _ALG_ mode, the Fortigate additionally does RFC compliance verification and more. So, the _ALG_ mode is more prone to cause issues but also provides more security.
