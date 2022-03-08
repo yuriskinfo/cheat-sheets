@@ -353,7 +353,7 @@ just clear Fortigate DHCP database and will start over allocating again. You can
 
 
 |*diagnose debug application dhcps -1*
-|enable real-time debug of DHCP server activity.
+|enable real-time debug of DHCP server activity. This will show DHCP messages sent/received, DHCP options sent in each reply, details of requesting hosts. 
 
 |===
 
@@ -588,6 +588,32 @@ just clear Fortigate DHCP database and will start over allocating again. You can
 
 |*diagnose hardware sysinfo vm full*
 |Show license data as seen by FortiGuard: status (should be `valid=1`), last time it was checked (`recv`), answer code, should be `code: 200`, `code: 401` is for duplicate license found, `code: 502` is for VM cannot connect to FortiGuard, and `code: 400` is for invalid license. 
+
+
+|===
+
+
+
+== SIP ALG and helper
+.SIP proxy or helper debug
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|*config sys settings*
+
+*get | grep alg*
+
+|Show what is the current SIP inspection mode. If the output is `default-voip-alg-mode: proxy-based` then the full Layer 7 
+proxy SIP inspection is on (_ALG_ inspection). If the output is `default-voip-alg-mode: kernel-helper-based` then the Layer 4 _helper_ inspection is on. In both modes Fortigate does IP address translation inside SIP packets (if needed), and opens dynamically high ports for incoming media/voice streams ports. In _ALG_ mode, the Fortigate additionally does RFC compliance verification and more. So, the _ALG_ mode is more prone to cause issues but also provides more security.
+
+|*show system session-helper | grep sip -f*
+|If using SIP _helper_ and not _ALG_, make sure there is an entry for SIP in the helpers list, usually on port 5060, but may be custom as well. 
+
+
+|*diagnose debug application sip -1*
+|Display SIP debug in real-time (lots of output). It shows IP replacement inside SIP packets if NAT involved, all SIP communication requests (`REGISTER`,`INVITE` etc.), and reply codes.
 
 
 |===
