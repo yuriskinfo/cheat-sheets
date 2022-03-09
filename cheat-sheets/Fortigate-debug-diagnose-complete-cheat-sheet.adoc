@@ -149,6 +149,9 @@ NOTE: All debug will run for 30 minutes by default, to increase use `diagnose de
 |*diagnose sys session clear* 
 |Clear/delete connections from the session table. IMPORTANT: If no session filter is set (see above) before running this command, ALL connections passing the Fortigate will be deleted! Which means they will be disconnected. So use carefully.
 
+|*diagnose sys session list*
+|List connections limited to the filter set if any, or all session table if not.
+
 |===
 
 
