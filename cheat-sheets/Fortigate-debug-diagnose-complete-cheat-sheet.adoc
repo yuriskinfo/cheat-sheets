@@ -105,7 +105,7 @@ NOTE: All debug will run for 30 minutes by default, to increase use `diagnose de
 |Show current number of sessions passing the Fortigate. Run inside the VDOM in multi-vdom environment to get number of connections/sessions for this specific VDOM. 
 
 |*get sys session-info statistics*
-| Get general statistics on sessions: current number of, global limits, number of clashes (different sesison trying to use the same ports), TCP sessions stats per state
+| Get general statistics on sessions: current number of, global limits, number of clashes (different sessions trying to use the same ports), TCP sessions stats per state
 
 |*get sys session-info ttl*
 |Show the default TTL setting for the connections in the table, default being 3600 seconds.
