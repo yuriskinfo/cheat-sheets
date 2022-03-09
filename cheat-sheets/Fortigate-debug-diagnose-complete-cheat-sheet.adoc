@@ -104,7 +104,50 @@ NOTE: All debug will run for 30 minutes by default, to increase use `diagnose de
 |*get system session status*
 |Show current number of sessions passing the Fortigate. Run inside the VDOM in multi-vdom environment to get number of connections/sessions for this specific VDOM. 
 
+|*get sys session-info statistics*
+| Get general statistics on sessions: current number of, global limits, number of clashes (different sesison trying to use the same ports), TCP sessions stats per state
 
+|*get sys session-info ttl*
+|Show the default TTL setting for the connections in the table, default being 3600 seconds.
+
+|*diagnose sys session filter <filter parameter>*
+| Set filter to show/manipulate only specific connections in the stateful table. Run without any filter parameters this command displays the current filter applied if any. Parameters: 
+
+`vd` - id number of the vdom. When entering the vdom with edit vdom, this number is shown first.
+
+`sintf` - source interface.
+
+`dintf` - destination interface.
+
+`proto` - protocol, by IANA protocol number.
+
+`proto-state` - protocol state.
+
+`src` - source IP.
+
+`dst` - destination IP.
+
+`nsrc` - NATed source IP.
+
+`sport` - source port.
+
+`nport` - NATed source port.
+
+`dport` - destination port.
+
+`policy` - policy id.
+
+`duration <from> <to>` - duration.
+
+`expire <from> <to>` - expiration time.
+
+`session-state1 <x>` - session state, where _x_ is in hex, state bits.
+ 
+`negate <parameter>` - negate the match, i.e. match if a connection does NOT contain _parameter_. Where parameter is one of the mentioned above.
+
+
+|*diagnose sys session clear* 
+|Clear/delete connections from the session table. IMPORTANT: If no session filter is set (see above) before running this command, ALL connections passing the Fortigate will be deleted! Which means they will be disconnected. So use carefully.
 
 |===
 
