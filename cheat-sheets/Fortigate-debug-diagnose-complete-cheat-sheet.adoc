@@ -700,14 +700,15 @@ proxy SIP inspection is on (_ALG_ inspection). If the output is `default-voip-al
 |*diagnose wireless-controller wlac -c ap-status*
 |Show list of all Access Points (APs) this Fortigate is aware of with their BSSID (MAC), SSID, and Status (`accepted`, `rogue`, `suppressed`)
 
+|*diagnose wireless-controller wlac -c vap*
+|Show list of APs with their BSSIDs, broadcasted SSIDs, IDs, and unlike `wlac -c ap-status` above, also shows management IP and port which can be later used for real-time debug.
+
 |*show wireless-controller wtp-profile*
 |Show available Wireless Termination Points (i.e. APs) profiles with their settings. Profiles are applied to individual APs, i.e. a single profile can be applied to multiple APs.
 
 |*show wireless-controller wtp*
 |Show APs known to this Fortigate individually. We can enter any given AP configuration and change settings for this AP only, i.e. `set admin disable`.
 
-|*diagnose wireless-controller wlac -c vap*
-|Show list of APs with their BSSIDs, broadcasted SSIDs, IDs, and unlike `wlac -c ap-status` above, management IP and port which can be later used for real-time debug.
 
 
 |===
