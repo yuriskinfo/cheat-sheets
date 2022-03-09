@@ -581,7 +581,7 @@ just clear Fortigate DHCP database and will start over allocating again. You can
 |Description
 
 |*get sys status \| grep -i lic*
-|Get status o fthe license (valid for Hardware Fortigate as well as VM). The corect status is `Valid`.
+|Get status of the license (for VM only). The corect status is `Valid`.
 
 |*diagnose debug vm-print-license*
 | Show detailed info on VM Fortigate license status: allowed CPUs and memory, date of license activation, license expiration date (if set), serial number.
