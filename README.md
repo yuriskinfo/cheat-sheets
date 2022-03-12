@@ -3,18 +3,20 @@
 
 
 
-All cheat sheets I created while doing my daily hands-on tasks of troubleshooting and configuring the production equipment. 
-Make sure to __watch__ this repository to get notified on updates. Your stars on the repository as a sign that you found it useful are appreciated, thanks. I also blog at https://yurisk.info about these topics as well.
+Collection of cheat sheets to help you with hands-on tasks of troubleshooting and configuring the production equipment. 
+Make sure to __watch__ this repository to get notified on updates (usually updated once per week). Your stars on the repository as a sign that you found it useful are appreciated, thanks. I also blog at https://yurisk.info about these topics as well.
   
 
 
-## Network and Security vendors (cheat-sheets/Fortinet, Cisco, Checkpoint, Rad, MRV, HP/Aruba)
+## Network and Security vendors (Fortinet, Cisco, Checkpoint, Rad, MRV, HP/Aruba)
 
 [Fortigate debug and diagnose commands complete cheat sheet](cheat-sheets/Fortigate-debug-diagnose-complete-cheat-sheet.adoc) | [PDF](cheat-sheets/Fortigate-debug-diagnose-complete-cheat-sheet.pdf)
 
 [Fortianalyzer diagnose and debug cheat sheet](cheat-sheets/Fortianalyzer-debug-cheat-sheet.adoc) | [PDF](cheat-sheets/Fortianalyzer-debug-cheat-sheet.pdf)
 
 [Checkpoint cpstat tool complete cheat sheet](cheat-sheets/Checkpoint-cpstat-complete-reference-cheat-sheet.adoc) | [PDF](cheat-sheets/Checkpoint-cpstat-complete-reference-cheat-sheet.pdf)
+
+[Checkpoint Firewalls Debug Cheat Sheet](/cheat-sheets/Checkpoint-firewalls-debug-cheat-sheet.adoc)| [PDF](/cheat-sheets/Checkpoint-firewalls-debug-cheat-sheet.pdf)
 
 [Cisco Nexus 9000 9k debug and diagnostic commands cheat sheet](cheat-sheets/Cisco-Nexus-9000-9k-debug-and-diagnostic-commands-cheat-sheet.adoc) | [PDF](cheat-sheets/Cisco-Nexus-9000-9k-debug-and-diagnostic-commands-cheat-sheet.pdf)
 
@@ -26,6 +28,8 @@ Make sure to __watch__ this repository to get notified on updates. Your stars on
 
 [Aruba and HP switches debug and diagnostics commands](cheat-sheets/Aruba-HP-switches-debug-and-diagnostics-commands-cheat-sheet.adoc) | [PDF](cheat-sheets/Aruba-HP-switches-debug-and-diagnostics-commands-cheat-sheet.pdf)
 
+[Aruba HP switches configuration examples cookbook](/cheat-sheets/Aruba-HP-switches-configuration-examples-cookbook.adoc) | [PDF](/cheat-sheets/Aruba-HP-switches-configuration-examples-cookbook.pdf)
+
 [Ruckus ICX switches 7150, 7250, 7450, 7650, 7750, 7850 diagnostics commands](cheat-sheets/Ruckus-Brocade-ICX-FastIron-switch-debug-nad-diagnostics-commands-cheat-sheet.adoc) | [PDF](cheat-sheets/Ruckus-Brocade-ICX-FastIron-switch-debug-nad-diagnostics-commands-cheat-sheet.pdf)
 
 ## Linux, FreeBSD, OpenBSD, and Open Source Tools
@@ -35,6 +39,10 @@ Make sure to __watch__ this repository to get notified on updates. Your stars on
 [GNU tar archive manager cookbook of examples](cheat-sheets/gnu-tar-example-reference.adoc) | [PDF](cheat-sheets/gnu-tar-example-reference.pdf)
 
 [Linux and PF BSD firewalls cheat sheet](cheat-sheets/Linux-and-BSD-firewalls-cheat-sheet.adoc) | [PDF](cheat-sheets/Linux-and-BSD-firewalls-cheat-sheet.pdf)
+
+[Ubuntu Uncomplicated Firewall (ufw) cookbook of configuration examples](/cheat-sheets/Ubuntu-ufw-firewall-cookbook.adoc) | [PDF](/cheat-sheets/Ubuntu-ufw-firewall-cookbook.pdf)
+
+[FreeBSD cheat sheet](/cheat-sheets/FreeBSD-cheat-sheet.adoc) | [PDF](/cheat-sheets/FreeBSD-cheat-sheet.pdf)
 
 [Git and github.com commands cheat sheet](cheat-sheets/git-and-github-cheat-sheet.adoc) | [PDF](cheat-sheets/git-and-github-cheat-sheet.pdf)
 
