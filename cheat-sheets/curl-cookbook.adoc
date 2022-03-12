@@ -50,7 +50,8 @@ curl -o index.html -s https://yurisk.info
 Use `-A`  to set User-Agent.  
 
 ----
-curl -o Index.html  -A  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36" http://example.com
+curl -o Index.html  -A  "Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36" http://example.com
 ----
 
 Resources:  https://developers.whatismybrowser.com/useragents/explore/
