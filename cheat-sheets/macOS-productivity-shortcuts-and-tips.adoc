@@ -6,5 +6,6 @@
 == Finder
 == System Preferences
 == Accessibility
+== Safari
 
 
