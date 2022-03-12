@@ -1,0 +1,10 @@
+= macOS Productivity Shortcuts and Tips
+:homepage: https://https://github.com/yuriskinfo/cheat-sheets
+:toc:
+
+
+== Finder
+== System Preferences
+== Accessibility
+
+
