@@ -2,5 +2,5 @@ extends: default
 footer:
   verso:
     center:
-      content: ' https://www.linkedin.com/in/yurislobodyanyuk/[Yuri Slobodyanyuk] {doctitle}'
+      content: ' https://www.linkedin.com/in/yurislobodyanyuk/ {doctitle}'
 footer_recto_right_content: '{page-number} out of {page-count}'
