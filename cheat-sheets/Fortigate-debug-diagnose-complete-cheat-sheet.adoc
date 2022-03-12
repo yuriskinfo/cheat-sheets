@@ -110,7 +110,7 @@ NOTE: All debug will run for 30 minutes by default, to increase use `diagnose de
 |*get sys session-info ttl*
 |Show the default TTL setting for the connections in the table, default being 3600 seconds.
 
-|*diagnose sys session filter <filter parameter>*
+|*diagnose sys session filter <filter parameter> <filter value>*
 | Set filter to show/manipulate only specific connections in the stateful table. Run without any filter parameters this command displays the current filter applied if any. Parameters: 
 
 `vd` - id number of the vdom. When entering the vdom with edit vdom, this number is shown first.
