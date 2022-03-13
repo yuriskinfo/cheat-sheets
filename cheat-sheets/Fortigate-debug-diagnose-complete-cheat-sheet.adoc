@@ -25,7 +25,7 @@ NOTE: All debug will run for 30 minutes by default, to increase use `diagnose de
 |Description
 
 |*diagnose firewall iprope lookup <src IP> <src port> <dst IP> <dst port>
-<protocol IANA protocol number> <src interface>*
+<IANA protocol number> <src interface>*
 |Policy lookup for any combination of IPs and ports - use to see what policy (if
 any) matches traffic between specific IP addresses and ports.
 
