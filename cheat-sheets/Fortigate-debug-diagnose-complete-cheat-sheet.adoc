@@ -27,7 +27,8 @@ NOTE: All debug will run for 30 minutes by default, to increase use `diagnose de
 |*diagnose firewall iprope lookup <src IP> <src port> <dst IP> <dst port>
 <IANA protocol number> <src interface>*
 |Policy lookup for any combination of IPs and ports - use to see what policy (if
-any) matches traffic between specific IP addresses and ports.
+any) matches traffic between specific IP addresses and ports. E.g. `dia firewall
+iprope 10.10.10.1 34567 8.8.8.8 443 6 LAN1`
 
 |*diagnose debug flow filter*
 |Show the active filter for the flow debug
