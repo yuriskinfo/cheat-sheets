@@ -37,6 +37,10 @@ access to all the browser functionality: _File_, _View_, _Download_, _Setup_, et
 |Refresh/reload the current page.
 
 
+|*s*
+|Show Bookmarks dialog menu with options to Add, Delete, Create Folder, Move
+bookmarks.
+
 
 
 
