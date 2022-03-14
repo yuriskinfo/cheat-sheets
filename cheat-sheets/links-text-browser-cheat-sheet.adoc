@@ -1,0 +1,34 @@
+= Links Text and Graphical Browser Cheat Sheet
+:homepage: https://github.com/yuriskinfo/cheat-sheets
+:toc:
+
+NOTE: All the below relates to the Text Mode browsing. The keyboard shortcuts
+work in GUI Mode as well, but no mention of it is attempted. The keyboard
+shortcuts work when the Main Menu is not visible.
+
+
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|*g*
+|Brings up dialog window to enter URL to jump to. The default protocol is HTTP,
+specify explicitly any other one, e.g. `ftp://ftp.hp.com`.
+
+|*ESC*
+|Show Main menu, press again to hide. The Main menu contains submenus with
+access to all the browser functionality: _File_, _View_, _Download_, _Setup_, etc.
+
+|*<-*, *z*
+| Go back to the previous page.
+
+|*q*
+|Quit browser with confirmation. Use *Q* to quit immediately.
+
+
+
+
+
+
+|===
