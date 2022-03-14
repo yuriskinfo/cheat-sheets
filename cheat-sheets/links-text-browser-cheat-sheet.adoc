@@ -26,6 +26,13 @@ access to all the browser functionality: _File_, _View_, _Download_, _Setup_, et
 |*q*
 |Quit browser with confirmation. Use *Q* to quit immediately.
 
+|*l*, *CTRL + N*
+|Scroll page down.
+
+|*p*, *CTRL + P*
+|Scroll page up.
+
+
 |*CTRL + R*
 |Refresh/reload the current page.
 
