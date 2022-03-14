@@ -6,6 +6,7 @@ NOTE: All the below relates to the Text Mode browsing. The keyboard shortcuts
 work in GUI Mode as well, but no mention of it is attempted. The keyboard
 shortcuts work when the Main Menu is not visible.
 
+== Keyboard Shortcuts and Menus
 
 [cols=2, options="header"]
 |===
