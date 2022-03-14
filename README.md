@@ -48,6 +48,9 @@ Make sure to __watch__ this repository to get notified on updates (usually updat
 
 [GNU screen terminal multiplexor cheat sheet](cheat-sheets/gnu-screen-cheat-sheet.adoc) | [PDF](cheat-sheets/gnu-screen-cheat-sheet.pdf)
 
+[Links text browser cheat
+sheet](cheat-sheets/links-text-browser-cheat-sheet.adoc) |
+[PDF](cheat-sheets/links-text-browser-cheat-sheet.pdf)
 [Ed text editor complete cheat sheet](cheat-sheets/ed-text-editor-cheat-sheet.adoc) | [PDF](cheat-sheets/ed-text-editor-cheat-sheet.pdf)
 
 [ncftp Ftp Client Commands example cookbook](cheat-sheets/ncftp-commands-reference-by-example-cookbook.adoc) | [PDF](cheat-sheets/ncftp-commands-reference-by-example-cookbook.pdf)
