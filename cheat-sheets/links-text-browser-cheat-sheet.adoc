@@ -37,6 +37,13 @@ access to all the browser functionality: _File_, _View_, _Download_, _Setup_, et
 |*CTRL + R*
 |Refresh/reload the current page.
 
+|*\/*
+|Search forward for text on the current page starting at the top and finishing at the
+bottom of the page. The searched text will be background-highlighted. The search
+is case insensitive.
+
+|*?*
+|Search text backward - from the bottom to the top. 
 
 |*s*
 |Show Bookmarks dialog menu with options to Add, Delete, Create Folder, Edit,
