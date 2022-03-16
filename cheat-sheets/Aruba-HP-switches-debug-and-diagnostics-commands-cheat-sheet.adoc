@@ -81,7 +81,8 @@ Author: Yuri Slobodyanyuk,  https://www.linkedin.com/in/yurislobodyanyuk/
 
 
 |*show power-over-ethernet brief/ethernet*
-|Show state of PoE-enabled interfaces.
+|Show state of PoE-enabled interfaces, including information on drawn/available
+power.
 
 
 
