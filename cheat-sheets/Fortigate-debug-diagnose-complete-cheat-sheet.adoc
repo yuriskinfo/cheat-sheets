@@ -378,7 +378,9 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 |*execute interface pppoe-reconnect*
 |Force ADSL re-connection.
 
-
+|*diagnose sys waninfo*
+|Show WAN interface info: public IP address of the WAN interface, guessed geo
+location of this IP, and whetehr this IP address is in FortiGuard black list.
 
 |===
 
