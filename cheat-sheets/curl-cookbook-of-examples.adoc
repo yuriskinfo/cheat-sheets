@@ -7,29 +7,42 @@
 
 
 == Get coronavirus/Covid-19 statistics for your country, real-time or historical
+----
+curl -L -s covid19.trackercli.com/il
+----
 Add your country code after the slash, e.g. for Israel "il".  
 
-----
-$ curl -L -s covid19.trackercli.com/il
-╔══════════════════════════════════════════════════════════════════════╗
-║ COVID-19 Tracker CLI v3.1.0 - Israel Update                          ║
-╟──────────────────────────────────────────────────────────────────────╢
-║ As of 4/6/2020, 6:55:12 AM [Date:4/6/2020]                           ║
-╟─────────────╤──────────────╤───────────╤─────────────╤───────────────╢
-║ Cases       │ Deaths       │ Recovered │ Active      │ Cases/Million ║
-╟─────────────┼──────────────┼───────────┼─────────────┼───────────────╢
-║ 8,611       │ 51           │ 585       │ 7,975       │ 995           ║
-╟─────────────┼──────────────┼───────────┼─────────────┼───────────────╢
-║ Today Cases │ Today Deaths │ Critical  │ Mortality % │ Recovery %    ║
-╟─────────────┼──────────────┼───────────┼─────────────┼───────────────╢
-║ 181         │ 2            │ 141       │ 0.59        │ 6.79          ║
-╟─────────────╧──────────────╧───────────╧─────────────╧───────────────╢
-║ Source: https://www.worldometers.info/coronavirus/                   ║
-╟──────────────────────────────────────────────────────────────────────╢
-║ Code: https://github.com/warengonzaga/covid19-tracker-cli            ║
-╚══════════════════════════════════════════════════════════════════════╝
-----
 
+----
+╔═══════════════════════════════════════════════════════════════════════╗
+║ COVID-19 Tracker & CLI v4.1.1 - Israel Update                         ║
+╟───────────────────────────────────────────────────────────────────────╢
+║ As of 3/18/2022, 03:25:53 PM [Date: 3/18/2022]                        ║
+╟─────────────╤──────────────╤───────────╤──────────────╤───────────────╢
+║ Cases       │ Deaths       │ Recovered │ Active       │ Cases/Million ║
+╟─────────────┼──────────────┼───────────┼──────────────┼───────────────╢
+║ 3,745,408   │ 10,417       │ 3,692,166 │ 42,825       │ 401,609       ║
+╟─────────────┼──────────────┼───────────┼──────────────┼───────────────╢
+║ Today Cases │ Today Deaths │ Critical  │ Mortaility % │ Recovery %    ║
+╟─────────────┼──────────────┼───────────┼──────────────┼───────────────╢
+║ 0           │ 0            │ 325       │ 0.28%        │ 98.58%        ║
+╟─────────────╧──────────────╧───────────╧──────────────╧───────────────╢
+║ Help: Try to append the URL with /help to learn more...               ║
+╟───────────────────────────────────────────────────────────────────────╢
+║ Docs: docs.wareneutron.com/covid19-tracker-cli                        ║
+╟───────────────────────────────────────────────────────────────────────╢
+║ Repo: repo.wareneutron.com/covid19-tracker-cli                        ║
+╚═══════════════════════════════════════════════════════════════════════╝
+
+Green apple is better than vitamins!
+
+════════════════════════════════════════════════════════════
+Love this project? Help us to help others by means of coffee!
+Buy Us a Coffee - wareneutron.com/donate
+════════════════════════════════════════════════════════════
+Follow the lead dev on twitter for more updates!
+@warengonzaga #covid19trackercli
+----
 Historical data:  
 
 ----
@@ -56,11 +69,6 @@ AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36" http:
 
 Resources:  https://developers.whatismybrowser.com/useragents/explore/
 
-== Download a web page via GET request setting Googlebot version 2.1 as the User-Agent.
-
-----
-curl -o Index.html -A "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"  http://example.com
-----
 
 == Download a page via https ignoring ceritficate errors
 Add `-k` to ignore any SSL certificate warnings/errors.  
@@ -71,7 +79,7 @@ curl -k -o Index.html https://example.com
 
 
 == Download a page using SOCKS5 proxy listening on 127.0.0.1  port 10443
-Useful when you have set up a SSH tunnel to remote server listening on local
+Useful when you have set up an SSH tunnel to remote server listening on local
 port, say 10443.
 
 ----
@@ -130,8 +138,8 @@ curl -w "@curl-params" -o /dev/null -s https://example.com
 
 == Resolve IP address to the owner's Autonomous System Number 
 Do so by sending POST query with form fields to the Team Cymru whois server.
-When sending any POST data with form fields, the first task is to get all the
-fields. The esiest way to do it is to browse to the page, fill the form, open
+When sending any POST data with form fields, the first task is to know the 
+fields. The esiest way to do it is to browse the form page, fill the form, open
 the HTML code and write down fields and their values. I did it for the page at
 https://asn.cymru.com/  and noted 5 fields to fill with values, the field to
 place IP address to query for is `bulk_paste`. In curl you specify field values
@@ -150,7 +158,7 @@ AS      | IP               | AS Name
 
 
 
-== Make sure Curl follows redirections (`Location:`) automatically, using the correct `Referer` on each redirection
+== Make sure curl follows redirections (`Location:`) automatically, using the correct `Referer` on each redirection
 
 ----
 curl -L -e ';auto' -o index.html https://example.com
@@ -198,14 +206,14 @@ Access-Control-Allow-Methods: GET
 ----
 
 
-== Convert Curl command into ready to be compiled C source  file
+== Convert curl command into ready to be compiled C source  file
 
 ----
 curl -o index.html https://yurisk.info --libcurl index.c
 ----
 
 
-The output file index.c will contain the source code to implement the same command using Curl C library:
+The output file index.c will contain the source code to implement the same command using curl C library:
 
 [source,c]
 ----
