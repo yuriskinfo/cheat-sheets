@@ -54,6 +54,8 @@ Make sure to __watch__ this repository to get notified on updates (usually updat
 
 [ncftp Ftp Client Commands example cookbook](cheat-sheets/ncftp-commands-reference-by-example-cookbook.adoc) | [PDF](cheat-sheets/ncftp-commands-reference-by-example-cookbook.pdf)
 
+[curl cookbook of examples](cheat-sheets/blob/next/cheat-sheets/curl-cookbook-of-examples.adoc) | [PDF](cheat-sheets/curl-cookbook-of-examples.pdf)
+
 ## Windows software and utilities
 
 
