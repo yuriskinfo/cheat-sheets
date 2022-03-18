@@ -146,7 +146,8 @@ place IP address to query for is `bulk_paste`. In curl you specify field values
 with `-F 'name=value'`  option:
 
 ----
-curl -s  -X POST -F 'action=do_whois' -F 'family=ipv4' -F 'method_whois=whois' -F 'bulk_paste=35.1.33.192' -F 'submit_paste=Submit' https://asn.cymru.com/cgi-bin/whois.cgi | grep "|"
+curl -s  -X POST -F 'action=do_whois' -F 'family=ipv4' -F 'method_whois=whois' \
+ -F 'bulk_paste=35.1.33.192' -F 'submit_paste=Submit' https://asn.cymru.com/cgi-bin/whois.cgi | grep "|"
 ----
 
 Output:  
