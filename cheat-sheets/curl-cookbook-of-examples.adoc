@@ -160,6 +160,7 @@ AS      | IP               | AS Name
 
 
 == Make sure curl follows redirections (`Location:`) automatically, using the correct `Referer` on each redirection
+Use `-L` option to tell curl to follow the _Location_ header.
 
 ----
 curl -L -e ';auto' -o index.html https://example.com
