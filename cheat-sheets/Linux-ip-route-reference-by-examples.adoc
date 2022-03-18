@@ -222,5 +222,63 @@ Show IPv6 neighbors.
 
 |===
 
+== Network bridge with ip route2 - manage a network bridge using the ip command
+[cols=2, options="header"]
+|===
+
+|Command
+|Description
+
+|*ip link add name bridge_name type bridge* +
+*ip link set bridge_name up*
+|Create a new bridge and change its state to up.
+
+|*ip link set eth0 up*
+|To add an interface (e.g. eth0) into the bridge, its state must be up
+
+|*ip link set eth0 master bridge_name*
+|Adding the interface into the bridge
+
+|*bridge link*
+|To show the existing bridges and associated interfaces, use the bridge command
+
+|*ip link set eth0 nomaster*
+|to remove an interface from a bridge
+
+|*ip link delete bridge_name type bridge*
+|To delete a bridge
+
+|*bridge fdb show*
+|Shows a list of MACs in FDB(Forwarding Database entry)	
+
+|*bridge fdb add 00:01:02:03:04:05 dev eth0 master*
+|add a new fdb entry
+
+|*bridge fdb append to 00:00:00:00:00:00 dst 10.0.0.2 dev vxlan0*
+|append a forwarding database entry	
+
+|*bridge fdb del 00:01:02:03:04:05 dev eth0 master*
+|Deletes FDB entry
+
+|*bridge vlan add dev bond0 vid 2 master*
+|Create a new vlan
+
+|*bridge vlan delete dev eth0 vid 2*
+|Delete a vlan
+
+|*bridge vlan show*
+|List all vlans
+
+|*bridge link set dev eth0 guard on*
+|Disable/Enable BPDU proccessing on specific port 
+
+|*bridge link set dev eth1 cost 4*
+|Setting STP Cost to a port
+
+|*bridge link set dev eth1 root_block on*
+|To set root guard on eth1
+
+|===
+
 == Reference
 * https://manpages.debian.org/jessie/iproute2/ip-route.8.en.html
