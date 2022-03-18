@@ -430,7 +430,7 @@ If a website has a repeating pattern in naming its resources, we can use **URL g
 
 _Output files_: curl remembers the matched glob patterns and we can use them with `-o` to specify custom output filenames.
 
-1. Fetch all pages in
+* Fetch all pages in
 `https://yurisk.info/category/checkpoint-ngngx<i>NNN</i>.html`  where _NNN_ goes from 2 to 9. Pay attention to the single quotes - when using on the Bash command line, the range `[]` and list `{}` operators would be otherwise interpreted by the Bash itself instead of curl.
 
 ----
@@ -451,7 +451,7 @@ checkpoint-ngngx8.html
 checkpoint-ngngx9.html
 ----
 
-2. Fetch all pages _cisco.html,fortinet.html,linux.html,checkpoint-ngngx.html_ inside the _category_ folder:  
+* Fetch all pages _cisco.html,fortinet.html,linux.html,checkpoint-ngngx.html_ inside the _category_ folder:  
 
 ----
  curl   -O 'https://yurisk.info/category/{cisco,fortinet,linux,checkpoint-ngngx}.html'
@@ -466,7 +466,7 @@ fortinet.html
 linux.html
 ----
 
-3. Download pages with alphabetical ranges.
+* Download pages with alphabetical ranges.
 
 ----
 curl-O -s https://yurisk.info/test[a-z]
