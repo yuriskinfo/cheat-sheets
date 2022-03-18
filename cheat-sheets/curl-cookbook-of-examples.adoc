@@ -300,7 +300,10 @@ Output:
  curl scp://99.23.5.18:/root/pdf.pdf -o pdf.pdf -u root
 ----
 
-Note: curl checks `~/.ssh/known_hosts`  file to verify authenticityy of the remote server. If the remote server is not already in the `known_hosts`, curl will refuse to connect. To prevent it - connect to the remote server via SSH, this will add it to the known hosts. Also, curl should be compiled with support for `libssh2` library.
+Note: curl checks `~/.ssh/known_hosts`  file to verify authenticity of the
+remote server. If the remote server is not already in the `known_hosts`, curl
+will refuse to connect. To prevent it - forst connect to the remote server via SSH,
+ this will add it to the known hosts. Also, curl should be compiled with support for `libssh2` library.
 
 == Get external IP address of the machine where the curl is installed 
 
@@ -329,7 +332,8 @@ Hi, curl can now send e-mails as well!
 Now, send the e-mail using the created file and setting e-mail envelope on the CLI:
 
 ----
-curl -v  smtp://aspmx.l.google.com/smtp.example.com  --mail-from Joedow@example.com  --mail-rcpt yuri@yurisk.info  --upload-file message.txt
+curl -v  smtp://aspmx.l.google.com/smtp.example.com  --mail-from Joedow@example.com  \
+ --mail-rcpt yuri@yurisk.info  --upload-file message.txt
 ----
 
 .Here:  
@@ -408,7 +412,7 @@ Output:
 
 ----
 
-Check if a site supports easily breakable DES algorithm:  
+Check if your version of curl supports easily breakable DES algorithm:  
 
 ----
 curl -k -o /dev/null  https://yurisk.info:443  --ciphers DES  
@@ -456,7 +460,6 @@ checkpoint-ngngx9.html
 Output:   
 
 ----
-ls -1 *.html
 checkpoint-ngngx.html
 cisco.html
 fortinet.html
