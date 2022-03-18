@@ -192,7 +192,7 @@ curl -compressed  -o w3.css https://yurisk.info/theme/css/w3.css
 Note: this option causes curl to sent `Accept-Encoding: gzip` in the request.
 
 
-== Verify CORS functionality of a website
+== Verify CORS settings of a website
 
 ----
 curl -H "Access-Control-Request-Method: GET" -H "Origin: http://localhost" \
@@ -474,7 +474,7 @@ curl-O -s https://yurisk.info/test[a-z]
 
 
 == How to prevent errors on URLs that contain brackets
- If the curl uses brackets (square and curly) for ranges (<a name="ee22">see above</a>), how do we work with URLs containing such symbols? By using the `-g` option to curl which turns off globbing. It also means we can't use ranges with URLs that contain brackets.
+If the curl uses brackets (square and curly) for ranges (<a name="ee22">see above</a>), how do we work with URLs containing such symbols? By using the `-g` option to curl which turns off globbing. It also means we can't use ranges with URLs that contain brackets.
 
 ----
 curl -g https://example.com/{ids}?site=example.gov
