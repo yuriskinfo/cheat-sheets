@@ -8,6 +8,7 @@ Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
 <<ip route - Manage routing table>> +
 <<ip link - Link Management>> +
 <<ip neighbor - Manage ARP and neighbors table>> +
+<<Network bridge with ip route2 - manage a network bridge using the ip command>> +
 <<Reference>>
 
 
