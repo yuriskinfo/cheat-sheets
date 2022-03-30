@@ -396,7 +396,7 @@ location of this IP, and whetehr this IP address is in FortiGuard black list.
 |List all aggregate interfaces in the current VDOM, shows names, state
 (up/down), LACP mode and algorithm used 
 
-|*diagnose netlink aggregate name <_aggregate interface name_>*
+|*diagnose netlink aggregate name <aggregate interface name>*
 |Shows details of the given aggregate interface under the entry `actor state`
 (preferred state is *ASAIEE*): LACP Mode (Active/Passive),
 LACP Speed mode (Slow [default]/Fast), Synced or Out of Sync, minimal physical
@@ -412,7 +412,7 @@ name, and should leave from the physical interface(s) destined to the peer's MAC
 address. This capture will also show LACP actor state in arriving/leaving
 packets - for working LACP aggregate it should be `ASAIEE` in both directions.
 
-|*diagnose netlink port <_aggregate int name_> src-ip <_IP_> dst-ip <_IP_>*
+|*diagnose netlink port <aggregate int name> src-ip <IP> dst-ip <IP>*
 |Show what physical port a packet given by the filter will exit. Available
 filter keywords:
 
