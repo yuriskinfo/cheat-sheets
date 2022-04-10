@@ -385,6 +385,54 @@ location of this IP, and whetehr this IP address is in FortiGuard black list.
 |===
 
 
+== LACP Aggregate Interfaces
+
+[cols=2, options="heade"]
+|===
+|Command
+|Description
+
+|*diagnose netlink aggregate list*
+|List all aggregate interfaces in the current VDOM, shows names, state
+(up/down), LACP mode and algorithm used 
+
+|*diagnose netlink aggregate name <aggregate interface name>*
+|Shows details of the given aggregate interface under the entry `actor state`
+(preferred state is *ASAIEE*): LACP Mode (Active/Passive),
+LACP Speed mode (Slow [default]/Fast), Synced or Out of Sync, minimal physical
+interfaces to be up for the whole aggregate to be up, Aggregator ID (has to be
+identical on both sides), own and peer's MAC addresses, link failure count.
+
+|*diagnose sniffer packet any "ether proto 0x8809" 6 0 a*
+|Sniffer to see all LACP traffic on this Fortigate: `0x8809` LACP Ethernet
+protocol designation, `6` - maximum verbosity, `0` - do not limit number of captured packets, `a` - show
+time in UTC format, rather than delta from the 1st packet seen. LACP packets
+should arrive from the peer's MAC address on the aggregate logical interface
+name, and should leave from the physical interface(s) destined to the peer's MAC
+address. This capture will also show LACP actor state in arriving/leaving
+packets - for working LACP aggregate it should be `ASAIEE` in both directions.
+
+|*diagnose netlink port <aggregate int name> src-ip <IP> dst-ip <IP>*
+|Show what physical port a packet given by the filter will exit. Available
+filter keywords:
+
+`src-ip` - Source IP address.
+
+`dst-ip` - Destination IP address.
+
+`src-mac` - Source MAC address.
+
+`dst-mac` - Destination MAC.
+
+`proto` - Protocol number.
+
+`src-port/dst-port` - Source/Destination port.
+
+`vlan-id` - VLAN number.
+
+
+|===
+
 == DHCP server
 
 .DHCP server
