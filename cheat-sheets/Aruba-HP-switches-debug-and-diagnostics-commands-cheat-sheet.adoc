@@ -17,12 +17,27 @@ NOTE: All commands were tested on HP/Aruba 5400 switches.
 |*show cpu [_seconds_]*
 |Show CPU stats of average load for 1 second, 5 seconds, and 1 minute, optionally setting period in _seconds_ (300 is max).
 
+|===
+
+== Logs
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
 | *show logging -r*
 | Show system logs and events in reverse chronological order, i.e. newest logs first.
 
 |*clear log*
 |Delete all logs on the switch.
+
+|*show log -s*
+|Display logs from the Standby commander/member in a VSF stack.
+
+|*show log -b*
+|Show logs with time since boot instead of date/time format.
 |===
+
 
 
 [cols=2,options="header"]
