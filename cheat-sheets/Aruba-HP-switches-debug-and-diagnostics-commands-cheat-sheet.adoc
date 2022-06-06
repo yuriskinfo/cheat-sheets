@@ -67,7 +67,7 @@ multiple tagged VLANs, input/output erros, buffer failures, CRCs, runts.
 *int _name_*
 
 *disable/enable*
-|Disable/enable a specific interface (in Cisco world `shut`/`no shut`
+|Disable/enable a specific interface (in Cisco world `shut`/`no shut`)
 
 |*show interface transceiver [_name_] [detail]*
 |Info on installed optical transceivers: Port number where installed, Type/Speed, Serial Number. If _detail_ is added, will also show temperature, voltage, Transmit (TX) and Receive (RX) power in mW and dBm.
