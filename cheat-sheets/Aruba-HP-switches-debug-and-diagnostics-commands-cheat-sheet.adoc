@@ -4,6 +4,7 @@ Yuri SLobodyanyuk, admin@yurisk.info
 
 Author: Yuri Slobodyanyuk,  https://www.linkedin.com/in/yurislobodyanyuk/
 
+NOTE: All commands were tested on HP/Aruba 5400 switches.
 
 [cols=2,options="header"]
 |===
