@@ -1,6 +1,7 @@
 = Aruba and HP switches debug and diagnostics commands cheat sheet
 Yuri SLobodyanyuk, admin@yurisk.info
 :homepage: https://yurisk.info
+:toc:
 
 Author: Yuri Slobodyanyuk,  https://www.linkedin.com/in/yurislobodyanyuk/
 
