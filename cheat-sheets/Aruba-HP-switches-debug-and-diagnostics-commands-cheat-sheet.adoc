@@ -62,8 +62,8 @@ NOTE: All commands were tested on HP/Aruba 5400 switches.
 |Show detailed information of an interface: media type, speed/duplex state, MAC address, up/down, max frame size, VLAN id if any untagged set and `.` (dot) for 
 multiple tagged VLANs, input/output erros, buffer failures, CRCs, runts. 
 
-|*show interface transceiver*
-|Info on installed optical transceivers: Port number where installed, Type/Speed, Serial Number.
+|*show interface transceiver [detail]*
+|Info on installed optical transceivers: Port number where installed, Type/Speed, Serial Number. If _detail_ is added, will also show temperature, voltage, Transmit (TX) and Receive (RX) power in mW and dBm.
 
 |*show ip*
 | Show all configured IP addresses on a switch.
