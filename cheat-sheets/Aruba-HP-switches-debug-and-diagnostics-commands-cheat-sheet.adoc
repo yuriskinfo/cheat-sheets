@@ -6,6 +6,19 @@ Author: Yuri Slobodyanyuk,  https://www.linkedin.com/in/yurislobodyanyuk/
 
 NOTE: All commands were tested on HP/Aruba 5400 switches.
 
+
+== General Health
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|*show cpu [_seconds_]*
+|Show CPU stats of average load for 1 second, 5 seconds, and 1 minute, optionally setting period in _seconds_ (300 is max).
+
+|===
+
+
 [cols=2,options="header"]
 |===
 |Command
