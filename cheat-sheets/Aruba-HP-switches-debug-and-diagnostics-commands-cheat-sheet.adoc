@@ -250,7 +250,7 @@ power.
 |*show ntp associations*
 |SHow state of associations with the configured NTP servers, together with stats: delay, offset, dispersion, and stratum.
 
-|*show run \| i ntp
+|*show run \| i ntp*
 |Show NTP-related configs.
 
 |===
