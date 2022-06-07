@@ -5,7 +5,7 @@ Yuri SLobodyanyuk, admin@yurisk.info
 
 Author: Yuri Slobodyanyuk,  https://www.linkedin.com/in/yurislobodyanyuk/
 
-NOTE: All commands were tested on HP/Aruba 5400 switches.
+NOTE: All commands were tested on HP/Aruba 5400 switches (specifically 5406Rzl2).
 
 
 == General Health
@@ -280,3 +280,19 @@ internal power.
 
 |===
 
+
+== VSF (Virtual Switching Framework)
+[cols=2,options="header"]
+|===
+|Command
+|Description
+
+|*show vsf*
+|Show general VSF status: who is active, priority, software versions.
+
+|* show vsf member _member-id_*
+|Show general info on a specific member: serial number, uptime, cpu usage, memory usage, status: Commander/Standby, priority.
+
+
+
+|===
