@@ -95,7 +95,7 @@ multiple tagged VLANs, input/output erros, buffer failures, CRCs, runts.
 |Lists all interfaces with their names if set. In Cisco it would be `show int description`
 
 |*show trunk*
-| Show trunk interfaces with their state and type. NOTE: In HP/Aruba world *trunk* means aggregated interfaces (LACP), what in Cisco world is called port/ether-channel.
+| Show trunk interfaces with their state and type. NOTE: In HP/Aruba world *trunk* means aggregated interfaces (LAG), what in Cisco world is called port/ether-channel.
 
 |*show trunk-statistics <trunk name>*
 | Show cumulative statistics for the trunk interface: packets passed, bytes received, drops if any.
