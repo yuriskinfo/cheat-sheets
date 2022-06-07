@@ -290,7 +290,7 @@ internal power.
 |*show vsf*
 |Show general VSF status: who is active, priority, software versions.
 
-|* show vsf member _member-id_*
+|*show vsf member _member-id_*
 |Show general info on a specific member: serial number, uptime, cpu usage, memory usage, status: Commander/Standby, priority.
 
 
