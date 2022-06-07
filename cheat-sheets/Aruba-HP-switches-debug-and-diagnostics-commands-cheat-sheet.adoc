@@ -17,6 +17,8 @@ NOTE: All commands were tested on HP/Aruba 5400 switches.
 |*show cpu [_seconds_]*
 |Show CPU stats of average load for 1 second, 5 seconds, and 1 minute, optionally setting period in _seconds_ (300 is max).
 
+|*show uptime*
+|Show uptime of the switch since reboot, for VSF stack switches shows uptime for each member.
 
 |*show time*
 |Show switch time and date, for log correlation.
