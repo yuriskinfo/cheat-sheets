@@ -104,7 +104,7 @@ multiple tagged VLANs, input/output erros, buffer failures, CRCs, runts.
 
 |===
 
-== Daemons Debug real time
+== Daemons Debug Real-Time
 
 [cols=2,options="header"]
 |===
@@ -124,7 +124,7 @@ multiple tagged VLANs, input/output erros, buffer failures, CRCs, runts.
 `buffer` - send to the switch memory buffer.
 
 |*debug <daemon name>*
-|enable real-time debug of the specified daemon. The daemons are:
+a|enable real-time debug of the specified daemon. The daemons are:
 
 *  acl                   Displays debug messages for access control lists.
 * all                   Display all debug messages.
