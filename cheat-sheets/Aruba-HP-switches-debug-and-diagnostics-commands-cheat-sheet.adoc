@@ -5,7 +5,7 @@ Yuri SLobodyanyuk, admin@yurisk.info
 
 Author: Yuri Slobodyanyuk,  https://www.linkedin.com/in/yurislobodyanyuk/
 
-NOTE: All commands were tested on HP/Aruba 5400 switches (specifically 5406Rzl2).
+NOTE: All commands were tested on HP/Aruba 5400 switches (specifically 5406Rzl2), but will work on any model with recent firmware versions, except for the hardware features unavailable on smaller models, like VSF .
 
 
 == General Health
