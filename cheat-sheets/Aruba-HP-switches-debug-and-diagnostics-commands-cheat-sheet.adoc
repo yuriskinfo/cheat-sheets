@@ -181,10 +181,10 @@ a|Debug various routing processes. The _routing process_ is one of the:
 |Description 
 
 |*display stp root*
-| Show root switch for Spanning Tree Protocol.
+| Show  root switch for each VLAN.
 
 |*display stp brief*
-| Short information on STP state for VLANs.
+| Show STP state for each port/VLAN - Forwarding/Blocking, STP role.
 
 |===
 
