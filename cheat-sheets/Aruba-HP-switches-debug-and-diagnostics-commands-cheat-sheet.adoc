@@ -104,6 +104,77 @@ multiple tagged VLANs, input/output erros, buffer failures, CRCs, runts.
 
 |===
 
+== Daemons Debug real time
+
+[cols=2,options="header"]
+|===
+|Command
+|Description
+
+|*show debug*
+|Show currently enabled debug
+
+|*debug destination <logging/session/buffer>*
+|Set location to output the debug to (default `none`): 
+
+`logging` - send the debug to the configured (if any) syslog server.
+
+`session` - send to the terminal (Cisco analog of `term mon`).
+
+`buffer` - send to the switch memory buffer.
+
+|*debug <daemon name>*
+|enable real-time debug of the specified daemon. The daemons are:
+
+*  acl                   Displays debug messages for access control lists.
+* all                   Display all debug messages.
+*  aruba-central         Display Aruba Central server debug information.
+* bfd                   Enable BFD debug logging.
+* cdp                   Display CDP information.
+* cfg-restore           Display cfg-restore debug messages.
+* destination           Select destination for debug messages.
+* dhcp-server           Display DHCP server debug messages.
+* distributed-trunking  Display DT debug messages.
+* est                   Display EST debug messages.
+* event                 Display event log messages.
+* ip                    Display debug messages for IPv4.
+* ip-sla                Enable debug logs for IP SLA.
+* ipv6                  Enable debug messages for IPv6.
+* lacp                  Display LACP information.
+* lldp                  Display LLDP information.
+* mdns                  Display mDNS debug messages.
+* mstp                  Display MSTP debug messages.
+* mvrp                  Enable MVRP debug messages.
+* ntp                   Display debug messages for NTP.
+* openflow              Display all OpenFlow packets.
+* rest-interface        Display REST debug information.
+* rpvst                 Display RPVST debug messages.
+* security              Display all Security messages.
+* services              Display debug messages on services module.
+* smart-link            Display Smart link debug messages.
+* snmp                  Display SNMP debug messages.
+* time-stamp            Enable/disable system-time to be associated with debug messages.
+* tunnel                Display tunnel debug messages.
+* udld                  Display UDLD debug messages.
+* uplink-failure-det... Display UFD debug messages.
+* usertn                Displays authentication module log messages for user-based tunneled node
+* vrrp                  Display VRRP debug messages.
+* ztp                   Display ZTP debug messages.
+ debug ip 
+ bgp                   Display all BGP routing messages.
+ client-tracker        Displays debug messages for IP client tracker.
+ fib                   Display IP Forwarding Information Base messages & events.
+ forwarding            Display IPv4 forwarding messages.
+ iface                 Display interface management messages.
+ igmp                  Display all IGMP messages.
+ ospf                  Display all OSPF routing messages.
+ ospfv3                [Deprecated] Enable debug messages for OSPFv3.
+ packet                Display IPv4 packet messages.
+ pbr                   Enable debug messages for PBR.
+ pim                   Enable/disable tracing of PIM messages.
+ rip                   Display all RIP routing messages.
+
+|===
 
 
 [cols=2,options="header"]
