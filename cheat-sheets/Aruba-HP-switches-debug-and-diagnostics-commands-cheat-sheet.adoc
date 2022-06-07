@@ -57,9 +57,6 @@ NOTE: All commands were tested on HP/Aruba 5400 switches.
 
 
 
-|*show debug*
-|Show what debug is currently active.
-
 |*show mac-address*
 |Show table of MAC addresses.
 
