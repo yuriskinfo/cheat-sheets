@@ -27,6 +27,9 @@ NOTE: All commands were tested on HP/Aruba 5400 switches.
 |*display boot-loader*
 | Show what image will be loaded on the next boot.
 
+|*show redundancy*
+|In VSF stack topology, shows firmware image version of each member, as well as number of fail overs. 
+
 |===
 
 == Logs
