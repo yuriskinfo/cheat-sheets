@@ -42,6 +42,9 @@ for the next boot.
 | *show logging -r*
 | Show system logs and events in reverse chronological order, i.e. newest logs first.
 
+|*show log _string-to-search_*
+|Search and display only logs containing the specified string. The search is *case sensitive*, and no regex - just plain strings. E.g. to search for logs   containing  the interface _1/B2_: `show log 1/B2`. E.g. search for all bgp-related logs like peer up/down: `show log -r bgp`.
+
 |*clear log*
 |Delete all logs on the switch.
 
