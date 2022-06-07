@@ -55,15 +55,6 @@ NOTE: All commands were tested on HP/Aruba 5400 switches.
 
 
 
-|*debug destination buffer*
-|Direct debug output to the log buffer, to be read later on CLI.
-
-|*debug <daemon name>*
-|Start runnig debug,e.g. to debug SNMP daemon: `debug snmp pdu`
-
-|*show debug buffer*
-|Show log buffer with the collected debug output.
-
 |*show debug*
 |Show what debug is currently active.
 
@@ -130,6 +121,9 @@ multiple tagged VLANs, input/output erros, buffer failures, CRCs, runts.
 `session` - send to the terminal (Cisco analog of `term mon`).
 
 `buffer` - send to the switch memory buffer.
+
+|*show debug buffer*
+|Show log buffer with the collected debug output.
 
 |*debug <daemon name>*
 a|enable real-time debug of the specified daemon. The daemons are:
@@ -225,12 +219,6 @@ a|Debug various routing processes. The _routing process_ is one of the:
 |Display OSPF neighbors
 
 
-
-
-
-
-
-
 |*show power-over-ethernet brief/ethernet*
 |Show state of PoE-enabled interfaces, including information on drawn/available
 power.
@@ -242,5 +230,26 @@ power.
 |===
 
 
+== NTP
+[cols=2,options="header"]
+|===
+|Command
+|Description
 
+|*show ntp status*
+|Show current status of NTP
+
+|*show ntp  servers*
+|Display configured NTP servers
+
+|*show ntp statistics*
+|Show stats for NTP - number of NTP packets sent/received, and errors.
+
+|*show ntp associations*
+|SHow state of associations with the configured NTP servers, together with stats: delay, offset, dispersion, and stratum.
+
+|*show run | i ntp
+|Show NTP-related configs.
+
+|===
 
