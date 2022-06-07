@@ -54,17 +54,7 @@ for the next boot.
 
 
 
-[cols=2,options="header"]
-|===
-|Command
-|Description 
 
-
-
-|*show mac-address*
-|Show table of MAC addresses.
-
-|===
 
 == Interfaces
 [cols=2,options="header"]
@@ -246,7 +236,7 @@ each entry.
 
 
  
-== POE
+== PoE
 [cols=2,options="header"]
 |===
 |Command
