@@ -17,6 +17,14 @@ NOTE: All commands were tested on HP/Aruba 5400 switches.
 |*show cpu [_seconds_]*
 |Show CPU stats of average load for 1 second, 5 seconds, and 1 minute, optionally setting period in _seconds_ (300 is max).
 
+
+|*show time*
+|Show switch time and date, for log correlation.
+
+
+|*display boot-loader*
+| Show what image will be loaded on the next boot.
+
 |===
 
 == Logs
@@ -104,7 +112,7 @@ multiple tagged VLANs, input/output erros, buffer failures, CRCs, runts.
 
 |===
 
-== Daemons Debug Real-Time
+== Daemons Real-Time Debug 
 
 [cols=2,options="header"]
 |===
@@ -132,7 +140,6 @@ a|enable real-time debug of the specified daemon. The daemons are:
 * `bfd`                   Enable BFD debug logging.
 * `cdp`                   Display CDP information.
 * `cfg-restore`           Display cfg-restore debug messages.
-* `destination`           Select destination for debug messages.
 * `dhcp-server`           Display DHCP server debug messages.
 * `distributed-trunking`  Display DT debug messages.
 * `est`                   Display EST debug messages.
@@ -180,7 +187,7 @@ a|Debug various routing processes. The _routing process_ is one of the:
 
 |===
 
-
+== Spanning Tree Protocol (STP)
 [cols=2,options="header"]
 |===
 |Command
@@ -192,6 +199,24 @@ a|Debug various routing processes. The _routing process_ is one of the:
 |*display stp brief*
 | Short information on STP state for VLANs.
 
+|===
+
+== Routing Info
+[cols=2,options="header"]
+|===
+|Command
+|Description
+
+|*show ip*
+| Show IP routing state: disabled/enabled. It is disabled by default, to enable: *(config)# ip routing* on platforms that support Layer 3 routing. Also displays list of all the interfaces/VLANs with IP address set.
+
+|*show ip route*
+|Show FIB - routing table the switch is currently using to forward the packets.
+
+
+
+
+
 |*display lldp neighbor list*
 |Display LLDP neighbors.
 
@@ -199,19 +224,11 @@ a|Debug various routing processes. The _routing process_ is one of the:
 |*show ip ospf neighbor [detail]*
 |Display OSPF neighbors
 
-|*show ip route*
-| Show routing table for Layer 3 switch.
-
-|*show ip*
-| Show IP routing state: disabled/enabled. It is disabled by default, to enable: *(config)# ip routing* on platforms that support Layer 3 routing.
 
 
-|*display boot-loader*
-| Show what image will be loaded on the next boot.
 
 
-|*show time*
-|Show switch time and date, for log correlation.
+
 
 
 |*show power-over-ethernet brief/ethernet*
