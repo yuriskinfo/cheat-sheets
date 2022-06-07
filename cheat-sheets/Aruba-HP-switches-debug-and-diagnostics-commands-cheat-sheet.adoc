@@ -24,8 +24,9 @@ NOTE: All commands were tested on HP/Aruba 5400 switches.
 |Show switch time and date, for log correlation.
 
 
-|*display boot-loader*
-| Show what image will be loaded on the next boot.
+|*show flash*
+| Show what firmware images are stored in the flash, and which one is the primary/secondary
+for the next boot.
 
 |*show redundancy*
 |In VSF stack topology, shows firmware image version of each member, as well as number of fail overs. 
