@@ -210,23 +210,57 @@ a|Debug various routing processes. The _routing process_ is one of the:
 |Show FIB - routing table the switch is currently using to forward the packets.
 
 
+|===
 
 
+== LLDP & MAC
 
-|*display lldp neighbor list*
-|Display LLDP neighbors.
+[cols=2,options="header"]
+|===
+|Command
+|Description
+
+|*show lldp info remote-device [detail]*
+|Display LLDP neighbors. The info includes: local port name, chassis id of the peer, remote system name, remote port. If _detail_ is added, will also show exact firmware version used, and management IP address if configured. Useful for 
+topology discovery, which switch is connected to which.
+
+|*show lldp info local-device [detail]*
+|Show info about the device you are connected to: chassis id, system name, firmware image version, IP addresses configured. 
+
+|*show lldp stats*
+|Show LLDP packets sent/received per port.
+
+|*show mac-address [detail]*
+|Show complete MAC addresses table with port names, MAC addresses, and VLANs. If _detail_ is added, will also show age of 
+each entry.
+
+|*show mac-address vlan _vlanid_*
+| Show MAC addresses learned on the specified VLAN.
+
+|*show mac-address _port1_[,_port2_...]*
+|Show MAC addresses learned on specified ports.
 
 
-|*show ip ospf neighbor [detail]*
-|Display OSPF neighbors
+|===
 
 
-|*show power-over-ethernet brief/ethernet*
-|Show state of PoE-enabled interfaces, including information on drawn/available
-power.
+ 
+== POE
+[cols=2,options="header"]
+|===
+|Command
+|Description
 
+|*show power-over-ethernet brief [_port name_]*
+|Show detailed information  about PoE-enabled interfaces, including information on drawn/available
+power per port, state. Optionally, limit information to a specific port. 
 
+|*show power-over-ethernet brief vsf member _member id_*
+|Show PoE detailed info per VSF member.
 
+|*show power-over-ethernet*
+| Display PoE general information for the whole switch: total available/used power, PoE redundancy status, 
+internal power. 
 
 
 |===
