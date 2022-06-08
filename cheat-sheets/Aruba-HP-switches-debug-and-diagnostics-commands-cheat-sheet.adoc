@@ -92,6 +92,15 @@ the `clear log` and records all commands - both configuration and not. So, it wi
 |Show detailed information of an interface: media type, speed/duplex state, MAC address, up/down, max frame size, VLAN id if any untagged set and `.` (dot) for 
 multiple tagged VLANs, input/output erros, buffer failures, CRCs, runts. 
 
+|*show interface display*
+|Present TUI dialog window with real-time information for all interfaces, including total bytes/frames, Rx/Tx errors, and drops. The information is updated every 3 seconds dynamically. Use arrows/tab to navigate, CTRL + C to exit the menu.
+
+|*show interface port-utilization*
+|Show one time as a table the current traffic rates passing each interface.
+
+|*show int queue _port-name_*
+| Show statistics of all queue buffers of a given interface, including _drops_ for each. 
+
 |*conf t*
 
 *int _name_*
