@@ -66,7 +66,7 @@ the `clear log` and records all commands - both configuration and not. So, it wi
 |Show only logs of the specified category, see above for the available categories.
 
 |*clear log*
-|Delete all logs.
+|Delete (almost) all logs.
 
 |*show log -s*
 |Display logs from the Standby commander/member in a VSF stack.
