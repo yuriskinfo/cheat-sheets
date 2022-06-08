@@ -6,15 +6,7 @@ NOTE: The tool is to be run in Expert mode. It is available on both Management S
 
 status: Work in Progress.
 
-<<blades>> +
-<<os>> +
-<<mg>> +
-<<fg>> +
-<<https_inspection>> +
-<<antimalware>> +
-<<dlp - DLP>> +
-<<ctnt - Content Awareness>> +
-
+:toc:
 
 
 == blades
@@ -374,5 +366,17 @@ NOTE: Thresholds and their actions are configured via `threshold_config` CLI too
 
 |*default*
 |Is Content Awareness blade active: True/False. Total files scanned, total data types detected.
+
+|===
+
+== scrub - Threat Extraction process
+[cols = 2, options="headers"]
+|===
+
+|Flavor
+|Description
+
+|*subscription_status*
+|License/subscription status and expiration date.
 
 |===

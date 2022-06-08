@@ -5,7 +5,7 @@ Yuri SLobodyanyuk, admin@yurisk.info
 
 Author: Yuri Slobodyanyuk,  https://www.linkedin.com/in/yurislobodyanyuk/
 
-NOTE: All commands were tested on HP/Aruba 5400 switches (specifically 5406Rzl2), but will work on any model with recent firmware versions, except for the hardware features unavailable on smaller models, like VSF .
+NOTE: All commands were tested on HP/Aruba 5400 switches (specifically 5406Rzl2), but will work on any model with recent firmware versions (16.x or newer), except for the hardware features unavailable on smaller models, like VSF .
 
 
 == General Health
@@ -18,18 +18,17 @@ NOTE: All commands were tested on HP/Aruba 5400 switches (specifically 5406Rzl2)
 |Show CPU stats of average load for 1 second, 5 seconds, and 1 minute, optionally setting period in _seconds_ (300 is max).
 
 |*show uptime*
-|Show uptime of the switch since reboot, for VSF stack switches shows uptime for each member.
+|Show uptime of the switch since reboot, for VSF stacked switches shows uptime for each member.
 
 |*show time*
 |Show switch time and date, for log correlation.
 
 
 |*show flash*
-| Show what firmware images are stored in the flash, and which one is the primary/secondary
-for the next boot.
+| Show what firmware images are stored in the flash, and which one is the primary/secondary for the next boot.
 
 |*show redundancy*
-|In VSF stack topology, shows firmware image version of each member, as well as number of fail overs. 
+|In VSF stack topology, shows firmware image version of each member, as well as the number of failovers. 
 
 |===
 
@@ -42,11 +41,18 @@ for the next boot.
 | *show logging -r*
 | Show system logs and events in reverse chronological order, i.e. newest logs first.
 
+|*show log -a*
+|Show logs from previous boot cycles. HP/Aruba will display only logs since the last boot, by default, but you can add `-a` to any of the log display commands below to work on previous logs as well. 
+
 |*show log _string-to-search_*
-|Search and display only logs containing the specified string. The search is *case sensitive*, and no regex - just plain strings. E.g. to search for logs   containing  the interface _1/B2_: `show log 1/B2`. E.g. search for all bgp-related logs like peer up/down: `show log -r bgp`.
+|Search and display only logs containing the specified string. The search is *case sensitive*, and no regex - just plain strings with exact match. E.g. to search for logs   containing  the interface _1/B2_: `show log 1/B2`; to search for all bgp-related logs like peer up/down: `show log -r bgp`.
+
+|*show log command [-a]*
+|Show log of commands issued by users on CLI. This log is NOT erased even by 
+the `clear log` and records all commands - both configuration and not. So, it will record commands like `ping 8.8.8.8`, `clear log`, `no router bgp`. Adding `-a` will show logs from previous boot cycles.
 
 |*clear log*
-|Delete all logs on the switch.
+|Delete all logs.
 
 |*show log -s*
 |Display logs from the Standby commander/member in a VSF stack.
@@ -109,8 +115,8 @@ multiple tagged VLANs, input/output erros, buffer failures, CRCs, runts.
 |*show debug*
 |Show currently enabled debug
 
-|*debug destination <logging/session/buffer>*
-|Set location to output the debug to (default `none`): 
+|*debug destination logging/session/buffer*
+|Set location to output the debug to (default `none`), run before enabling the debug: 
 
 `logging` - send the debug to the configured (if any) syslog server.
 
@@ -121,7 +127,7 @@ multiple tagged VLANs, input/output erros, buffer failures, CRCs, runts.
 |*show debug buffer*
 |Show log buffer with the collected debug output.
 
-|*debug <daemon name>*
+|*debug _daemon-name_*
 a|enable real-time debug of the specified daemon. The daemons are:
 
 *  `acl`                   Displays debug messages for access control lists.
@@ -159,8 +165,8 @@ a|enable real-time debug of the specified daemon. The daemons are:
 * `ztp`                   Display ZTP debug messages.
 
 
-|*debug ip <routing process>*
-a|Debug various routing processes. The _routing process_ is one of the:
+|*debug ip _routing-process_*
+a|Debug various routing processes. The _routing-process_ is one of the:
 
 * `bgp`                   Display all BGP routing messages.
 * `client-tracker`        Displays debug messages for IP client tracker.
@@ -295,6 +301,9 @@ internal power.
 
 |*show vsf member _member-id_*
 |Show general info on a specific member: serial number, uptime, cpu usage, memory usage, status: Commander/Standby, priority.
+
+|*show redundancy*
+|Shows firmware image version of each member, as well as the number of failovers. 
 
 
 
