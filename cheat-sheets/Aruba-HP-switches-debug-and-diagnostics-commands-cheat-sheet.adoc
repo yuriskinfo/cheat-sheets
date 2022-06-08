@@ -120,7 +120,7 @@ multiple tagged VLANs, input/output erros, buffer failures, CRCs, runts.
 |*show trunk*
 | Show trunk interfaces with their state and type. NOTE: In HP/Aruba world *trunk* means aggregated interfaces (LAG), what in Cisco world is called port/ether-channel.
 
-|*show trunk-statistics <trunk name>*
+|*show trunk-statistics _trunk-name_*
 | Show cumulative statistics for the trunk interface: packets passed, bytes received, drops if any.
 
 |*show lacp*
