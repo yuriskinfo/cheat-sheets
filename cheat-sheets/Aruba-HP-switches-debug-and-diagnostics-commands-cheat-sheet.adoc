@@ -242,7 +242,7 @@ a|Debug various routing processes. The _routing-process_ is one of the:
 |*show ip bgp neighbor [_ip-address-of-peer_]*
 |Show detailed information about the BGP session with all or the specified peer(s), including hold time, weight, prefixes advertised/received, etc.
 
-|*show ip bgp neighbor _ip-adress_ advertised-routes*
+|*show ip bgp neighbor _ip-address_ advertised-routes*
 |Display routes we advertise via BGP to the _ip-address_ neighbor.
 
 |*show ip bgp neighbor _ip-address_ received-routes*
