@@ -234,7 +234,7 @@ a|Debug various routing processes. The _routing-process_ is one of the:
 |Description
 
 |*show ip bgp summary*
-|Show in short format all BGP pers with their IP address, AS number, and state. The first command to try for BGP.
+|Show in short format all BGP peers with their IP address, AS number, and state. The first command to try for BGP.
 
 |*show ip bgp _prefix/mask_*
 |Show BGP info for the specified prefix. In other words - show all prefixes/networks known in the BGP table.
