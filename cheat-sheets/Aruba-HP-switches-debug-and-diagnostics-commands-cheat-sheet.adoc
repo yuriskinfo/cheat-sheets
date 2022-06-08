@@ -38,6 +38,17 @@ NOTE: All commands were tested on HP/Aruba 5400 switches (specifically 5406Rzl2)
 |Command
 |Description
 
+a| Logs category:
+
+* W=Warning   
+* I=Information
+* M=Major     
+* D=Debug 
+* E=Error
+| All logs are categorized when written, and the category is presented in the 1st column of each log. This also
+allows filtering logs for display by their category, see below.
+
+
 | *show logging -r*
 | Show system logs and events in reverse chronological order, i.e. newest logs first.
 
@@ -50,6 +61,9 @@ NOTE: All commands were tested on HP/Aruba 5400 switches (specifically 5406Rzl2)
 |*show log command [-a]*
 |Show log of commands issued by users on CLI. This log is NOT erased even by 
 the `clear log` and records all commands - both configuration and not. So, it will record commands like `ping 8.8.8.8`, `clear log`, `no router bgp`. Adding `-a` will show logs from previous boot cycles.
+
+|*show log -m/-e/-p/-w/-i/-d*
+|Show only logs of the specified category, see above for the available categories.
 
 |*clear log*
 |Delete all logs.
