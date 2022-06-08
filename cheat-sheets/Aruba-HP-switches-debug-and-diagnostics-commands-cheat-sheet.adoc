@@ -212,6 +212,7 @@ a|Debug various routing processes. The _routing-process_ is one of the:
 |===
 
 == Routing Info
+=== Static
 [cols=2,options="header"]
 |===
 |Command
@@ -225,6 +226,34 @@ a|Debug various routing processes. The _routing-process_ is one of the:
 
 
 |===
+
+=== BGP
+[cols=2,options="header"]
+|===
+|Command
+|Description
+
+|*show ip bgp summary*
+|Show in short format all BGP pers with their IP address, AS number, and state. The first command to try for BGP.
+
+|*show ip bgp _prefix/mask_*
+|Show BGP info for the specified prefix. In other words - show all prefixes/networks known in the BGP table.
+
+|*show ip bgp neighbor [_ip-address-of-peer_]*
+|Show detailed information about the BGP session with all or the specified peer(s), including hold time, weight, prefixes advertised/received, etc.
+
+|*show ip bgp neighbor _ip-adress_ advertised-routes*
+|Display routes we advertise via BGP to the _ip-address_ neighbor.
+
+|*show ip bgp neighbor _ip-address_ received-routes*
+|Display routes we learned from the given BGP peer.
+
+|*show log bgp*
+|Show logs including the word `bgp`. I twill include BGP peering establsihment/tear up.
+
+|===
+
+
 
 
 == LLDP & MAC
