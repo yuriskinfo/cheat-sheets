@@ -249,7 +249,7 @@ a|Debug various routing processes. The _routing-process_ is one of the:
 |Display routes we learned from the given BGP peer.
 
 |*show log bgp*
-|Show logs that include  the word `bgp`. I twill include BGP peering establsihment/tear up.
+|Show logs that include  the word `bgp`. It will include BGP peering establsihment/tear up.
 
 |===
 
