@@ -28,7 +28,7 @@ NOTE: All commands were tested on HP/Aruba 5400 switches (specifically 5406Rzl2)
 | Show what firmware images are stored in the flash, and which one is the primary/secondary for the next boot.
 
 |*show redundancy*
-|In VSF stack topology, shows firmware image version of each member, as well as the number of failovers. 
+|In module management redundancy stack topology, shows firmware image version of each member, as well as the number of failovers. 
 
 |===
 
@@ -403,7 +403,7 @@ internal power.
 |Show general info on a specific member: serial number, uptime, cpu usage, memory usage, status: Commander/Standby, priority.
 
 |*show redundancy*
-|Shows firmware image version of each member, as well as the number of failovers. 
+|Shows firmware image version of each member, as well as the number of failovers. Not strictly VSF feature - but management redundancy, but the result is the same. 
 
 
 
