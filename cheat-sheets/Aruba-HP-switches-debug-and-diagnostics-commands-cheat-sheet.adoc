@@ -263,6 +263,31 @@ a|Debug various routing processes. The _routing-process_ is one of the:
 |===
 
 
+=== OSPF
+[cols=2,options="header"]
+|===
+|Command
+|Description
+
+|*show ip ospf*
+|Show if the OSPF process is running and router id.
+
+|*show ip ospf area*
+|Show all areas configured on this device.
+
+|*show ip ospf statistics*
+|List OSPF packet statistics (OSPF sent,recieved and error packet count) of all OSPF enabled interfaces.
+
+|*show ip  ospf interface*
+|Show OSPF interfaces' information.
+
+|*show ip ospf neighbor*
+|List all established neighborships on this device.
+
+|*show ip ospf link-state*
+|Show all Link State Advertisements. 
+
+|===
 
 
 == LLDP & MAC
