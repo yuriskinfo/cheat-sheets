@@ -147,6 +147,12 @@ multiple tagged VLANs, input/output erros, buffer failures, CRCs, runts.
 |*show vlans _vlan-id_*
 |Show ports where the specified _vlan-id_ is enabled, either as `tagged` or `untagged`
 
+|*conf t*
+
+*(config)# no vlan _vlan-id_*
+| Dletes VLAN _vlan-id_ from configuration and un-assigns all ports from it, if some ports have no other VLAN association, they will be auto-assigned to default VLAN 1. WARNING: this command deletes the VLAN specified no matter from which sub-config mode you issue it. That is, even under `(config-if)#` interface config mode, this will remove all configuration for this VLAN from everywhere. 
+
+
 
 
 |===
