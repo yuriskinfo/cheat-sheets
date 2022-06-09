@@ -128,6 +128,25 @@ multiple tagged VLANs, input/output erros, buffer failures, CRCs, runts.
 
 |===
 
+== VLANs
+[cols=2,options="header"]
+|===
+|Command
+|Description
+
+|*show vlans*
+|Show a list of all VLANs configured on this switch.
+
+|*show vlans ports _port-name_[_,port2-name_...]*
+|Show vlans enabled on the specified physical port.
+
+|*show vlans _vlan-id_*
+|Show ports where the specified _vlan-id_ is enabled, either as `tagged` or `untagged`
+
+
+
+|===
+
 == Daemons Real-Time Debug 
 
 [cols=2,options="header"]
