@@ -44,7 +44,7 @@ a| Display part of configuration given by _option_:
 
 `interface` _port-id_: Show startup config for the specified interface.
 
-`router bgp|ospf|pim`: Show startup configuration section for this routing protocol.
+`router bgp\|ospf\|pim`: Show startup configuration section for this routing protocol.
 
 `vlan` _vlan-id_: Startup configuration for VLAN(s).
 
