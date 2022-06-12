@@ -37,6 +37,19 @@ NOTE: All commands were tested on HP/Aruba 5400 switches (specifically 5406Rzl2)
 |Show fans state: OK/Failed, and number of failures if any. For VSF shows info
 for both members.
 
+|*show config _option_*
+a| Display part of configuration given by _option_:
+
+`status`: Tell if the running config differs from the startup config.
+
+`interface` _port-id_: Show startup config for the specified interface.
+
+`router bgp|ospf|pim`: Show startup configuration section for this routing protocol.
+
+`vlan` _vlan-id_: Startup configuration for VLAN(s).
+
+
+
 |===
 
 == Logs
