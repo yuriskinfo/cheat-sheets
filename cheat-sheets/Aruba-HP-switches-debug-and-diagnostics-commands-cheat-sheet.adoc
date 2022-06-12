@@ -30,6 +30,13 @@ NOTE: All commands were tested on HP/Aruba 5400 switches (specifically 5406Rzl2)
 |*show redundancy*
 |In module management redundancy stack topology, shows firmware image version of each member, as well as the number of failovers. 
 
+|*show system power-supply [detail]*
+|Show statistics of the power supplies: power consumed, power supplied, fan speed,inlet and internal temperature.
+
+|*show system fans*
+|Show fans state: OK/Failed, and number of failures if any. For VSF shows info
+for both members.
+
 |===
 
 == Logs
@@ -94,6 +101,10 @@ multiple tagged VLANs, input/output erros, buffer failures, CRCs, runts.
 
 |*show interface display*
 |Present TUI dialog window with real-time information for all interfaces, including total bytes/frames, Rx/Tx errors, and drops. The information is updated every 3 seconds dynamically. Use arrows/tab to navigate, CTRL + C to exit the menu.
+
+|*show interfaces custom _start-port_[-_end-port_] <port / type / status / speed / mode / name / vlan / nabled>
+|Show selected ports with only specified fields: `port`, `type`, `status` etc.
+
 
 |*show interface port-utilization*
 |Show one time as a table the current traffic rates passing each interface.
@@ -387,8 +398,8 @@ internal power.
 |*show ntp statistics*
 |Show stats for NTP - number of NTP packets sent/received, and errors.
 
-|*show ntp associations*
-|SHow state of associations with the configured NTP servers, together with stats: delay, offset, dispersion, and stratum.
+|*show ntp associations [detail]*
+|Show state of associations with the configured NTP servers, together with stats: delay, offset, dispersion, and stratum.
 
 |*show run \| i ntp*
 |Show NTP-related configs.
