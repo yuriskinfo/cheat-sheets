@@ -154,6 +154,12 @@ multiple tagged VLANs, input/output erros, buffer failures, CRCs, runts.
 |*show lacp*
 |Show LACP state on the trunking interfaces.
 
+|*show lacp counters*
+|show stats for received/sent LACP PDUs per trunk (should be increasing). 
+
+|*show port-security _port-id_*
+|Show port security state for all/specified interfaces.
+
 |===
 
 == VLANs
@@ -203,8 +209,8 @@ multiple tagged VLANs, input/output erros, buffer failures, CRCs, runts.
 |*show debug buffer*
 |Show log buffer with the collected debug output.
 
-|*debug _daemon-name_*
-a|enable real-time debug of the specified daemon. The daemons are:
+|*[no] debug _daemon-name_*
+a|enable real-time debug of the specified daemon. Use `no` option to disable the debug.The daemons are:
 
 *  `acl`                   Displays debug messages for access control lists.
 * `all`                   Display all debug messages.
