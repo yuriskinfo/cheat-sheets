@@ -210,7 +210,7 @@ multiple tagged VLANs, input/output erros, buffer failures, CRCs, runts.
 |Show log buffer with the collected debug output.
 
 |*[no] debug _daemon-name_*
-a|enable real-time debug of the specified daemon. Use `no` option to disable the debug.The daemons are:
+a|enable real-time debug of the specified daemon. Use `no` option to disable the debug. The daemons are:
 
 *  `acl`                   Displays debug messages for access control lists.
 * `all`                   Display all debug messages.
