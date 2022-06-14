@@ -51,6 +51,8 @@ a| Display part of configuration given by _option_:
 
 `vlan` _vlan-id_: Startup configuration for VLAN(s).
 
+|*show tech [all]*
+|WARNING: I bring this command for completeness sake, but this command will run dozens/hundreds of debug commands, printing lots of info, hundreds of pages, which in turn will load the switch as well. Run it with caution, most probably at the HPE support request only.
 
 
 |===
@@ -422,7 +424,7 @@ internal power.
 |Description
 
 |*show dhcp-server statistics*
-|Show DHCP server stats ofr Discover/Offer/Ack/NAK messages received/sent, number of pools configured.
+|Show DHCP server stats for Discover/Offer/Ack/NAK messages received/sent, number of pools configured.
 
 |*clear dhcp-server statistics*
 |Clear DHCP server stats.
