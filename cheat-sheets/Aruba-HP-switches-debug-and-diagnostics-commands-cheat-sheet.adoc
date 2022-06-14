@@ -14,6 +14,9 @@ NOTE: All commands were tested on HP/Aruba 5400 switches (specifically 5406Rzl2)
 |Command
 |Description
 
+|*show system*
+|Show general info: current CPU load, uptime, memory used/free, software version.
+
 |*show cpu [_seconds_]*
 |Show CPU stats of average load for 1 second, 5 seconds, and 1 minute, optionally setting period in _seconds_ (300 is max).
 
@@ -50,6 +53,9 @@ a| Display part of configuration given by _option_:
 `router bgp\|ospf\|pim`: Show startup configuration section for this routing protocol.
 
 `vlan` _vlan-id_: Startup configuration for VLAN(s).
+
+|*show modules*
+|Show installed modules and their state and serial numbers.
 
 |*show tech [all]*
 |WARNING: I bring this command for completeness sake, but this command will run dozens/hundreds of debug commands, printing lots of info, hundreds of pages, which in turn will load the switch as well. Run it with caution, most probably at the HPE support request only.
@@ -135,6 +141,9 @@ multiple tagged VLANs, input/output erros, buffer failures, CRCs, runts.
 
 |*show interface port-utilization*
 |Show one time as a table the current traffic rates passing each interface.
+
+|*show interface trunk-utilization*
+|Show current traffic rates of all trunks.
 
 |*show int queue _port-name_*
 | Show statistics of all queue buffers of a given interface, including _drops_ for each. 
