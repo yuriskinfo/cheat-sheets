@@ -82,6 +82,9 @@ allows filtering logs for display by their category, see below.
 |Show log of commands issued by users on CLI. This log is NOT erased even by 
 the `clear log` and records all commands - both configuration and not. So, it will record commands like `ping 8.8.8.8`, `clear log`, `no router bgp`. Adding `-a` will show logs from previous boot cycles.
 
+|*show running-config changes-history [detail]*
+|Display history of up to 32 last changes to the configuration, including time of change, IP address if any, event id. This will NOT show what the changes were themselves though.
+
 |*show log -m/-e/-p/-w/-i/-d*
 |Show only logs of the specified category, see above for the available categories.
 
@@ -104,6 +107,12 @@ the `clear log` and records all commands - both configuration and not. So, it wi
 |===
 |Command
 |Description 
+
+|*show interface [_port-id_]*
+|Show as a table (if _port-id_ is not given) all ports with the total bytes/frames, Rx/Tx errors, and Broadcast limit if set for each port. 
+
+|*clear statistics global*
+|Clear counters on all interfaces.
 
 |*show interface status*
 | Show list of all interfaces with info for each: state (Up/Down), Actual Speed, Tagged or not, VLANs configured for the interface (single VLAN for Untagged, `multiple` for Tagged). NOTE: In Cisco world Tagged interface is called *trunk*.
