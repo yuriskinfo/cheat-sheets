@@ -60,6 +60,8 @@ a| Display part of configuration given by _option_:
 |*show tech [all]*
 |WARNING: I bring this command for completeness sake, but this command will run dozens/hundreds of debug commands, printing lots of info, hundreds of pages, which in turn will load the switch as well. Run it with caution, most probably at the HPE support request only.
 
+|*show environment*
+|Show the chassis' sensors temperature
 
 |===
 
@@ -69,15 +71,15 @@ a| Display part of configuration given by _option_:
 |Command
 |Description
 
-a| Logs category:
+a| Logs severity:
 
 * W=Warning   
 * I=Information
 * M=Major     
 * D=Debug 
 * E=Error
-| All logs are categorized when written, and the category is presented in the 1st column of each log. This also
-allows filtering logs for display by their category, see below.
+| All logs are categorized into severities when written, and the severity is presented in the 1st column of each log. This also
+allows filtering logs for display by their severity, see below.
 
 
 | *show logging -r*
@@ -100,7 +102,7 @@ the `clear log` and records all commands - both configuration and not. So, it wi
 |Show only logs of the specified category, see above for the available categories.
 
 |*clear log*
-|Delete (almost) all logs.
+|Hides, not deletes, (almost) all logs for the current session. Applying `-a` will still display all logs.
 
 |*show log -s*
 |Display logs from the Standby commander/member in a VSF stack.
@@ -230,7 +232,7 @@ multiple tagged VLANs, input/output erros, buffer failures, CRCs, runts.
 `buffer` - send to the switch memory buffer.
 
 |*show debug buffer*
-|Show log buffer with the collected debug output.
+|Show log buffer with the collected debug output if the destination was set to `buffer`.
 
 |*[no] debug _daemon-name_*
 a|enable real-time debug of the specified daemon. Use `no` option to disable the debug. The daemons are:
