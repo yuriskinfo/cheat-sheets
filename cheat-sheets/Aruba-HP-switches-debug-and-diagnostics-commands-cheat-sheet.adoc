@@ -33,8 +33,11 @@ NOTE: All commands were tested on HP/Aruba 5400 switches (specifically 5406Rzl2)
 |*show boot-history*
 |Show log of previous boots with their reason (user reboot/cold reboot), crashes and what process crashed with its memory dump, and timestamps.
 
-|*show redundancy*
-|In module management redundancy stack topology, shows firmware image version of each member, as well as the number of failovers. 
+|*boot system flash primary\|secondary*
+|Set the image to boot from on the next reboot.
+
+|*show redundancy [detail]*
+|In module management redundancy standalone/stack topology, shows firmware image version of each module, as well as the number of failovers. 
 
 |*show system power-supply [detail]*
 |Show statistics of the power supplies: power consumed, power supplied, fan speed,inlet and internal temperature.
@@ -44,7 +47,7 @@ NOTE: All commands were tested on HP/Aruba 5400 switches (specifically 5406Rzl2)
 for both members.
 
 |*show config _option_*
-a| Display part of configuration given by _option_:
+a| Display part of saved configuration given by _option_:
 
 `status`: Tell if the running config differs from the startup config.
 
@@ -62,6 +65,7 @@ a| Display part of configuration given by _option_:
 
 |*show environment*
 |Show the chassis' sensors temperature
+
 
 |===
 
@@ -105,7 +109,7 @@ the `clear log` and records all commands - both configuration and not. So, it wi
 |Hides, not deletes, (almost) all logs for the current session. Applying `-a` will still display all logs.
 
 |*show log -s*
-|Display logs from the Standby commander/member in a VSF stack.
+|Display logs from the Standby commander/management module in a VSF stack or in standalone switch with management module redundancy.
 
 |*show log -b*
 |Show logs with time since boot instead of date/time format.
@@ -184,6 +188,11 @@ multiple tagged VLANs, input/output erros, buffer failures, CRCs, runts.
 
 |*show port-security _port-id_*
 |Show port security state for all/specified interfaces.
+
+|*test cable-diagnostics _port-list_*
+
+*show cable-diagnostics*
+|Initiate and show results of Time-domain reflectometer cable diagnostics test to check Ethernet cables for faults. This will *shut down* temporarily all the tested ports! 
 
 |===
 
@@ -478,15 +487,20 @@ internal power.
 |Command
 |Description
 
-|*show vsf*
+|*show vsf [detail]*
 |Show general VSF status: who is active, priority, software versions.
 
 |*show vsf member _member-id_*
 |Show general info on a specific member: serial number, uptime, cpu usage, memory usage, status: Commander/Standby, priority.
 
-|*show redundancy*
-|Shows firmware image version of each member, as well as the number of failovers. Not strictly VSF feature - but management redundancy, but the result is the same. 
+|*show vsf link [detail\|utilization]*
+|Show info on VSF link (VPC peer link in the Cisco world). Problems with VSF link may cause split-brain situation, when each member acts independently.
 
+|*show redundancy*
+|Shows firmware image version of each member, as well as the number of failovers. 
+
+|*boot vsf member _member-id_*
+|Reboot the specified VSF member. 
 
 
 |===
