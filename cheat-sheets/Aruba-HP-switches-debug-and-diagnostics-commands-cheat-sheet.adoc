@@ -103,7 +103,7 @@ the `clear log` and records all commands - both configuration and not. So, it wi
 |Display history of up to 32 last changes to the configuration, including time of change, IP address if any, event id. This will NOT show what the changes were themselves though.
 
 |*show log -m/-e/-p/-w/-i/-d*
-|Show only logs of the specified category, see above for the available categories.
+|Show only logs of the specified severity, see above for the available severities.
 
 |*clear log*
 |Hides, not deletes, (almost) all logs for the current session. Applying `-a` will still display all logs.
@@ -112,7 +112,7 @@ the `clear log` and records all commands - both configuration and not. So, it wi
 |Display logs from the Standby commander/management module in a VSF stack or in standalone switch with management module redundancy.
 
 |*show log -b*
-|Show logs with time since boot instead of date/time format.
+|Show logs with time since boot instead of an absolute date/time format.
 |===
 
 
@@ -136,7 +136,7 @@ the `clear log` and records all commands - both configuration and not. So, it wi
 
 |*display interface [_name_]*
 |Show detailed information of an interface: media type, speed/duplex state, MAC address, up/down, max frame size, VLAN id if any untagged set and `.` (dot) for 
-multiple tagged VLANs, input/output erros, buffer failures, CRCs, runts. 
+multiple tagged VLANs, input/output erros, buffer failures, CRC errors, runts. 
 
 |*show interface display*
 |Present TUI dialog window with real-time information for all interfaces, including total bytes/frames, Rx/Tx errors, and drops. The information is updated every 3 seconds dynamically. Use arrows/tab to navigate, CTRL + C to exit the menu.
@@ -214,7 +214,7 @@ multiple tagged VLANs, input/output erros, buffer failures, CRCs, runts.
 |*conf t*
 
 *(config)# no vlan _vlan-id_*
-| Deletes VLAN _vlan-id_ from configuration and un-assigns all ports from it, if some ports have no other VLAN association, they will be auto-assigned to default VLAN 1. WARNING: this command deletes the VLAN specified no matter from which sub-config mode you issue it. That is, even under `(config-if)#` interface config mode, this will remove all configuration for this VLAN from everywhere. 
+| Deletes VLAN _vlan-id_ from configuration and un-assigns all ports from it, if some ports have no other VLAN association, they will be auto-assigned to default VLAN 1. WARNING: this command deletes the VLAN specified no matter from which sub-config mode you issue it. That is, even under interface config mode, this will remove all configuration for this VLAN from everywhere. 
 
 
 
@@ -324,7 +324,8 @@ a|Debug various routing processes. The _routing-process_ is one of the:
 | Show IP routing state: disabled/enabled. It is disabled by default, to enable: *(config)# ip routing* on platforms that support Layer 3 routing. Also displays list of all the interfaces/VLANs with IP address set.
 
 |*show ip route*
-|Show FIB - routing table the switch is currently using to forward the packets.
+| Show static and connected routes on the switch. 
+
 
 
 |===
@@ -339,7 +340,10 @@ a|Debug various routing processes. The _routing-process_ is one of the:
 |Show in short format all BGP peers with their IP address, AS number, and state. The first command to try for BGP.
 
 |*show ip bgp _prefix/mask_*
-|Show BGP info for the specified prefix. In other words - show all prefixes/networks known in the BGP table.
+|Show BGP info for the specified prefix. 
+
+|*show ip bgp*
+|Display routes learned via BGP.
 
 |*show ip bgp neighbor [_ip-address-of-peer_]*
 |Show detailed information about the BGP session with all or the specified peer(s), including hold time, weight, prefixes advertised/received, etc.
