@@ -92,7 +92,7 @@ allows filtering logs for display by their severity, see below.
 |Search and display only logs containing the specified string. The search is *case sensitive*, and no regex - just plain strings with exact match. E.g. to search for logs   containing  the interface _1/B2_: `show log 1/B2`; to search for all bgp-related logs like peer up/down: `show log -r bgp`.
 
 |*show log command [-a]*
-|Show log of commands issued by users on CLI. This log is NOT erased even by 
+|Show log of commands issued by users on CLI. This log is NOT hidden even by 
 the `clear log` and records all commands - both configuration and not. So, it will record commands like `ping 8.8.8.8`, `clear log`, `no router bgp`. Adding `-a` will show logs from previous boot cycles.
 
 |*show running-config changes-history [detail]*
