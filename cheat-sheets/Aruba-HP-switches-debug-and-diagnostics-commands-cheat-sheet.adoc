@@ -1,95 +1,510 @@
 = Aruba and HP switches debug and diagnostics commands cheat sheet
 Yuri SLobodyanyuk, admin@yurisk.info
 :homepage: https://yurisk.info
+:toc:
 
 Author: Yuri Slobodyanyuk,  https://www.linkedin.com/in/yurislobodyanyuk/
 
+NOTE: All commands were tested on HP/Aruba 5400 switches (specifically 5406Rzl2), but will work on any model with recent firmware versions (16.x or newer), except for the hardware features unavailable on smaller models, like VSF .
 
-[cols=2,options="header"]
+
+== General Health
+[cols=2, options="header"]
 |===
 |Command
-|Description 
+|Description
 
-| *show logging -r*
-| Show system logs and events in reverse chronological order, i.e. newest logs first.
+|*show system*
+|Show general info: current CPU load, uptime, memory used/free, software version.
 
-|*clear log*
-|Delete all logs on the switch.
+|*show cpu [_seconds_]*
+|Show CPU stats of average load for 1 second, 5 seconds, and 1 minute, optionally setting period in _seconds_ (300 is max).
 
-|*debug destination buffer*
-|Direct debug output to the log buffer, to be read later on CLI.
-
-|*debug <daemon name>*
-|Start runnig debug,e.g. to debug SNMP daemon: `debug snmp pdu`
-
-|*show debug buffer*
-|Show log buffer with the collected debug output.
-
-|*show debug*
-|Show what debug is currently active.
-
-|*show mac-address*
-|Show table of MAC addresses.
-
-|*show interface status*
-| Show list of all interfaces with info for each: state (Up/Down), Actual  Speed, Tagged or not, VLANs configured for the interface (single VLAN for Untagged, multiple for Tagged). NOTE: In Cisco world Tagged interface is called *trunk*.
-
-|*display interface*
-|Show detailed information of an interface: MAC address, state, speed, VLAN id if any. 
-
-|*show interface transceiver*
-|Info on installed optical transceivers: Port number where installed, Type/Speed, Serial Number.
-
-|*show ip*
-| Show all configured IP addresses on a switch.
-
-|*show trunk*
-| Show trunk interfaces with their state and type. NOTE: In HP/Aruba world *trunk* means aggregated interfaces (LACP), what in Cisco world is called port/ether-channel.
-
-|*show trunk-statistics <trunk name>*
-| Show cumulative statistics for the trunk interface: packets passed, bytes received, drops if any.
-
-|*show lacp*
-|Show LACP state on the trunking interfaces.
-
-|*display stp root*
-| Show root switch for Spanning Tree Protocol.
-
-|*display stp brief*
-| Short information on STP state for VLANs.
-
-|*display lldp neighbor list*
-|Display LLDP neighbors.
-
-
-|*show ip ospf neighbor [detail]*
-|Display OSPF neighbors
-
-|*show ip route*
-| Show routing table for Layer 3 switch.
-
-|*show ip*
-| Show IP routing state: disabled/enabled. It is disabled by default, to enable: *(config)# ip routing* on platforms that support Layer 3 routing.
-
-
-|*display boot-loader*
-| Show what image will be loaded on the next boot.
-
+|*show uptime*
+|Show uptime of the switch since reboot, for VSF stacked switches shows uptime for each member.
 
 |*show time*
 |Show switch time and date, for log correlation.
 
 
-|*show power-over-ethernet brief/ethernet*
-|Show state of PoE-enabled interfaces, including information on drawn/available
-power.
+|*show flash*
+| Show what firmware images are stored in the flash, and which one is the primary/secondary for the next boot.
 
+|*show boot-history*
+|Show log of previous boots with their reason (user reboot/cold reboot), crashes and what process crashed with its memory dump, and timestamps.
+
+|*boot system flash primary\|secondary*
+|Set the image to boot from on the next reboot.
+
+|*show redundancy [detail]*
+|In module management redundancy standalone/stack topology, shows firmware image version of each module, as well as the number of failovers. 
+
+|*show system power-supply [detail]*
+|Show statistics of the power supplies: power consumed, power supplied, fan speed,inlet and internal temperature.
+
+|*show system fans*
+|Show fans state: OK/Failed, and number of failures if any. For VSF shows info
+for both members.
+
+|*show config _option_*
+a| Display part of saved configuration given by _option_:
+
+`status`: Tell if the running config differs from the startup config.
+
+`interface` _port-id_: Show startup config for the specified interface.
+
+`router bgp\|ospf\|pim`: Show startup configuration section for this routing protocol.
+
+`vlan` _vlan-id_: Startup configuration for VLAN(s).
+
+|*show modules*
+|Show installed modules and their state and serial numbers.
+
+|*show tech [all]*
+|WARNING: I bring this command for completeness sake, but this command will run dozens/hundreds of debug commands, printing lots of info, hundreds of pages, which in turn will load the switch as well. Run it with caution, most probably at the HPE support request only.
+
+|*show environment*
+|Show the chassis' sensors temperature
+
+
+|===
+
+== Logs
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+a| Logs severity:
+
+* W=Warning   
+* I=Information
+* M=Major     
+* D=Debug 
+* E=Error
+| All logs are categorized into severities when written, and the severity is presented in the 1st column of each log. This also
+allows filtering logs for display by their severity, see below.
+
+
+| *show logging -r*
+| Show system logs and events in reverse chronological order, i.e. newest logs first.
+
+|*show log -a*
+|Show logs from previous boot cycles. HP/Aruba will display only logs since the last boot, by default, but you can add `-a` to any of the log display commands below to work on previous logs as well. 
+
+|*show log _string-to-search_*
+|Search and display only logs containing the specified string. The search is *case sensitive*, and no regex - just plain strings with exact match. E.g. to search for logs   containing  the interface _1/B2_: `show log 1/B2`; to search for all bgp-related logs like peer up/down: `show log -r bgp`.
+
+|*show log command [-a]*
+|Show log of commands issued by users on CLI. This log is NOT hidden even by 
+the `clear log` and records all commands - both configuration and not. So, it will record commands like `ping 8.8.8.8`, `clear log`, `no router bgp`. Adding `-a` will show logs from previous boot cycles.
+
+|*show running-config changes-history [detail]*
+|Display history of up to 32 last changes to the configuration, including time of change, IP address if any, event id. This will NOT show what the changes were themselves though.
+
+|*show log -m/-e/-p/-w/-i/-d*
+|Show only logs of the specified severity, see above for the available severities.
+
+|*clear log*
+|Hides, not deletes, (almost) all logs for the current session. Applying `-a` will still display all logs.
+
+|*show log -s*
+|Display logs from the Standby commander/management module in a VSF stack or in standalone switch with management module redundancy.
+
+|*show log -b*
+|Show logs with time since boot instead of an absolute date/time format.
+|===
+
+
+
+
+
+== Interfaces
+[cols=2,options="header"]
+|===
+|Command
+|Description 
+
+|*show interface [_port-id_]*
+|Show as a table (if _port-id_ is not given) all ports with the total bytes/frames, Rx/Tx errors, and Broadcast limit if set for each port. 
+
+|*clear statistics global*
+|Clear counters on all interfaces.
+
+|*show interface status*
+| Show list of all interfaces with info for each: state (Up/Down), Actual Speed, Tagged or not, VLANs configured for the interface (single VLAN for Untagged, `multiple` for Tagged). NOTE: In Cisco world Tagged interface is called *trunk*.
+
+|*display interface [_name_]*
+|Show detailed information of an interface: media type, speed/duplex state, MAC address, up/down, max frame size, VLAN id if any untagged set and `.` (dot) for 
+multiple tagged VLANs, input/output erros, buffer failures, CRC errors, runts. 
+
+|*show interface display*
+|Present TUI dialog window with real-time information for all interfaces, including total bytes/frames, Rx/Tx errors, and drops. The information is updated every 3 seconds dynamically. Use arrows/tab to navigate, CTRL + C to exit the menu.
+
+|*show interfaces custom _start-port_[-_end-port_] <port / type / status / speed / mode / name / vlan / enabled>*
+|Show selected ports with only specified fields: `port`, `type`, `status` etc. E.g. `show interface custom 1/B1 port status speed vlan`.
+
+
+|*show interface port-utilization*
+|Show one time as a table the current traffic rates passing each interface.
+
+|*show interface trunk-utilization*
+|Show current traffic rates of all trunks.
+
+|*show int queue _port-name_*
+| Show statistics of all queue buffers of a given interface, including _drops_ for each. 
+
+|*conf t*
+
+*int _name_*
+
+*disable/enable*
+|Disable/enable a specific interface (in Cisco world `shut`/`no shut`)
+
+|*show interface transceiver [_name_] [detail]*
+|Info on installed optical transceivers: Port number where installed, Type/Speed, Serial Number. If _detail_ is added, will also show temperature, voltage, Transmit (TX) and Receive (RX) power in mW and dBm.
+
+|*show ip*
+| Show all configured IP addresses on a switch.
+
+|*show arp vlan _vlan-id_*
+|List all IP addresses (provided Layer 3 features are enabled) learned on the VLAN _vlan-id_.
+
+
+|*show name*
+|Lists all interfaces with their names if set. In Cisco it would be `show int description`
+
+|*show trunks*
+| Show trunk interfaces with their state and type. NOTE: In HP/Aruba world *trunk* means aggregated interfaces (LAG), what in Cisco world is called port/ether-channel.
+
+|*show trunk-statistics _trunk-name_*
+| Show cumulative statistics for the trunk interface: packets passed, bytes received, drops if any.
+
+|*show lacp*
+|Show LACP state on the trunking interfaces.
+
+|*show lacp counters*
+|show stats for received/sent LACP PDUs per trunk (should be increasing). 
+
+|*show port-security _port-id_*
+|Show port security state for all/specified interfaces.
+
+|*test cable-diagnostics _port-list_*
+
+*show cable-diagnostics*
+|Initiate and show results of Time-domain reflectometer cable diagnostics test to check Ethernet cables for faults. This will *shut down* temporarily all the tested ports! 
+
+|===
+
+== VLANs
+[cols=2,options="header"]
+|===
+|Command
+|Description
+
+|*show vlans*
+|Show a list of all VLANs configured on this switch.
+
+|*show vlans ports _port-name_[_,port2-name_...]*
+|Show vlans enabled on the specified physical port.
+
+|*show vlans _vlan-id_*
+|Show ports where the specified _vlan-id_ is enabled, either as `tagged` or `untagged`
+
+|*conf t*
+
+*(config)# no vlan _vlan-id_*
+| Deletes VLAN _vlan-id_ from configuration and un-assigns all ports from it, if some ports have no other VLAN association, they will be auto-assigned to default VLAN 1. WARNING: this command deletes the VLAN specified no matter from which sub-config mode you issue it. That is, even under interface config mode, this will remove all configuration for this VLAN from everywhere. 
 
 
 
 
 |===
 
+== Daemons Real-Time Debug 
+
+[cols=2,options="header"]
+|===
+|Command
+|Description
+
+|*show debug*
+|Show currently enabled debug
+
+|*debug destination logging/session/buffer*
+|Set location to output the debug to (default `none`), run before enabling the debug: 
+
+`logging` - send the debug to the configured (if any) syslog server.
+
+`session` - send to the terminal (Cisco analog of `term mon`).
+
+`buffer` - send to the switch memory buffer.
+
+|*show debug buffer*
+|Show log buffer with the collected debug output if the destination was set to `buffer`.
+
+|*[no] debug _daemon-name_*
+a|enable real-time debug of the specified daemon. Use `no` option to disable the debug. The daemons are:
+
+*  `acl`                   Displays debug messages for access control lists.
+* `all`                   Display all debug messages.
+*  `aruba-central`         Display Aruba Central server debug information.
+* `bfd`                   Enable BFD debug logging.
+* `cdp`                   Display CDP information.
+* `cfg-restore`           Display cfg-restore debug messages.
+* `dhcp-server`           Display DHCP server debug messages.
+* `distributed-trunking`  Display DT debug messages.
+* `est`                   Display EST debug messages.
+* `event`                 Display event log messages.
+* `ip`                    Display debug messages for IPv4.
+* `ip-sla`                Enable debug logs for IP SLA.
+* `ipv6`                  Enable debug messages for IPv6.
+* `lacp`                  Display LACP information.
+* `lldp`                  Display LLDP information.
+* `mdns`                  Display mDNS debug messages.
+* `mstp`                  Display MSTP debug messages.
+* `mvrp`                  Enable MVRP debug messages.
+* `ntp`                   Display debug messages for NTP.
+* `openflow`              Display all OpenFlow packets.
+* `rest-interface`        Display REST debug information.
+* `rpvst`                 Display RPVST debug messages.
+* `security`              Display all Security messages.
+* `services`              Display debug messages on services module.
+* `smart-link`            Display Smart link debug messages.
+* `snmp`                  Display SNMP debug messages.
+* `time-stamp`            Enable/disable system-time to be associated with debug messages.
+* `tunnel`                Display tunnel debug messages.
+* `udld`                  Display UDLD debug messages.
+* `uplink-failure-detection` Display UFD debug messages.
+* `usertn`                Displays authentication module log messages for user-based tunneled node
+* `vrrp`                  Display VRRP debug messages.
+* `ztp`                   Display ZTP debug messages.
+
+
+|*debug ip _routing-process_*
+a|Debug various routing processes. The _routing-process_ is one of the:
+
+* `bgp`                   Display all BGP routing messages.
+* `client-tracker`        Displays debug messages for IP client tracker.
+* `fib`                   Display IP Forwarding Information Base messages & events.
+* `forwarding`            Display IPv4 forwarding messages.
+* `iface`                 Display interface management messages.
+* `igmp`                  Display all IGMP messages.
+* `ospf`                  Display all OSPF routing messages.
+* `ospfv3`                [Deprecated] Enable debug messages for OSPFv3.
+* `packet`                Display IPv4 packet messages.
+* `pbr`                   Enable debug messages for PBR.
+* `pim`                   Enable/disable tracing of PIM messages.
+* `rip`                   Display all RIP routing messages.
+
+|===
+
+== Spanning Tree Protocol (STP)
+[cols=2,options="header"]
+|===
+|Command
+|Description 
+
+|*display stp root*
+| Show  root switch for each VLAN.
+
+|*display stp brief*
+| Show STP state for each port/VLAN - Forwarding/Blocking, STP role.
+
+|===
+
+== Routing Info
+=== Static
+[cols=2,options="header"]
+|===
+|Command
+|Description
+
+|*show ip*
+| Show IP routing state: disabled/enabled. It is disabled by default, to enable: *(config)# ip routing* on platforms that support Layer 3 routing. Also displays list of all the interfaces/VLANs with IP address set.
+
+|*show ip route*
+| Show static and connected routes on the switch. 
 
 
 
+|===
+
+=== BGP
+[cols=2,options="header"]
+|===
+|Command
+|Description
+
+|*show ip bgp summary*
+|Show in short format all BGP peers with their IP address, AS number, and state. The first command to try for BGP.
+
+|*show ip bgp _prefix/mask_*
+|Show BGP info for the specified prefix. 
+
+|*show ip bgp*
+|Display routes learned via BGP.
+
+|*show ip bgp neighbor [_ip-address-of-peer_]*
+|Show detailed information about the BGP session with all or the specified peer(s), including hold time, weight, prefixes advertised/received, etc.
+
+|*show ip bgp neighbor _ip-address_ advertised-routes*
+|Display routes we advertise via BGP to the _ip-address_ neighbor.
+
+|*show ip bgp neighbor _ip-address_ received-routes*
+|Display routes we learned from the given BGP peer.
+
+|*show log bgp*
+|Show logs that include  the word `bgp`. It will include BGP peering establishment/tear up.
+
+|===
+
+
+=== OSPF
+[cols=2,options="header"]
+|===
+|Command
+|Description
+
+|*show ip ospf*
+|Show if the OSPF process is running and router id.
+
+|*show ip ospf area*
+|Show all areas configured on this device.
+
+|*show ip ospf statistics*
+|List OSPF packet statistics (OSPF sent,recieved and error packet count) of all OSPF enabled interfaces.
+
+|*show ip  ospf interface*
+|Show OSPF interfaces' information.
+
+|*show ip ospf neighbor*
+|List all established neighborships on this device.
+
+|*show ip ospf link-state*
+|Show all Link State Advertisements. 
+
+|===
+
+
+== LLDP & MAC & CDP
+
+[cols=2,options="header"]
+|===
+|Command
+|Description
+
+|*show lldp info remote-device [detail]*
+|Display LLDP neighbors. The info includes: local port name, chassis id of the peer, remote system name, remote port. If _detail_ is added, will also show exact firmware version used, and management IP address if configured. Useful for 
+topology discovery, which switch is connected to which.
+
+|*show lldp info local-device [detail]*
+|Show info about the device you are connected to: chassis id, system name, firmware image version, IP addresses configured. 
+
+|*show lldp stats*
+|Show LLDP packets sent/received per port.
+
+|*show mac-address [detail]*
+|Show complete MAC addresses table with port names, MAC addresses, and VLANs. If _detail_ is added, will also show age of 
+each entry.
+
+|*show mac-address vlan _vlanid_*
+| Show MAC addresses learned on the specified VLAN.
+
+|*show mac-address _port1_[,_port2_...]*
+|Show MAC addresses learned on specified ports.
+
+|*show cdp neighbors [detail]*
+|Show list of CDP neighhbors with info on their MAC address, model, local port where it was seen. Adding `detail` also shows IP address of the CDP neighbor, if configured. 
+
+|===
+
+
+ 
+== PoE
+[cols=2,options="header"]
+|===
+|Command
+|Description
+
+|*show power-over-ethernet brief [_port name_]*
+|Show detailed information  about PoE-enabled interfaces, including information on drawn/available
+power per port, state. Optionally, limit information to a specific port. 
+
+|*show power-over-ethernet brief vsf member _member id_*
+|Show PoE detailed info per VSF member.
+
+|*show power-over-ethernet*
+| Display PoE general information for the whole switch: total available/used power, PoE redundancy status, 
+internal power. 
+
+
+|===
+
+== DHCP
+[cols=2,options="header"]
+|===
+|Command
+|Description
+
+|*show dhcp-server statistics*
+|Show DHCP server stats for Discover/Offer/Ack/NAK messages received/sent, number of pools configured.
+
+|*clear dhcp-server statistics*
+|Clear DHCP server stats.
+
+|*show dhcp-server binding\|conflict\|database\|pool*
+|Show variouis operational parameters of the DHCP server.
+|===
+
+
+
+
+
+== NTP
+[cols=2,options="header"]
+|===
+|Command
+|Description
+
+|*show ntp status*
+|Show current status of NTP
+
+|*show ntp  servers*
+|Display configured NTP servers
+
+|*show ntp statistics*
+|Show stats for NTP - number of NTP packets sent/received, and errors.
+
+|*show ntp associations [detail]*
+|Show state of associations with the configured NTP servers, together with stats: delay, offset, dispersion, and stratum.
+
+|*show run \| i ntp*
+|Show NTP-related configs.
+
+|===
+
+
+== VSF (Virtual Switching Framework)
+[cols=2,options="header"]
+|===
+|Command
+|Description
+
+|*show vsf [detail]*
+|Show general VSF status: who is active, priority, software versions.
+
+|*show vsf member _member-id_*
+|Show general info on a specific member: serial number, uptime, cpu usage, memory usage, status: Commander/Standby, priority.
+
+|*show vsf link [detail\|utilization]*
+|Show info on VSF link (VPC peer link in the Cisco world). Problems with VSF link may cause split-brain situation, when each member acts independently.
+
+|*show redundancy*
+|Shows firmware image version of each member, as well as the number of failovers. 
+
+|*boot vsf member _member-id_*
+|Reboot the specified VSF member. 
+
+
+|===
