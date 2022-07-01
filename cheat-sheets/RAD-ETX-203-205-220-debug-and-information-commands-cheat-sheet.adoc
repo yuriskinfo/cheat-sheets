@@ -22,10 +22,21 @@ The commands below are meant to be run on the device CLI itself, not on provisio
 |*show config port _name_ statistics*
 | Statistics of the port: total bits/frames passed,maximum/minimum bits/sec seen, and most interesting - CRC errors, error frames, oversize frames, discards.
 
-|*show config port _name_ statistics*
-| Statistics of the port: total bits/frames passed,maximum/minimum bits/sec seen, and most interesting - CRC errors, error frames, oversize frames, discards.
 
-|*config port name*  
+|*config port ethernet _number_*
+
+*clear-statistics*
+|Clear all statistics/counters for this port.
+
+|*config flow*
+
+*flow _flow-name_*
+
+*show statistics running*
+|Show detailed counters for the given flow, will include `bps`, max/min `bps` seen after reboot, `drops` if any.
+
+
+|*config port _name_*  
 
 *rate-measure interval _seconds_*  
 
