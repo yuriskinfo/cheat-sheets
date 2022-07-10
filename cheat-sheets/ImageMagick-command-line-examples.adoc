@@ -12,3 +12,13 @@ do
 convert ${ii}  -rotate  90 ${ii}-rotated.jpg
 done
 ----
+
+
+== Combine images in the current folder into a PDF file
+Let's combine images with extension .jpg (using shell wildcards) into one 
+PDF file.
+
+----
+magick *.jpg  hoze-2022-1.pdf
+----
+
