@@ -71,7 +71,14 @@ service-ping local-ip 13.13.13.1/30 dst-ip 13.13.13.2 next-hop 13.13.13.2 egress
 |Show alarms log, their severity/state/last raised time
 
 
+|*exit all*
+|Exit all sub-configuration modes to the top level.
 
+|*show file startup*
+|Show startup configuration.
+
+|*save*
+|Save the configuration.
 
 
 
