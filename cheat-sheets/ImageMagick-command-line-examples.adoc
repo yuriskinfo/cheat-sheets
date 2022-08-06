@@ -19,6 +19,6 @@ Let's combine images with extension .jpg (using shell wildcards) into one
 PDF file.
 
 ----
-magick *.jpg  hoze-2022-1.pdf
+magick *.jpg  pics-2022-1.pdf
 ----
 
