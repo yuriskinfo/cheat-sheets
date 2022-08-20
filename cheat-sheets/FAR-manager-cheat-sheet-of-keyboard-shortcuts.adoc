@@ -85,7 +85,7 @@ Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
 |*Shift + move up/down*
 |Select single/multiple items. To deselect, hold Shift and move in the opposite direction.
 
-|*\** (asterisk)
+|* (asterisk)
 |Select all files/folders in the panel. Press again to invert the selection.
 
 |COLORS fix later
