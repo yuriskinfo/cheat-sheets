@@ -1,5 +1,5 @@
 = ImageMagick Command Line Examples
-
+:toc:
 
 == Rotate images 90 degrees
 
