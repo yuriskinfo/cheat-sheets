@@ -1,0 +1,40 @@
+= Windows cmd shell batch scripting cheat sheet
+Yuri Slobodyanyuk <admin@yurisk.info>
+v1.0, 2022-08-31
+:homepage: https://yurisk.info
+:toc:
+Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
+
+
+== Controlling scripts themselves
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|*rem*
+|Comment, till the end of line. It can be used to comment out a whole line or part of it.
+
+|*cls*
+|Clear the screen buffer.
+
+|*echo _text to display_*
+
+*echo off/on*
+
+*echo.*
+|Print text on line, or, with `off/on` switch without text, turn off/on echoing the commands being run. 
+Usually, you set `echo off` as the 1st line in a batch script, and the `echo on` as the last line. Turning
+echoing off does not hide _output_ of the commands run, just the commands themselves. The 3rd option is `echo` followed immediately
+by _dot_ and it causes echo to print a blank line (an dthis is the only way to do so).
+
+|*@*
+|Turn off echoing only for the command preceded by this @. Usually, also used as `@echo off` to prevent the _echo off_ 
+being printed itself.
+
+|*title _Title bar text_*
+|Change the title of the cmd.exe window for this session. As a rule of a good style, change _title_ on each stage of the 
+script, to let users know what the script is doing.
+
+
+|===
