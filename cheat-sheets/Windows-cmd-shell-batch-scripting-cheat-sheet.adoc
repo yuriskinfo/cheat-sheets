@@ -13,7 +13,7 @@ Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
 |Description
 
 |*rem*
-|Comment, till the end of line. It can be used to comment out a whole line or part of it.
+|Start a comment, till the end of line. It can be used to comment out a whole line or part of it.
 
 |*cls*
 |Clear the screen buffer.
