@@ -29,7 +29,7 @@ echoing off does not hide _output_ of the commands run, just the commands themse
 by _dot_ and it causes echo to print a blank line (an dthis is the only way to do so).
 
 |*@*
-|Turn off echoing only for the command preceded by this @. Usually, also used as `@echo off` to prevent the _echo off_ 
+|Turn off echoing only for the command preceded by this @. E.g. `@echo off` to prevent the _echo off_ 
 being printed itself.
 
 |*title _Title bar text_*
