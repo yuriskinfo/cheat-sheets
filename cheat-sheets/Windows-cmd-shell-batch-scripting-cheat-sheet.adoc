@@ -58,6 +58,6 @@ E.g. `echo The script was called as %0, with the %1 as the first argument`
 
 |*shift [/_n_]*
 |Shift positional arguments by one. If `/n` is given, will shift starting with n+1. E.g. `shift /4` will shift 5th to become 4th, 
-6th will become 5th, and so, while arguments before _n_ will stay untouched.
+6th will become 5th, and so, while arguments before 4 will stay untouched.
 
 |===
