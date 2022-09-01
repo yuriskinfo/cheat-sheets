@@ -38,3 +38,22 @@ script, to let users know what the script is doing.
 
 
 |===
+
+
+== Script arguments
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|%_n_
+|Positional argument to the script from the command line. _n_ can be from 0 to 9.
+
+|%0
+|The script name.  The actual arguments to the script start with %1.
+E.g. `echo The script was called as %0, with the %1 as the first argument`
+
+|%*
+|The rest of the positional arguments after the 9th. 
+
+|===
