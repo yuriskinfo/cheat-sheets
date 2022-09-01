@@ -54,6 +54,9 @@ script, to let users know what the script is doing.
 E.g. `echo The script was called as %0, with the %1 as the first argument`
 
 |%*
-|The rest of the positional arguments after the 9th. 
+|The rest of the positional arguments after the 9th, not accessible directly, only after `SHIFT`-ing.
+
+|*shift [/_n_]*
+|Shift positional arguments by one. 
 
 |===
