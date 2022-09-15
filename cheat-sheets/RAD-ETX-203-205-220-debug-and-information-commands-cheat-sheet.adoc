@@ -80,6 +80,8 @@ service-ping local-ip 13.13.13.1/30 dst-ip 13.13.13.2 next-hop 13.13.13.2 egress
 |*save*
 |Save the configuration.
 
+|*clear-statistics*
+|Clear all statistics - errors on interfaces, bytes ent/received, etc.
 
 
 |===
