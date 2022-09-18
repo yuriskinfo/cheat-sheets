@@ -1,0 +1,25 @@
+= 7z Linux Command Line Cookbook of Examples
+:homepage: https://github.com/yuriskinfo/cheat-sheets
+:toc:
+
+Author: https://www.linkedin.com/in/yurislobodyanyuk/ 
+
+== Important facts about 7-zip
+* 7-zip does NOT store the owner/group of the files/folders being archived, which is good for privacy, but may not suite your specifc use case, especially as a back up tool.
+* 7-zip is a name of the compression tool created by Igor Pavlov. 
+* While Igor Pavlov provides Linux/macOS versions as well, another implementation by independent developer (Mohammed Adnene Trojette) has become wide used in the Linux realm - `p7zip`. This cookbook relates to this, independent version, so options and switches may differ a bit from 7-zip Windows canonical version.
+
+== Install p7zip package on Linux
+This tool is already in all the major repositories, so you should have no problems installing it.
+
+`Ubuntu`: `sudo apt install p7zip-full`
+
+`CentOS/Fedora`: `sudo yum install p7zip p7zip-plugins`
+
+== Create an archive adding all the files in the current folder
+We first indicate to `7-zip` that we want to _add_ to an archive with `a` command, then we specify the archive name, and finally, we use `*` as wildcard to include all files in the current folder.
+
+`7z a folder.7z *`
+
+The result - _folder.7z_ will be placed in the same folder where it run.
+

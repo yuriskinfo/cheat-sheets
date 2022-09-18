@@ -1,0 +1,24 @@
+= ImageMagick Command Line Examples
+:toc:
+
+== Rotate images 90 degrees
+
+Use `convert` tools in a bash script to rotate all .jpg images in the current folder, naming the rotated images as _current-name_-rotated.jpg 
+
+[source,bash]
+----
+for ii in *.jpg
+do
+convert ${ii}  -rotate  90 ${ii}-rotated.jpg
+done
+----
+
+
+== Combine images in the current folder into a PDF file
+Let's combine images with extension .jpg (using shell wildcards) into one 
+PDF file.
+
+----
+magick *.jpg  pics-2022-1.pdf
+----
+

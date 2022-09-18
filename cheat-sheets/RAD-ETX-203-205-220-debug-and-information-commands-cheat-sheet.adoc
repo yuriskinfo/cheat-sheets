@@ -20,12 +20,25 @@ The commands below are meant to be run on the device CLI itself, not on provisio
 | Show port status: administrative and operational states, speed/duplex, connector type, MAC address, and most important (for fiber) - RX/TX signal power (dBm)
 
 |*show config port _name_ statistics*
-| Statistics of the port: total bits/frames passed,maximum/minimum bits/sec seen, and most interesting - CRC errors, error frames, oversize frames, discards.
+| Statistics of the port: total bits/frames passed, maximum/minimum bits/sec seen, and most
+interesting - CRC errors, error frames, oversize frames, discards, CV/ES/SES/FC stats for
+E1 lines.
 
-|*show config port _name_ statistics*
-| Statistics of the port: total bits/frames passed,maximum/minimum bits/sec seen, and most interesting - CRC errors, error frames, oversize frames, discards.
 
-|*config port name*  
+|*config port ethernet _number_*
+
+*clear-statistics*
+|Clear all statistics/counters for this port.
+
+|*config flow*
+
+*flow _flow-name_*
+
+*show statistics running*
+|Show detailed counters for the given flow, will include `bps`, max/min `bps` seen after reboot, `drops` if any.
+
+
+|*config port _name_*  
 
 *rate-measure interval _seconds_*  
 
@@ -60,8 +73,22 @@ service-ping local-ip 13.13.13.1/30 dst-ip 13.13.13.2 next-hop 13.13.13.2 egress
 |Show alarms log, their severity/state/last raised time
 
 
+|*exit all*
+|Exit all sub-configuration modes to the top level.
 
+|*show file startup*
+|Show startup configuration.
 
+|*save*
+|Save the configuration.
+
+|*clear-statistics*
+|Clear all statistics (at the highest config level) - errors on interfaces, bytes sent/received, etc.
+
+|*admin*
+
+*reboot*
+|Reboot the device.
 
 
 |===

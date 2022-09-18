@@ -61,6 +61,6 @@ Make sure to __watch__ this repository to get notified on updates (usually updat
 
 [FAR file manager cheat sheet of keyboard shortcuts](cheat-sheets/FAR-manager-cheat-sheet-of-keyboard-shortcuts.adoc) | [PDF](cheat-sheets/FAR-manager-cheat-sheet-of-keyboard-shortcuts.pdf)
 
-
+[Windows cmd.exe shell batch scripting cheat sheet](cheat-sheets/Windows-cmd-shell-batch-scripting-cheat-sheet.adoc)
 
 
