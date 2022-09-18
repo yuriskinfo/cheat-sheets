@@ -20,7 +20,9 @@ The commands below are meant to be run on the device CLI itself, not on provisio
 | Show port status: administrative and operational states, speed/duplex, connector type, MAC address, and most important (for fiber) - RX/TX signal power (dBm)
 
 |*show config port _name_ statistics*
-| Statistics of the port: total bits/frames passed,maximum/minimum bits/sec seen, and most interesting - CRC errors, error frames, oversize frames, discards.
+| Statistics of the port: total bits/frames passed, maximum/minimum bits/sec seen, and most
+interesting - CRC errors, error frames, oversize frames, discards, CV/ES/SES/FC stats for
+E1 lines.
 
 
 |*config port ethernet _number_*
@@ -81,7 +83,12 @@ service-ping local-ip 13.13.13.1/30 dst-ip 13.13.13.2 next-hop 13.13.13.2 egress
 |Save the configuration.
 
 |*clear-statistics*
-|Clear all statistics - errors on interfaces, bytes sent/received, etc.
+|Clear all statistics (at the highest config level) - errors on interfaces, bytes sent/received, etc.
+
+|*admin*
+
+*reboot*
+|Reboot the device.
 
 
 |===
