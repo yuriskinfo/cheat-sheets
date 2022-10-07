@@ -85,6 +85,12 @@ iprope lookup 10.10.10.1 34567 8.8.8.8 443 6 LAN1`
 |*get sys performance stat*
 |Show real-time operational statistics: CPU load per CPU, memory usage, average network/session, uptime.
 
+|*diagnose sys top [_refresh_] [_num-of-processes_] [_iterations_]*
+|Print list of running processes updated every _refresh_ seconds, for
+_iterations_ times, sorted in descending order by the CPU load. This `top` command does not display all processes by
+default, to show them all, set _num-of-processes_ to high number, for example
+100.
+
 |*diagnose debug crashlog read*
 | Display crash log. Records all daemons crashes and restarts. Some daemons are more critical than others.
 
