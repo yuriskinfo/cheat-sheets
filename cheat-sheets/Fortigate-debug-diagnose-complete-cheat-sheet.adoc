@@ -93,7 +93,7 @@ default, to show them all, set _num-of-processes_ to high number, for example
 is in this order: `Process id`, `process state: (R)unning, (S)leep, (Z)ombie,
 (D)isk Sleep, < Means higher priority`, `CPU used`, `Memory used`.
 
-|*dia sys kill <_signal-id_> <_process-id_>*
+|*dia sys kill _signal-id_ _process-id_*
 |Forcefully kill the process with the id of _process-id_, sending it the given _signal-id_ (Linux signals, e.g. 9, 11).
 
 |*diagnose debug crashlog read*
