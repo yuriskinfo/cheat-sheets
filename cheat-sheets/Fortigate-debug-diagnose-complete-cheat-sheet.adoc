@@ -799,9 +799,7 @@ proxy SIP inspection is on (_ALG_ inspection). If the output is `default-voip-al
 |Command
 |Descritption
 
-|*diagnose debug httpsd -1*
-
-*diagnose debug application httpsd -1*
+| *diagnose debug application httpsd -1*
 
 |Enable diagnostics for administrator and remote REST API access via `api-user`. When debugging API automation, refrain from working in admin GUI as it will produce a lot of unrelated output.    
 
