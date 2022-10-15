@@ -792,7 +792,7 @@ proxy SIP inspection is on (_ALG_ inspection). If the output is `default-voip-al
 |===
 
 
-== Administrator GUI access and API automation requests debug
+== Administrator GUI, SSH access and API automation requests debug
 
 [cols=2, options="header"]
 |===
@@ -802,6 +802,9 @@ proxy SIP inspection is on (_ALG_ inspection). If the output is `default-voip-al
 | *diagnose debug application httpsd -1*
 
 |Enable diagnostics for administrator and remote REST API access via `api-user`. When debugging API automation, refrain from working in admin GUI as it will produce a lot of unrelated output.    
+
+|*diagnose debug application sshd -1*
+|Debug SSH administrator session.
 
 |===
 
