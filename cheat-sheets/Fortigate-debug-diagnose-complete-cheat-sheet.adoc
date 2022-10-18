@@ -299,6 +299,20 @@ a| Filter VPN debug messages using various parameters:
 |*get vpn ssl monitor*
 |List logged in SSL VPN users with allocated IP address, username, connection duration.
 
+|*diagnose vpn ssl debug-filter _criteria_*
+|Limit debug output according to the _criteria_ below: 
+
+`src-addr4|src-addr6` _source-ip-of-client_ Source IP of the connecting client
+
+`vd` _VDOM name_ Limit debug to a specific VDOM, specify VDOM by its string
+name, not numerical index.
+
+`negate` Negate the filter.
+
+`clear` Clear the filter.
+
+`list` List active filter.
+
 |*diagnose debug app sslvpn -1*
 |Debug SSL VPN connection. Shows only SSL protocol negotiation and set up. That is - ciphers used, algorithms and such, does NOT show user names, groups, or any client related info.
 
