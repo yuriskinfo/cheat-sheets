@@ -302,7 +302,7 @@ a| Filter VPN debug messages using various parameters:
 |*diagnose vpn ssl debug-filter _criteria_*
 |Limit debug output according to the _criteria_ below: 
 
-`src-addr4|src-addr6` _source-ip-of-client_ Source IP of the connecting client
+`src-addr4\|src-addr6` _source-ip-of-client_ Source IP of the connecting client
 
 `vd` _VDOM name_ Limit debug to a specific VDOM, specify VDOM by its string
 name, not numerical index.
