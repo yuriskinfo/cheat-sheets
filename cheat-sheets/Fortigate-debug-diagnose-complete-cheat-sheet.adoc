@@ -671,13 +671,13 @@ just clear Fortigate DHCP database and will start over allocating again. You can
 
 |*diagnose sys sdwan member*
 
-*diagnose sys virtual-wan-link member*
+*diagnose sys virtual-wan-link member* (5.6 up to 6.4)  
 
 |Show list of SD-WAN zone/interface members. Also gives each interface gateway IP (if was set, 0.0.0.0 if not), `priority`, and `weight` both by default equal `0`, used with some SLA Types. 
 
 |*diagnose sys sdwan service*
 
-*diagnose sys virtual-wan-link service*
+*diagnose sys virtual-wan-link service* (5.6 up to 6.4)  
 
 |List configured SD-WAN rules (aka `services`), except the Implied one which is always present and cannot be disabled, but is editable for the default load balancing method used. Shows member interfaces and their status `alive` or `dead` for this rule. 
 
@@ -685,7 +685,7 @@ just clear Fortigate DHCP database and will start over allocating again. You can
 
 |*diag sys sdwan  intf-sla-log <interface name>*
 
-*diag sys virtual-wan-link intf-sla-log <interface name>*
+*diag sys virtual-wan-link intf-sla-log <interface name>* (5.6 up to 6.4)  
 
 |Print log of <interface name> usage for the last 10 minutes. The statistics shown in bps: `inbandwidth`, `outbandwidth`, `bibandwidth`, `tx bytes`, `rx bytes`. 
 
