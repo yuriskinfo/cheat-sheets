@@ -299,6 +299,20 @@ a| Filter VPN debug messages using various parameters:
 |*get vpn ssl monitor*
 |List logged in SSL VPN users with allocated IP address, username, connection duration.
 
+|*diagnose vpn ssl debug-filter _criteria_*
+|Limit debug output according to the _criteria_ below: 
+
+`src-addr4\|src-addr6` _source-ip-of-client_ Source IP of the connecting client
+
+`vd` _VDOM name_ Limit debug to a specific VDOM, specify VDOM by its string
+name, not numerical index.
+
+`negate` Negate the filter.
+
+`clear` Clear the filter.
+
+`list` List active filter.
+
 |*diagnose debug app sslvpn -1*
 |Debug SSL VPN connection. Shows only SSL protocol negotiation and set up. That is - ciphers used, algorithms and such, does NOT show user names, groups, or any client related info.
 
@@ -657,13 +671,13 @@ just clear Fortigate DHCP database and will start over allocating again. You can
 
 |*diagnose sys sdwan member*
 
-*diagnose sys virtual-wan-link member*
+*diagnose sys virtual-wan-link member* (5.6 up to 6.4)  
 
 |Show list of SD-WAN zone/interface members. Also gives each interface gateway IP (if was set, 0.0.0.0 if not), `priority`, and `weight` both by default equal `0`, used with some SLA Types. 
 
 |*diagnose sys sdwan service*
 
-*diagnose sys virtual-wan-link service*
+*diagnose sys virtual-wan-link service* (5.6 up to 6.4)  
 
 |List configured SD-WAN rules (aka `services`), except the Implied one which is always present and cannot be disabled, but is editable for the default load balancing method used. Shows member interfaces and their status `alive` or `dead` for this rule. 
 
@@ -671,7 +685,7 @@ just clear Fortigate DHCP database and will start over allocating again. You can
 
 |*diag sys sdwan  intf-sla-log <interface name>*
 
-*diag sys virtual-wan-link intf-sla-log <interface name>*
+*diag sys virtual-wan-link intf-sla-log <interface name>* (5.6 up to 6.4)  
 
 |Print log of <interface name> usage for the last 10 minutes. The statistics shown in bps: `inbandwidth`, `outbandwidth`, `bibandwidth`, `tx bytes`, `rx bytes`. 
 
@@ -792,18 +806,19 @@ proxy SIP inspection is on (_ALG_ inspection). If the output is `default-voip-al
 |===
 
 
-== Administrator GUI access and API automation requests debug
+== Administrator GUI, SSH access and API automation requests debug
 
 [cols=2, options="header"]
 |===
 |Command
 |Descritption
 
-|*diagnose debug httpsd -1*
-
-*diagnose debug application httpsd -1*
+| *diagnose debug application httpsd -1*
 
 |Enable diagnostics for administrator and remote REST API access via `api-user`. When debugging API automation, refrain from working in admin GUI as it will produce a lot of unrelated output.    
+
+|*diagnose debug application sshd -1*
+|Debug SSH administrator session.
 
 |===
 
