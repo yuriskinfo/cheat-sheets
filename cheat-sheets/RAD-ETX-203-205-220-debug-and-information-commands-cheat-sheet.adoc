@@ -75,7 +75,7 @@ and another one as a sender.
 *show mac-table*
 
 *no mac-learning*
-|Enable MAC address learning inside a flow. The _flow_ should be the one where
+|Enable MAC address learning inside a flow and show the MAC table. The _flow_ should be the one where
 those MAC addresses are supposed to be learned, and in the appropriate
 direction. E.g. if the equipment of the end client is connected to ETX port
 `ethernet 0/10`, then you should run this command under the flow that has 
