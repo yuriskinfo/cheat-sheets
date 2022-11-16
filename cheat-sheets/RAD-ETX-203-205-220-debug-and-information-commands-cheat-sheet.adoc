@@ -58,7 +58,9 @@ _Ping sender:_
 
 service-ping local-ip 13.13.13.1/30 dst-ip 13.13.13.2 next-hop 13.13.13.2 egress-port ethernet 4/1 vlan 777 number-of-packets 10 payload-size 1450
 
-|Send ping over the client vlan (here 777) from ETX to ETX to measure latency and packet loss. You configure one ETX as responder and another one as sender.
+|Send ping over the client vlan in Service Provider netwrok (here 777) from ETX
+to ETX to measure latency and packet loss. You configure one ETX as a responder
+and another one as a sender.
 
 |*show configure flows summary brief*
 |List all flows configured on this ETX briefly
