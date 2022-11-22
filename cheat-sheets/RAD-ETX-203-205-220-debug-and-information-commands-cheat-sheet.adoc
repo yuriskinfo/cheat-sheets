@@ -58,7 +58,9 @@ _Ping sender:_
 
 service-ping local-ip 13.13.13.1/30 dst-ip 13.13.13.2 next-hop 13.13.13.2 egress-port ethernet 4/1 vlan 777 number-of-packets 10 payload-size 1450
 
-|Send ping over the client vlan (here 777) from ETX to ETX to measure latency and packet loss. You configure one ETX as responder and another one as sender.
+|Send ping over the client vlan in Service Provider network (here 777) from ETX
+to ETX to measure latency and packet loss. You configure one ETX as a responder
+and another one as a sender.
 
 |*show configure flows summary brief*
 |List all flows configured on this ETX briefly
@@ -66,6 +68,21 @@ service-ping local-ip 13.13.13.1/30 dst-ip 13.13.13.2 next-hop 13.13.13.2 egress
 |*show configure flows summary details*
 |List all flows configured on this ETX with details
 
+|*config flow _name_*
+
+*mac-learning*
+
+*show mac-table*
+
+*no mac-learning*
+|Enable MAC address learning inside a flow and show the MAC table. The _flow_ should be the one where
+those MAC addresses are supposed to be learned, and in the appropriate
+direction. E.g. if the equipment of the end client is connected to ETX port
+`ethernet 0/10`, then you should run this command under the flow that has 
+`ingress port 0/10`, to see if the ETX can see client's equipment. WARNING:
+after showing the results, make sure to disable the MAC learning, as it may
+interfere with the client's traffic. 
+ 
 |*show config system system-date*
 | Show system time of the appliance, important for logs/alarms correlation.
 
