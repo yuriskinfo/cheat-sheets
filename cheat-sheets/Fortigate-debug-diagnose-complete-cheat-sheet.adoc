@@ -89,6 +89,7 @@ interface, and contents of the packet if needed.
 
 `count` - number of packets to capture, integer. If not set, will be capturing
 until the SSH/console timeout or until stopped with `CTRL + C`.
+
 `time-format`:
 
 * `a` - absolute UTC time
