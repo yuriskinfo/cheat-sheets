@@ -367,13 +367,19 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 |*exe tracert6 [-s _source-ip_] _host_*
 | Run IPv6 trace route. 
 
-|*exe ping-options [data-size _bytes_ / df-bit / interface _if-name_ / interval
+|*exe ping-options* [data-size _bytes_ / df-bit / interface _if-name_ / interval
 _seconds_ / repeat-count _integer_ / reset / view-settings / timeout _seconds_ /
-source _ip_ / ttl _integer_ / use-sdwan yes]*
+source _ip_ / ttl _integer_ / use-sdwan yes]
 | Set various options before running pings.
 
 |*exe ping _host_*
-|Run the ping. 
+|Run the IPv4  ping. 
+
+|*exe ping6-options* _see available options above for ipv4_
+|Set various ping6 options before running it.
+
+|*exe ping6 _host_*
+|Run the IPv6 ping.
 
 
 |===
