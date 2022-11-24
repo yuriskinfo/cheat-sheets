@@ -72,6 +72,27 @@ iprope lookup 10.10.10.1 34567 8.8.8.8 443 6 LAN1`
 
 |===
 
+
+== Packet Sniffer (diagnose sniffer packet)
+
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|*dia sni pa _if-name_/any 'tcpdump syntax filter' _verbosity_ _count_
+_time-format_*
+|Network level packet sniffer like tcpdump/tshark/wireshark, presenting captured
+packets on CLI. It gives definite answers whether a packet reached the
+Fortigate, whether it was dropped by firewall rules, what was incoming/outgoing
+interface, and contents of the packet if needed.
+
+
+
+
+|===
+
+
 == General Health, CPU, and Memory
 .General Health, CPU, and Memory loads
 [cols=2, options="header"]
