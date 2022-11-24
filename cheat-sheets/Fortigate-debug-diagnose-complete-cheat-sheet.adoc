@@ -257,6 +257,17 @@ The output will look like `state/chg_time/now=2(work)/1610773657/1617606630`, wh
 |First show index of all Fortigate cluster members, then enter any secondary member CLI via its index.
 
 
+|*diagnose sys ha reset-uptime*
+|Resets uptime of this member making it less than the other member(s)'s uptime
+and so fails over to those member(s). This is a temporary way to force cluster
+fail-over to another member from the current one. NOTE: check that the setting
+below is present or immediately after the reset and failover, this member will become
+active again if it has higher HA priority. 
+
+----
+config sys ha 
+set ha override disable
+----
 
 
 |===
