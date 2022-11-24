@@ -328,6 +328,9 @@ name, not numerical index.
 |Description
 
 |*get router info kernel*
+
+*get router info6 kernel*
+
 a|View the kernel routing table (FIB). This is the list of resolved routes actually being used by the FortiOS kernel.
 
 `tab` Table number, either 254 for unicast or 255 for multicast.
@@ -347,15 +350,22 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 `dev` outgoing interface index. If VDOMs enabled, VDOM will be included as well, if alias is set it will be shown.
 
 |*get router info routing-table all*
+
+*get router info6 routing*
+
 |Show RIB - active routing table with installed and actively used routes. It will not show routes with worse priority, multiple routes to the same destination if unused.
 
 |*get router info routing database*
+
+*get rotuer info6 routing database*
 |Show ALL routes, the Fortigate knows of - including not currently used.
 
 |*get router info routing-table details <route>*
 | Show verbose info about specific route, e.g. `get router info routing-table details 0.0.0.0/0`
 
 |*get firewall proute*
+
+*get firewall proute6*
 | Get all configured Policy Based Routes on the Fortigate.
 
 
