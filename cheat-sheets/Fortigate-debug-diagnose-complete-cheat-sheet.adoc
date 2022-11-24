@@ -72,6 +72,34 @@ iprope lookup 10.10.10.1 34567 8.8.8.8 443 6 LAN1`
 
 |===
 
+
+== Packet Sniffer (diagnose sniffer packet)
+
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|*dia sni pa _if-name_/any 'tcpdump syntax filter' _verbosity_ _count_
+_time-format_*
+a| Network level packet sniffer like tcpdump/tshark/wireshark, presenting captured
+packets on CLI. It gives definite answers whether a packet reached the
+Fortigate, whether it was dropped by firewall rules, what was incoming/outgoing
+interface, and contents of the packet if needed.
+
+`count` - number of packets to capture, integer. If not set, will be capturing
+until the SSH/console timeout or until stopped with `CTRL + C`.
+
+`time-format`:
+
+* `a` - absolute UTC time
+* `l` - local time
+* _default_ - relative to the start of sniffing in seconds.milliseconds.
+
+
+|===
+
+
 == General Health, CPU, and Memory
 .General Health, CPU, and Memory loads
 [cols=2, options="header"]
@@ -111,7 +139,7 @@ processes to show with _num-processes_, and use `detail` to get verbose output
 | Show memory statistics: free, cached, swap, shared 
 
 |*execute sensor list*
-|List current readings of all sensors present on this model of the Fortigate. ALrger models (1500 and up) show CPUs voltage, fan speeds, temperature, power supply voltage and more.
+|List current readings of all sensors present on this model of the Fortigate. Larger models (1500 and up) show CPUs voltage, fan speeds, temperature, power supply voltage and more.
 
 |===
 
@@ -229,6 +257,17 @@ The output will look like `state/chg_time/now=2(work)/1610773657/1617606630`, wh
 |First show index of all Fortigate cluster members, then enter any secondary member CLI via its index.
 
 
+|*diagnose sys ha reset-uptime*
+a| Resets uptime of this member making it less than the other member(s)'s uptime
+and so fails over to those member(s). This is a temporary way to force cluster
+fail-over to another member from the current one. NOTE: check that the setting
+below is present or immediately after the reset and failover, this member will become
+active again if it has higher HA priority. 
+
+----
+config sys ha 
+set ha override disable
+----
 
 
 |===
@@ -328,6 +367,9 @@ name, not numerical index.
 |Description
 
 |*get router info kernel*
+
+*get router info6 kernel*
+
 a|View the kernel routing table (FIB). This is the list of resolved routes actually being used by the FortiOS kernel.
 
 `tab` Table number, either 254 for unicast or 255 for multicast.
@@ -347,18 +389,49 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 `dev` outgoing interface index. If VDOMs enabled, VDOM will be included as well, if alias is set it will be shown.
 
 |*get router info routing-table all*
+
+*get router info6 routing*
+
 |Show RIB - active routing table with installed and actively used routes. It will not show routes with worse priority, multiple routes to the same destination if unused.
 
 |*get router info routing database*
+
+*get rotuer info6 routing database*
 |Show ALL routes, the Fortigate knows of - including not currently used.
 
 |*get router info routing-table details <route>*
 | Show verbose info about specific route, e.g. `get router info routing-table details 0.0.0.0/0`
 
+|*diagnose ip rtcache list*
+| Show the routes cache table.
+
 |*get firewall proute*
+
+*get firewall proute6*
 | Get all configured Policy Based Routes on the Fortigate.
 
 
+| *exe traceroute-options [source _ip_ / device _ifname_ / view-settings / use-sdwan yes]*
+
+*exe traceroute _host_*
+| Run traceroute, setting various options if needed.
+
+|*exe tracert6 [-s _source-ip_] _host_*
+| Run IPv6 trace route. 
+
+|*exe ping-options* [data-size _bytes_ / df-bit / interface _if-name_ / interval
+_seconds_ / repeat-count _integer_ / reset / view-settings / timeout _seconds_ /
+source _ip_ / ttl _integer_ / use-sdwan yes]
+| Set various options before running pings.
+
+|*exe ping _host_*
+|Run the IPv4  ping. 
+
+|*exe ping6-options* _see available options above for ipv4_
+|Set various ping6 options before running it.
+
+|*exe ping6 _host_*
+|Run the IPv6 ping.
 
 
 |===
