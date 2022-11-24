@@ -82,12 +82,16 @@ iprope lookup 10.10.10.1 34567 8.8.8.8 443 6 LAN1`
 
 |*dia sni pa _if-name_/any 'tcpdump syntax filter' _verbosity_ _count_
 _time-format_*
-|Network level packet sniffer like tcpdump/tshark/wireshark, presenting captured
+a| Network level packet sniffer like tcpdump/tshark/wireshark, presenting captured
 packets on CLI. It gives definite answers whether a packet reached the
 Fortigate, whether it was dropped by firewall rules, what was incoming/outgoing
 interface, and contents of the packet if needed.
 
+`time-format`:
 
+* `a` - absolute UTC time
+* `l` - local time
+* _default_ - relative to the start of sniffing in seconds.milliseconds.
 
 
 |===
