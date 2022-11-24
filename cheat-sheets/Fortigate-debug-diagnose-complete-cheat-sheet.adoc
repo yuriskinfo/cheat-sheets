@@ -363,6 +363,9 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 |*get router info routing-table details <route>*
 | Show verbose info about specific route, e.g. `get router info routing-table details 0.0.0.0/0`
 
+|*diagnose ip rtcache list*
+| Show the routes cache table.
+
 |*get firewall proute*
 
 *get firewall proute6*
