@@ -111,7 +111,7 @@ processes to show with _num-processes_, and use `detail` to get verbose output
 | Show memory statistics: free, cached, swap, shared 
 
 |*execute sensor list*
-|List current readings of all sensors present on this model of the Fortigate. ALrger models (1500 and up) show CPUs voltage, fan speeds, temperature, power supply voltage and more.
+|List current readings of all sensors present on this model of the Fortigate. Larger models (1500 and up) show CPUs voltage, fan speeds, temperature, power supply voltage and more.
 
 |===
 
@@ -359,6 +359,13 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 | Get all configured Policy Based Routes on the Fortigate.
 
 
+| *exe traceroute-options [source _ip_ / device _ifname_ / view-settings / use-sdwan yes]*
+
+*exe traceroute _host_
+| Run traceroute, setting various options if needed.
+
+|*exe tracert6 [-s _source-ip_] _host_*
+| Run IPv6 trace route. 
 
 
 |===
