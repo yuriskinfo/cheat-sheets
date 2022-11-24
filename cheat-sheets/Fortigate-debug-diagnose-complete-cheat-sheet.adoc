@@ -361,7 +361,7 @@ a|View the kernel routing table (FIB). This is the list of resolved routes actua
 
 | *exe traceroute-options [source _ip_ / device _ifname_ / view-settings / use-sdwan yes]*
 
-*exe traceroute _host_
+*exe traceroute _host_*
 | Run traceroute, setting various options if needed.
 
 |*exe tracert6 [-s _source-ip_] _host_*
