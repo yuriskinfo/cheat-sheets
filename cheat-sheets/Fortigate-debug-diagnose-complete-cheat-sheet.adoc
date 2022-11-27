@@ -87,6 +87,25 @@ packets on CLI. It gives definite answers whether a packet reached the
 Fortigate, whether it was dropped by firewall rules, what was incoming/outgoing
 interface, and contents of the packet if needed.
 
+`verbosity` - level of detail to present, can be one of:
+
+1 - packets' header, includes IP addresses, ports, and flags if set.
+
+2 - packets' header and data for IP packet, i.e. same as above plus contents of
+the packet.
+
+3 - same as 2 above plus Ethernet header.
+
+4 - packets' header (no contents) plus incoming/outgoing interface name for each
+packet. This gives the indication whether the packet passed the Fortigate or was
+dropped by it.
+
+5 - same data as `4` plus contents of IP packets.
+
+6 - packets' header starting from Ethernet plus contents and incoming/outgoing
+interface names.
+
+
 `count` - number of packets to capture, integer. If not set, will be capturing
 until the SSH/console timeout or until stopped with `CTRL + C`.
 
