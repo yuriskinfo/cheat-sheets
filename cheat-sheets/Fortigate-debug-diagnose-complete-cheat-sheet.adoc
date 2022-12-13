@@ -160,6 +160,11 @@ processes to show with _num-processes_, and use `detail` to get verbose output
 |*execute sensor list*
 |List current readings of all sensors present on this model of the Fortigate. Larger models (1500 and up) show CPUs voltage, fan speeds, temperature, power supply voltage and more.
 
+|*dia sys flash list*
+|Show contents of the flash memory holding FortiOS firmware images. One of the images
+will have `primary` set to `yes`, which means it will be the active on the next
+boot.
+
 |===
 
 
