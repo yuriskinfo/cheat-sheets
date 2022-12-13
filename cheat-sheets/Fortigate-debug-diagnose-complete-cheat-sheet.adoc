@@ -162,8 +162,7 @@ processes to show with _num-processes_, and use `detail` to get verbose output
 
 |*dia sys flash list*
 |Show contents of the flash memory holding FortiOS firmware images. One of the images
-will have `primary` set to `yes`, which means it will be the active on the next
-boot.
+will have `Active` set to `yes`, which means it is the used one.
 
 |===
 
