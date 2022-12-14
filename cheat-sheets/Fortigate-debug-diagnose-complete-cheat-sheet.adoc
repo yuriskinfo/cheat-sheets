@@ -701,6 +701,10 @@ just clear Fortigate DHCP database and will start over allocating again. You can
 |Description
 
 
+|*diagnose firewall auth list*
+|List all authenticated and known by firewall usernames. It does not matter what
+the source is - LDAP/SSO/etc. Also shows client's IP, idle time, duration.
+
 |*diagnose debug app fnbamd -1*
 |Enable debug for authentication daemon, valid for ANY remote authentication - RADIUS, LDAP, TACACS+.
 
