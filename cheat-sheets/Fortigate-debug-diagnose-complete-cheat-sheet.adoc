@@ -157,6 +157,10 @@ processes to show with _num-processes_, and use `detail` to get verbose output
 |*get hardware memory*
 | Show memory statistics: free, cached, swap, shared 
 
+|*dia hardware sysinfo conserve*
+|Info whether the conserve mode on or off, total memory available, conserve mode
+thresholds `red` and `green`
+
 |*execute sensor list*
 |List current readings of all sensors present on this model of the Fortigate. Larger models (1500 and up) show CPUs voltage, fan speeds, temperature, power supply voltage and more.
 
