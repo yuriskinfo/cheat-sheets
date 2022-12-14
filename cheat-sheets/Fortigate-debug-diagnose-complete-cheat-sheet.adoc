@@ -168,6 +168,10 @@ thresholds `red` and `green`
 |Show contents of the flash memory holding FortiOS firmware images. One of the images
 will have `Active` set to `yes`, which means it is the used one.
 
+|*diagnose hardware deviceinfo disk*
+|Show all storage attached to the firewall, including disk type, volume, free
+space.
+
 |===
 
 
