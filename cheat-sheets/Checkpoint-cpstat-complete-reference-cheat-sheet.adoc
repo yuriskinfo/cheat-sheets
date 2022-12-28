@@ -1,4 +1,4 @@
-= Checkpoint `cpstat` diagnostics and information tool cheat sheet
+= Check Point `cpstat` diagnostics and information tool cheat sheet
 
 Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
 
