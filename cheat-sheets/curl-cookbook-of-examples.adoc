@@ -6,49 +6,6 @@
  
 
 
-== Get coronavirus/Covid-19 statistics for your country, real-time or historical
-----
-curl -L -s covid19.trackercli.com/il
-----
-Add your country code after the slash, e.g. for Israel "il".  
-
-
-----
-╔═══════════════════════════════════════════════════════════════════════╗
-║ COVID-19 Tracker & CLI v4.1.1 - Israel Update                         ║
-╟───────────────────────────────────────────────────────────────────────╢
-║ As of 3/18/2022, 03:25:53 PM [Date: 3/18/2022]                        ║
-╟─────────────╤──────────────╤───────────╤──────────────╤───────────────╢
-║ Cases       │ Deaths       │ Recovered │ Active       │ Cases/Million ║
-╟─────────────┼──────────────┼───────────┼──────────────┼───────────────╢
-║ 3,745,408   │ 10,417       │ 3,692,166 │ 42,825       │ 401,609       ║
-╟─────────────┼──────────────┼───────────┼──────────────┼───────────────╢
-║ Today Cases │ Today Deaths │ Critical  │ Mortaility % │ Recovery %    ║
-╟─────────────┼──────────────┼───────────┼──────────────┼───────────────╢
-║ 0           │ 0            │ 325       │ 0.28%        │ 98.58%        ║
-╟─────────────╧──────────────╧───────────╧──────────────╧───────────────╢
-║ Help: Try to append the URL with /help to learn more...               ║
-╟───────────────────────────────────────────────────────────────────────╢
-║ Docs: docs.wareneutron.com/covid19-tracker-cli                        ║
-╟───────────────────────────────────────────────────────────────────────╢
-║ Repo: repo.wareneutron.com/covid19-tracker-cli                        ║
-╚═══════════════════════════════════════════════════════════════════════╝
-
-Green apple is better than vitamins!
-
-════════════════════════════════════════════════════════════
-Love this project? Help us to help others by means of coffee!
-Buy Us a Coffee - wareneutron.com/donate
-════════════════════════════════════════════════════════════
-Follow the lead dev on twitter for more updates!
-@warengonzaga #covid19trackercli
-----
-Historical data:  
-
-----
-$ curl -L -s covid19.trackercli.com/history/il
-----
-
 
 
 == Force curl not to show the progress bar   
