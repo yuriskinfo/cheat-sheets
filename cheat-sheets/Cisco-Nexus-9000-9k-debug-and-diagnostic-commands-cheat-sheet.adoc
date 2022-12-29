@@ -31,8 +31,30 @@ Status: Work in progress.
 |*show vpc peer-keepalive*
 | Display real-time stats on peering keepalives: last send/receive time, IP of the peer, port and protocol used, vrf for communicaiton.
 
+|*show feature*
+|Show enabled features, make sure FEX is on.
 
+|*show fex [_fex-num_] [detail]*
+| Show FEX, optionally with details - FEX associated number, state
+(Online/Offline/Connecting), model, serial number (of the module). If _detail_,
+then also show log of the last registration/offline/online of the FEX.
 
+|*show interface fex*
+| In addition to above, show physical interface names (uplinks) where FEX is connected on
+Nexus and its state. 
+
+|*reload fex _fex-num_*
+| Reload the specified FEX (it should be online for this).
+
+|*show inventory fex _fex-num_*
+|Show hardware info and serial numbers of the FEX chassis, network module, fans,
+power supplies. 
+
+|*show environment fex _fex-num_/all*
+|Show power consumed, temperature.
+
+|*show int port-channel _n_ fex*
+|Show physical interfaces pinned to a given port-channel.
 
 |===
 

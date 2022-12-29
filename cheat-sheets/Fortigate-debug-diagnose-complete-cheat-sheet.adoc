@@ -87,6 +87,25 @@ packets on CLI. It gives definite answers whether a packet reached the
 Fortigate, whether it was dropped by firewall rules, what was incoming/outgoing
 interface, and contents of the packet if needed.
 
+`verbosity` - level of detail to present, can be one of:
+
+1 - packets' header, includes IP addresses, ports, and flags if set.
+
+2 - packets' header and data for IP packet, i.e. same as above plus contents of
+the packet.
+
+3 - same as 2 above plus Ethernet header.
+
+4 - packets' header (no contents) plus incoming/outgoing interface name for each
+packet. This gives the indication whether the packet passed the Fortigate or was
+dropped by it.
+
+5 - same data as `4` plus contents of IP packets.
+
+6 - packets' header starting from Ethernet plus contents and incoming/outgoing
+interface names.
+
+
 `count` - number of packets to capture, integer. If not set, will be capturing
 until the SSH/console timeout or until stopped with `CTRL + C`.
 
@@ -138,8 +157,20 @@ processes to show with _num-processes_, and use `detail` to get verbose output
 |*get hardware memory*
 | Show memory statistics: free, cached, swap, shared 
 
+|*dia hardware sysinfo conserve*
+|Info whether the conserve mode on or off, total memory available, conserve mode
+thresholds `red` and `green`
+
 |*execute sensor list*
 |List current readings of all sensors present on this model of the Fortigate. Larger models (1500 and up) show CPUs voltage, fan speeds, temperature, power supply voltage and more.
+
+|*dia sys flash list*
+|Show contents of the flash memory holding FortiOS firmware images. One of the images
+will have `Active` set to `yes`, which means it is the used one.
+
+|*diagnose hardware deviceinfo disk*
+|Show all storage attached to the firewall, including disk type, volume, free
+space.
 
 |===
 
@@ -677,6 +708,10 @@ just clear Fortigate DHCP database and will start over allocating again. You can
 |Command
 |Description
 
+
+|*diagnose firewall auth list*
+|List all authenticated and known by firewall usernames. It does not matter what
+the source is - LDAP/SSO/etc. Also shows client's IP, idle time, duration.
 
 |*diagnose debug app fnbamd -1*
 |Enable debug for authentication daemon, valid for ANY remote authentication - RADIUS, LDAP, TACACS+.
