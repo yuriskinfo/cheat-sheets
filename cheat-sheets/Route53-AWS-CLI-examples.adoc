@@ -38,13 +38,15 @@ aws route53 list-resource-record-sets --hosted-zone-id Z3HR6JS50CWURT
 Show all and only A records from a zone:
 
 ----
-aws route53 list-resource-record-sets --hosted-zone-id ZN36CWKHEDURT  --query "ResourceRecordSets[?Type == 'A'] "
+aws route53 list-resource-record-sets --hosted-zone-id ZN36CWKHEDURT  \
+--query "ResourceRecordSets[?Type == 'A'] "
 ----
 
 Show only records matching the given record value (here _www.yurisk.info_):
 
 ----
-aws route53 list-resource-record-sets --hosted-zone-id ZN36CWKHEDURT  --query "ResourceRecordSets[?Name == 'www.yurisk.info.'] "
+aws route53 list-resource-record-sets --hosted-zone-id ZN36CWKHEDURT \
+ --query "ResourceRecordSets[?Name == 'www.yurisk.info.'] "
 ----
 
 NOTE: AWS returns maximum 100 items in one response. Use paging with `NextToken`
@@ -55,8 +57,8 @@ if you expect to get more results.
 Create a new public zone named _example334455.com_: 
 
 ----
-aws route53 create-hosted-zone --name example334455.com --caller-reference
-some-text-for-me-for-reference 
+aws route53 create-hosted-zone --name example334455.com \
+--caller-reference some-text-for-me-for-reference 
 ----
 
 On success returns zone's ID, request status (e.g. `Pending`), allocated name
@@ -69,7 +71,7 @@ can specify the record(s) to add explicitly with `--change-batch`. Let's add A
 record _www.example334455.com_ wtih TTL of 600, pointing to IP _1.2.3.4_:
 
 ----
-aws route53 change-resource-record-sets --hosted-zone-id Z0967968IADGHN5TI3WW
+aws route53 change-resource-record-sets --hosted-zone-id Z0967968IADGHN5TI3WW \
 --change-batch '
 {
 "Comment": "Adding A record",
@@ -97,7 +99,7 @@ Let's delete the A record just created _www.example334455.com_  (we use
 `Action:DELETE`):
 
 ----
-aws route53 change-resource-record-sets --hosted-zone-id Z0967968IADGHN5TI3WW
+aws route53 change-resource-record-sets --hosted-zone-id Z0967968IADGHN5TI3WW \
 --change-batch '
 {
 "Comment": "Adding A record",
