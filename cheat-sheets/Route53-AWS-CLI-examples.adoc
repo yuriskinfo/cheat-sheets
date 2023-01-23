@@ -67,7 +67,7 @@ servers. The `caller-reference` you set is used for identifying this request in
 logs etc. and can be arbitrary string.
 
 == Add A record to a zone
-While mainly expected to store the A record in JSON format in a local file, we
+While mainly expected to store the  record in JSON format in a local file, we
 can specify the record(s) to add explicitly with `--change-batch`. Let's add A
 record _www.example334455.com_ wtih TTL of 600, pointing to IP _1.2.3.4_:
 
