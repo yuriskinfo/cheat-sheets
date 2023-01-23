@@ -5,7 +5,7 @@ Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
 
 
 == Short Introduction
-* AWS ROute53 is the only service with 100% SLA.
+* AWS Route53 is the only service with 100% SLA.
 * Amazon Registrar does domain registration only for _.com, .org, .net_ domains, the
  rest are registered via _Gandi SAS_
 
@@ -43,14 +43,14 @@ aws route53 list-resource-record-sets --hosted-zone-id ZN36CWKHEDURT --profile
 awsadmin --query "ResourceRecordSets[?Type == 'A'] "
 ----
 
-Show only records matching the given record value (_here _www.yurisk.info_):
+Show only records matching the given record value (here _www.yurisk.info_):
 
 ----
 aws route53 list-resource-record-sets --hosted-zone-id ZN36CWKHEDURT --profile
 awsadmin --query "ResourceRecordSets[?Name == 'www.yurisk.info.'] "
 ----
 
-NOTE: AWS returns maximum 100 items in one response. Use paging with `NextToen`
+NOTE: AWS returns maximum 100 items in one response. Use paging with `NextToken`
 if you expect to get more results.
 
 == Create a new public zone
