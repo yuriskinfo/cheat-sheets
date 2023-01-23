@@ -30,8 +30,7 @@ This command returns _zone-id_ you will need in future queries.
 
 [source, bash]
 ----
-aws route53 list-resource-record-sets --hosted-zone-id Z3HR6JS50CWURT  --profile
-awsadmin
+aws route53 list-resource-record-sets --hosted-zone-id Z3HR6JS50CWURT  
 ----
 
 
@@ -39,15 +38,13 @@ awsadmin
 Show all and only A records from a zone:
 
 ----
-aws route53 list-resource-record-sets --hosted-zone-id ZN36CWKHEDURT --profile
-awsadmin --query "ResourceRecordSets[?Type == 'A'] "
+aws route53 list-resource-record-sets --hosted-zone-id ZN36CWKHEDURT  --query "ResourceRecordSets[?Type == 'A'] "
 ----
 
 Show only records matching the given record value (here _www.yurisk.info_):
 
 ----
-aws route53 list-resource-record-sets --hosted-zone-id ZN36CWKHEDURT --profile
-awsadmin --query "ResourceRecordSets[?Name == 'www.yurisk.info.'] "
+aws route53 list-resource-record-sets --hosted-zone-id ZN36CWKHEDURT  --query "ResourceRecordSets[?Name == 'www.yurisk.info.'] "
 ----
 
 NOTE: AWS returns maximum 100 items in one response. Use paging with `NextToken`
