@@ -928,6 +928,11 @@ proxy SIP inspection is on (_ALG_ inspection). If the output is `default-voip-al
 |*diagnose debug application sshd -1*
 |Debug SSH administrator session.
 
+|*dia debug cli 8*
+|Nice trick: this will print CLI commands the Fortigate runs when you do
+something in the GUI. This way we can find CLI commands without long search in 
+Google or documentation.
+
 |===
 
 
