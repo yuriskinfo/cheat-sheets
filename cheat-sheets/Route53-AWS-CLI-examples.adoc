@@ -1,0 +1,143 @@
+= Route53 AWS CLI examples cookbook
+:homepage: https://yurisk.info
+:toc:
+Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
+
+
+== Short Introduction
+* AWS Route53 is the only service with 100% SLA.
+* Amazon Registrar does domain registration only for _.com, .org, .net_ domains, the
+ rest are registered via _Gandi SAS_
+
+
+
+== List all hosted zones (private and public)
+[source, bash]
+----
+aws route53 list-hosted-zones  
+----
+
+If you are using configuration profiles:
+
+[source, bash]
+----
+aws route53 list-hosted-zones  --profile <profile-name> 
+----
+
+This command returns _zone-id_ you will need in future queries.
+
+== Show all records of a zone
+
+[source, bash]
+----
+aws route53 list-resource-record-sets --hosted-zone-id Z3HR6JS50CWURT  
+----
+
+
+=== Filter output for specific records
+Show all and only A records from a zone:
+
+----
+aws route53 list-resource-record-sets --hosted-zone-id ZN36CWKHEDURT  \
+--query "ResourceRecordSets[?Type == 'A'] "
+----
+
+Show only records matching the given record value (here _www.yurisk.info_):
+
+----
+aws route53 list-resource-record-sets --hosted-zone-id ZN36CWKHEDURT \
+ --query "ResourceRecordSets[?Name == 'www.yurisk.info.'] "
+----
+
+NOTE: AWS returns maximum 100 items in one response. Use paging with `NextToken`
+if you expect to get more results.
+
+== Create a new public zone
+
+Create a new public zone named _example334455.com_: 
+
+----
+aws route53 create-hosted-zone --name example334455.com \
+--caller-reference some-text-for-me-for-reference 
+----
+
+On success returns zone's ID, request status (e.g. `Pending`), allocated name
+servers. The `caller-reference` you set is used for identifying this request in
+logs etc. and can be arbitrary string.
+
+== Add A record to a zone
+While mainly expected to store the  record in JSON format in a local file, we
+can specify the record(s) to add explicitly with `--change-batch`. Let's add A
+record _www.example334455.com_ wtih TTL of 600, pointing to IP _1.2.3.4_:
+
+----
+aws route53 change-resource-record-sets --hosted-zone-id Z0967968IADGHN5TI3WW \
+--change-batch '
+{
+"Comment": "Adding A record",
+"Changes": [
+{
+"Action": "CREATE",
+"ResourceRecordSet": {
+"Name": "www.example334455.com",
+"Type": "A",
+"TTL": 600,
+"ResourceRecords": [
+{
+"Value": "1.2.3.4"
+}
+]
+}
+}
+]
+}
+'
+----
+
+== Delete a record from a zone
+Let's delete the A record just created _www.example334455.com_  (we use
+`Action:DELETE`):
+
+----
+aws route53 change-resource-record-sets --hosted-zone-id Z0967968IADGHN5TI3WW \
+--change-batch '
+{
+"Comment": "Adding A record",
+"Changes": [
+{
+"Action": "DELETE",
+"ResourceRecordSet": {
+"Name": "www.example334455.com",
+"Type": "A",
+"TTL": 600,
+"ResourceRecords": [
+{
+"Value": "1.2.3.4"
+}
+]
+}
+}
+]
+}
+'
+----
+
+== Delete a zone completely
+NOTE: You cannot delete a non-empty zone, have to 1st delete all records except
+NS.
+
+Trying to delete a zone with other than NS records gives this error:
+
+----
+An error occurred (HostedZoneNotEmpty) when calling the DeleteHostedZone
+operation: The specified hosted zone contains non-required resource record
+sets  and so cannot be deleted
+----
+
+We delete the empty zone _example334455.com_: 
+
+----
+aws route53 delete-hosted-zone --id Z0967968IADGHN5TI3WW
+----
+
+

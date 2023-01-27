@@ -4,7 +4,37 @@
 Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
 
 == Firewalld daemon management (Red Hat based distributions)
-.firewall-cmd commands
+
+=== Enable, disable, reload the daemon
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|*systemctl disable/enable firewalld*
+|Disable/enable firewalld, survives reboot.
+
+|*systemctl stop firewalld*
+|Stop firewalld until started manually or reboot.
+
+
+|*firewall-cmd --reload*
+|Reload firewall rules to make your changes active, keeping the state table. Active sessions do not disconnect. On finishing reload will output `success`.
+
+|*systemctl restart firewalld*
+|Restart the daemon, without resetting the active connections. Use in case of
+problems with the daemon.
+
+|*firewall-cmd --complete-reload*
+|Reload firewall completely, disconnecting the active connections. When nothing
+else helps.
+
+
+
+
+|===
+=== List rules, status, additional info
+
 [cols=2, options="header"]
 |===
 |Command
@@ -16,8 +46,6 @@ Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
 |*firewall-cmd  --list-all*
 |List currently active rules
 
-|*firewall-cmd --reload*
-|Reload firewall keeping the state table. Active sessions do not disconnect. On finishing reload will output `success`.
 
 |*firewall-cmd --get-default-zone*
 | Show the default zone for interfaces.
