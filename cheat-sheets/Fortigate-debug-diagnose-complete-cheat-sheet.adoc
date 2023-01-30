@@ -5,7 +5,9 @@
 Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
 
 
-NOTE: To enable debug set by any of the commands below, you need to run *diagnose debug enable*. This is assumed and not reminded any further.
+NOTE: To enable debug set by any of the commands below, you need to run
+*diagnose debug enable*. This is assumed and not reminded any further. Use *dia
+debug info* to know what debug is enabled, and at what level.
 
 NOTE: To disable and stop immediately any debug, run *dia deb res* which is short for *diagnose debug reset*.
 
@@ -955,6 +957,22 @@ Google or documentation.
 |*show wireless-controller wtp*
 |Show APs known to this Fortigate individually. We can enter any given AP configuration and change settings for this AP only, i.e. `set admin disable`.
 
+
+
+|===
+
+
+== Alerts Sending debug
+
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|*dia debug app alertmail -1*
+|Enable sessions debug for sending alerts by mail. This will show the configured
+settings, like from/to email address, as well as SMTP session log of connecting
+to the remote mail server and received/sent SMTP session codes.
 
 
 |===
