@@ -483,6 +483,11 @@ source _ip_ / ttl _integer_ / use-sdwan yes]
 |*diagnose hardware deviceinfo nic <nic name>*
 |Same as above.
 
+|*get sys interface transceiver*
+|List all SFP/SFP+ transceivers installed with info on: vendor name, serial
+number, temperature, voltage consumed, and, most important - Transmit (TX) and
+Receive (RX) signal power in dBm. 
+
 |*get hardware npu np6 port-list*
 |Show on which interfaces the NPU offloading is enabled.
 
