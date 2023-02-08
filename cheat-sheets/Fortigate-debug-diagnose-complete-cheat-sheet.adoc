@@ -976,12 +976,16 @@ Google or documentation.
 |*diagnose fortitoken info*
 |Show all existing on the Fortigate Fortitokens, including their status:
 
-* `new` - new token, available to be assigned to a user.
-* `active` - normal state, assigned to a user, hardware Fortitoken.
-* `provisioning` - Fortitoken Mobile (FTM), assigned to a user, waits for end
+`new` - new token, available to be assigned to a user.
+
+`active` - normal state, assigned to a user, hardware Fortitoken.
+
+`provisioning` - Fortitoken Mobile (FTM), assigned to a user, waits for end
  user to activate it on his/her mobile phone.
-* `provisioned` - FTM, assigned to a user and activated by him/her as well.
-* `provision timeout` - user hasn't activated the assigned token in the given
+
+`provisioned` - FTM, assigned to a user and activated by him/her as well.
+
+`provision timeout` - user hasn't activated the assigned token in the given
  time window (3 days default), the token needs to be re-provisioned to a user again.
 `locked` - token was locked either manually by administrator, or because
 Fortigate was not able to reach Fortiguard servers. 
