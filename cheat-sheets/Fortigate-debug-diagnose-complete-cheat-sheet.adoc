@@ -5,7 +5,9 @@
 Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
 
 
-NOTE: To enable debug set by any of the commands below, you need to run *diagnose debug enable*. This is assumed and not reminded any further.
+NOTE: To enable debug set by any of the commands below, you need to run
+*diagnose debug enable*. This is assumed and not reminded any further. Use *dia
+debug info* to know what debug is enabled, and at what level.
 
 NOTE: To disable and stop immediately any debug, run *dia deb res* which is short for *diagnose debug reset*.
 
@@ -481,6 +483,11 @@ source _ip_ / ttl _integer_ / use-sdwan yes]
 |*diagnose hardware deviceinfo nic <nic name>*
 |Same as above.
 
+|*get sys interface transceiver*
+|List all SFP/SFP+ transceivers installed with info on: vendor name, serial
+number, temperature, voltage consumed, and, most important - Transmit (TX) and
+Receive (RX) signal power in dBm. 
+
 |*get hardware npu np6 port-list*
 |Show on which interfaces the NPU offloading is enabled.
 
@@ -955,6 +962,62 @@ Google or documentation.
 |*show wireless-controller wtp*
 |Show APs known to this Fortigate individually. We can enter any given AP configuration and change settings for this AP only, i.e. `set admin disable`.
 
+
+
+|===
+
+== FortiTokens
+
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|*diagnose fortitoken info*
+|Show all existing on the Fortigate Fortitokens, including their status:
+
+`new` - new token, available to be assigned to a user.
+
+`active` - normal state, assigned to a user, hardware Fortitoken.
+
+`provisioning` - Fortitoken Mobile (FTM), assigned to a user, waits for end
+ user to activate it on his/her mobile phone.
+
+`provisioned` - FTM, assigned to a user and activated by him/her as well.
+
+`provision timeout` - user hasn't activated the assigned token in the given
+ time window (3 days default), the token needs to be re-provisioned to a user again.
+
+`locked` - token was locked either manually by administrator, or because
+Fortigate was not able to reach Fortiguard servers. 
+
+
+|*exec ping fds1.fortinet.com*
+
+*exec ping directregistration.fortinet.com*
+
+*exec ping globalftm.fortinet.net*
+
+|Verify that Fortigate can resolve and ping  the FortiGuard servers
+responsible for FortiToken activation/license validation.
+
+|*show user fortitoken*
+|Display all Fortitokens info on license number, activation expiration (in epoch
+format). 
+
+|===
+
+== Alerts Sending debug
+
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|*dia debug app alertmail -1*
+|Enable sessions debug for sending alerts by mail. This will show the configured
+settings, like from/to email address, as well as SMTP session log of connecting
+to the remote mail server and received/sent SMTP session codes.
 
 
 |===
