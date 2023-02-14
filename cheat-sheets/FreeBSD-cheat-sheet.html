@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.18">
+<title>FreeBSD cheat sheet</title>
+<style>
+
+</style>
+</head>
+<body class="article">
+<div id="header">
+<h1>FreeBSD cheat sheet</h1>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Author: Yuri Slobodyanyuk, <a href="https://www.linkedin.com/in/yurislobodyanyuk/" class="bare">https://www.linkedin.com/in/yurislobodyanyuk/</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_working_with_disks_and_partitions">Working with disks and partitions</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Command</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>camcontrol devlist</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Show list of attached storage devices</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>geom &lt;disk/label/part/raid&gt; list</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Display detailed information for the given GEOM class <code>disk</code> - physical disk, <code>label</code> - device labels, <code>part</code> - partitions. Other classes are available, but not mentioned for irrelevance here.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>mount</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Show mounted in fact partitions and their properties (journaled or not, type).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>glabel list</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Show labels, same as <code>geom label list</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>gpart show</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Show partitions, similar to <code>geom part list</code> minus labels information, so is shorter. Add <code>-r</code> to show GPT partition types, see for the complete list at <a href="https://en.wikipedia.org/wiki/GUID_Partition_Table" class="bare">https://en.wikipedia.org/wiki/GUID_Partition_Table</a> .</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>gpart recover &lt;device name&gt;</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Recover partition information, e.g. when increasing the size of already partitioned disk in Virtual Machine, the last sector holding the partition info is lost, so to put the needed info in the last sector of now increased disk: <code>gpart recover da0</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>swapoff &lt;device name&gt;</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Turn off temporarily the swap file, e.g. to move its partition to the end of the increased virtual disk: <code>swapoff /dev/da0p3</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>gpart delete -i &lt;n&gt; &lt;device name&gt;</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete partition number <code>n</code> (as shown by <code>gpart show</code>) on the device <code>device name</code>. E.g. If the swap partition was number 3 on disk /dev/da0, to delete it: <code>gpart delete -i 3 /dev/da0</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>gpart create -s &lt;partition scheme&gt; &lt;device name&gt;</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set type of partition to be added on device <code>device name</code>. E.g. to set up  device <em>da1</em> for GPT partitioning: <code>gpart create -s gpt da1</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>sysctl kern.geom.debugflags=16</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Resizing a live partition may require turning off this protection.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>gpart resize -i &lt;n&gt; [ -s &lt;new size K/M/G&gt;] [-a &lt;alignment size&gt;] &lt;device name&gt;</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Resize existing partition number <code>n</code> to <code>new size</code>, optionally setting alighnment, on device <code>device name</code>. If <code>-s</code> size is not given, use up all available <em>free</em> space. E.g. to increase the <em>2nd</em> partition on device <em>da0</em> to 47 Gigabyte with 4k alignment: <code>gpart resize -i 2 -s 47G -a 4k da0</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>growfs &lt;partition name&gt;</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">After resizing a partition, grow the existing file system on it to encompass the new free space. E.g.<code>growfs /dev/da0p2</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>gpart add -t &lt;partition type&gt; [-a &lt;alignment&gt;] [-l &lt;label name&gt;] &lt;dev name&gt;</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add a new partition to the disk <code>dev name</code>, setting its type and optionally alignment and label. E.g. to add <em>freebsd-ufs</em> type partition to disk <em>da1</em> aligned on 4k border setting the label to <em>data</em>: <code>gpart add -t freebsd-ufs -a 4k -l data da1</code> . After that, this partition will be available as  <em>/dev/gpt/data</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>newfs [-U] [-j] &lt;partition name/label&gt;</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add filesystem to the named partition. Switches depend on the filesystem type, here <code>-U</code> is for <strong>freebsd-ufs</strong> with soft updates but without journaling, while <code>-j</code> adds journaling. E.g. to create UFS filesystem with soft updates but without the journaling on partition labeled <em>/data</em> of type GPT: <code>newfs -U /dev/gpt/data</code>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2021-12-03 08:42:05 +0200
+</div>
+</div>
+</body>
+</html>
