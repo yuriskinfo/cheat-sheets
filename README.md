@@ -63,4 +63,6 @@ Make sure to __watch__ this repository to get notified on updates (usually updat
 
 [Windows cmd.exe shell batch scripting cheat sheet](cheat-sheets/Windows-cmd-shell-batch-scripting-cheat-sheet.adoc)
 
+## Amazon AWS CLI v2.x
 
+[Route53 cheat sheet of examples](cheat-sheets/Route53-AWS-CLI-examples.adoc)
