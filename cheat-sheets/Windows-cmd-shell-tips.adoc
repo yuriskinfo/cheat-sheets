@@ -1,0 +1,68 @@
+= Windows cmd.exe shell tips for productivity
+Yuri Slobodyanyuk <admin@yurisk.info>
+v1.0, 2023-03-07
+:homepage: https://yurisk.info
+:toc:
+
+Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
+
+== doskey
+
+[cols=2, options="headers"]
+|===
+|Command
+|Description
+
+|Up Arrow
+|Recall previous command.
+
+|Down Arrow
+|Recall next command
+
+|Page Up
+|Recall the 1st/oldest command in the current session.
+
+|Page Down
+|Recall the most recent command in this session.
+
+|Ctrl + Left Arrow
+|Move cursor back one word.
+
+|Ctrl + Right Arrow
+|Move cursor right one word.
+
+|Home
+|Move cursor to the beginning of the line.
+
+|End
+|Move cursor to the end of the line.
+
+|Esc
+|Clear the command from the display.
+
+|Right Click on title -> Properties -> Options -> Buffer size
+|Increase/decrease the commands history buffer size. Note: `doskey
+/listsize=<n>` stopped working on Windows 10 somewhere in 2021. 
+
+|*doskey /history*
+|Show all commands in the buffer.
+
+|*doskey _macroName_ = _command to run_*
+|Record a macro for this session. E.g. to save some typing: 
+`doskey ro = route print`, now we can use `ro` to run `route print`. 
+The macros are not saved, and disappear after closing the cmd.exe, 
+unless saved in a batch file.
+
+|*doskey /macros*
+|Show all macros defined for this session.
+
+
+|===
+
+
+
+
+
+== References
+* https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/doskey
+
