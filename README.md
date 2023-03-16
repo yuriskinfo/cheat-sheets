@@ -12,6 +12,8 @@ Make sure to __watch__ this repository to get notified on updates (usually updat
 
 [Fortigate debug and diagnose commands complete cheat sheet](cheat-sheets/Fortigate-debug-diagnose-complete-cheat-sheet.adoc) | [PDF](cheat-sheets/Fortigate-debug-diagnose-complete-cheat-sheet.pdf)
 
+[Fortigate SSL VPN Hardening Guide](cheat-sheets/fortigate-ssl-vpn-hardening-guide.adoc)
+
 [Fortianalyzer diagnose and debug cheat sheet](cheat-sheets/Fortianalyzer-debug-cheat-sheet.adoc) | [PDF](cheat-sheets/Fortianalyzer-debug-cheat-sheet.pdf)
 
 [Checkpoint cpstat tool complete cheat sheet](cheat-sheets/Checkpoint-cpstat-complete-reference-cheat-sheet.adoc) | [PDF](cheat-sheets/Checkpoint-cpstat-complete-reference-cheat-sheet.pdf)
