@@ -4,7 +4,7 @@
 :date: 2023-03-15 09:55:25+00:00
 :toc:
 
-Last updated: 16.03.2023
+Last updated: 19.03.2023
 
 == Introduction
 This guide is the result of closely following Fortigate VPN SSL vulnerabilities
@@ -41,6 +41,7 @@ On the CLI:
 config vpn ssl settings
     set port 13123
 ----
+
 
 == Do not use local users for authentication, and if using - keep passwords elsewhere or/and  enable MFA
 In general, keeping all the security info in one box (Fortigate here) is a bad
@@ -244,6 +245,38 @@ end
 ----
 
 
+== Create a no-access portal and set it as default in the VPN settings
+Once you have VPN SSL enabled, you *have* to specify the default portal 
+to which all unmapped to portals user will be assigned. To prevent unintended
+users/groups connecting via default portal, create the one disabling all access
+inside it and then set it as the default.
+
+* Create a portal with no factual access:
+
+----
+config vpn ssl web portal
+    edit DefaultNoAccess
+        set tunnel-mode disable 
+        set web-mode disable
+        set ipv6-tunnel-mode disable
+    next
+end
+----
+
+
+* Make it the default portal:
+
+----
+config vpn ssl setting
+        set default-portal DefaultNoAccess
+end
+----
+
+IMPORTANT: Make sure you have the relevant users/groups mapped to other, working portals, before doing this.
+
+
+
+
 
 == Block offending IP after _n_ failed attempts
 This slows down brute-force and scanning attacks on VPN SSL. This feature is on 
@@ -318,6 +351,24 @@ remember of no single critical CVE for the IPSec daemon in Fortigate. Yes, it is
 involved in configuring it, but it may well be worth the effort. You use on the
 client side the same Forticlient.
 
+
+== Consider moving VPN SSL into its own VDOM
+This is a measure against the worst case scenario - remotely executable 0-day
+happens in the SSL VPN daemon, and attackers break into your Fortigate. In this
+scenario the attackers will most probably create their own admin users for
+persistence, set up VPN for remote access with rules permitting _Any_ to the
+internal LAN, and if not trying to hide - will delete/remove your admin user to
+block you access to the Fortigate. If this happens with the Fortigate that all
+your DMZ/LAN/Storage/Backup networks are connected to, the game is over. But if
+the same happens to the Internet-facing VDOM that has only SSL VPN configs and
+rules, well, maximum they will have access to is anything you explicitly allowed
+in rules between VDOMs. And if you implemented specific rules to allow specific
+protocols to specific hosts, that would be not much of a gain to the attackers.
+And all Fortigate models except the smallest ones, have hardware acceleration on
+their inter-VDOM links, so perfomance-wise you lose nothing as well.
+And price-wise, every Fortigate (even the smallest 40F) includes 10 VDOMs for free.
+
+ 
 == Additional Resources to follow
 * https://www.fortiguard.com/psirt Fortinet announcements on new vulnerabilities.
 * https://yurisk.info/category/fortigate.html My blog's Fortigate category, has RSS feed
