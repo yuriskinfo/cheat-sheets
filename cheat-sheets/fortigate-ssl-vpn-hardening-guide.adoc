@@ -247,9 +247,9 @@ end
 
 == Create a no-access portal and set it as default in the VPN settings
 Once you have VPN SSL enabled, you *have* to specify the default portal 
-to which all unmapped to portals user will be assigned. To prevent unintended
-users/groups connecting via default portal, create the one disabling all access
-inside it and then set it as the default.
+to which all unmapped to portals users will be assigned. To prevent unintended
+users/groups connecting via this default portal, create the one disabling all
+the access inside it and then set it as the default.
 
 * Create a portal with no factual access:
 
