@@ -12,7 +12,7 @@ Make sure to __watch__ this repository to get notified on updates (usually updat
 
 [Fortigate debug and diagnose commands complete cheat sheet](cheat-sheets/Fortigate-debug-diagnose-complete-cheat-sheet.adoc) | [PDF](cheat-sheets/Fortigate-debug-diagnose-complete-cheat-sheet.pdf)
 
-[Fortigate SSL VPN Hardening Guide](cheat-sheets/fortigate-ssl-vpn-hardening-guide.adoc)
+[Fortigate SSL VPN Hardening Guide](cheat-sheets/fortigate-ssl-vpn-hardening-guide.adoc) | [PDF](cheat-sheets/fortigate-ssl-vpn-hardening-guide.pdf)
 
 [Fortianalyzer diagnose and debug cheat sheet](cheat-sheets/Fortianalyzer-debug-cheat-sheet.adoc) | [PDF](cheat-sheets/Fortianalyzer-debug-cheat-sheet.pdf)
 
