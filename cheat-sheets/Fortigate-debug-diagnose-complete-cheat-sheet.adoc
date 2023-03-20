@@ -1007,6 +1007,29 @@ format).
 
 |===
 
+== Automation stitches debug
+
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|*diag test app autod 1* 
+|Enable automation stitches logging.
+
+|*diag debug cli 7* 
+|Show stitches' running log on the CLI.
+
+|*diag debug enable* 
+|Enable debug.
+
+|*diagnose automation test <stitch name> <log if needed>*
+|Run the specified _stitch name_, optionally adding log when using Log based
+events.
+
+|===
+
+
 == Alerts Sending debug
 
 [cols=2, options="header"]
