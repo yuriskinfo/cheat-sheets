@@ -1023,7 +1023,7 @@ format).
 |*diag debug enable* 
 |Enable debug.
 
-|*diagnose automation test _stitch-name_ _log if needed_*
+|*diagnose automation test _stitch-name_ _log-if-needed_*
 |Run the specified _stitch name_, optionally adding log when using Log based
 events.
 
