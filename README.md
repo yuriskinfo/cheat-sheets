@@ -61,7 +61,7 @@ Make sure to __watch__ this repository to get notified on updates (usually updat
 
 ## Apple macOS tools
 
-[mdfind examples cheat sheet](cheat-sheets/macos-mdfind-examples-cheat-sheet.adoc)
+[mdfind examples cheat sheet](cheat-sheets/macos-mdfind-examples-cheat-sheet.adoc) | [PDF](cheat-sheets/macos-mdfind-examples-cheat-sheet.pdf)
 
 
 ## Windows software and utilities
