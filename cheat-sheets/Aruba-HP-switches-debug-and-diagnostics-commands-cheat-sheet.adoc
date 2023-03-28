@@ -297,6 +297,13 @@ a|Debug various routing processes. The _routing-process_ is one of the:
 * `pim`                   Enable/disable tracing of PIM messages.
 * `rip`                   Display all RIP routing messages.
 
+
+|*show ip ssh*, *kill _session-number_*
+|HP Aruba allows up to 5 SSH sessions at the same time, additional users will
+not be able to connect. To disconnect existing SSH sessions, run `show ip ssh`
+and notice session number in the leftmose column, then disconnect it with `kill
+<number>`
+
 |===
 
 == Spanning Tree Protocol (STP)
