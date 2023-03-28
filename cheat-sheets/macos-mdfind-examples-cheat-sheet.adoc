@@ -1,0 +1,222 @@
+= macOS `mdfind` examples cheat sheet
+:source-highlighter: rouge
+:date: 2023-03-28 09:55:25+00:00
+:slug: mdfind-macos-examples-cheat-sheet
+:category: macOS 
+:tags: macOS, Apple
+:toc:
+
+== Introduction
+`mdfind` is a command-line interface to the SpotLight search tool on every 
+Apple macOS system. Being a CLI tool, it saves time when searching for stuff in
+your Mac. Unfortunately, there is a lot of documentation on the topic which is
+out of date - the examples either do not work or give an error. Otherwise, the
+tool is not well-documented. Below are few examples for every day usage, tested
+on the newest versions - Catalina, Big Sur, Monterrey, Ventura.
+
+== Find files with a given word in it
+Just give the `mdfind` a word to search for, and it will find it in
+file/media/applications 
+names, as well as in their contents.
+
+----
+mdfind  mysearchword
+----
+
+== Search for a word in file names only, not their contents
+Add `-name` qualifier before the search word.
+
+----
+mdfind -name October
+----
+
+Will find files named: _OctoberFest.pdf_, _inoctober.txt_, _Red October.mp4_
+
+
+== Find a file with multiple keywords in its name
+We can specify more than 1 word to look for in the file/app name - the `mdfind` 
+uses logical AND by default for multiple keywords.
+
+----
+mdfind -name red october
+----
+
+Will find: _Red October.mp4_, _red octoberfest.jpg_, but NOT _red.pdf_ or
+_October.mp4_. 
+
+
+== Limit search to specific file format(s)
+You can use ``kind:``__file-format__ to additionally limit results to this file
+format. Be aware that _kind_ is not always the file extension though. I list the
+most popular file formats below.
+
+Find file with the _red_ in its name, but only in  _mp4_, _.mov_ etc.  files:
+
+----
+mdfind -name red kind:movie
+----
+
+|===
+
+|*File format* |*kind term* |*File format* |*kind term*
+
+|jpeg/jpg, png, gif, tiff
+|image
+|Application
+|app
+
+|mp3, ogg
+|music
+|mp4, mov, mpeg
+|movie
+
+|Bookmarks
+|bookmark
+|Email messages
+|email
+
+|Folders
+|folder
+|MS Word docs (docx, dot)
+|word
+
+|===
+
+
+The other way to look for file extensions is with the _kMDItemFSName_ metadata
+value and listing the desired extension after the asterisk.
+
+----
+mdfind "kMDItemFSName == '*.pdf'"
+----
+
+But if you want to look for a specific file name as well, you will have to pipe the
+command above to _grep_ or alike. 
+
+
+
+
+== Look up folder names
+Using (see table above) `kind:folder` we can search in folder names only.
+
+Find all folders with the name _document_ in them:
+
+`mdfind -name documents kind:folder`
+
+== Search for an exact match
+We can do it in 2 ways.
+First, wrapping search terms in double and then single quotes:
+
+----
+mdfind -name '"red carpet"'
+----
+This will match  _red carpet.txt_, but not _red 2 carpet.txt_.
+
+The other  way to look for an exact match is with the `-literal` qualifier, which prohibits any other qualifier though.
+
+Find everything having _Hat, Red_ in the name:
+
+`mdfind -literal  "kMDItemDisplayName == 'Hat, Red'"`
+
+Here, *kMDItemDisplayName* is a metadata field holding the item name for files/folders/etc. Any additional options will be ignored.
+
+
+
+== Search in specific folder(s) only
+We can use *-onlyin* option to limit the search:
+
+`mdfind -name red.txt -onlyin ~/Documents`
+
+This will only search in the folder _Documents_ and its subfoldes.
+
+
+== Search by created, modified dates
+IMPORTANT: The date format is your current locale.  So, I put dates in the
+_19/1/2023_ format, but if your Mac is set to use _1/19/2023_, do so.
+
+Find file named _red_ and created on 19th of January 2023:
+
+`mdfind -name red AND created:19/1/2023` 
+
+NOTE: The _AND_ is not explicitly needed here, but I put it for reminder yet.
+
+Find file named _red_ modified on 19th of January 2023:
+
+`mdfind -name red AND  modified:19/1/2023`
+
+The date-related searches also understand ranges. 
+
+Find files with _red_ in their name modified in the period from the  1st of January
+2023, and up to (including) 19th of January 2023:
+
+`mdfind -name red  modified:01/01/2023-19/1/2023` 
+
+Same, but _created_ in that period:
+
+`mdfind -name red  created:01/01/2023-19/1/2023`
+
+
+== Find file by their size
+We can specify file size as additional search term.
+This will find files with the _red_ in their names AND of size 0 bytes.
+
+`mdfind name:red AND size:0` 
+
+
+`mdfind name:red AND NOT size:0` will find files named _red_ that are NOT 0
+bytes in size.
+
+
+We can provide ranges for sizes as well. To find files named _red_ of size
+between 10 and 25 bytes:
+
+`mdfind -interpret name:red AND size:\<25 AND size:\>10` 
+
+NOTE: The '\' escapes '<' and '>' from the shell interpretation.
+
+
+== Disable Spotlight/mdfind indexing for a specific volume
+
+* Spotlight (and thus mdfind) stores its index for each hard drive in a hidden
+directory named `.Spotlight-V100` located at the root of each disk. You can list this directory contents with 
+sudo mdutil -L _path-to-the-disk_* , e.g. 
+
+----
+sudo mdutil -L /Volumes/exFAT1Tb
+
+
+/Volumes/exFAT1Tb/.Spotlight-V100:
+drwxrwxrwx   1    99    99     262144 Jun 27 2021 07:46 Store-V2
+-rwxrwxrwx   1    99    99       4246 Jun 13 2022 11:09
+VolumeConfiguration.plist
+
+/Volumes/exFAT1Tb/.Spotlight-V100/Store-V2:
+drwxrwxrwx   1    99    99     262144 Jun 27 2021 07:46  B332121F-C8CA-4FF1-924A-67FC321C3FFCC/
+
+
+/Volumes/exFAT1Tb/.Spotlight-V100/Store-V2/B332121F-C8CA-4FF1-924A-67FC321C3FFCC/journals.assisted_import_post:
+/Volumes/exFAT1Tb/.Spotlight-V100/Store-V2/B332121F-C8CA-4FF1-924A-67FC321C3FFCC/journals.assisted_import_pre:
+/Volumes/exFAT1Tb/.Spotlight-V100/Store-V2/B332121F-C8CA-4FF1-924A-67FC321C3FFCC/journals.corespotlight:
+/Volumes/exFAT1Tb/.Spotlight-V100/Store-V2/B332121F-C8CA-4FF1-924A-67FC321C3FFCC/journals.health_check:
+/Volumes/exFAT1Tb/.Spotlight-V100/Store-V2/B332121F-C8CA-4FF1-924A-67FC321C3FFCC/journals.live:
+/Volumes/exFAT1Tb/.Spotlight-V100/Store-V2/B332121F-C8CA-4FF1-924A-67FC321C3FFCC/journals.live_priority:
+/Volumes/exFAT1Tb/.Spotlight-V100/Store-V2/B332121F-C8CA-4FF1-924A-67FC321C3FFCC/journals.live_system:
+/Volumes/exFAT1Tb/.Spotlight-V100/Store-V2/B332121F-C8CA-4FF1-924A-67FC321C3FFCC/journals.live_user:
+/Volumes/exFAT1Tb/.Spotlight-V100/Store-V2/B332121F-C8CA-4FF1-924A-67FC321C3FFCC/journals.migration:
+/Volumes/exFAT1Tb/.Spotlight-V100/Store-V2/B332121F-C8CA-4FF1-924A-67FC321C3FFCC/journals.migration_secondchance:
+/Volumes/exFAT1Tb/.Spotlight-V100/Store-V2/B332121F-C8CA-4FF1-924A-67FC321C3FFCC/journals.repair:
+/Volumes/exFAT1Tb/.Spotlight-V100/Store-V2/B332121F-C8CA-4FF1-924A-67FC321C3FFCC/journals.scan:
+
+----
+
+* For space savings or privacy concerns, you can turn off indexing of a given volume by running 
+*sudo mdutil -i off /Volumes/__volume-name__*, and even
+erase the existing index with *sudo mdutil -E /Volumes/__volume-name__*.
+
+
+== Resources
+* For additional cheat sheets, see Github: https://github.com/yuriskinfo/cheat-sheets
+
+
+_Follow me on https://www.linkedin.com/in/yurislobodyanyuk/  not to miss what I
+publish on Linkedin, Github, blog, and more._
