@@ -58,6 +58,12 @@ Make sure to __watch__ this repository to get notified on updates (usually updat
 
 [curl cookbook of examples](cheat-sheets/curl-cookbook-of-examples.adoc) | [PDF](cheat-sheets/curl-cookbook-of-examples.pdf)
 
+
+## Apple macOS tools
+
+[mdfind examples cheat sheet](cheat-sheets/macos-mdfind-examples-cheat-sheet.adoc)
+
+
 ## Windows software and utilities
 
 
