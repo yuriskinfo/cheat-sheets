@@ -73,8 +73,8 @@ else helps.
 |Description
 
 |*firewall-cmd --add-port=_port-number_/_protocol_*
-|Open incoming _port-number_ of the _protocol_. E.g. opem incoming TCP port
-5900: `firewall-cmd --add-port=5900/tcp`
+|Open incoming _port-number_ of the _protocol_. E.g. open incoming TCP port
+5900 rom any: `firewall-cmd --add-port=5900/tcp`
 
 
 |*firewall-cmd --remove-port=_port-number_/_protocol_*
