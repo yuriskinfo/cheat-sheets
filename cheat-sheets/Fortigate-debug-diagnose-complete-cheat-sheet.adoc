@@ -915,7 +915,8 @@ proxy SIP inspection is on (_ALG_ inspection). If the output is `default-voip-al
 |*diagnose test app dnsproxy 99*
 |Restart the dns proxy service.
 
-
+|*diagnose test app dnsproxy -1*
+|Enable all possible debug, a lot of output.
 
 
 |===
