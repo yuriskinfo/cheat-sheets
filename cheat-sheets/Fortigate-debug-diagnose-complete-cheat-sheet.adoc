@@ -875,6 +875,10 @@ proxy SIP inspection is on (_ALG_ inspection). If the output is `default-voip-al
 |*get system dns*
 |Show configured DNS servers, DNS cache limit and TTL, source IP used, timeout and retry, whther NDS over TLS is enabled.
 
+|*diagnose test app dnsproxy*
+|Will present all debug options for dnsproxy. Belowi are some of more useful of
+them.
+
 |*diagnose test app dnsproxy 2*
 |Show the following statatistics: number of DNS process workers (if multiple), DNS latency against each server used, Secure DNS IP and latency - DNS server used for DNS filtering and Botnet detections, DNS cache usage, UDP vs TCP requests statistics, name of DNS Filter applied if any.
 
