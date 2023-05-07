@@ -65,6 +65,25 @@ else helps.
 
 |===
 
+=== Open, close ports
+
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|*firewall-cmd --add-port=_port-number_/_protocol_*
+|Open in incoming _port-number_ of the _protocol_. E.g. open incoming to TCP port
+5900 from any: `firewall-cmd --add-port=5900/tcp`
+
+
+|*firewall-cmd --remove-port=_port-number_/_protocol_*
+|Close the open _port-number_.  E.g. close the open port 5900/tcp: `firewall-cmd --remove-port=5900/tcp`
+
+|*firewall-cmd --runtime-to-permanent*
+|Make the changed rules permanent to survive reboot.
+
+|===
 
 == Ubuntu Uncomplicated Firewall (ufw)
 .ufw management commands
