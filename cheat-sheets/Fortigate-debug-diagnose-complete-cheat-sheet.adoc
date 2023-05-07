@@ -38,7 +38,7 @@ iprope lookup 10.10.10.1 34567 8.8.8.8 443 6 LAN1`
 |*diagnose debug filter clear*
 |Remove any filtering of the debug output set
 
-|*diagnose debug flow filter <filtering param>*
+|*diagnose debug flow filter <filtering param> / dia debug flow filter6 <param>*
 | Set filter for security rulebase processing packets output. You can set multiple filters - act as AND, by issuing this command multiple times. Parameters:
 
 `vd` - id number of the vdom. When entering the vdom with `edit vdom`, this number is shown first.
