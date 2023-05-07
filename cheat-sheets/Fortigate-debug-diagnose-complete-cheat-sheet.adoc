@@ -70,6 +70,8 @@ iprope lookup 10.10.10.1 34567 8.8.8.8 443 6 LAN1`
 |*diagnose debug flow trace start [number]*
 |Actually start the debug with optional `number` to limit number of packets traced. 
 
+|*diagnose debug flow trace start6 [number]*
+|Start the debug trace for IPv6 traffic, with optional `number` to limit number of packets traced.
 
 
 |===
@@ -117,6 +119,9 @@ until the SSH/console timeout or until stopped with `CTRL + C`.
 * `l` - local time
 * _default_ - relative to the start of sniffing in seconds.milliseconds.
 
+|_IPv6_
+|For IPv6 traffic, the command is the same, but use the relevant `filter` clauses instead, 
+e.g. `host 2001:db8::1` or `net 2001:db8::/64` or `icmp6`.
 
 |===
 
@@ -184,8 +189,8 @@ space.
 |Command
 |Description
 
-|*get system session status*
-|Show current number of sessions passing the Fortigate. Run inside the VDOM in multi-vdom environment to get number of connections/sessions for this specific VDOM. 
+|*get system session status / get system session6 status*
+|Show current number of sessions passing the Fortigate (IPv4/IPv6). Run inside the VDOM in multi-vdom environment to get number of connections/sessions for this specific VDOM. 
 
 |*get sys session-info statistics*
 | Get general statistics on sessions: current number of, global limits, number of clashes (different sessions trying to use the same ports), TCP sessions stats per state
@@ -193,7 +198,7 @@ space.
 |*get sys session-info ttl*
 |Show the default TTL setting for the connections in the table, default being 3600 seconds.
 
-|*diagnose sys session filter <filter parameter> <filter value>*
+|*diagnose sys session filter <filter parameter> <filter value> / diagnose sys session6 filter <filter parameter> <filter value>*
 | Set filter to show/manipulate only specific connections in the stateful table. Run without any filter parameters this command displays the current filter applied if any. Parameters: 
 
 `vd` - id number of the vdom. When entering the vdom with edit vdom, this number is shown first.
@@ -229,10 +234,10 @@ space.
 `negate <parameter>` - negate the match, i.e. match if a connection does NOT contain _parameter_. Where parameter is one of the mentioned above.
 
 
-|*diagnose sys session clear* 
+|*diagnose sys session clear / dia sys session6 clear* 
 |Clear/delete connections from the session table. IMPORTANT: If no session filter is set (see above) before running this command, ALL connections passing the Fortigate will be deleted! Which means they will be disconnected. So use carefully.
 
-|*diagnose sys session list*
+|*diagnose sys session list / dia sys session6 list*
 |List connections limited to the filter set if any, or all session table if not.
 
 |===
