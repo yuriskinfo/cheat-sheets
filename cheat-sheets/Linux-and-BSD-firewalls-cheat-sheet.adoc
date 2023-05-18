@@ -59,7 +59,7 @@ else helps.
 |*firewall-cmd --list-all-zones*
 |List all zones with their rules and associated interfaces.
 
-|*firewall-cmd -add-service <service name>*
+|*firewall-cmd --add-service <service name>*
 |Add predefined service by name to the default zone, with action ACCEPT, e.g. `firewall-cmd -add-service ftp` .
 
 
