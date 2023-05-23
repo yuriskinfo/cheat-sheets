@@ -579,9 +579,9 @@ filter keywords:
 
 |===
 
-== DHCP server
+== DHCP server, relay, client
 
-.DHCP server
+.DHCP server, relay, client
 [cols=2, options="header"]
 |===
 |Command
@@ -591,17 +591,24 @@ filter keywords:
 |*show system dhcp server*
 |Show DHCP server configuration, including DHCP address pools.
 
-|*execute dhcp lease-list [_interface name_]*
+|*execute dhcp/dhcp6 lease-list [_interface name_]*
 |Show real-time list of allocated by Fortigate addresses via DHCP. It will show IP address of each client, its MAC
  address, device type/name (Android, iOS, Windows, etc.), the lease time and expiration.
 
-|*execute dhcp lease-clear all/_start-end-IP-address-range_*
+|*execute dhcp/dhcp6 lease-clear all/_start-end-IP-address-range_*
 |Clear DHCP allocations on the Fortigate. This will NOT cause clients that already have IP addresses to release them, but will
 just clear Fortigate DHCP database and will start over allocating again. You can either clear _all_ IP addresses in the database, or only specific IPs.
 
 
-|*diagnose debug application dhcps -1*
-|enable real-time debug of DHCP server activity. This will show DHCP messages sent/received, DHCP options sent in each reply, details of requesting hosts. 
+|*diagnose debug application dhcps/dhcp6s -1*
+|Enable real-time debug of DHCP server activity. This will show DHCP messages sent/received, DHCP options sent in each reply, details of requesting hosts. 
+
+|*diagnose debug application dhcprelay/dhcp6r -1*
+|Enable real-time debug of the DHCP relay agent, `dhcp6r` is for DHCPv6.
+
+|*diagnose debug application dhcpc/dhcp6c -1*
+|Enable real-time debug when Fortigate is itself a DHCP Client.
+
 
 |===
 
