@@ -588,7 +588,7 @@ filter keywords:
 |Description
 
 
-|*show system dhcp server*
+|*show system dhcp/dhcp6 server*
 |Show DHCP server configuration, including DHCP address pools.
 
 |*execute dhcp/dhcp6 lease-list [_interface name_]*
