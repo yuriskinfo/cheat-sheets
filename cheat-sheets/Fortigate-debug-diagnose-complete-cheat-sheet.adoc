@@ -609,6 +609,9 @@ just clear Fortigate DHCP database and will start over allocating again. You can
 |*diagnose debug application dhcpc/dhcp6c -1*
 |Enable real-time debug when Fortigate is itself a DHCP Client.
 
+|*dia sni pa any 'port 67 or port 68' 6* and for DHCPv6 
+*dia sni pa any 'port 546 or port 547' 6*
+|Run packet sniffer for DHCP or DHCPv6 packets reaching the Fortigate.
 
 |===
 
