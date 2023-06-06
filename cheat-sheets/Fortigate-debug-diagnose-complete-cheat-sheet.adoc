@@ -123,6 +123,9 @@ until the SSH/console timeout or until stopped with `CTRL + C`.
 |For IPv6 traffic, the command is the same, but use the relevant `filter` clauses instead, 
 e.g. `host 2001:db8::1` or `net 2001:db8::/64` or `icmp6`.
 
+|*set auto-asic-offload disable*
+|You may need to temporarily disable NPU hardware acceleration offloading, to see accelerated packets. You do so inside a specific firewall policy. This will cause all packets passing on this policy rule to be processed by CPU and thus make packets visible to the sniffer. This may increase the CPU load. E.g. `config firewall policy`, `edit 1`, `set auto-asic-offload disable`. Do not forget to turn it on again: `set auto-asic-offload enable`.
+
 |===
 
 
