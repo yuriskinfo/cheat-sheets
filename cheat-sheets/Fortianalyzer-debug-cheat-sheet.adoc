@@ -1,15 +1,7 @@
 = Fortianalyzer diagnose and debug cheat sheet
-Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
-
-:homepage: https://yurisk.info
-
 :toc: auto
 
 
-<<General Health>> +
-<<Communication debug>> +
-<<Logs from devices>> +
-<<Licensing>> +
 
 
 == General Health
@@ -113,6 +105,43 @@ Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
 
 
 |===
+
+== Disk and RAID health
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|*diagnose sys raid status*
+|General health of the RAID: RAID level used, RAID status, RAID size, health status of
+each physical disk in the RAID.
+
+|*dia sys raid hwinfo*
+|Detailed RAID controller info: IDs, slot numbers, link speed, media type, temperature,
+error counters, and more.
+
+|*dia sys disk info*
+|General physical disks info: model and maker for each physical disk, s/n, speed (RPM), media
+type, ATA/SATA versions supported.
+
+|*dia sys disk health*
+|Health state of the disks as read from S.M.A.R.T. info, greatly depends on the S.M.A.R.T.
+level support by the disk.
+
+|*dia sys disk error*
+|History of all errors along with the time of occurrence.
+
+|*dia sys disk usage*
+|Lists all folders (a lot) of the filesystem with their sizes on disk. Also available on
+VM FAZ.
+
+
+ 
+
+
+|===
+
+
 
 == Licensing
 [cols=2, options="header"]

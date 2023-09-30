@@ -123,6 +123,9 @@ until the SSH/console timeout or until stopped with `CTRL + C`.
 |For IPv6 traffic, the command is the same, but use the relevant `filter` clauses instead, 
 e.g. `host 2001:db8::1` or `net 2001:db8::/64` or `icmp6`.
 
+|*set auto-asic-offload disable*
+|You may need to temporarily disable NPU hardware acceleration offloading, to see accelerated packets. You do so inside a specific firewall policy. This will cause all packets passing on this policy rule to be processed by CPU and thus make packets visible to the sniffer. This may increase the CPU load. E.g. `config firewall policy`, `edit 1`, `set auto-asic-offload disable`. Do not forget to turn it on again: `set auto-asic-offload enable`.
+
 |===
 
 
@@ -579,29 +582,39 @@ filter keywords:
 
 |===
 
-== DHCP server
+== DHCP server, relay, client
 
-.DHCP server
+.DHCP server, relay, client
 [cols=2, options="header"]
 |===
 |Command
 |Description
 
 
-|*show system dhcp server*
+|*show system dhcp/dhcp6 server*
 |Show DHCP server configuration, including DHCP address pools.
 
-|*execute dhcp lease-list [_interface name_]*
+|*execute dhcp/dhcp6 lease-list [_interface name_]*
 |Show real-time list of allocated by Fortigate addresses via DHCP. It will show IP address of each client, its MAC
  address, device type/name (Android, iOS, Windows, etc.), the lease time and expiration.
 
-|*execute dhcp lease-clear all/_start-end-IP-address-range_*
+|*execute dhcp/dhcp6 lease-clear all/_start-end-IP-address-range_*
 |Clear DHCP allocations on the Fortigate. This will NOT cause clients that already have IP addresses to release them, but will
 just clear Fortigate DHCP database and will start over allocating again. You can either clear _all_ IP addresses in the database, or only specific IPs.
 
 
-|*diagnose debug application dhcps -1*
-|enable real-time debug of DHCP server activity. This will show DHCP messages sent/received, DHCP options sent in each reply, details of requesting hosts. 
+|*diagnose debug application dhcps/dhcp6s -1*
+|Enable real-time debug of DHCP server activity. This will show DHCP messages sent/received, DHCP options sent in each reply, details of requesting hosts. 
+
+|*diagnose debug application dhcprelay/dhcp6r -1*
+|Enable real-time debug of the DHCP relay agent, `dhcp6r` is for DHCPv6.
+
+|*diagnose debug application dhcpc/dhcp6c -1*
+|Enable real-time debug when Fortigate is itself a DHCP Client.
+
+|*dia sni pa any 'port 67 or port 68' 6* and for DHCPv6 
+*dia sni pa any 'port 546 or port 547' 6*
+|Run packet sniffer for DHCP or DHCPv6 packets reaching the Fortigate.
 
 |===
 
