@@ -26,6 +26,11 @@
 |*exe iotop -b -n 1*
 |Display and update every 1 second READ/WRITE statistics for all the processes.
 
+|*dia sys process list*
+|list running processes, like `ps aux` in Linux.
+
+|*dia sys process kill <kill signal> <process id>*
+|Kill a process by its pid. Kill signal can be word or numeric, e.g. `dia sys process kill 9 27034`. 
 
 |*diagnose system print cpuinfo*
 |Display hardware CPU information - vendor, number of CPUs etc.
@@ -42,11 +47,18 @@
 |*diagnose system print  loadavg*
 |Show average system load, analog to the Linux `uptime` command.
 
-|*diagnose system print  netstat*
-|Show established connections to the Fortianalyzer, as well as listening ports. Every logging device can (and usually does) have multiple connections established.
+|*dia sys print uptime*
+|Show FAZ uptime.
 
-|*diagnose system print  route*
-|Show routing table of the Fortianalyzer.
+|*dia sys  admin-session <list/status/kill>*
+|List, kill admin session(s).
+
+|*dia sys ntp status*
+|Show NTP status: IP of the NTP server synchronized to, its startum, etc.
+
+|*dia dvm check-integrity*
+|Check objects db integrity.
+
 
 
 |===
@@ -56,6 +68,14 @@
 |===
 |Command
 |Description
+
+|*diagnose system print  netstat*
+|Show established connections to the Fortianalyzer, as well as listening ports. Every logging device can (and usually does) have multiple connections established.
+
+|*diagnose system route list*, *diagnose sys route6 list*
+|Show routing table
+
+
 
 |*diagnose test application oftpd 3*
 |List all devices sending logs to the Fortianalyzer with their IP addresses, serial numbers, _uptime_ meaning connection establishment uptime, not remote device uptime, and packets received (should be growing).
@@ -135,9 +155,8 @@ level support by the disk.
 |Lists all folders (a lot) of the filesystem with their sizes on disk. Also available on
 VM FAZ.
 
-
- 
-
+|*dia sys flash list*
+|List FAZ image stored in the flash, e.g. 
 
 |===
 
@@ -155,6 +174,8 @@ VM FAZ.
 |*diagnose debug vminfo*
 |Show report on Virtual Machine license: whether valid or not, type, licensed  storage volume, licensed log receive rate, licensed maximum device count.
 
+|*dia license list*
+|List all applied lcienses on this FAZ.
 
 |===
 

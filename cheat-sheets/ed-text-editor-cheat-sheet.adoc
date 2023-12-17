@@ -31,7 +31,7 @@ NOTE: The cheat sheet is for GNU version of `ed`. All values in [] are optional.
 
 |*e [_filename_]*
 |Edit a file - _filename_ if given, default if not. 
-WARNING: Current buffer and all of its changes is discarded.
+WARNING: Current buffer and all of its changes are discarded.
 
 |*[_start,end_]w [_filename_]*
 | Write the current buffer (whole or just lines between _start_ and _end_) to a _filename_ if given or the currently set with the `file` command. The contents of the _filename_ is overwritten! Ed reports number of characters written on success.
