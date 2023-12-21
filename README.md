@@ -58,6 +58,7 @@ Make sure to __watch__ this repository to get notified on updates (usually updat
 
 [curl cookbook of examples](cheat-sheets/curl-cookbook-of-examples.adoc) | [PDF](cheat-sheets/curl-cookbook-of-examples.pdf)
 
+[nslookup command cheat sheet](cheat-sheets/nslookup-commands-cheat-sheet.adoc) | [PDF](cheat-sheets/nslookup-commands-cheat-sheet.adoc)
 
 ## Apple macOS tools
 

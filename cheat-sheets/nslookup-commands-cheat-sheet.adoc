@@ -1,0 +1,74 @@
+= nslookup commands cheat sheet
+:homepage: https://github.com/yuriskinfo/cheat-sheets
+:toc:
+
+
+
+NOTE: All the commands below are for the Interactive mode.
+
+[cols=2, options="headers"]
+|===
+|Command
+|Description
+
+|*nslookup*
+|Enter the interactive mode. The nslookup prompt `>` opens.
+
+|*set all*
+|Show current settings for the session, useful to show what the `nslookup` is actually going to do on the next query.
+
+|*set ty=_Record-type-to-query-for_*
+|Sets the record `type` you want to query. E.g. `set ty=MX` - all following queries will ask for MX record only, until changed again with `set ty=...`. Available types A, AAAA, MX, TXT, SOA, CNAME, etc. as per DNS protocol.
+
+|*_domain_*
+|Query the domain _domain_ for the value of the record type set previously via `set ty=...` or A record by default.
+
+|*server [_IP-address-of-alternative-DNS-server_]*
+a|Run by itself, `server` prints DNS server(s) currently set and used for resolving. Change the DNS server to query by specifying IP address of the server, e.g. 
+
+----
+> server 8.8.8.8
+Default server: 8.8.8.8
+Address: 8.8.8.8#53
+----
+
+|*set debug/nodebug*
+|Enable verbose output of what the `nslookup` is actually doing (*debug*), or disable *nodebug* (default). Shows what server is being queried, additional records, whether the server is authoritative or not. 
+
+|*IDN_DISABLE*
+a|Environment variable, if not set (default) enables querying IDN names, e.g.:
+
+----
+> set ty=A
+> рег.рф
+Server:         8.8.8.8
+Address:        8.8.8.8#53
+
+------------
+    QUESTIONS:
+        рег.рф, type = A, class = IN
+    ANSWERS:
+    ->  рег.рф
+        internet address = 194.58.116.37
+        ttl = 21600
+    AUTHORITY RECORDS:
+    ADDITIONAL RECORDS:
+------------
+Non-authoritative answer:
+Name:   рег.рф
+Address: 194.58.116.37
+----
+
+|*set port=_N_*
+|Set port different from 53 on the remote DNS server. NOTE: `nslookup` does NOT support DOT/DOH protocols, only plain old clear text DNS.
+
+|*exit*
+|Leave `nslookup` interactive mode to the command line of terminal.
+
+
+
+
+
+
+
+|===
