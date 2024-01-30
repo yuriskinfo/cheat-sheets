@@ -65,6 +65,10 @@ Address: 194.58.116.37
 |*exit*
 |Leave `nslookup` interactive mode to the command line of terminal.
 
+|WINDOWS only: 
+*ls -d* _domain-name_
+|Try to do AXFR zone transfer from the configured DNS server. If works and unintended - serious security risk. Linux version of nslookup does NOT have this option. E.g. `ls -d yurisk.info`.
+
 
 
 
