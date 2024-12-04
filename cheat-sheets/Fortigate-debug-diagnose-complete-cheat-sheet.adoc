@@ -1101,7 +1101,7 @@ to the remote mail server and received/sent SMTP session codes.
 * Show Linux kernel version of the Fortigate: 
 `fnsysctl cat /proc/version`
 
-* Show open TCP connections to/from Fortigate itself (use `diagnose sys tcpsock | grep 0.0.0.0` instead):
+* Show open TCP connections to/from Fortigate itself (use `diagnose sys tcpsock \| grep 0.0.0.0` instead):
 `fnsysctl cat /proc/net/tcp`
 
 * Show CPU info: `fnsysctl cat /proc/cpuinfo` 
