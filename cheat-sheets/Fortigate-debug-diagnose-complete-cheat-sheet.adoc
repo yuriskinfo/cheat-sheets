@@ -2,7 +2,7 @@
 :homepage: https://yurisk.info
 :toc:
 
-Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
+Author: Yuri Slobodyanyuk, https://yurisk.info
 
 
 NOTE: To enable debug set by any of the commands below, you need to run
