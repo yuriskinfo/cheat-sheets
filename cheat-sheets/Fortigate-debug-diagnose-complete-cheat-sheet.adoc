@@ -759,6 +759,11 @@ the source is - LDAP/SSO/etc. Also shows client's IP, idle time, duration.
 |*diagnose debug authd fsso server-status*
 | Show status of connections with FSSO servers. Note: it shows both, local and remote FSSO Agent(s). The local Agent is only relevant when using Direct DC Polling, without installing FSSO Agent on AD DC, so it is ok for it to be `waiting for retry ... 127.0.0.1` if you don't use it. The working state should be `connected`. 
 
+|*diagnose debug authd fsso refresh-logon*
+|Refresh user login information.
+
+|*diagnose debug authd fsso refresh-group*
+|Refresh groups and groups memberships info.
 
 
 |===
@@ -1071,6 +1076,99 @@ events.
 |Enable sessions debug for sending alerts by mail. This will show the configured
 settings, like from/to email address, as well as SMTP session log of connecting
 to the remote mail server and received/sent SMTP session codes.
+
+
+|===
+
+
+== fnsysctl all possible options
+
+
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|*fnsysctl ifconfig [int-name]*
+|Show detailed information on all/specific interface - errors, MTU, and more.
+
+|*fnsysctl ls [path]*
+|List files/folders in the filesystem. Useful for post-incident investigation of Fortigate compromises, looking for a given CVE indicators of compromise (IOCs).
+
+|*fnsysctl cat <filename>*
+| Show contents of a file, not all files in the filesystem are accessible. Some examples: 
+
+* Show Linux kernel version of the Fortigate: 
+`fnsysctl cat /proc/version`
+
+* Show open TCP connections to/from Fortigate itself (use `diagnose sys tcpsock | grep 0.0.0.0` instead):
+`fnsysctl cat /proc/net/tcp`
+
+* Show CPU info: `fnsysctl cat /proc/cpuinfo` 
+
+* Get memory information: `fnsysctl cat /proc/meminfo` 
+
+|*fnsysctl date*
+| Show date in the Linux format, ignores any options.
+
+|*fnsysctl df -h*
+|Show filesystem usage, useful when you have harddisk(s) attached to the Fortigate.
+
+|*fnsysctl du*
+|Show directories usage, accepts following options:
+
+`-d n` - Limit depth to n levels deep.
+
+`-a` - Show/count files as well, not only directories.
+
+`-s` - Show only the summary usage of all directories/files.
+
+`-L` - Follow all symlinks
+
+|*fnsysctl pwd*
+|Show current working directory. Not very useful as we don’t have access to `cd` and thus cannot change directory anyway.
+
+|*fnsysctl ps*
+|List running processes. Useful together with the next command `kill`` for restarting some stuck process on Fortigate. Most of the processes in Fortigate are run via Watch Dog which means killing them will shut the running process and will restart it immediately later.
+
+|*fnsysctl kill <process-id>*
+|Kill a process by its ID (PID). The only option accepted is `-s N` where N is the signal number to send as per Linux.
+
+|*fnsysctl killall <process-name>*
+|Kill/restart a process by name. When using `killall` it is not recorded in the crash log file (which you read with `diagnose debug crashlog read`). Not all processes can be killed with it, e.g. hasync.
+
+|*fnsysctl mv <src> <dst>*
+|Move file in the filesystem. Most of the directories on the Fortigate are read-only, but some, like tmp are not. This command will ask for the adminstrator username/password explicitly. 
+
+|*fnsysctl printenv*
+|Print environment variables. The only environment variable I was able to catch with this was type of Terminal used.
+
+|*fnsysctl grep <regex> <file>*
+|Search contents of a file/files. The usual grep options are available:
+
+        -i      Ignore case distinctions
+
+        -l      List names of files that match
+        
+        -H      Prefix output lines with filename where match was found
+        
+        -h      Suppress the prefixing filename on output
+        
+        -n      Print line number with output lines
+        
+        -q      Quiet
+        
+        -v      Select non-matching lines
+        
+        -s      Suppress file open/read error messages
+        
+        -c      Only print count of matching lines
+        
+        -A      Print NUM lines of trailing context
+        
+        -B      Print NUM lines of leading context
+        
+        -C      Print NUM lines of output context
 
 
 |===
