@@ -327,7 +327,7 @@ a| Filter VPN debug messages using various parameters:
 * `list`  Display the current filter.
 * `clear` Delete  the current filter.
 * `name` Phase1 name to filter by.
-* `src-addr4`/`src-addr6`   IPv4/IPv6 source address range to filter by.
+* `src-addr4`/`src-addr6`   IPv4/IPv6 source address range to filter by, usually you filter on Remote peer legal IP.
 * `dst-addr4`/`dst-addr6`   IPv4/IPv6 destination address range to filter by.
 * `src-port` Source port range
 * `dst-port`  Destination port range
@@ -348,6 +348,13 @@ a| Filter VPN debug messages using various parameters:
 
 |*diagnose vpn ike gateway list*
 | Show each tunnel details, including user for XAuth dial-up connection.
+
+|*dia vpn tunnel shut <Phase2 name> <Phase1 name>*
+|Bring the named tunnel down by its Phase2 and Phase2 name.
+
+|*dia vpn tunnel up <Phase2 name> <Phase1 name>*
+|Bring the tunnel up by its name.
+
 
 |*get vpn ipsec tunnel details* 
 | Detailed info about the tunnels: Rx/Tx packets/bytes, IP addresses of the peers, algorithms used, detailed selectors info, lifetime, whether NAT Traversal is enabled or not.
