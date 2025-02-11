@@ -2,6 +2,7 @@
 :homepage: https://github.com/yuriskinfo/cheat-sheets
 :toc:
 
+Author: Yuri Slobodyanyuk, https://yurisk.info
 
 
 NOTE: All the commands below are for the Interactive mode.
@@ -17,8 +18,11 @@ NOTE: All the commands below are for the Interactive mode.
 |*set all*
 |Show current settings for the session, useful to show what the `nslookup` is actually going to do on the next query.
 
+|*set norecurse*
+|Disable recursive querying. Useful when checking if a specific DNS can answer the query without recursively asking other DNS servers. Use `set recurse` to enable it back.
+
 |*set ty=_Record-type-to-query-for_*
-|Sets the record `type` you want to query. E.g. `set ty=MX` - all following queries will ask for MX record only, until changed again with `set ty=...`. Available types A, AAAA, MX, TXT, SOA, CNAME, etc. as per DNS protocol.
+|Sets the record `type` you want to query. E.g. `set ty=MX` - all following queries will ask for MX record only, until changed again with `set ty=...`. Available types A, AAAA, ANY, MX, TXT, SOA, CNAME, etc. as per DNS protocol. The default type, if not set otherwise is A/AAAA.
 
 |*_domain_*
 |Query the domain _domain_ for the value of the record type set previously via `set ty=...` or A record by default.
@@ -34,6 +38,9 @@ Address: 8.8.8.8#53
 
 |*set debug/nodebug*
 |Enable verbose output of what the `nslookup` is actually doing (*debug*), or disable *nodebug* (default). Shows what server is being queried, additional records, whether the server is authoritative or not. 
+
+|*set no<name of the option>* 
+|Unset any option you previously set. E.g. to disable recursive query: `set norecurse`. There is no space between the "no" and the option name. Use `set <option name>` to enable the option again.
 
 |*IDN_DISABLE*
 a|Environment variable, if not set (default) enables querying IDN names, e.g.:
