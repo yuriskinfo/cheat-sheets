@@ -2,4 +2,4 @@ extends: default
 footer:
   verso:
     center:
-      content: ' https://www.linkedin.com/in/yurislobodyanyuk/ {doctitle}'
+      content: ' https://yurisk.info {doctitle}'

@@ -1,5 +1,6 @@
 = Fortigate debug and diagnose commands complete cheat sheet
 :homepage: https://yurisk.info
+:source-highlighter: rouge
 :toc:
 
 Author: Yuri Slobodyanyuk, https://yurisk.info
@@ -715,6 +716,65 @@ just clear Fortigate DHCP database and will start over allocating again. You can
 |===
 
 
+
+
+
+== OSPF
+
+[cols=2,options="header"]
+|===
+|Command
+|Description
+
+|*get router info ospf status*
+|Info about OSPF for the whole Fortigate: Router ID, Hello timer, stats of LSA originated/received, OSPF Areas configured, number of neighbors for each Area, whether authentication is enabled per Area.
+
+|*get router ospf*
+|Show all general OSPF process settings, default and not.
+
+|*get router info ospf neighbor*
+|Get info on all neighbors of this Fortigate - their IPs, state, Dead Interval timers.
+
+|*get router info ospf interface _inerface-name_*
+|Show OSPF info for a given interface - Area, Router ID, timers, DR/BDR for broadcast nets, MTU as seen by OSPF.
+
+|*get router info ospf route*
+|Show OSPF routes installed into RIB.
+
+|*diagnose ip router ospf level info*
+|Set OSPF debug level to the highest - info. A must before running OSPF debug to see relevant information.
+
+|*diagnose ip router ospf _option_*
+|Enable specific debug option. If in doubt just use `dia ip router ospf all -1`  to enable all OSPF debug options. Some options expect integer as info level as the last parammeter, some options need `enable` as the last parameter. Options:
+
+`all` _n_  - Enable all OSPF debug, _n_ is the info level, for all set to `-1`.
+
+`lsa` - OSPF Link State Advertisement, sending/receiving LSAs.
+
+`nfsm` -  OSPF Neighbor State Machine, not very useful.
+
+`packet` - OSPF Packets. Show OSPF packets traffic.
+
+`events` -   OSPF events.
+
+`ifsm` -   OSPF Interface State Machine. Not very useful, use `get router info ospf interface` instead.
+
+`nfsm` -  OSPF Neighbor State Machine.
+
+`nsm` -   OSPF NSM interface.
+
+`route` - OSPF route information.
+
+`show` -  Show status of OSPF debugging.
+
+|===
+
+
+
+
+
+
+
 == Admin sessions
 .Admin sessions management
 [cols=2,options="header"]
@@ -751,6 +811,9 @@ the source is - LDAP/SSO/etc. Also shows client's IP, idle time, duration.
 
 |*diagnose test authserver ldap <LDAP server name in FG> <username> <password>*
 | Test user authenticaiton on Fortigate CLI against Active Directory via LDAP. E.g. test user `Tara Addison` against LDAP server configured in Fortigate as `LDAP-full-tree` having password `secret`: `diagnose test authserver ldap LDAP-full-tree "Tara Addison" secret`.
+
+|*diagnose test authserver radius <RADIUS server object> <chap/pap/mschap2>  <username> <password>*
+| Test user authentication against the configured RADIUS server. E.g. to test user `adminad1` with password `secr3t` against RADIUS server `RAD1`: `diagnose test authserver radius RAD1 mschap2  adminad1 secr3t` Output:  `authenticate 'adminad1' against 'mschap2' succeeded, server=primary assigned_rad_session_id=9839905755137 session_timeout=0 secs idle_timeout=0 secs!`
 
 
 |*diagnose debug authd fsso list*
