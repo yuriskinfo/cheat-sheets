@@ -832,6 +832,51 @@ the source is - LDAP/SSO/etc. Also shows client's IP, idle time, duration.
 |===
 
 
+== Web and URL Filtering debug
+
+.Web Filtering debug
+[cols=2, options="header"]
+|===
+|Command
+|Description
+
+|*diagnose debug rating*
+|Shows if the Fortiguard-based Web filtering is enabled, the contract/subscription status, whether the Anycast of Unicast used, IPs of Fortigaurd servers and the communication status.
+
+|*diag autoupdate versions*
+|Show current databases versions and the last time they were updated.
+
+|*execute update-now*
+|Force download and update of all the databases (AV, IPS, etc.)
+
+|*diagnose debug application update -1*
+
+*dia debug enable*
+
+*execute update-now*
+|Enable updates debug and then force the updates.
+
+|execute ping *service.fortiguard.net*
+
+execute ping *update.fortiguard.net*
+
+execute ping *guard.fortinet.net*
+|Check DNS resolving of the Fortiguard servers names, and connectivity to them (note: those servers usually do answer pings, but it may change any time).
+
+
+|*diag webfilter fortiguard cache dump*
+|Show cache of web sites ratings responses from the Fortiguard. 
+
+|*dia test app urlfilter 2*
+|Clear the cache, no downtime.
+
+|*dia test app urlfilter 99*
+|Restart the URL filtering daemon, causes short downtime.
+
+|*dia deb app urlfilter -1*
+|Enable URL filering daemon debug, showing all processing steps, a lot of output as shows everything.
+
+|===
 
 == Fortianalyzer logging  debug
 .Verify and debug sending logs from Fortigate to Fortianalyzer
