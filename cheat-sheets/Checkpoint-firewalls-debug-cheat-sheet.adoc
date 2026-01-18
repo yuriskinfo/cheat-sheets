@@ -43,3 +43,16 @@ Status: Work in progress.
 |Partial output of the above commands in TUI interface.
 
 |===
+
+== VPN
+
+
+== Kernel Debug
+
+
+== Identity Awareness 
+
+== SecureXL (Hardware Acceleration)
+
+== Monitoring Blade (Real Time Monitoring)
+

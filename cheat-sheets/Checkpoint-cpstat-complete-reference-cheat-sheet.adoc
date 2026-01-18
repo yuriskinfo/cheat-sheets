@@ -1,11 +1,10 @@
 = Check Point `cpstat` diagnostics and information tool cheat sheet
-
+:toc:
 
 NOTE: The tool is to be run in Expert mode. It is available on both Management Server and Gateway. The available *flavor* options depend on the blades enabled and their subscription status, also on platform used. To know what options are available on your specific Checkpoint - run `cpstat` without any switches.
 Example of using: `cpstat os -f ifconfig`
 
 
-:toc:
 
 
 == blades
@@ -238,7 +237,7 @@ NOTE: Thresholds and their actions are configured via `threshold_config` CLI too
 |===
 
 
-== mg
+== mg - SMS Management server
 [cols=2,options="header"]
 |===
 |Flavor
@@ -254,7 +253,7 @@ NOTE: Thresholds and their actions are configured via `threshold_config` CLI too
 |Log Indexer stats: Total Read Logs, Total Updates and Logs Indexed, Total Read Logs Errors, Total Updates and Logs Indexed Errors, Updates and Logs Indexed Rate, Read Logs Rate, Updates and Logs Indexed Rate (10min), Read Logs Rate (10min), Updates and Logs Indexed Rate (60min), Read Logs Rate (60min), Updates and Logs Indexed Rate Peak, Read Logs Rate Peak, Read Logs Delay.
 
 |===
-== fg
+== fg - QOS module
 [cols=2, options="header"]
 |===
 |Flavor
@@ -286,7 +285,7 @@ NOTE: Thresholds and their actions are configured via `threshold_config` CLI too
 
 
 
-== antimalware
+== antimalware - Threat Prevention
 [cols=2, options="header"]
 |===
 |Flavor
