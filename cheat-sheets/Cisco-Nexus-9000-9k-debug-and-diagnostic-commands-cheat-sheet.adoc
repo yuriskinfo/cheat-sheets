@@ -2,6 +2,7 @@
 Yuri Slobodyanyuk <admin@yurisk.info>
 v1.0, 2020-09-01
 :homepage: https://yurisk.info
+:pdf-theme: custom-theme.yml
 
 Author: Yuri Slobodyanyuk, https://www.linkedin.com/in/yurislobodyanyuk/
 
@@ -33,6 +34,16 @@ Status: Work in progress.
 
 |*show feature*
 |Show enabled features, make sure FEX is on.
+
+|*show interface counters errors non-zero*
+| Show interface errors and discards in a neat table
+
+|*show interface \| include "Ethernet\|discard"*
+| Show all interfaces discards, but cluttered output, so better use the command above.
+
+|*show hardware internal buffer info pkt-stats*
+| Show used/current buffers cell budget
+
 
 |*show fex [_fex-num_] [detail]*
 | Show FEX, optionally with details - FEX associated number, state
