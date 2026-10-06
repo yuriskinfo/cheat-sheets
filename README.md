@@ -67,10 +67,12 @@ Make sure to __watch__ this repository to get notified on updates (usually updat
 
 ## Windows software and utilities
 
+[Windows network troubleshooting commands cheat sheet](cheat-sheets/windows-network-troubleshooting-commands-cheat-sheet.adoc) | [PDF](cheat-sheets/windows-network-troubleshooting-commands-cheat-sheet.pdf)
+
 
 [FAR file manager cheat sheet of keyboard shortcuts](cheat-sheets/FAR-manager-cheat-sheet-of-keyboard-shortcuts.adoc) | [PDF](cheat-sheets/FAR-manager-cheat-sheet-of-keyboard-shortcuts.pdf)
 
-[Windows cmd.exe shell batch scripting cheat sheet](cheat-sheets/Windows-cmd-shell-batch-scripting-cheat-sheet.adoc) | [PDF](Windows-cmd-shell-batch-scripting-cheat-sheet.pdf)
+[Windows cmd.exe shell batch scripting cheat sheet](cheat-sheets/Windows-cmd-shell-batch-scripting-cheat-sheet.adoc) | [PDF](cheat-sheets/Windows-cmd-shell-batch-scripting-cheat-sheet.pdf)
 
 ## Amazon AWS CLI v2.x
 
